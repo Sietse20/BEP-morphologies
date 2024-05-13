@@ -182,7 +182,7 @@ def open_and_split(path):
     number_of_comments = len(lines) - len(important_lines)
     entry = 0
     for l in important_lines:
-        entry = entry + 1
+        entry += 1
         tempinf = l.split(' ')
         information = []
         for piece in tempinf:
@@ -193,13 +193,13 @@ def open_and_split(path):
             if '#' in l:
                 print("Please consider removing all comments from lines that contain data, and make sure to not have indented comments.")
         else:
-            seg_ID = int(information[0])-1
+            seg_ID = int(information[0]) - 1
             type_ID = int(information[1])
             x_coor = float(information[2])
             y_coor = float(information[3])
             z_coor = float(information[4])
             rad = float(information[5])
-            par_ID = int(information[6])-1
+            par_ID = int(information[6]) - 1
             
             if par_ID < 0:
                 par_ID = -1
@@ -228,8 +228,8 @@ def construct_nml(d, cell_ID, filename):
     '''
 
     generic_file_name = filename.split('.')[0]
-    nml_doc = neuroml.NeuroMLDocument(id="%s" %generic_file_name)
-    nml_cell = neuroml.Cell(id="%s" %cell_ID)
+    nml_doc = neuroml.NeuroMLDocument(id=f"{generic_file_name}")
+    nml_cell = neuroml.Cell(id=f"{cell_ID}")
     n,children,type_seg,types,root = classify_types_branches_and_leafs(d)
     # d,n,children,type_seg,types,root = fix_dict(d,types,children)
     segmentGroups = find_segments(d,n,cell_ID,children)
@@ -249,7 +249,7 @@ def construct_nml(d, cell_ID, filename):
 
 def classify_types_branches_and_leafs(d):
     # Find branch points and leaf points
-    print(d[441])
+
     n = {}
     n[0] = []
     n[1] = []
@@ -265,13 +265,6 @@ def classify_types_branches_and_leafs(d):
     types['axon'] = []
     types['soma'] = []
     types['ap_dend'] = []
-
-    ##
-    for point in range(0, len(d)):
-        if d[point][5] == 441:
-            print(point)
-    
-    print(d[89])
 
     for point in range(0,len(d)):
 
@@ -333,8 +326,6 @@ def classify_types_branches_and_leafs(d):
 
 def find_segments(d,n,cell_ID,children):
     # Now find the segments;
-
-    print(n[2])
 
     segmentGroups = []
     N = 0
@@ -935,7 +926,7 @@ def print_statistics(d, segmentGroups):
 # In[98]:
 
 
-swc_file = 'GGN_20170309_sc.swc' # Insert the path of the swc-file here
+swc_file = 'Niet werkend\Incompatible (custom) type\SU8flatHB_T3_10X_3_18.CNG.swc' # Insert the path of the swc-file here
 nml_file_name = convert_to_nml(swc_file)
 print('Converted the following file: %s' %nml_file_name)
 

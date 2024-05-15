@@ -39,16 +39,17 @@ import os
 import neuroml
 import neuroml.writers as writers
 import math
+import api2
 
 
 # In[78]:
 
 
-def convert_to_nml(path):
+def convert_to_nml(path, output_dir):
     d = open_and_split(path)
     file = path.split('/')[-1]
     cell_ID = file.split('_')[0]
-    nml_file = construct_nml(d, cell_ID, file)
+    nml_file = construct_nml(d, cell_ID, file, output_dir)
     
     return nml_file
 
@@ -205,13 +206,15 @@ def open_and_split(path):
                 par_ID = -1
             
             d[seg_ID] = (type_ID, x_coor, y_coor, z_coor, rad, par_ID)
+    
+    print(d)
     return d
 
 
 # In[81]:
 
 
-def construct_nml(d, cell_ID, filename):
+def construct_nml(d, cell_ID, filename, output_dir):
     
     '''
     
@@ -237,7 +240,7 @@ def construct_nml(d, cell_ID, filename):
     nml_cell = process_cables(segmentGroups,type_seg,nml_mor,nml_cell)
     nml_cell = define_biophysical_properties(nml_cell,cell_ID)
     nml_doc.cells.append(nml_cell)
-    nml_file = generic_file_name + '_converted.cell.nml'
+    nml_file = f'{output_dir}/{generic_file_name}_converted.cell.nml'
     writers.NeuroMLWriter.write(nml_doc, nml_file)
     # print_statistics(d, segmentGroups)
     
@@ -924,11 +927,15 @@ def print_statistics(d, segmentGroups):
 
 
 # In[98]:
+for neuron_id in range(1, 10):
+    swc_file = api2.create_swc_file(neuron_id, 'map swc files')
+    nml_file_name = convert_to_nml(swc_file, 'map nml files')
+    print('Converted the following file: %s' %nml_file_name)
 
 
-swc_file = 'Niet werkend\Incompatible (custom) type\SU8flatHB_T3_10X_3_18.CNG.swc' # Insert the path of the swc-file here
-nml_file_name = convert_to_nml(swc_file)
-print('Converted the following file: %s' %nml_file_name)
+# swc_file = 'neuron_1.swc' # Insert the path of the swc-file here
+# nml_file_name = convert_to_nml(swc_file)
+# print('Converted the following file: %s' %nml_file_name)
 
 
 # In[ ]:

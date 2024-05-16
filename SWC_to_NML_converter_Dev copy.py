@@ -49,6 +49,19 @@ def convert_to_nml(path, output_dir):
     d = open_and_split(path)
     file = path.split('/')[-1]
     cell_ID = file.split('_')[0]
+
+    # Fix the schema problem
+    for letter in file:
+        if letter.isdigit():
+            file = file[1:]
+        else:
+            break
+    for letter in cell_ID:
+        if letter.isdigit():
+            cell_ID = cell_ID[1:]
+        else:
+            break
+
     nml_file = construct_nml(d, cell_ID, file, output_dir)
     
     return nml_file
@@ -282,6 +295,13 @@ def classify_types_branches_and_leafs(d):
         else:
             n[2].append(point)
         
+        # Check for 0.0 diameter:
+        if d[point][4] <= 0.0:
+            d[point] = (d[point][0], d[point][1], d[point][2], d[point][3], 0.0000001, d[point][5])
+            if point in n[0]:
+                print("Endpoint of zero diameter detected.")
+            else:
+                print("Point of zero diameter detected in branch.")
 
         if d[point][0] == 1:
             type_seg[point] = 'soma'
@@ -927,15 +947,15 @@ def print_statistics(d, segmentGroups):
 
 
 # In[98]:
+# for neuron_id in range(1, 10):
+#     swc_file = api2.create_swc_file(neuron_id, 'map swc files')
+#     nml_file_name = convert_to_nml(swc_file, 'map nml files')
+#     print(f'Converted the following file: {nml_file_name}')
+
 for neuron_id in range(1, 10):
-    swc_file = api2.create_swc_file(neuron_id, 'map swc files')
-    nml_file_name = convert_to_nml(swc_file, 'map nml files')
-    print(f'Converted the following file: {nml_file_name}')
-
-
-# swc_file = 'neuron_1.swc' # Insert the path of the swc-file here
-# nml_file_name = convert_to_nml(swc_file)
-# print('Converted the following file: %s' %nml_file_name)
+    swc_file = f'map_swc_files/neuron_{neuron_id}.swc' # Insert the path of the swc-file here
+    nml_file_name = convert_to_nml(swc_file, 'map_nml_files')
+    print('Converted the following file: %s' %nml_file_name)
 
 
 # In[ ]:

@@ -214,8 +214,8 @@ def construct_nml(d, cell_ID, filename, output_dir):
 
     generic_file_name = filename.split('.')[0]
     print("Things: ", type(generic_file_name), type(cell_ID))
-    nml_doc = neuroml.NeuroMLDocument(id=generic_file_name)
-    nml_cell = neuroml.Cell(id=cell_ID)
+    nml_doc = neuroml.NeuroMLDocument(id=f"{generic_file_name}")
+    nml_cell = neuroml.Cell(id=f"{cell_ID}")
     n, children, type_seg, types, root = classify_types_branches_and_leafs(d)
     # d,n,children,type_seg,types,root = fix_dict(d,types,children)
     segmentGroups = find_segments(d,n,cell_ID,children)
@@ -230,31 +230,33 @@ def construct_nml(d, cell_ID, filename, output_dir):
     return nml_file
 
 
-def classify_types_branches_and_leafs(d: dict[int, tuple]):
-    '''
+# In[82]:
 
-    This function classifies the segments into different types, and determines the children of points
-    Returns: - n: dict
-             - etc
 
-    '''
-   
-    n = {0: [],
-         1: [],
-         2: []}
-    root = -float("Inf")
+def classify_types_branches_and_leafs(d):
+    # Find branch points and leaf points
+
+    n = {}
+    n[0] = []
+    n[1] = []
+    n[2] = []
+    n['soma'] = []
+    root = -2 # Is going to be positive!!!!!
+
     children = {}
-    type_seg = {}
-    types = {'dend': [],
-             'axon': [],
-             'soma': [],
-             'ap_dend': []}
 
-    for point, info in d.items():
-        # Create dict n:
+    type_seg = {}
+    types = {}
+    types['dend'] = []
+    types['axon'] = []
+    types['soma'] = []
+    types['ap_dend'] = []
+
+    for point in range(0,len(d)):
+
         number_of_children = 0
-        for info2 in d.values():
-            if info2[5] == point:
+        for count in range(0,len(d)):
+            if d[count][5] == point:
                 number_of_children += 1
         if number_of_children == 0:
             n[0].append(point)
@@ -264,52 +266,59 @@ def classify_types_branches_and_leafs(d: dict[int, tuple]):
             n[2].append(point)
         
         # Check for 0.0 diameter:
-        if info[4] <= 0.0:
-            d[point] = info[:4] + (0.000001,) + (info[5],)
+        if d[point][4] <= 0.0:
+            d[point] = (d[point][0], d[point][1], d[point][2], d[point][3], 0.0000001, d[point][5])
             if point in n[0]:
                 print("Endpoint of zero diameter detected.")
             else:
                 print("Point of zero diameter detected in branch.")
 
-        # Create dicts type_seg and types:
-        if info[0] == 1:
+        if d[point][0] == 1:
             type_seg[point] = 'soma'
             types['soma'].append(point)
-        elif info[0] == 2:
+        elif d[point][0] == 2:
             type_seg[point] = 'axon'
             types['axon'].append(point)
-        elif info[0] == 3:
+        elif d[point][0] == 3:
             type_seg[point] = 'dend'
             types['dend'].append(point)
-        elif info[0] == 4:
+        elif d[point][0] == 4:
             type_seg[point] = 'ap_dend'
             types['ap_dend'].append(point)
-        else: # Account for custom types
-            type_seg[point] = f'custom_{info[0]}'
-            if f'custom_{info[0]}' not in types:
-                print(f"Unknown type: type {info[0]} for point {point}")
-                types[f'custom_{info[0]}'] = [point]
+        else:
+            type_seg[point] = f'custom_{d[point][0]}'
+            if f'custom_{d[point][0]}' not in types:
+                print("Unknown type: type %s for point %s" %(d[point][0], point))
+                types[f'custom_{d[point][0]}'] = [point]
             else:
-                types[f'custom_{info[0]}'].append(point)
+                types[f'custom_{d[point][0]}'].append(point)
 
-        # Find root:
-        if info[5] == -1:
-            root = point 
 
+        if d[point][5] == -1:
+            root = point # The root will become positive at some point
         children[point] = []
 
-    # Create dict children:
-    for point, info in d.items():
-        if point != root:
-            children[info[5]].append(point)    
+    for counter in range(0,len(d)):
+        if counter != root:
+            children[d[counter][5]].append(counter)    
 
-    return n, children, type_seg, types, root
+            
+    # print(n)
+    # print("Root: %s" %root)
+    # print(children)
+    # print(type_seg)
+    
+
+    return n,children,type_seg,types,root
+
+    # Elements in n[0] are leaf points, n[1] are normal points, n[2] are branch points, n['soma'] are soma segments
+
+
+# In[83]:
 
 
 def find_segments(d,n,cell_ID,children):
-    '''
-    Finds segments
-    '''
+    # Now find the segments;
 
     segmentGroups = []
     N = 0

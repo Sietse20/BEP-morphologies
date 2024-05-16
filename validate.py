@@ -20,13 +20,12 @@ def validate_neuroml_files(directory):
             result = subprocess.run(command, capture_output=True, text=True, check=True)
             
             # Print the output
-            print(result.stdout)
-            print(result.stderr)
-            
             if result.returncode == 0:
-                print(f"Validation succeeded for file: {file_path}")
+                print(f"Validation succeeded for file: {os.path.basename(file_path)}")
             else:
-                print(f"Validation failed for file: {file_path}")
+                print(f"Validation failed for file: {os.path.basename(file_path)}")
+                print(result.stdout)
+                print(result.stderr)
         
         except subprocess.CalledProcessError as e:
             # Handle errors in the command execution

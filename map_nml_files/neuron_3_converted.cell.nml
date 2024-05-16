@@ -199,7 +199,7 @@
             </segment>
             <segment id="49" name="Comp_49">
                 <parent segment="48"/>
-                <distal x="214.22" y="60.04" z="10.17" diameter="2e-07"/>
+                <distal x="214.22" y="60.04" z="10.17" diameter="2e-06"/>
             </segment>
             <segment id="50" name="Comp_50">
                 <parent segment="44"/>
@@ -219,7 +219,7 @@
             </segment>
             <segment id="54" name="Comp_54">
                 <parent segment="53"/>
-                <distal x="232.54" y="52.86" z="8.27" diameter="2e-07"/>
+                <distal x="232.54" y="52.86" z="8.27" diameter="2e-06"/>
             </segment>
             <segment id="55" name="Comp_55">
                 <parent segment="37"/>
@@ -239,7 +239,7 @@
             </segment>
             <segment id="59" name="Comp_59">
                 <parent segment="58"/>
-                <distal x="148.9" y="77.54" z="5.17" diameter="2e-07"/>
+                <distal x="148.9" y="77.54" z="5.17" diameter="2e-06"/>
             </segment>
             <segment id="60" name="Comp_60">
                 <parent segment="35"/>
@@ -311,7 +311,7 @@
             </segment>
             <segment id="77" name="Comp_77">
                 <parent segment="76"/>
-                <distal x="198.32" y="-18.23" z="22.47" diameter="2e-07"/>
+                <distal x="198.32" y="-18.23" z="22.47" diameter="2e-06"/>
             </segment>
             <segment id="78" name="Comp_78">
                 <parent segment="24"/>
@@ -399,7 +399,7 @@
             </segment>
             <segment id="99" name="Comp_99">
                 <parent segment="98"/>
-                <distal x="106.54" y="101.83" z="-34.42" diameter="2e-07"/>
+                <distal x="106.54" y="101.83" z="-34.42" diameter="2e-06"/>
             </segment>
             <segment id="100" name="Comp_100">
                 <parent segment="84"/>
@@ -471,7 +471,7 @@
             </segment>
             <segment id="117" name="Comp_117">
                 <parent segment="116"/>
-                <distal x="108.45" y="142.68" z="8.17" diameter="2e-07"/>
+                <distal x="108.45" y="142.68" z="8.17" diameter="2e-06"/>
             </segment>
             <segment id="118" name="Comp_118">
                 <parent segment="22"/>
@@ -507,7 +507,7 @@
             </segment>
             <segment id="126" name="Comp_126">
                 <parent segment="125"/>
-                <distal x="105.14" y="2.06" z="-28.67" diameter="2e-07"/>
+                <distal x="105.14" y="2.06" z="-28.67" diameter="2e-06"/>
             </segment>
             <segment id="127" name="Comp_127">
                 <parent segment="16"/>
@@ -619,7 +619,7 @@
             </segment>
             <segment id="154" name="Comp_154">
                 <parent segment="153"/>
-                <distal x="101.46" y="-43.72" z="-34.02" diameter="2e-07"/>
+                <distal x="101.46" y="-43.72" z="-34.02" diameter="2e-06"/>
             </segment>
             <segment id="155" name="Comp_155">
                 <parent segment="130"/>
@@ -759,7 +759,7 @@
             </segment>
             <segment id="189" name="Comp_189">
                 <parent segment="188"/>
-                <distal x="182.86" y="-67.92" z="-5.72" diameter="2e-07"/>
+                <distal x="182.86" y="-67.92" z="-5.72" diameter="2e-06"/>
             </segment>
             <segment id="190" name="Comp_190">
                 <parent segment="12"/>
@@ -903,7 +903,7 @@
             </segment>
             <segment id="225" name="Comp_225">
                 <parent segment="224"/>
-                <distal x="104.84" y="190.02" z="-9.17" diameter="2e-07"/>
+                <distal x="104.84" y="190.02" z="-9.17" diameter="2e-06"/>
             </segment>
             <segment id="226" name="Comp_226">
                 <parent segment="192"/>
@@ -963,7 +963,7 @@
             </segment>
             <segment id="240" name="Comp_240">
                 <parent segment="239"/>
-                <distal x="69.42" y="90.75" z="57.87" diameter="2e-07"/>
+                <distal x="69.42" y="90.75" z="57.87" diameter="2e-06"/>
             </segment>
             <segment id="241" name="Comp_241">
                 <parent segment="227"/>
@@ -995,7 +995,7 @@
             </segment>
             <segment id="248" name="Comp_248">
                 <parent segment="247"/>
-                <distal x="80.07" y="52.1" z="53.32" diameter="2e-07"/>
+                <distal x="80.07" y="52.1" z="53.32" diameter="2e-06"/>
             </segment>
             <segment id="249" name="Comp_249">
                 <parent segment="9"/>
@@ -1155,7 +1155,7 @@
             </segment>
             <segment id="288" name="Comp_288">
                 <parent segment="287"/>
-                <distal x="145.3" y="-73.07" z="10.52" diameter="2e-07"/>
+                <distal x="145.3" y="-73.07" z="10.52" diameter="2e-06"/>
             </segment>
             <segment id="289" name="Comp_289">
                 <parent segment="258"/>
@@ -1335,7 +1335,7 @@
             </segment>
             <segment id="333" name="Comp_333">
                 <parent segment="332"/>
-                <distal x="140.8" y="-179.18" z="-31.67" diameter="2e-07"/>
+                <distal x="140.8" y="-179.18" z="-31.67" diameter="2e-06"/>
             </segment>
             <segment id="334" name="Comp_334">
                 <parent segment="251"/>
@@ -1355,7 +1355,7 @@
             </segment>
             <segment id="338" name="Comp_338">
                 <parent segment="337"/>
-                <distal x="33.67" y="4.66" z="-21.39" diameter="2e-07"/>
+                <distal x="33.67" y="4.66" z="-21.39" diameter="2e-06"/>
             </segment>
             <segment id="339" name="Comp_339">
                 <parent segment="8"/>
@@ -1491,7 +1491,7 @@
             </segment>
             <segment id="372" name="Comp_372">
                 <parent segment="371"/>
-                <distal x="105.42" y="43.48" z="-41.37" diameter="2e-07"/>
+                <distal x="105.42" y="43.48" z="-41.37" diameter="2e-06"/>
             </segment>
             <segment id="373" name="Comp_373">
                 <parent segment="345"/>
@@ -1643,7 +1643,7 @@
             </segment>
             <segment id="410" name="Comp_410">
                 <parent segment="409"/>
-                <distal x="82.97" y="161.85" z="-37.97" diameter="2e-07"/>
+                <distal x="82.97" y="161.85" z="-37.97" diameter="2e-06"/>
             </segment>
             <segment id="411" name="Comp_411">
                 <parent segment="340"/>
@@ -1775,7 +1775,7 @@
             </segment>
             <segment id="443" name="Comp_443">
                 <parent segment="442"/>
-                <distal x="23.92" y="141.33" z="-44.42" diameter="2e-07"/>
+                <distal x="23.92" y="141.33" z="-44.42" diameter="2e-06"/>
             </segment>
             <segment id="444" name="Comp_444">
                 <parent segment="418"/>
@@ -1867,7 +1867,7 @@
             </segment>
             <segment id="466" name="Comp_466">
                 <parent segment="465"/>
-                <distal x="82.11" y="179.23" z="67.47" diameter="2e-07"/>
+                <distal x="82.11" y="179.23" z="67.47" diameter="2e-06"/>
             </segment>
             <segment id="467" name="Comp_467">
                 <parent segment="5"/>
@@ -2039,7 +2039,7 @@
             </segment>
             <segment id="509" name="Comp_509">
                 <parent segment="508"/>
-                <distal x="128.68" y="-121.21" z="-28.77" diameter="2e-07"/>
+                <distal x="128.68" y="-121.21" z="-28.77" diameter="2e-06"/>
             </segment>
             <segment id="510" name="Comp_510">
                 <parent segment="474"/>
@@ -2203,7 +2203,7 @@
             </segment>
             <segment id="550" name="Comp_550">
                 <parent segment="549"/>
-                <distal x="63.25" y="-192.8" z="-45.42" diameter="2e-07"/>
+                <distal x="63.25" y="-192.8" z="-45.42" diameter="2e-06"/>
             </segment>
             <segment id="551" name="Comp_551">
                 <parent segment="469"/>
@@ -2235,7 +2235,7 @@
             </segment>
             <segment id="558" name="Comp_558">
                 <parent segment="557"/>
-                <distal x="43.78" y="-15.09" z="61.12" diameter="2e-07"/>
+                <distal x="43.78" y="-15.09" z="61.12" diameter="2e-06"/>
             </segment>
             <segment id="559" name="Comp_559">
                 <parent segment="0"/>
@@ -2299,7 +2299,7 @@
             </segment>
             <segment id="574" name="Comp_574">
                 <parent segment="573"/>
-                <distal x="-44.81" y="30.76" z="-39.57" diameter="2e-07"/>
+                <distal x="-44.81" y="30.76" z="-39.57" diameter="2e-06"/>
             </segment>
             <segment id="575" name="Comp_575">
                 <parent segment="565"/>
@@ -2419,7 +2419,7 @@
             </segment>
             <segment id="604" name="Comp_604">
                 <parent segment="603"/>
-                <distal x="-88.63" y="90.49" z="-2.32" diameter="2e-07"/>
+                <distal x="-88.63" y="90.49" z="-2.32" diameter="2e-06"/>
             </segment>
             <segment id="605" name="Comp_605">
                 <parent segment="562"/>
@@ -2623,7 +2623,7 @@
             </segment>
             <segment id="655" name="Comp_655">
                 <parent segment="654"/>
-                <distal x="-51.65" y="212.23" z="-39.32" diameter="2e-07"/>
+                <distal x="-51.65" y="212.23" z="-39.32" diameter="2e-06"/>
             </segment>
             <segment id="656" name="Comp_656">
                 <parent segment="612"/>
@@ -2651,7 +2651,7 @@
             </segment>
             <segment id="662" name="Comp_662">
                 <parent segment="661"/>
-                <distal x="-21.92" y="56.1" z="-36.07" diameter="2e-07"/>
+                <distal x="-21.92" y="56.1" z="-36.07" diameter="2e-06"/>
             </segment>
             <segment id="663" name="Comp_663">
                 <parent segment="610"/>
@@ -2843,7 +2843,7 @@
             </segment>
             <segment id="710" name="Comp_710">
                 <parent segment="709"/>
-                <distal x="-17.78" y="206.23" z="-17.27" diameter="2e-07"/>
+                <distal x="-17.78" y="206.23" z="-17.27" diameter="2e-06"/>
             </segment>
             <segment id="711" name="Comp_711">
                 <parent segment="667"/>
@@ -2887,7 +2887,7 @@
             </segment>
             <segment id="721" name="Comp_721">
                 <parent segment="720"/>
-                <distal x="-2.68" y="71.16" z="-42.17" diameter="2e-07"/>
+                <distal x="-2.68" y="71.16" z="-42.17" diameter="2e-06"/>
             </segment>
             <segment id="722" name="Comp_722">
                 <parent segment="664"/>
@@ -2931,7 +2931,7 @@
             </segment>
             <segment id="732" name="Comp_732">
                 <parent segment="731"/>
-                <distal x="7.32" y="66.52" z="-39.92" diameter="2e-07"/>
+                <distal x="7.32" y="66.52" z="-39.92" diameter="2e-06"/>
             </segment>
             <segment id="733" name="Comp_733">
                 <parent segment="0"/>
@@ -3139,7 +3139,7 @@
             </segment>
             <segment id="784" name="Comp_784">
                 <parent segment="783"/>
-                <distal x="-8.9" y="-197.0" z="-39.17" diameter="2e-07"/>
+                <distal x="-8.9" y="-197.0" z="-39.17" diameter="2e-06"/>
             </segment>
             <segment id="785" name="Comp_785">
                 <parent segment="744"/>
@@ -3295,7 +3295,7 @@
             </segment>
             <segment id="823" name="Comp_823">
                 <parent segment="822"/>
-                <distal x="-122.29" y="-91.01" z="26.12" diameter="2e-07"/>
+                <distal x="-122.29" y="-91.01" z="26.12" diameter="2e-06"/>
             </segment>
             <segment id="824" name="Comp_824">
                 <parent segment="786"/>
@@ -3387,7 +3387,7 @@
             </segment>
             <segment id="846" name="Comp_846">
                 <parent segment="845"/>
-                <distal x="-12.4" y="-136.16" z="29.32" diameter="2e-07"/>
+                <distal x="-12.4" y="-136.16" z="29.32" diameter="2e-06"/>
             </segment>
             <segment id="847" name="Comp_847">
                 <parent segment="827"/>
@@ -3431,7 +3431,7 @@
             </segment>
             <segment id="857" name="Comp_857">
                 <parent segment="856"/>
-                <distal x="11.89" y="-81.02" z="46.87" diameter="2e-07"/>
+                <distal x="11.89" y="-81.02" z="46.87" diameter="2e-06"/>
             </segment>
             <segment id="858" name="Comp_858">
                 <parent segment="739"/>
@@ -3571,7 +3571,7 @@
             </segment>
             <segment id="892" name="Comp_892">
                 <parent segment="891"/>
-                <distal x="-33.36" y="-194.49" z="-8.77" diameter="2e-07"/>
+                <distal x="-33.36" y="-194.49" z="-8.77" diameter="2e-06"/>
             </segment>
             <segment id="893" name="Comp_893">
                 <parent segment="860"/>
@@ -3671,7 +3671,7 @@
             </segment>
             <segment id="917" name="Comp_917">
                 <parent segment="916"/>
-                <distal x="35.31" y="-137.17" z="-38.52" diameter="2e-07"/>
+                <distal x="35.31" y="-137.17" z="-38.52" diameter="2e-06"/>
             </segment>
             <segment id="918" name="Comp_918">
                 <parent segment="895"/>
@@ -3711,7 +3711,7 @@
             </segment>
             <segment id="927" name="Comp_927">
                 <parent segment="926"/>
-                <distal x="5.14" y="-82.56" z="-38.62" diameter="2e-07"/>
+                <distal x="5.14" y="-82.56" z="-38.62" diameter="2e-06"/>
             </segment>
             <segment id="928" name="Comp_928">
                 <parent segment="735"/>
@@ -3855,7 +3855,7 @@
             </segment>
             <segment id="963" name="Comp_963">
                 <parent segment="962"/>
-                <distal x="-119.99" y="-59.88" z="8.52" diameter="2e-07"/>
+                <distal x="-119.99" y="-59.88" z="8.52" diameter="2e-06"/>
             </segment>
             <segment id="964" name="Comp_964">
                 <parent segment="937"/>
@@ -3983,7 +3983,7 @@
             </segment>
             <segment id="995" name="Comp_995">
                 <parent segment="994"/>
-                <distal x="-121.04" y="-2.12" z="-29.22" diameter="2e-07"/>
+                <distal x="-121.04" y="-2.12" z="-29.22" diameter="2e-06"/>
             </segment>
             <segment id="996" name="Comp_996">
                 <parent segment="931"/>
@@ -3999,7 +3999,7 @@
             </segment>
             <segment id="999" name="Comp_999">
                 <parent segment="998"/>
-                <distal x="-28.67" y="-3.93" z="-32.37" diameter="2e-07"/>
+                <distal x="-28.67" y="-3.93" z="-32.37" diameter="2e-06"/>
             </segment>
             <segment id="1000" name="Comp_1000">
                 <parent segment="0"/>
@@ -4179,7 +4179,7 @@
             </segment>
             <segment id="1044" name="Comp_1044">
                 <parent segment="1043"/>
-                <distal x="-116.19" y="-64.58" z="17.42" diameter="2e-07"/>
+                <distal x="-116.19" y="-64.58" z="17.42" diameter="2e-06"/>
             </segment>
             <segment id="1045" name="Comp_1045">
                 <parent segment="1013"/>
@@ -4251,7 +4251,7 @@
             </segment>
             <segment id="1062" name="Comp_1062">
                 <parent segment="1061"/>
-                <distal x="-51.66" y="-81.56" z="34.37" diameter="2e-07"/>
+                <distal x="-51.66" y="-81.56" z="34.37" diameter="2e-06"/>
             </segment>
             <segment id="1063" name="Comp_1063">
                 <parent segment="1008"/>
@@ -4391,7 +4391,7 @@
             </segment>
             <segment id="1097" name="Comp_1097">
                 <parent segment="1096"/>
-                <distal x="11.44" y="-148.74" z="-43.12" diameter="2e-07"/>
+                <distal x="11.44" y="-148.74" z="-43.12" diameter="2e-06"/>
             </segment>
             <segment id="1098" name="Comp_1098">
                 <parent segment="1006"/>
@@ -4527,7 +4527,7 @@
             </segment>
             <segment id="1131" name="Comp_1131">
                 <parent segment="1130"/>
-                <distal x="-113.55" y="-54.74" z="28.17" diameter="2e-07"/>
+                <distal x="-113.55" y="-54.74" z="28.17" diameter="2e-06"/>
             </segment>
             <segment id="1132" name="Comp_1132">
                 <parent segment="1002"/>
@@ -4551,7 +4551,7 @@
             </segment>
             <segment id="1137" name="Comp_1137">
                 <parent segment="1136"/>
-                <distal x="8.06" y="-9.04" z="26.82" diameter="2e-07"/>
+                <distal x="8.06" y="-9.04" z="26.82" diameter="2e-06"/>
             </segment>
             <segment id="1138" name="Comp_1138">
                 <parent segment="1133"/>
@@ -4659,7 +4659,7 @@
             </segment>
             <segment id="1164" name="Comp_1164">
                 <parent segment="1163"/>
-                <distal x="36.27" y="-185.27" z="12.37" diameter="2e-07"/>
+                <distal x="36.27" y="-185.27" z="12.37" diameter="2e-06"/>
             </segment>
             <segment id="1165" name="Comp_1165">
                 <parent segment="0"/>
@@ -4871,7 +4871,7 @@
             </segment>
             <segment id="1217" name="Comp_1217">
                 <parent segment="1216"/>
-                <distal x="-89.73" y="151.26" z="-4.22" diameter="2e-07"/>
+                <distal x="-89.73" y="151.26" z="-4.22" diameter="2e-06"/>
             </segment>
             <segment id="1218" name="Comp_1218">
                 <parent segment="1177"/>
@@ -5023,7 +5023,7 @@
             </segment>
             <segment id="1255" name="Comp_1255">
                 <parent segment="1254"/>
-                <distal x="-49.18" y="169.36" z="-30.27" diameter="2e-07"/>
+                <distal x="-49.18" y="169.36" z="-30.27" diameter="2e-06"/>
             </segment>
             <segment id="1256" name="Comp_1256">
                 <parent segment="1171"/>
@@ -5083,7 +5083,7 @@
             </segment>
             <segment id="1270" name="Comp_1270">
                 <parent segment="1269"/>
-                <distal x="-17.53" y="72.9" z="51.67" diameter="2e-07"/>
+                <distal x="-17.53" y="72.9" z="51.67" diameter="2e-06"/>
             </segment>
             <segment id="1271" name="Comp_1271">
                 <parent segment="1259"/>
@@ -5103,7 +5103,7 @@
             </segment>
             <segment id="1275" name="Comp_1275">
                 <parent segment="1274"/>
-                <distal x="11.59" y="50.5" z="38.47" diameter="2e-07"/>
+                <distal x="11.59" y="50.5" z="38.47" diameter="2e-06"/>
             </segment>
             <segment id="1276" name="Comp_1276">
                 <parent segment="1168"/>
@@ -5191,7 +5191,7 @@
             </segment>
             <segment id="1297" name="Comp_1297">
                 <parent segment="1296"/>
-                <distal x="-48.01" y="-6.82" z="40.97" diameter="2e-07"/>
+                <distal x="-48.01" y="-6.82" z="40.97" diameter="2e-06"/>
             </segment>
             <segment id="1298" name="Comp_1298">
                 <parent segment="1283"/>
@@ -5339,7 +5339,7 @@
             </segment>
             <segment id="1334" name="Comp_1334">
                 <parent segment="1333"/>
-                <distal x="-144.24" y="15.7" z="34.87" diameter="2e-07"/>
+                <distal x="-144.24" y="15.7" z="34.87" diameter="2e-06"/>
             </segment>
             <segment id="1335" name="Comp_1335">
                 <parent segment="1299"/>
@@ -5495,7 +5495,7 @@
             </segment>
             <segment id="1373" name="Comp_1373">
                 <parent segment="1372"/>
-                <distal x="-129.59" y="95.04" z="-17.32" diameter="2e-07"/>
+                <distal x="-129.59" y="95.04" z="-17.32" diameter="2e-06"/>
             </segment>
             <segment id="1374" name="Comp_1374">
                 <parent segment="0"/>
@@ -5627,7 +5627,7 @@
             </segment>
             <segment id="1406" name="Comp_1406">
                 <parent segment="1405"/>
-                <distal x="-172.89" y="-49.56" z="-22.62" diameter="2e-07"/>
+                <distal x="-172.89" y="-49.56" z="-22.62" diameter="2e-06"/>
             </segment>
             <segmentGroup id="Cable_1" neuroLexId="sao864921383">
                 <member segment="1"/>

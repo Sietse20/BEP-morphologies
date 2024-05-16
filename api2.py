@@ -32,4 +32,4 @@ def create_swc_file(neuron_id, swc_dir):
 
 if __name__ == "__main__":
     neuron_id = 2
-    create_swc_file(neuron_id)
+    create_swc_file(neuron_id, '')

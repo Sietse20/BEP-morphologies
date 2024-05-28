@@ -1,3 +1,10 @@
+import neuroml
+import neuroml.writers as writers
+import math
+import re
+import api2
+
+
 '''
 
 BEFORE USING THIS PROGRAM
@@ -22,15 +29,8 @@ A few messages of how to use:
 
 '''
 
+
 print("Ready")
-
-
-# Importing packages that are needed
-import os
-import neuroml
-import neuroml.writers as writers
-import math
-import api2
 
 
 def convert_to_nml(path, output_dir):
@@ -38,20 +38,14 @@ def convert_to_nml(path, output_dir):
     file = path.split('/')[-1]
     cell_ID = file.split('_')[0]
 
-    # Fix the schema problem
-    for letter in file:
-        if letter.isdigit():
-            file = file[1:]
-        else:
-            break
-    for letter in cell_ID:
-        if letter.isdigit():
-            cell_ID = cell_ID[1:]
-        else:
-            break
+    # Check if id is allowed by neuroml
+    pattern = r'^[a-zA-Z_][a-zA-Z0-9_]*$'
+    regex = re.compile(pattern)
+    if not bool(regex.match(cell_ID)):
+        raise Exception("Change filename to match format [a-zA-Z_][a-zA-Z0-9_]*")
 
     nml_file = construct_nml(d, cell_ID, file, output_dir)
-    
+
     return nml_file
 
 
@@ -60,83 +54,82 @@ def fix_dict(d, types, children):
 
     This function exists to fix any types of somas that don't work in NeuroML.
     At the moment, incorporated (and thus able to be converted are:
-    
+
     1) Somas indicated by a soma-outline, both one and multiple
 
     '''
-    
+
     hadcoords = []
     outline = False
     multiple_outline = False
-    
+
     for soma_seg in types['soma']:
         x = d[soma_seg][1]
         y = d[soma_seg][2]
         z = d[soma_seg][3]
-        coor = (x,y,z)
+        coor = (x, y, z)
         if coor in hadcoords:
-            if outline == True:
+            if outline is True:
                 multiple_outline = True
             outline = True
         hadcoords.append(coor)
-        
+
     hadcoords = []
     tot_x = 0
     tot_y = 0
     tot_z = 0
     amount_of_points = 0
-    
-    if outline == True:
+
+    if outline is True:
         print("Points of the soma are treated as soma outline!")
         print(">-------<")
-        
+
         for seg in types['soma']:
             x = d[seg][1]
             y = d[seg][2]
             z = d[seg][3]
-            coor = (x,y,z)
-            
+            coor = (x, y, z)
+
             if coor not in hadcoords:
                 tot_x = tot_x + x
                 tot_y = tot_y + y
                 tot_z = tot_z + z
                 amount_of_points = amount_of_points + 1
             hadcoords.append(coor)
-            
-        # print("The amount of points is: %s" %amount_of_points)    
+
+        # print("The amount of points is: %s" %amount_of_points)
         Cx = tot_x/amount_of_points
         Cy = tot_y/amount_of_points
         Cz = tot_z/amount_of_points
-        CoM = (Cx,Cy,Cz)
-        
+
         tot_dis = 0
         hadcoords = []
         # print("Center of mass: %s %s %s" %(Cx,Cy,Cz))
-        
+
         for seg in types['soma']:
             # print("Segment: %s" %seg)
             x = d[seg][1]
             y = d[seg][2]
             z = d[seg][3]
-            coor = (x,y,z)
+            coor = (x, y, z)
             # print("Coor: %s %s %s" %(x,y,z))
             distance = ((Cx - x)**2 + (Cy - y)**2 + (Cz - z)**2)**(1/2)
             # print("Distance: %s" %distance)
-            
+
             if coor not in hadcoords:
                 tot_dis = tot_dis + distance
                 # print("The total distance becomes: %s" %tot_dis)
             hadcoords.append(coor)
-        
+
         rs = (tot_dis/amount_of_points)*(5/8)
-        
+
         to_sub = len(types['soma']) - 3
-        
+
         d_new = {}
         d_new[0] = (1, Cx, Cy, Cz, rs, -1)
         d_new[1] = (1, Cx, Cy+rs, Cz, rs, 0)
         d_new[2] = (1, Cx, Cy-rs, Cz, rs, 0)
-        
+
         for entry in d:
             if d[entry][0] != 1:
                 type_seg = d[entry][0]
@@ -145,23 +138,23 @@ def fix_dict(d, types, children):
                 z_seg = d[entry][3]
                 rad_seg = d[entry][4]
                 par_seg = d[entry][5]
-                
+
                 if d[par_seg][0] == 1:
                     par_seg = 0
                 else:
                     par_seg = par_seg - to_sub
-                
+
                 new_ID = entry - to_sub
                 d_new[new_ID] = (type_seg, x_seg, y_seg, z_seg, rad_seg, par_seg)
-        
+
         # print("The dictionary:")
         # print(d)
         # print("Has been refined to dictionary:")
         # print(d_new)
-        
-        n,children,type_seg,types,root = classify_types_branches_and_leafs(d_new)
-        
-        return d_new,n,children,type_seg,types,root
+
+        n, children, type_seg, types, root = classify_types_branches_and_leafs(d_new)
+
+        return d_new, n, children, type_seg, types, root
 
 
 def open_and_split(path):
@@ -191,15 +184,15 @@ def open_and_split(path):
 
                     if par_ID < 0:
                         par_ID = -1
-            
+
                     d[seg_ID] = (type_ID, x_coor, y_coor, z_coor, rad, par_ID)
-    print(d)
+
     return d
 
 
 def construct_nml(d, cell_ID, filename, output_dir):
     '''
-    
+
     This function is the leading function! This function is the one that manages all the other functions, and which gives directions to the program.
     To understand the code, understanding the general process of conversion is needed - this function is the one to look at.
 
@@ -209,24 +202,23 @@ def construct_nml(d, cell_ID, filename, output_dir):
     After this, we can use those segmentGroups to define the cell morphology, but we need to take into account mistakes in the morphology (circular branches for example).
     This is also done automatically by the code.
     Finally, we need to give the cell some basic biophysical parameters.
-    
+
     '''
 
     generic_file_name = filename.split('.')[0]
-    print("Things: ", type(generic_file_name), type(cell_ID))
     nml_doc = neuroml.NeuroMLDocument(id=generic_file_name)
     nml_cell = neuroml.Cell(id=cell_ID)
     n, children, type_seg, types, root = classify_types_branches_and_leafs(d)
-    # d,n,children,type_seg,types,root = fix_dict(d,types,children)
-    segmentGroups = find_segments(d,n,cell_ID,children)
-    nml_mor = process_segments(d,children,root,cell_ID)
-    nml_cell = process_cables(segmentGroups,type_seg,nml_mor,nml_cell)
-    nml_cell = define_biophysical_properties(nml_cell,cell_ID)
+    # d, n, children, type_seg, types, root = fix_dict(d, types, children)
+    segmentGroups = find_segments(d, n, cell_ID, children)
+    nml_mor = process_segments(d, children, root, cell_ID)
+    nml_cell = process_cables(segmentGroups, type_seg, nml_mor, nml_cell)
+    nml_cell = define_biophysical_properties(nml_cell, cell_ID)
     nml_doc.cells.append(nml_cell)
     nml_file = f'{output_dir}/{generic_file_name}_converted.cell.nml'
     writers.NeuroMLWriter.write(nml_doc, nml_file)
     # print_statistics(d, segmentGroups)
-    
+
     return nml_file
 
 
@@ -238,7 +230,7 @@ def classify_types_branches_and_leafs(d: dict[int, tuple]):
              - etc
 
     '''
-   
+
     n = {0: [],
          1: [],
          2: []}
@@ -262,7 +254,7 @@ def classify_types_branches_and_leafs(d: dict[int, tuple]):
             n[1].append(point)
         else:
             n[2].append(point)
-        
+
         # Check for 0.0 diameter:
         if info[4] <= 0.0:
             d[point] = info[:4] + (0.000001,) + (info[5],)
@@ -284,7 +276,7 @@ def classify_types_branches_and_leafs(d: dict[int, tuple]):
         elif info[0] == 4:
             type_seg[point] = 'ap_dend'
             types['ap_dend'].append(point)
-        else: # Account for custom types
+        else:  # Account for custom types
             type_seg[point] = f'custom_{info[0]}'
             if f'custom_{info[0]}' not in types:
                 print(f"Unknown type: type {info[0]} for point {point}")
@@ -294,236 +286,188 @@ def classify_types_branches_and_leafs(d: dict[int, tuple]):
 
         # Find root:
         if info[5] == -1:
-            root = point 
+            root = point
 
         children[point] = []
 
     # Create dict children:
     for point, info in d.items():
         if point != root:
-            children[info[5]].append(point)    
+            children[info[5]].append(point)
 
     return n, children, type_seg, types, root
 
 
-def find_segments(d,n,cell_ID,children):
+def find_segments(d, n, cell_ID, children):
     '''
     Finds segments
     '''
 
     segmentGroups = []
-    N = 0
 
+    # Processing from leaf points to branch points:
     for leaf in n[0]:
         toAdd = leaf
         group_type = d[toAdd][0]
         segGr = []
         all_loops = []
         segmentFound = False
+
         if toAdd == 0:
             segmentFound = True
             segGr.append(toAdd)
-        while segmentFound == False:
-            # print("Segment: %s is being processed." %toAdd)
-            # print("%s is the segGr array at the moment." %segGr)
-            # print("%s is the segmentGroups array at the moment." %segmentGroups)
-            
+
+        while segmentFound is False:
             isin = False
-            for i in segmentGroups:
-                if toAdd in i:
+            for sg in segmentGroups:  # Check if segment is already found in another segmentgroup
+                if toAdd in sg:
                     isin = True
             if toAdd in segGr and d[toAdd][5] != -1:
                 isin = True
-                
-            if isin == True and toAdd not in n[2]:
-                # print("Loop: processing skipped.")
+
+            if isin is True and toAdd not in n[2]:
                 all_loops.append(segGr)
-                
                 break
-            elif toAdd == 0 and toAdd in n[2]: #??????????????????
+            elif toAdd == 0 and toAdd in n[2]:  # Start new segmentgroup at branching point, even if root
                 segmentFound = True
             elif toAdd == 0:
                 segmentFound = True
                 segGr.append(toAdd)
+            elif toAdd in n[2]:  # Found a branch point
+                segmentFound = True
             elif d[toAdd][0] != group_type:
                 segmentGroups.append(segGr)
-                N += len(segGr)
                 segGr = []
                 segGr.append(toAdd)
                 group_type = d[toAdd][0]
                 toAdd = d[toAdd][5]
-            elif toAdd in n[2]:
-                segmentFound = True
             else:
                 segGr.append(toAdd)
                 toAdd = d[toAdd][5]
-        
-        if all_loops:
-            print(all_loops)
 
         for loop in all_loops:
-            segmentGroupsNew = adjustSegmentGroups(loop,segmentGroups,children,d)
-            segmentGroups = segmentGroupsNew
-        
-        if segGr != []:
-            segmentGroups.append(segGr)
-            N += len(segGr)
+            segmentGroups = adjustSegmentGroups(loop, segmentGroups, children, d)
 
+        if segGr:
+            segmentGroups.append(segGr)
+
+    # Processing from branch points to other branch points:
     for branch in n[2]:
         toAdd = branch
         group_type = d[toAdd][0]
         segGr = []
         segmentFound = False
         all_loops = []
+
         if toAdd == 0:
             segmentFound = True
             segGr.append(toAdd)
-        while segmentFound == False:
-            # print("Segment: %s is being processed." %toAdd)
-            # print("%s is the segGr array at the moment." %segGr)
-            # print("%s is the segmentGroups array at the moment." %segmentGroups)
+
+        while segmentFound is False:
             isin = False
-            for i in segmentGroups:
-                if toAdd in i:
-                    print(branch)
-                    print(toAdd)
-                    print(toAdd in n[2])
-                    print(i)
+            for sg in segmentGroups:
+                if toAdd in sg:
                     isin = True
-            if (toAdd in segGr or isin == True) and toAdd != 0 and toAdd not in n[2]:
-                # print("Loop: processing skipped.")
-                print(f'isin:{isin}')
-                print(f'toAdd in segGr:{toAdd in segGr}')
+
+            if (toAdd in segGr or isin is True) and toAdd != 0 and toAdd not in n[2]:
                 all_loops.append(segGr)
                 break
-            elif toAdd == 0 and toAdd in n[2]:
+            elif toAdd == 0 and toAdd in n[2]: 
                 segmentFound = True
             elif toAdd == 0:
                 segmentFound = True
                 segGr.append(toAdd)
+            elif toAdd in n[2] and toAdd != branch:
+                segmentFound = True
             elif d[toAdd][0] != group_type:
                 segmentGroups.append(segGr)
-                N += len(segGr)
                 segGr = []
                 segGr.append(toAdd)
                 group_type = d[toAdd][0]
                 toAdd = d[toAdd][5]
-            elif toAdd in n[2] and toAdd != branch:
-                if toAdd == 428 and branch == 441:
-                    print('elif segmentfound true')
-                segmentFound = True
             else:
-                if toAdd == 428 and branch == 441:
-                    print('else')
                 segGr.append(toAdd)
                 toAdd = d[toAdd][5]
 
         if all_loops:
             print(all_loops)
-       
+
         for loop in all_loops:
-            segmentGroupsNew = adjustSegmentGroups(loop,segmentGroups,children,d)
-            segmentGroups = segmentGroupsNew        
-        
-        if segGr != []:
+            segmentGroups = adjustSegmentGroups(loop, segmentGroups, children, d)
+
+        if segGr:
             segmentGroups.append(segGr)
-    
+
+    # Calculate amount of points processed
     N = 0
     for seggroup in segmentGroups:
         N += len(seggroup)
-            
-    print(segmentGroups)
-    print(len(segmentGroups))
-    
+
     if N != len(d):
         print("Number of processed segments:", N)
         print("Number of segments expected:", len(d))
         print("Watch out! Number of processed segments does not match. Loops might be present!")
         print("The following numbers all correspond to the ID of the segments in the SWC file.")
         print("---------------------")
-        print("The segments that are absent in the processed neuron %s are:" %(cell_ID))
+        print(f"The segments that are absent in the processed neuron {cell_ID} are:")
         non_present_segments = []
-        for item in d:
+        for point in d:
             found = False
-            for segmgr in segmentGroups:
-                for seg in segmgr:
-                    if seg == item:
-                        print("Found",item)
+            for seggr in segmentGroups:
+                for seg in seggr:
+                    if seg == point:
+                        print(f"Found {point}")
                         found = True
-                        # print("Found %s" %item)
-            if found == False:
-                print("Not found", item)
-                non_present_segments.append(item)
-        check_for_loops(segmentGroups,d,non_present_segments,n,children)
+            if found is False:
+                print(f"Did not find {point}")
+                non_present_segments.append(point)
+        check_for_loops(segmentGroups, d, non_present_segments, n, children)
 
-    # In some cases, non_present_segments does not contain ALL segments that aren't present. Especially when
-
-    '''
-    print(segmentGroups)
-    '''
-    
     return segmentGroups
 
-    # We now get an array with arrays indicating the different segment groups
 
-
-# In[84]:
-
-
-def adjustSegmentGroups(loop, segmentGroups, children,d):
-    # print(children)
-    
-    # print(segmentGroups, "begin")
-    # print("Loop: %s" %loop)
-    
+def adjustSegmentGroups(loop, segmentGroups, children, d):
     node = loop[0]
     loopnew = []
     available = []
     loop = []
     loopfound = False
-    while loopfound == False:
+    while loopfound is False:
         loopnew.append(node)
         print(node)
         node = d[node][5]
         if node in loopnew:
             loopfound = True
-    # loop = loopnew
-    
-    # available = loopnew # loop is interconnected with available and idk why :(
-    
+
     for segment in loopnew:
         loop.append(segment)
         available.append(segment)
-    
-    # print(loop)
-    
+
     fully_adjusted = False
     to_remove = []
-    # print(available)
-    while fully_adjusted == False:
-        # print(available)
-        # print(loop)
+
+    while fully_adjusted is False:
         to_check = available[0]
-        print("%s will be checked now" %to_check)
+        print(f"{to_check} will be checked now")
         for segmentgr in segmentGroups:
             if to_check in segmentgr:
-                print("%s was found in a segment group" %to_check)
+                print(f"{to_check} was found in a segment group")
                 if segmentgr not in to_remove:
-                    print("%s caused a deletion!" %to_check)
+                    print(f"{to_check} caused a deletion!")
                     to_remove.append(segmentgr)
-                    print("To remove are now %s" %to_remove)
+                    print(f"To remove are now {to_check}")
         if children[to_check] != []:
             for chh in children[to_check]:
                 if chh not in loop:
                     available.append(chh)
-                    print("Appended %s since %s was gone." %(chh,to_check)) 
+                    print(f"Appended {chh} since {to_check} was gone.")
             print("Done")
         available.remove(to_check)
         if available == []:
             fully_adjusted = True
-    
-    print("To remove are %s" %to_remove)
-    
+
+    print(f"To remove are {to_remove}")
+
     segmentGroupsProxy = segmentGroups
     for seggr in to_remove:
         for seg in seggr:
@@ -531,19 +475,14 @@ def adjustSegmentGroups(loop, segmentGroups, children,d):
                 if seg in segmentgroup:
                     if segmentgroup in segmentGroups:
                         segmentGroups.remove(segmentgroup)
-    
-    # print(segmentGroups)
-    
+
     return segmentGroups
 
 
-# In[85]:
-
-
-def check_for_loops(segmentGroups, d, non_present_segments,n,children):
+def check_for_loops(segmentGroups, d, non_present_segments, n, children):
     # Only occurs if a mismatch in numbers is detected, which indicates the presence of loops.
     # This is a large chunk of code, but really not important to understand if only used on regular neurons.
-    
+
     print('---------------------')
     # print(n[2])
     # print(non_present_segments)
@@ -553,41 +492,38 @@ def check_for_loops(segmentGroups, d, non_present_segments,n,children):
         if absseg in n[2]:
             branch_in = True
             branches.append(absseg)
-    
-    # print("I'm now entering loop. State:",branch_in)
-    if branch_in == True:
+
+    if branch_in is True:
         # locate the loop(s)
         hadall = False
         had = []
         point_to_test = branches[0]
         i = 1
-        while hadall == False:
+        while hadall is False:
             loop_found = False
             had_this = []
             loopy = []
-            while loop_found == False:
+            while loop_found is False:
                 if point_to_test in had or point_to_test in had_this:
                     print("There is a loop present containing the following segments:")
-                    
-                    
+
                     inloop = False
-                    
+
                     for seg in had_this+had:
                         if seg == point_to_test:
                             inloop = True
                             loopy.append(seg)
-                    
+
                     thislompyfound = False
-                    while thislompyfound == False:
+                    while thislompyfound is False:
                         if d[loopy[-1]][5] not in loopy:
                             loopy.append(d[loopy[-1]][5])
                         else:
                             thislompyfound = True
-                    
+
                     for item in loopy:
                         print("Segment: %s" %(item+1))
-                    
-                    
+
                     print("To this loop, branches are attached containing the following segments:")
                     available = []
                     for seggy in loopy:
@@ -596,9 +532,9 @@ def check_for_loops(segmentGroups, d, non_present_segments,n,children):
                                 available.append(child)
                     # print(available, "are available")
                     allfound = False
-                    while allfound == False:
+                    while allfound is False:
                         next_print = min(available)
-                        print("Segment: %s" %(next_print+1))
+                        print(f"Segment: {next_print + 1}")
                         if next_print in branches:
                             branches.remove(next_print)
                         had.append(next_print)
@@ -607,27 +543,27 @@ def check_for_loops(segmentGroups, d, non_present_segments,n,children):
                             available.append(cc)
                         if len(available) == 0:
                             allfound = True
-                            
+
                     for item in had:
                         if item in non_present_segments:
                             non_present_segments.remove(item)
                     had = []
-                    
+
                     print("---------------------")
                     stillLeft = False
-                    
+
                     for segm in non_present_segments:
                         if segm not in had and segm not in had_this:
-                            if stillLeft == False:
+                            if stillLeft is False:
                                 print("The following segments have still been unassigned:")
                             stillLeft = True
-                            print("Segment: %s" %(segm+1))
-                    
-                    if stillLeft == False:
+                            print(f"Segment: {segm + 1}")
+
+                    if stillLeft is False:
                         print("All missing segments have been analysed. Thanks for your patience.")
-                    
+
                     loop_found = True
-                    
+
                 else:
                     had_this.append(point_to_test)
                     point_to_test = d[point_to_test][5]
@@ -640,8 +576,6 @@ def check_for_loops(segmentGroups, d, non_present_segments,n,children):
                     i = i + 1
                 else:
                     # here the entire code for finding a loop without branch again
-                    
-                    
                     for item in had:
                         if item in non_present_segments:
                             non_present_segments.remove(item)
@@ -649,9 +583,9 @@ def check_for_loops(segmentGroups, d, non_present_segments,n,children):
                     hadall_complete_loops = False
                     point_to_test = non_present_segments[0]
 
-                    while hadall_complete_loops == False:
+                    while hadall_complete_loops is False:
                         pathfound = False
-                        while pathfound == False:
+                        while pathfound is False:
                             if point_to_test in had:
                                 print("???????")
                             had.append(point_to_test)
@@ -664,25 +598,25 @@ def check_for_loops(segmentGroups, d, non_present_segments,n,children):
                         else:
                             print("There is a loop present containing the following segments:")
                             for seg in had:
-                                print("Segment: %s" %(seg+1))
+                                print(f"Segment: {seg + 1}")
                                 non_present_segments.remove(seg)
                             print("---------------------")
                             had = []
                             point_to_test = non_present_segments[0]
                             print("The following segments are still not assigned:")
                             for seg in non_present_segments:
-                                print("Segment: %s" %(seg+1))
-                    
+                                print(f"Segment: {seg + 1}")
+
                     hadall = True
-                    
+
     else:
         print(non_present_segments)
         point_to_test = non_present_segments[0]
         had = []
         hadall = False
-        while hadall == False:
+        while hadall is False:
             pathfound = False
-            while pathfound == False:
+            while pathfound is False:
                 if point_to_test in had:
                     print("??????")
                 had.append(point_to_test)
@@ -695,232 +629,218 @@ def check_for_loops(segmentGroups, d, non_present_segments,n,children):
             else:
                 print("There is a loop present containing the following segments:")
                 for seg in had:
-                    print("Segment: %s" %(seg+1))
+                    print(f"Segment: {seg + 1}")
                     non_present_segments.remove(seg)
                 print("---------------------")
                 had = []
                 point_to_test = non_present_segments[0]
                 print("The following segments are still not assigned:")
                 # for seg in non_present_segments:
-                    # print("Segment: %s" %(seg+1))
-                    
-                    
+                # print("Segment: %s" %(seg+1))
+
     print("---------------------")
 
 
-# In[86]:
+def process_segments(d, children, root, Cell_ID):
+    '''
+    We now process all segments one by one
+    '''
 
-
-def process_segments(d,children,root,Cell_ID):
-    # We now process all segments one by one
-    
-    nml_mor = neuroml.Morphology(id='%s_morphology' %Cell_ID)
+    nml_mor = neuroml.Morphology(id=f'{Cell_ID}_morphology')
 
     available_points = [root]
-    segments = {}
     processed = []
     all_processed = False
-    while all_processed == False:
+
+    while all_processed is False:
         next_to_process = min(available_points)
+
         if next_to_process in processed:
-            print("Please, take a look at segment %s, since it is being processed twice!" %next_to_process)
-        if next_to_process == root:
+            print(f"Please, take a look at segment {next_to_process}, since it is being processed twice!")
+
+        if next_to_process == root:  # Set distal and proximal points to root point if root
             Soma_Root = neuroml.Point3DWithDiam(x=str(d[next_to_process][1]),
-                                               y=str(d[next_to_process][2]),
-                                               z=str(d[next_to_process][3]),
-                                               diameter=str(d[next_to_process][4]*2))
+                                                y=str(d[next_to_process][2]),
+                                                z=str(d[next_to_process][3]),
+                                                diameter=str(d[next_to_process][4] * 2))
             distalp = Soma_Root
             proximalp = Soma_Root
         else:
             distalp = neuroml.Point3DWithDiam(x=str(d[next_to_process][1]),
-                                            y=str(d[next_to_process][2]),
-                                            z=str(d[next_to_process][3]),
-                                            diameter=str(d[next_to_process][4]*2))
+                                              y=str(d[next_to_process][2]),
+                                              z=str(d[next_to_process][3]),
+                                              diameter=str(d[next_to_process][4] * 2))
             parent = d[next_to_process][5]
             proximalp = neuroml.Point3DWithDiam(x=str(d[parent][1]),
-                                              y=str(d[parent][2]),
-                                              z=str(d[parent][3]),
-                                              diameter=str(d[parent][4]*2))
+                                                y=str(d[parent][2]),
+                                                z=str(d[parent][3]),
+                                                diameter=str(d[parent][4] * 2))
 
         parentID = d[next_to_process][5]
         if parentID != -1:
             segpar = neuroml.SegmentParent(segments=parentID)
-            parentSeg = segments[parentID]
-
-            thisSeg = neuroml.Segment(id=str(next_to_process),name='Comp_%s' %str(next_to_process),
-                                 distal=distalp,
-                                 parent=segpar)
+            thisSeg = neuroml.Segment(id=str(next_to_process),
+                                      name=f'Comp_{str(next_to_process)}',
+                                      distal=distalp,
+                                      parent=segpar)
         else:
-            thisSeg = neuroml.Segment(id=str(next_to_process),name='Comp_%s' %str(next_to_process),
-                                 proximal=proximalp,
-                                 distal=distalp)
+            thisSeg = neuroml.Segment(id=str(next_to_process),
+                                      name=f'Comp_{str(next_to_process)}',
+                                      proximal=proximalp,
+                                      distal=distalp)
 
         nml_mor.segments.append(thisSeg)
-        segments[next_to_process] = thisSeg
         processed.append(next_to_process)
 
         available_points.remove(next_to_process)
-        available_points = available_points + children[next_to_process]
-        if available_points == []:
+        available_points += children[next_to_process]
+        if not available_points:
             all_processed = True
-            
+
     return nml_mor
-            
-    # We now have processed all segments into neuroml Segment classes.
 
 
-# In[87]:
-
-
-def process_cables(segmentGroups,type_seg,nml_mor,nml_cell):
-    # Now we'll group the different segments together
+def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
+    '''
+    Group the different segments together and organize them into cables.
+    '''
 
     cablenumber = 1
     cables = {}
+    type_cab = {}
 
+    # Create main segment groups
     all_cables = neuroml.SegmentGroup(id='all')
     all_dendrites = neuroml.SegmentGroup(id='all_dend', neuro_lex_id='GO:0030425')
     all_axons = neuroml.SegmentGroup(id='all_axon', neuro_lex_id='GO:0030424')
     all_somas = neuroml.SegmentGroup(id='all_soma', neuro_lex_id='GO:0043025')
 
-    type_cab = {}
-
     for segmentGroup in segmentGroups:
         type_cable = ''
-        thisCable = neuroml.SegmentGroup(id='Cable_%s' %cablenumber, neuro_lex_id='sao864921383')
-        for qq in range(0,len(segmentGroup)):
-            seg = segmentGroup[-1-qq]
-            thismem = neuroml.Member(segments=seg)
-            thisCable.members.append(thismem)
-            type_this_seg = type_seg[seg]
-            if type_cable != '':
-                if type_cable != type_this_seg:
-                    print("Error; cable %s has multiple types!" %cablenumber)
+        cable_id = f'Cable_{cablenumber}'
+        this_cable = neuroml.SegmentGroup(id=cable_id, neuro_lex_id='sao864921383')
+
+        for segment in reversed(segmentGroup):
+            member = neuroml.Member(segments=segment)
+            this_cable.members.append(member)
+            type_this_seg = type_seg[segment]
+            if type_cable and type_cable != type_this_seg:
+                print(f"Error; cable {cablenumber - 1} has multiple types!")
             else:
                 type_cable = type_this_seg
-        cables[cablenumber] = thisCable
-        thiscab_include = neuroml.Include(segment_groups='Cable_%s' %cablenumber)
-        all_cables.includes.append(thiscab_include)
+
+        cables[cablenumber] = this_cable
+        cable_include = neuroml.Include(segment_groups=cable_id)
+        all_cables.includes.append(cable_include)
+
         if type_cable == 'soma':
-            all_somas.includes.append(thiscab_include)
+            all_somas.includes.append(cable_include)
         elif type_cable == 'axon':
-            all_axons.includes.append(thiscab_include)
+            all_axons.includes.append(cable_include)
         elif type_cable == 'dend':
-            all_dendrites.includes.append(thiscab_include)
+            all_dendrites.includes.append(cable_include)
 
         type_cab[cablenumber] = type_cable
-
         cablenumber += 1
 
+    # Append all cables and segment groups to morphology
+    for cable in cables.values():
+        nml_mor.segment_groups.append(cable)
 
-    for cab in range(1,len(cables)+1):
-        nml_mor.segment_groups.append(cables[cab])
-
-    nml_mor.segment_groups.append(all_cables)
-    nml_mor.segment_groups.append(all_dendrites)
-    nml_mor.segment_groups.append(all_somas)
-    nml_mor.segment_groups.append(all_axons)
+    nml_mor.segment_groups.extend([all_cables, all_dendrites, all_somas, all_axons])
 
     nml_cell.morphology = nml_mor
-    
+
     return nml_cell
-    
-    # We have now processed all segments
-
-
-# In[88]:
 
 
 def define_biophysical_properties(nml_cell, Cell_ID):
-    # Create the Biophysical properties:
+    '''
+    Define biophysical properties for the given cell
+    '''
 
-    all_prop = neuroml.BiophysicalProperties(id='%s_properties' %Cell_ID)
+    # Create biophysical properties object
+    all_props = neuroml.BiophysicalProperties(id=f'{Cell_ID}_properties')
 
-    membraneprop = neuroml.MembraneProperties()
-    intraprop = neuroml.IntracellularProperties()
+    # Create and configure membrane properties
+    membrane_props = neuroml.MembraneProperties()
+    membrane_props.spike_threshes.append(neuroml.SpikeThresh(value='0.0 mV'))
+    membrane_props.specific_capacitances.append(neuroml.SpecificCapacitance(value='1.0 uF_per_cm2'))
+    membrane_props.init_memb_potentials.append(neuroml.InitMembPotential(value='-60.0 mV'))
 
-    spthr = neuroml.SpikeThresh(value='0.0 mV')
-    specCap = neuroml.SpecificCapacitance(value='1.0 uF_per_cm2')
-    initmembpot = neuroml.InitMembPotential(value='-60.0 mV')
+    # Create and configure intracellular properties
+    intra_props = neuroml.IntracellularProperties()
+    intra_props.resistivities.append(neuroml.Resistivity(value='0.03 kohm_cm'))
 
-    resi = neuroml.Resistivity(value='0.03 kohm_cm')
+    # Assign properties to the object
+    all_props.membrane_properties = membrane_props
+    all_props.intracellular_properties = intra_props
 
-    membraneprop.spike_threshes.append(spthr)
-    membraneprop.specific_capacitances.append(specCap)
-    membraneprop.init_memb_potentials.append(initmembpot)
+    # Assign object to cell
+    nml_cell.biophysical_properties = all_props
 
-    intraprop.resistivities.append(resi)
-
-    all_prop.membrane_properties = membraneprop
-    all_prop.intracellular_properties = intraprop
-
-    nml_cell.biophysical_properties = all_prop
-    
     return nml_cell
 
 
-# In[97]:
+def print_statistics(d, segment_groups):
+    '''
+    Prints the relevant statistics we want to know.
+    '''
 
-
-def print_statistics(d, segmentGroups):
-    # Here the statistics that we want to know can be printed
-    
     total_area = 0
     total_volume = 0
-    
-    for Group in segmentGroups:
-        for seg in Group:
-            isroot = False
-            par = d[seg][5]
+
+    for group in segment_groups:
+        for segment in group:
+            par = d[segment][5]
+
             if par == -1:
-                isroot = True
-            
-            if isroot == True:
-                radius = d[seg][4]
-                segment_area = 4*math.pi*(radius**2)
-                segment_volume = (4/3)*math.pi*(radius**3)
-                total_area = total_area + segment_area
-                total_volume = total_volume + segment_volume
-            elif isroot == False:
-                radius = d[seg][4]
+                # Spherical segment
+                radius = d[segment][4]
+                segment_area = 4 * math.pi * radius**2
+                segment_volume = 4/3 * math.pi * radius**3
+            else:
+                # Cylindrical segment
+                radius = d[segment][4]
                 radius_par = d[par][4]
-                x, y, z = d[seg][1], d[seg][2], d[seg][3]
+                x, y, z = d[segment][1], d[segment][2], d[segment][3]
                 xpar, ypar, zpar = d[par][1], d[par][2], d[par][3]
-                distance = math.sqrt((x-xpar)**2 + (y-ypar)**2 + (z-zpar)**2)
-                if radius != radius_par:
-                    f = math.sqrt((distance-radius+radius_par)*(distance+radius-radius_par))/distance
-                    segment_area = math.pi*(f**2)*((distance/abs(radius-radius_par))+1)*abs(radius**2 - radius_par**2)
+                distance = math.sqrt((x - xpar)**2 + (y - ypar)**2 + (z - zpar)**2)
 
-                    segment_volume = (1/3)*math.pi*(f**4)*(distance/abs(radius_par-radius))*abs(radius**3 - radius_par**3)
+                if radius != radius_par:  # Frustrum
+                    if (distance - radius + radius_par) * (distance + radius - radius_par) < 0:
+                        print("Expression is negative")
+                        print(distance, radius, radius_par, distance - radius + radius_par, distance + radius - radius_par)
+                    f = math.sqrt((distance - radius + radius_par) * (distance + radius - radius_par)) / distance
+                    segment_area = math.pi * (f**2) * ((distance / abs(radius - radius_par)) + 1) * abs(radius**2 - radius_par**2)
+                    segment_volume = (1/3) * math.pi * (f**4) * (distance / abs(radius_par - radius)) * abs(radius**3 - radius_par**3)
+                else:  # Cylinder
+                    segment_area = 2 * math.pi * radius * distance
+                    segment_volume = math.pi * (radius**2) * distance
 
-                    
-                else:
-                    segment_area = 2*math.pi*radius*distance
-                    segment_volume = math.pi*(radius**2)*distance
-                
-                total_area = total_area + segment_area
-                total_volume = total_volume + segment_volume
-    
-    print("The total area of this neuron is: %s" %total_area)
-    print("The total volume of this neuron is: %s" %total_volume)
-    print("The area to volume ratio (A/V) of this neuron is: %s" %(total_area/total_volume))
+            total_area += segment_area
+            total_volume += segment_volume
+
+    print(f"The total area of this neuron is: {total_area}")
+    print(f"The total volume of this neuron is: {total_volume}")
+    print(f"The area to volume ratio (A/V) of this neuron is: {total_area/total_volume}")
     print(">-------<")
 
 
-# In[98]:
-# for neuron_id in range(1, 10):
-#     swc_file = api2.create_swc_file(neuron_id, 'map swc files')
-#     nml_file_name = convert_to_nml(swc_file, 'map nml files')
-#     print(f'Converted the following file: {nml_file_name}')
+# Indicate if you want to use the api
+# use_api = False
+# range_api = (1, 10)
+# if use_api:
+#     for neuron_id in range(*range_api):
+#         swc_file = api2.create_swc_file(neuron_id, 'map swc files')
+#         nml_file_name = convert_to_nml(swc_file, 'map nml files')
+#         print(f'Converted the following file: {nml_file_name}')
+# else:
+#     for neuron_id in range(1, 10):
+#         swc_file = f'map_swc_files/neuron_{neuron_id}.swc'  # Insert the path of the swc-file here
+#         nml_file_name = convert_to_nml(swc_file, 'map_nml_files')
+#         print(f'Converted the following file: {nml_file_name}')
 
-for neuron_id in range(1, 10):
-    swc_file = f'map_swc_files/neuron_{neuron_id}.swc' # Insert the path of the swc-file here
-    nml_file_name = convert_to_nml(swc_file, 'map_nml_files')
-    print('Converted the following file: %s' %nml_file_name)
-
-
-# In[ ]:
-
-
-
-
+swc_file = 'GGN_20170309_sc.swc'  # Insert the path of the swc-file here
+nml_file_name = convert_to_nml(swc_file, 'NML_files_working')
+print(f'Converted the following file: {nml_file_name}')

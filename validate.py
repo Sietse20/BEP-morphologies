@@ -2,6 +2,31 @@ import subprocess
 import glob
 import os
 
+
+def validate_single_file(file_path):
+    try:
+        # Construct the command for each file
+        command = ['pynml', '-validate', file_path]
+
+        # Execute the command
+        result = subprocess.run(command, capture_output=True, text=True, check=True)
+
+        # Print the output
+        if result.returncode == 0:
+            print(f"Validation succeeded for file: {os.path.basename(file_path)}")
+        else:
+            print(f"Validation failed for file: {os.path.basename(file_path)}")
+            print(result.stdout)
+            print(result.stderr)
+
+    except subprocess.CalledProcessError as e:
+        # Handle errors in the command execution
+        print(f"An error occurred while validating the file: {file_path}")
+        print(f"Error: {e.stderr}")
+    except FileNotFoundError:
+        print("pynml is not installed or not found in the PATH.")
+
+
 def validate_neuroml_files(directory):
     # Find all .cell.nml files in the specified directory
     file_pattern = os.path.join(directory, '*.cell.nml')
@@ -15,10 +40,10 @@ def validate_neuroml_files(directory):
         try:
             # Construct the command for each file
             command = ['pynml', '-validate', file_path]
-            
+
             # Execute the command
             result = subprocess.run(command, capture_output=True, text=True, check=True)
-            
+
             # Print the output
             if result.returncode == 0:
                 print(f"Validation succeeded for file: {os.path.basename(file_path)}")
@@ -26,7 +51,7 @@ def validate_neuroml_files(directory):
                 print(f"Validation failed for file: {os.path.basename(file_path)}")
                 print(result.stdout)
                 print(result.stderr)
-        
+
         except subprocess.CalledProcessError as e:
             # Handle errors in the command execution
             print(f"An error occurred while validating the file: {file_path}")
@@ -34,6 +59,10 @@ def validate_neuroml_files(directory):
         except FileNotFoundError:
             print("pynml is not installed or not found in the PATH.")
 
+
 # Example usage:
-directory = "map_nml_files"
-validate_neuroml_files(directory)
+# directory = "NML_files_working"
+# validate_neuroml_files(directory)
+
+file = "NML_files_working/GGN_20170309_sc_converted.cell.nml"
+validate_single_file(file)

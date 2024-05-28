@@ -916,16 +916,18 @@ def print_statistics(d, segmentGroups):
     print(">-------<")
 
 
-# In[98]:
-# for neuron_id in range(1, 10):
-#     swc_file = api2.create_swc_file(neuron_id, 'map swc files')
-#     nml_file_name = convert_to_nml(swc_file, 'map nml files')
-#     print(f'Converted the following file: {nml_file_name}')
+import api3
 
+# In[98]:
 for neuron_id in range(1, 10):
-    swc_file = f'map_swc_files/neuron_{neuron_id}.swc' # Insert the path of the swc-file here
-    nml_file_name = convert_to_nml(swc_file, 'map_nml_files')
-    print('Converted the following file: %s' %nml_file_name)
+    swc_file = api2.create_swc_file(neuron_id, 'map swc files')
+    nml_file_name = convert_to_nml(swc_file, 'map nml files')
+    print(f'Converted the following file: {nml_file_name}')
+
+# for neuron_id in range(1, 10):
+#     swc_file = f'map_swc_files/neuron_{neuron_id}.swc' # Insert the path of the swc-file here
+#     nml_file_name = convert_to_nml(swc_file, 'map_nml_files')
+#     print('Converted the following file: %s' %nml_file_name)
 
 
 # In[ ]:

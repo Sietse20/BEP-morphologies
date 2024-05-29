@@ -1,6 +1,6 @@
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.3.xsd" id="STRESS-1-N5_1_CNG">
-    <cell id="STRESS-1-N5">
-        <morphology id="STRESS-1-N5_morphology">
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.3.xsd" id="STRESS_1_N5_1_CNG">
+    <cell id="STRESS">
+        <morphology id="STRESS_morphology">
             <segment id="0" name="Comp_0">
                 <proximal x="0.0" y="0.0" z="0.0" diameter="1.164"/>
                 <distal x="0.0" y="0.0" z="0.0" diameter="1.164"/>
@@ -3069,7 +3069,7 @@
             </segmentGroup>
             <segmentGroup id="all_axon" neuroLexId="GO:0030424"/>
         </morphology>
-        <biophysicalProperties id="STRESS-1-N5_properties">
+        <biophysicalProperties id="STRESS_properties">
             <membraneProperties>
                 <spikeThresh value="0.0 mV"/>
                 <specificCapacitance value="1.0 uF_per_cm2"/>

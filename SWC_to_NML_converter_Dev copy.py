@@ -159,33 +159,35 @@ def fix_dict(d, types, children):
 
 def open_and_split(path):
     d = {}
-    number_of_comments = 0
-    entry = 0
+    line_nr = 0
 
     with open(path, 'r+') as f:
         for line in f:
-            if line == '' or line[0] == '#':
-                number_of_comments += 1
+            line_nr += 1
+            if not line or line[0] == '#':
+                pass
             else:
-                entry += 1
-                information = [elem for elem in line.split(' ') if elem]
-                if len(information) != 7:
-                    print("Line " + str(entry + number_of_comments) + " seems to have more columns than desired.")
-                    if '#' in line:
-                        print("Please consider removing all comments from lines that contain data, and make sure to not have indented comments.")
+                information = [elem for elem in line.strip().split(' ') if elem]
+                if not information:
+                    pass
                 else:
-                    seg_ID = int(information[0]) - 1
-                    type_ID = int(information[1])
-                    x_coor = float(information[2])
-                    y_coor = float(information[3])
-                    z_coor = float(information[4])
-                    rad = float(information[5])
-                    par_ID = int(information[6]) - 1
+                    if len(information) != 7:
+                        print(f"Line {line_nr} seems to have more/less columns than desired.")
+                        if '#' in line:
+                            print("Please consider removing all comments from lines that contain data, and make sure to not have indented comments.")
+                    else:
+                        seg_ID = int(information[0]) - 1
+                        type_ID = int(information[1])
+                        x_coor = float(information[2])
+                        y_coor = float(information[3])
+                        z_coor = float(information[4])
+                        rad = float(information[5])
+                        par_ID = int(information[6]) - 1
 
-                    if par_ID < 0:
-                        par_ID = -1
+                        if par_ID < 0:
+                            par_ID = -1
 
-                    d[seg_ID] = (type_ID, x_coor, y_coor, z_coor, rad, par_ID)
+                        d[seg_ID] = (type_ID, x_coor, y_coor, z_coor, rad, par_ID)
 
     return d
 
@@ -838,6 +840,6 @@ def print_statistics(d, segment_groups):
 #         nml_file_name = convert_to_nml(swc_file, 'map_nml_files')
 #         print(f'Converted the following file: {nml_file_name}')
 
-swc_file = 'GGN_20170309_sc.swc'  # Insert the path of the swc-file here
+swc_file = 'NML_files_working/STRESS_1_N5_1_CNG.swc'  # Insert the path of the swc-file here
 nml_file_name = convert_to_nml(swc_file, 'NML_files_working')
 print(f'Converted the following file: {nml_file_name}')

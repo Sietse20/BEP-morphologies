@@ -217,7 +217,7 @@ def construct_nml(d, cell_ID, filename, output_dir):
     nml_doc.cells.append(nml_cell)
     nml_file = f'{output_dir}/{generic_file_name}_converted.cell.nml'
     writers.NeuroMLWriter.write(nml_doc, nml_file)
-    # print_statistics(d, segmentGroups)
+    print_statistics(d, segmentGroups)
 
     return nml_file
 
@@ -807,13 +807,10 @@ def print_statistics(d, segment_groups):
                 xpar, ypar, zpar = d[par][1], d[par][2], d[par][3]
                 distance = math.sqrt((x - xpar)**2 + (y - ypar)**2 + (z - zpar)**2)
 
-                if radius != radius_par:  # Frustrum
-                    if (distance - radius + radius_par) * (distance + radius - radius_par) < 0:
-                        print("Expression is negative")
-                        print(distance, radius, radius_par, distance - radius + radius_par, distance + radius - radius_par)
-                    f = math.sqrt((distance - radius + radius_par) * (distance + radius - radius_par)) / distance
-                    segment_area = math.pi * (f**2) * ((distance / abs(radius - radius_par)) + 1) * abs(radius**2 - radius_par**2)
-                    segment_volume = (1/3) * math.pi * (f**4) * (distance / abs(radius_par - radius)) * abs(radius**3 - radius_par**3)
+                if radius != radius_par:  # Frustum
+                    s = math.sqrt((radius_par - radius)**2 + distance**2)
+                    segment_area = math.pi * (radius_par + radius) * s
+                    segment_volume = 1/3 * math.pi * distance * (radius_par**2 + radius**2 + (radius_par * radius))
                 else:  # Cylinder
                     segment_area = 2 * math.pi * radius * distance
                     segment_volume = math.pi * (radius**2) * distance

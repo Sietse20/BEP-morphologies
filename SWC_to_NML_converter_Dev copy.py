@@ -2,6 +2,7 @@ import neuroml
 import neuroml.writers as writers
 import math
 import re
+import textwrap
 import api2
 
 
@@ -34,17 +35,17 @@ print("Ready")
 
 
 def convert_to_nml(path, output_dir):
-    d = open_and_split(path)
-    file = path.split('/')[-1]
-    cell_ID = file.split('_')[0]
+    d, comments = open_and_split(path)
+    filename = path.split('/')[-1].split('.')[0]
 
-    # Check if id is allowed by neuroml
-    pattern = r'^[a-zA-Z_][a-zA-Z0-9_]*$'
-    regex = re.compile(pattern)
-    if not bool(regex.match(cell_ID)):
-        raise Exception("Change filename to match format [a-zA-Z_][a-zA-Z0-9_]*")
+    # Change pattern to be allowed by neuroml
+    filename = re.sub(r'[^a-zA-Z0-9_]', '_', filename)
+    if filename[0].isdigit():
+        filename = '_' + filename
+    
+    cell_ID = f"{filename}_cell"
 
-    nml_file = construct_nml(d, cell_ID, file, output_dir)
+    nml_file = construct_nml(d, filename, cell_ID, comments, output_dir)
 
     return nml_file
 
@@ -94,7 +95,7 @@ def fix_dict(d, types, children):
                 tot_x = tot_x + x
                 tot_y = tot_y + y
                 tot_z = tot_z + z
-                amount_of_points = amount_of_points + 1
+                amount_of_points += 1
             hadcoords.append(coor)
 
         # print("The amount of points is: %s" %amount_of_points)
@@ -160,12 +161,15 @@ def fix_dict(d, types, children):
 def open_and_split(path):
     d = {}
     line_nr = 0
+    comments = []
 
     with open(path, 'r+') as f:
         for line in f:
             line_nr += 1
-            if not line or line[0] == '#':
+            if not line:
                 pass
+            elif line[0] == '#':
+                comments.append(line[1:].strip())
             else:
                 information = [elem for elem in line.strip().split(' ') if elem]
                 if not information:
@@ -189,10 +193,10 @@ def open_and_split(path):
 
                         d[seg_ID] = (type_ID, x_coor, y_coor, z_coor, rad, par_ID)
 
-    return d
+    return d, comments
 
 
-def construct_nml(d, cell_ID, filename, output_dir):
+def construct_nml(d, filename, cell_ID, comments, output_dir):
     '''
 
     This function is the leading function! This function is the one that manages all the other functions, and which gives directions to the program.
@@ -207,9 +211,9 @@ def construct_nml(d, cell_ID, filename, output_dir):
 
     '''
 
-    generic_file_name = filename.split('.')[0]
-    nml_doc = neuroml.NeuroMLDocument(id=generic_file_name)
+    nml_doc = neuroml.NeuroMLDocument(id=filename)
     nml_cell = neuroml.Cell(id=cell_ID)
+    make_notes(comments, nml_cell)
     n, children, type_seg, types, root = classify_types_branches_and_leafs(d)
     # d, n, children, type_seg, types, root = fix_dict(d, types, children)
     segmentGroups = find_segments(d, n, cell_ID, children)
@@ -217,14 +221,28 @@ def construct_nml(d, cell_ID, filename, output_dir):
     nml_cell = process_cables(segmentGroups, type_seg, nml_mor, nml_cell)
     nml_cell = define_biophysical_properties(nml_cell, cell_ID)
     nml_doc.cells.append(nml_cell)
-    nml_file = f'{output_dir}/{generic_file_name}_converted.cell.nml'
+    nml_file = f'{output_dir}/{filename}_converted.cell.nml'
     writers.NeuroMLWriter.write(nml_doc, nml_file)
-    print_statistics(d, segmentGroups)
 
-    return nml_file
+    return nml_file.split('/')[-1]
 
 
-def classify_types_branches_and_leafs(d: dict[int, tuple]):
+def make_notes(comments, nml_cell):
+    nml_cell.notes = "\n\n" + '*' * 40 + \
+                     "\nThis NeuroML file was converted from SWC to NeuroML format by Sietse Reissenweber's converter. \
+                     \nFor any questions regarding the conversion, you can email me at s.reissenweber12@gmail.com. \
+                     \nThe notes listed below are the notes that were originally contained in the SWC file.\n" \
+                     + '*' * 40 + "\n\n"
+    
+    nml_cell.notes += "#" * 40 + "\n\n"
+
+    for comment in comments:
+        nml_cell.notes += f'{comment}\n'
+
+    nml_cell.notes += "\n" + "#" * 40 + "\n\n"
+
+
+def classify_types_branches_and_leafs(d):
     '''
 
     This function classifies the segments into different types, and determines the children of points
@@ -713,13 +731,13 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
 
     # Create main segment groups
     all_cables = neuroml.SegmentGroup(id='all')
-    all_dendrites = neuroml.SegmentGroup(id='all_dend', neuro_lex_id='GO:0030425')
-    all_axons = neuroml.SegmentGroup(id='all_axon', neuro_lex_id='GO:0030424')
-    all_somas = neuroml.SegmentGroup(id='all_soma', neuro_lex_id='GO:0043025')
+    dendrite_group = neuroml.SegmentGroup(id='dendrite_group', neuro_lex_id='GO:0030425')
+    axon_group = neuroml.SegmentGroup(id='axon_group', neuro_lex_id='GO:0030424')
+    soma_group = neuroml.SegmentGroup(id='soma_group', neuro_lex_id='GO:0043025')
 
     for segmentGroup in segmentGroups:
         type_cable = ''
-        cable_id = f'Cable_{cablenumber}'
+        cable_id = f'{type_seg[segmentGroup[0]]}_{cablenumber}'
         this_cable = neuroml.SegmentGroup(id=cable_id, neuro_lex_id='sao864921383')
 
         for segment in reversed(segmentGroup):
@@ -727,7 +745,7 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
             this_cable.members.append(member)
             type_this_seg = type_seg[segment]
             if type_cable and type_cable != type_this_seg:
-                print(f"Error; cable {cablenumber - 1} has multiple types!")
+                print(f"Error; cable {cablenumber} has multiple types!")
             else:
                 type_cable = type_this_seg
 
@@ -736,11 +754,11 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
         all_cables.includes.append(cable_include)
 
         if type_cable == 'soma':
-            all_somas.includes.append(cable_include)
+            soma_group.includes.append(cable_include)
         elif type_cable == 'axon':
-            all_axons.includes.append(cable_include)
-        elif type_cable == 'dend':
-            all_dendrites.includes.append(cable_include)
+            axon_group.includes.append(cable_include)
+        elif type_cable == 'dend' or type_cable == 'ap_dend':
+            dendrite_group.includes.append(cable_include)
 
         type_cab[cablenumber] = type_cable
         cablenumber += 1
@@ -749,7 +767,7 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
     for cable in cables.values():
         nml_mor.segment_groups.append(cable)
 
-    nml_mor.segment_groups.extend([all_cables, all_dendrites, all_somas, all_axons])
+    nml_mor.segment_groups.extend([all_cables, dendrite_group, soma_group, axon_group])
 
     nml_cell.morphology = nml_mor
 
@@ -840,6 +858,6 @@ def print_statistics(d, segment_groups):
 #         nml_file_name = convert_to_nml(swc_file, 'map_nml_files')
 #         print(f'Converted the following file: {nml_file_name}')
 
-swc_file = 'NML_files_working/STRESS_1_N5_1_CNG.swc'  # Insert the path of the swc-file here
-nml_file_name = convert_to_nml(swc_file, 'NML_files_working')
+swc_file = 'NML_files_working/43-08-cell-2-analysis.CNG.swc'  # Insert the path of the swc-file here
+nml_file_name = convert_to_nml(swc_file, 'try2')
 print(f'Converted the following file: {nml_file_name}')

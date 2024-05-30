@@ -3,8 +3,9 @@ import trimesh
 
 
 def visualise(file):
-    cell_info = eden_simulator.experimental.explain_cell(file)[file.split('/')[-1].split('_')[0]]
-    print(cell_info.keys())
+    cell_dict = eden_simulator.experimental.explain_cell(file)
+    cell_info = cell_dict[list(cell_dict.keys())[0]]
+
     viz = trimesh.Trimesh(vertices=cell_info['mesh_vertices'],
                           faces=cell_info['mesh_faces'])
 
@@ -12,8 +13,5 @@ def visualise(file):
     viz.show()
 
 
-file = "NML_files_working/STRESS_1_N5_1_CNG_converted.cell.nml"
+file = "NML_files_working/GGN_20170309_sc_converted.cell.nml"
 visualise(file)
-
-# The total area of this neuron is: 442970.51466962165
-# The total volume of this neuron is: 425285.584402701

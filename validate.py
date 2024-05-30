@@ -1,6 +1,7 @@
 import subprocess
 import glob
 import os
+import eden_simulator
 
 
 def validate_single_file(file_path):
@@ -10,6 +11,8 @@ def validate_single_file(file_path):
 
         # Execute the command
         result = subprocess.run(command, capture_output=True, text=True, check=True)
+
+        validate_eden(file_path)
 
         # Print the output
         if result.returncode == 0:
@@ -44,6 +47,8 @@ def validate_neuroml_files(directory):
             # Execute the command
             result = subprocess.run(command, capture_output=True, text=True, check=True)
 
+            validate_eden(file_path)
+
             # Print the output
             if result.returncode == 0:
                 print(f"Validation succeeded for file: {os.path.basename(file_path)}")
@@ -60,9 +65,13 @@ def validate_neuroml_files(directory):
             print("pynml is not installed or not found in the PATH.")
 
 
+def validate_eden(file):
+    eden_simulator.experimental.explain_cell(file)
+
+
 # Example usage:
 # directory = "NML_files_working"
 # validate_neuroml_files(directory)
 
-file = "NML_files_working/GGN_20170309_sc_converted.cell.nml"
+file = "NMLCL000813-NeuroML/cNAC187_L23_NGC_3c9a6fcd96_0_0.cell.nml"
 validate_single_file(file)

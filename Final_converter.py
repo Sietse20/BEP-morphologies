@@ -34,7 +34,7 @@ A few messages of how to use:
 print("Ready")
 
 
-def convert_to_nml(path, output_dir):
+def convert_to_nml(path, output_dir=''):
     d, comments = open_and_split(path)
     filename = path.split('/')[-1].split('.')[0]
 
@@ -45,7 +45,7 @@ def convert_to_nml(path, output_dir):
     
     cell_ID = f"{filename}_cell"
 
-    nml_file = construct_nml(d, filename, cell_ID, comments, output_dir)
+    nml_file = construct_nml(d, filename, cell_ID, comments, output_dir=output_dir)
 
     return nml_file
 
@@ -196,7 +196,7 @@ def open_and_split(path):
     return d, comments
 
 
-def construct_nml(d, filename, cell_ID, comments, output_dir):
+def construct_nml(d, filename, cell_ID, comments, output_dir=''):
     '''
 
     This function is the leading function! This function is the one that manages all the other functions, and which gives directions to the program.
@@ -221,7 +221,10 @@ def construct_nml(d, filename, cell_ID, comments, output_dir):
     nml_cell = process_cables(segmentGroups, type_seg, nml_mor, nml_cell)
     nml_cell = define_biophysical_properties(nml_cell, cell_ID)
     nml_doc.cells.append(nml_cell)
-    nml_file = f'{output_dir}/{filename}_converted.cell.nml'
+    if output_dir:
+        nml_file = f'{output_dir}/{filename}_converted.cell.nml'
+    else:
+        nml_file = f'{filename}_converted.cell.nml'
     writers.NeuroMLWriter.write(nml_doc, nml_file)
 
     return nml_file.split('/')[-1]
@@ -233,7 +236,7 @@ def make_notes(comments, nml_cell):
                      \nFor any questions regarding the conversion, you can email me at s.reissenweber12@gmail.com. \
                      \nThe notes listed below are the notes that were originally contained in the SWC file.\n" \
                      + '*' * 40 + "\n\n"
-    
+
     nml_cell.notes += "#" * 40 + "\n\n"
 
     for comment in comments:
@@ -859,5 +862,5 @@ def print_statistics(d, segment_groups):
 #         print(f'Converted the following file: {nml_file_name}')
 
 swc_file = 'NML_files_working/43-08-cell-2-analysis.CNG.swc'  # Insert the path of the swc-file here
-nml_file_name = convert_to_nml(swc_file, 'try2')
+nml_file_name = convert_to_nml(swc_file)  # Second argument is the output directory, which can be specified if necessary
 print(f'Converted the following file: {nml_file_name}')

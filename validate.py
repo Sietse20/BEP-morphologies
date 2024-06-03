@@ -73,5 +73,5 @@ def validate_eden(file):
 # directory = "NML_files_working"
 # validate_neuroml_files(directory)
 
-file = "NMLCL000813-NeuroML/cNAC187_L23_NGC_3c9a6fcd96_0_0.cell.nml"
+file = "GGN_20170309_sc_converted.cell.nml"
 validate_single_file(file)

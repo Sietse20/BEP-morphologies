@@ -734,14 +734,17 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
 
     # Create main segment groups
     all_cables = neuroml.SegmentGroup(id='all')
-    dendrite_group = neuroml.SegmentGroup(id='dendrite_group', neuro_lex_id='GO:0030425')
-    axon_group = neuroml.SegmentGroup(id='axon_group', neuro_lex_id='GO:0030424')
-    soma_group = neuroml.SegmentGroup(id='soma_group', neuro_lex_id='GO:0043025')
+    basal_group = neuroml.SegmentGroup(id='basal_group', neuro_lex_id='SAO:1079900774')
+    apical_group = neuroml.SegmentGroup(id='apical_group', neuro_lex_id='SAO:273773228')
+    axon_group = neuroml.SegmentGroup(id='axon_group', neuro_lex_id='SAO:1770195789')
+    soma_group = neuroml.SegmentGroup(id='soma_group', neuro_lex_id='SAO:1044911821')
+
+    custom_groups = {}  # Dictionary to hold custom segment groups
 
     for segmentGroup in segmentGroups:
         type_cable = ''
         cable_id = f'{type_seg[segmentGroup[0]]}_{cablenumber}'
-        this_cable = neuroml.SegmentGroup(id=cable_id, neuro_lex_id='sao864921383')
+        this_cable = neuroml.SegmentGroup(id=cable_id, neuro_lex_id='SAO:864921383')
 
         for segment in reversed(segmentGroup):
             member = neuroml.Member(segments=segment)
@@ -760,8 +763,16 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
             soma_group.includes.append(cable_include)
         elif type_cable == 'axon':
             axon_group.includes.append(cable_include)
-        elif type_cable == 'dend' or type_cable == 'ap_dend':
-            dendrite_group.includes.append(cable_include)
+        elif type_cable == 'dend':
+            basal_group.includes.append(cable_include)
+        elif type_cable == 'ap_dend':
+            apical_group.includes.append(cable_include)
+        else:
+            custom_group_id = f'{type_cable}_group'
+            if custom_group_id not in custom_groups:
+                custom_group = neuroml.SegmentGroup(id=custom_group_id)
+                custom_groups[custom_group_id] = custom_group
+            custom_groups[custom_group_id].includes.append(cable_include)
 
         type_cab[cablenumber] = type_cable
         cablenumber += 1
@@ -770,7 +781,12 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
     for cable in cables.values():
         nml_mor.segment_groups.append(cable)
 
-    nml_mor.segment_groups.extend([all_cables, dendrite_group, soma_group, axon_group])
+    for type in [all_cables, basal_group, apical_group, soma_group, axon_group]:
+        if type.includes:
+            nml_mor.segment_groups.append(type)
+
+    for custom_group in custom_groups.values():
+        nml_mor.segment_groups.append(custom_group)
 
     nml_cell.morphology = nml_mor
 
@@ -861,7 +877,7 @@ def print_statistics(d, segment_groups):
 #         nml_file_name = convert_to_nml(swc_file, 'map_nml_files')
 #         print(f'Converted the following file: {nml_file_name}')
 
-swc_file = 'NML_files_working/43-08-cell-2-analysis.CNG.swc'  # Insert the path of the swc-file here
+swc_file = 'GGN_20170309_sc.swc'  # Insert the path of the swc-file here
 output_dir = ''  # Insert the output directory here if necessary
 nml_file_name = convert_to_nml(swc_file, output_dir=output_dir)
 print(f'Converted the following file: {nml_file_name}')

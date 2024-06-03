@@ -862,5 +862,6 @@ def print_statistics(d, segment_groups):
 #         print(f'Converted the following file: {nml_file_name}')
 
 swc_file = 'NML_files_working/43-08-cell-2-analysis.CNG.swc'  # Insert the path of the swc-file here
-nml_file_name = convert_to_nml(swc_file)  # Second argument is the output directory, which can be specified if necessary
+output_dir = ''  # Insert the output directory here if necessary
+nml_file_name = convert_to_nml(swc_file, output_dir=output_dir)
 print(f'Converted the following file: {nml_file_name}')

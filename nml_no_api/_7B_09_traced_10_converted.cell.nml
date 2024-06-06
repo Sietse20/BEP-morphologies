@@ -1,0 +1,117 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.3.xsd" id="_7B_09_traced_10">
+    <cell id="_7B_09_traced_10_cell">
+        <notes>
+
+****************************************
+This NeuroML file was converted from SWC to NeuroML format by Sietse Reissenweber's converter.                      
+For any questions regarding the conversion, you can email me at s.reissenweber12@gmail.com.                      
+The notes listed below are the notes that were originally contained in the SWC file.
+****************************************
+
+########################################
+########################################
+
+</notes>
+        <morphology id="_7B_09_traced_10_cell_morphology">
+            <segment id="0" name="Comp_0">
+                <proximal x="0.0" y="0.0" z="0.0" diameter="8.30802"/>
+                <distal x="0.0" y="0.0" z="0.0" diameter="8.30802"/>
+            </segment>
+            <segment id="1" name="Comp_1">
+                <parent segment="0"/>
+                <distal x="1.70313" y="-3.77344" z="0.0" diameter="8.30802"/>
+            </segment>
+            <segment id="2" name="Comp_2">
+                <parent segment="0"/>
+                <distal x="-1.71094" y="3.78125" z="0.0" diameter="8.30802"/>
+            </segment>
+            <segment id="3" name="Comp_3">
+                <parent segment="0"/>
+                <distal x="1.57031" y="4.35938" z="0.0" diameter="0.1"/>
+            </segment>
+            <segment id="4" name="Comp_4">
+                <parent segment="3"/>
+                <distal x="6.11719" y="10.0703" z="0.0" diameter="0.1"/>
+            </segment>
+            <segment id="5" name="Comp_5">
+                <parent segment="4"/>
+                <distal x="1.45313" y="12.8594" z="0.0" diameter="0.1"/>
+            </segment>
+            <segment id="6" name="Comp_6">
+                <parent segment="4"/>
+                <distal x="6.17969" y="12.6797" z="0.0" diameter="0.1"/>
+            </segment>
+            <segment id="7" name="Comp_7">
+                <parent segment="6"/>
+                <distal x="2.78125" y="13.9687" z="0.0" diameter="0.1"/>
+            </segment>
+            <segment id="8" name="Comp_8">
+                <parent segment="0"/>
+                <distal x="-1.97656" y="-4.70313" z="0.0" diameter="0.1"/>
+            </segment>
+            <segment id="9" name="Comp_9">
+                <parent segment="8"/>
+                <distal x="-1.78125" y="-8.42969" z="0.0" diameter="0.1"/>
+            </segment>
+            <segment id="10" name="Comp_10">
+                <parent segment="9"/>
+                <distal x="8.16406" y="-22.375" z="0.0" diameter="0.1"/>
+            </segment>
+            <segmentGroup id="soma_1" neuroLexId="SAO:864921383">
+                <member segment="1"/>
+            </segmentGroup>
+            <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
+                <member segment="2"/>
+            </segmentGroup>
+            <segmentGroup id="custom_6_3" neuroLexId="SAO:864921383">
+                <member segment="5"/>
+            </segmentGroup>
+            <segmentGroup id="custom_6_4" neuroLexId="SAO:864921383">
+                <member segment="6"/>
+                <member segment="7"/>
+            </segmentGroup>
+            <segmentGroup id="custom_6_5" neuroLexId="SAO:864921383">
+                <member segment="8"/>
+                <member segment="9"/>
+                <member segment="10"/>
+            </segmentGroup>
+            <segmentGroup id="soma_6" neuroLexId="SAO:864921383">
+                <member segment="0"/>
+            </segmentGroup>
+            <segmentGroup id="custom_6_7" neuroLexId="SAO:864921383">
+                <member segment="3"/>
+                <member segment="4"/>
+            </segmentGroup>
+            <segmentGroup id="all">
+                <include segmentGroup="soma_1"/>
+                <include segmentGroup="soma_2"/>
+                <include segmentGroup="custom_6_3"/>
+                <include segmentGroup="custom_6_4"/>
+                <include segmentGroup="custom_6_5"/>
+                <include segmentGroup="soma_6"/>
+                <include segmentGroup="custom_6_7"/>
+            </segmentGroup>
+            <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
+                <include segmentGroup="soma_1"/>
+                <include segmentGroup="soma_2"/>
+                <include segmentGroup="soma_6"/>
+            </segmentGroup>
+            <segmentGroup id="custom_6_group">
+                <include segmentGroup="custom_6_3"/>
+                <include segmentGroup="custom_6_4"/>
+                <include segmentGroup="custom_6_5"/>
+                <include segmentGroup="custom_6_7"/>
+            </segmentGroup>
+        </morphology>
+        <biophysicalProperties id="_7B_09_traced_10_cell_properties">
+            <membraneProperties>
+                <spikeThresh value="0.0 mV"/>
+                <specificCapacitance value="1.0 uF_per_cm2"/>
+                <initMembPotential value="-60.0 mV"/>
+            </membraneProperties>
+            <intracellularProperties>
+                <resistivity value="0.03 kohm_cm"/>
+            </intracellularProperties>
+        </biophysicalProperties>
+    </cell>
+</neuroml>

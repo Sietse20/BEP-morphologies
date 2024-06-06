@@ -38,6 +38,9 @@ def validate_neuroml_files(directory):
     if not files:
         print("No .cell.nml files found in the directory.")
         return
+    
+    total_files = len(files)
+    total_errors = 0
 
     for file_path in files:
         try:
@@ -56,22 +59,30 @@ def validate_neuroml_files(directory):
                 print(f"Validation failed for file: {os.path.basename(file_path)}")
                 print(result.stdout)
                 print(result.stderr)
+                total_errors += 1
 
         except subprocess.CalledProcessError as e:
             # Handle errors in the command execution
             print(f"An error occurred while validating the file: {file_path}")
             print(f"Error: {e.stderr}")
+            total_errors += 1
         except FileNotFoundError:
             print("pynml is not installed or not found in the PATH.")
+    
+    return total_files, total_errors
 
 
 def validate_eden(file):
     eden_simulator.experimental.explain_cell(file)
 
 
-# Example usage:
-# directory = "NML_files_working"
-# validate_neuroml_files(directory)
+# Validate files in directory:
 
-file = "GGN_20170309_sc_converted.cell.nml"
-validate_single_file(file)
+directory = "nml_no_api"
+total_files, total_errors = validate_neuroml_files(directory)
+print(f'\nFrom {total_files} total files: \nValidation successful for {total_files - total_errors} files. \nValidation unsuccessful for {total_errors} files.')
+
+# Validate single file:
+
+# file = "GGN_20170309_sc_converted.cell.nml"
+# validate_single_file(file)

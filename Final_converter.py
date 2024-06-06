@@ -2,6 +2,7 @@ import neuroml
 import neuroml.writers as writers
 import math
 import re
+import os
 import textwrap
 import api2
 
@@ -36,7 +37,7 @@ print("Ready")
 
 def convert_to_nml(path, output_dir=''):
     d, comments = open_and_split(path)
-    filename = path.split('/')[-1].split('.')[0]
+    filename = os.path.basename(path).split('.')[0]
 
     # Change pattern to be allowed by neuroml
     filename = re.sub(r'[^a-zA-Z0-9_]', '_', filename)
@@ -162,6 +163,7 @@ def open_and_split(path):
     d = {}
     line_nr = 0
     comments = []
+    no_par = 0  # Variable used for checking amount of segments without parent
 
     with open(path, 'r+') as f:
         for line in f:
@@ -190,8 +192,17 @@ def open_and_split(path):
 
                         if par_ID < 0:
                             par_ID = -1
+                            no_par += 1
 
                         d[seg_ID] = (type_ID, x_coor, y_coor, z_coor, rad, par_ID)
+        
+    # Check if cell has segments:
+    if not d:
+        raise Exception("Could not process SWC file, cell does not contain any segments.")
+    
+    # Check if cell has more than one or zero segment(s) without a parent
+    if no_par != 1:
+        raise Exception("SWC file contains more than one or zero segments without a parent")
 
     return d, comments
 
@@ -227,7 +238,7 @@ def construct_nml(d, filename, cell_ID, comments, output_dir=''):
         nml_file = f'{filename}_converted.cell.nml'
     writers.NeuroMLWriter.write(nml_doc, nml_file)
 
-    return nml_file.split('/')[-1]
+    return os.path.basename(nml_file)
 
 
 def make_notes(comments, nml_cell):
@@ -237,12 +248,12 @@ def make_notes(comments, nml_cell):
                      \nThe notes listed below are the notes that were originally contained in the SWC file.\n" \
                      + '*' * 40 + "\n\n"
 
-    nml_cell.notes += "#" * 40 + "\n\n"
+    nml_cell.notes += "#" * 40 + "\n"
 
     for comment in comments:
         nml_cell.notes += f'{comment}\n'
 
-    nml_cell.notes += "\n" + "#" * 40 + "\n\n"
+    nml_cell.notes += "#" * 40 + "\n\n"
 
 
 def classify_types_branches_and_leafs(d):
@@ -260,7 +271,7 @@ def classify_types_branches_and_leafs(d):
     root = -float("Inf")
     children = {}
     type_seg = {}
-    types = {'dend': [],
+    types = {'bas_dend': [],
              'axon': [],
              'soma': [],
              'ap_dend': []}
@@ -294,8 +305,8 @@ def classify_types_branches_and_leafs(d):
             type_seg[point] = 'axon'
             types['axon'].append(point)
         elif info[0] == 3:
-            type_seg[point] = 'dend'
-            types['dend'].append(point)
+            type_seg[point] = 'bas_dend'
+            types['bas_dend'].append(point)
         elif info[0] == 4:
             type_seg[point] = 'ap_dend'
             types['ap_dend'].append(point)
@@ -310,6 +321,8 @@ def classify_types_branches_and_leafs(d):
         # Find root:
         if info[5] == -1:
             root = point
+            if type_seg[root] != 'soma':
+                raise Exception("Warning: spherical root segment does not belong to soma_group.")
 
         children[point] = []
 
@@ -701,6 +714,12 @@ def process_segments(d, children, root, Cell_ID):
 
         parentID = d[next_to_process][5]
         if parentID != -1:
+            # Only one segment may be spherical and must belong to the soma_group SegmentGroup:
+            coord_distal = (d[next_to_process][1], d[next_to_process][2], d[next_to_process][3])
+            coord_proximal = (d[parent][1], d[parent][2], d[parent][3])
+            if coord_distal == coord_proximal and d[next_to_process][4] == d[parent][4]:
+                raise Exception(f"Warning: Multiple spherical segments detected, see point {next_to_process}.")
+            
             segpar = neuroml.SegmentParent(segments=parentID)
             thisSeg = neuroml.Segment(id=str(next_to_process),
                                       name=f'Comp_{str(next_to_process)}',
@@ -734,10 +753,11 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
 
     # Create main segment groups
     all_cables = neuroml.SegmentGroup(id='all')
+    soma_group = neuroml.SegmentGroup(id='soma_group', neuro_lex_id='SAO:1044911821')
+    axon_group = neuroml.SegmentGroup(id='axon_group', neuro_lex_id='SAO:1770195789')
+    dendrite_group = neuroml.SegmentGroup(id='dendrite_group', neuro_lex_id='SAO:1211023249')
     basal_group = neuroml.SegmentGroup(id='basal_group', neuro_lex_id='SAO:1079900774')
     apical_group = neuroml.SegmentGroup(id='apical_group', neuro_lex_id='SAO:273773228')
-    axon_group = neuroml.SegmentGroup(id='axon_group', neuro_lex_id='SAO:1770195789')
-    soma_group = neuroml.SegmentGroup(id='soma_group', neuro_lex_id='SAO:1044911821')
 
     custom_groups = {}  # Dictionary to hold custom segment groups
 
@@ -763,10 +783,12 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
             soma_group.includes.append(cable_include)
         elif type_cable == 'axon':
             axon_group.includes.append(cable_include)
-        elif type_cable == 'dend':
+        elif type_cable == 'bas_dend':
             basal_group.includes.append(cable_include)
+            dendrite_group.includes.append(cable_include)
         elif type_cable == 'ap_dend':
             apical_group.includes.append(cable_include)
+            dendrite_group.includes.append(cable_include)
         else:
             custom_group_id = f'{type_cable}_group'
             if custom_group_id not in custom_groups:
@@ -777,11 +799,15 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
         type_cab[cablenumber] = type_cable
         cablenumber += 1
 
+    # Check if cell contains soma segmentgroup
+    if not soma_group.includes:
+        raise Exception("Warning: Cell is not valid because it does not contain any soma segments.")
+
     # Append all cables and segment groups to morphology
     for cable in cables.values():
         nml_mor.segment_groups.append(cable)
 
-    for type in [all_cables, basal_group, apical_group, soma_group, axon_group]:
+    for type in [all_cables, basal_group, apical_group, soma_group, axon_group, dendrite_group]:
         if type.includes:
             nml_mor.segment_groups.append(type)
 
@@ -863,21 +889,66 @@ def print_statistics(d, segment_groups):
     print(">-------<")
 
 
-# Indicate if you want to use the api
-# use_api = False
-# range_api = (1, 10)
-# if use_api:
-#     for neuron_id in range(*range_api):
-#         swc_file = api2.create_swc_file(neuron_id, 'map swc files')
-#         nml_file_name = convert_to_nml(swc_file, 'map nml files')
-#         print(f'Converted the following file: {nml_file_name}')
-# else:
-#     for neuron_id in range(1, 10):
-#         swc_file = f'map_swc_files/neuron_{neuron_id}.swc'  # Insert the path of the swc-file here
-#         nml_file_name = convert_to_nml(swc_file, 'map_nml_files')
-#         print(f'Converted the following file: {nml_file_name}')
+# Converting from API:
 
-swc_file = 'GGN_20170309_sc.swc'  # Insert the path of the swc-file here
-output_dir = ''  # Insert the output directory here if necessary
-nml_file_name = convert_to_nml(swc_file, output_dir=output_dir)
-print(f'Converted the following file: {nml_file_name}')
+# range_api = (1, 10)
+
+# for neuron_id in range(*range_api):
+#     swc_file = api2.create_swc_file(neuron_id, output_dir=output_dir_swc)
+#     try:
+#         nml_file = convert_to_nml(swc_file, output_dir=output_dir_nml)
+#         print(f'Converted {swc_file.split('/')[-1]} to the following file: {nml_file}\n')
+#     except Exception as e:
+#         print(f'Error converting {swc_file}: {e}\n')
+
+
+# Converting from a map:
+
+path_swc = 'swc_no_api'
+path_nml = 'nml_no_api'
+
+total_errors = 0
+exception_counts = {}
+
+# Use os.walk to iterate through all directories and subdirectories
+file_paths = []
+for root, dirs, files in os.walk(path_swc):
+    for file in files:
+        if file.endswith('.CNG.swc'):
+            file_paths.append(os.path.join(root, file))
+
+total_files = len(file_paths)
+
+for file_path in file_paths:
+    swc_file = os.path.basename(file_path)
+    print(f'Processing file: {swc_file}')
+    try:
+        nml_file_name = convert_to_nml(file_path, output_dir=path_nml)
+        print(f'Converted {swc_file} to the following file: {nml_file_name}\n')
+    except Exception as e:
+        exception_message = str(e)
+        if exception_message in exception_counts:
+            exception_counts[exception_message] += 1
+        else:
+            exception_counts[exception_message] = 1
+        total_errors += 1
+        print(f'Error converting {swc_file}: {e}\n')
+
+
+print(f'From {total_files} total files: \nConversion successful for {total_files - total_errors} files. \nConversion unsuccessful for {total_errors} files.')
+print("\nSummary of Exception Counts:")
+for exception_type, count in exception_counts.items():
+    print(f"{exception_type}: {count} times")
+
+
+# Converting single file:
+
+# path = 'GGN_20170309_sc.swc'
+# output_dir = ''
+
+# swc_file = os.path.basename(path)
+# try:
+#     nml_file = construct_nml(path, output_dir='')
+#     print(f'Converted {swc_file} to the following file: {nml_file}\n')
+# except Exception as e:
+#     print(f'Error converting {swc_file}: {e}\n')

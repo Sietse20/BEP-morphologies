@@ -1,0 +1,86 @@
+# SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
+# Original fileName:C:\postprocessing\Ginty_Final\Source_Temp1//Igbpf5-7866-03-F_1.CNG.swc
+#
+# SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
+# Original fileName:C:\postprocessing\Ginty_Final\Source_Temp1//Igbpf5-7866-03-F_1.CNG.swc
+#
+# SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
+# Original fileName:C:\postprocessing\BLOOP_Final\Source_Temp1//Igbpf5-7866-03-F_1.DC02.swc
+#
+# SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
+# Original fileName:C:\postprocessing\Everything_Post_Final\Source_Temp1//Igbpf5-7866-03-F_1.CNG.swc
+#
+# SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
+# Original fileName:C:\postprocessing\Ginty_CNG_Final\Source_Temp1//Igbpf5-7866-03-F_1.CNG.swc
+#
+# SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
+# Original fileName:C:\postprocessing\Processed_Final\Source_Temp1//Igbpf5-7866-03-F_1.DC01.swc
+#
+# SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
+# Original fileName:C:\NMO_dev\data_proc\Auto swc//Igbpf5-7866-03-F_1.dat.asc.swc.CNG.swc
+#
+# Original file C:\NMO_dev\data_proc\Temp_LMeasure\Igbpf5-7866-03-F_1.dat.asc.swc edited using StdSwc version 1.31 on 6/13/17.
+# Irregularities and fixes documented in C:\NMO_dev\data_proc\Temp_LMeasure\Igbpf5-7866-03-F_1.dat.asc.swc.std.  See StdSwc1.31.doc for more information.
+#
+# Neurolucida to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
+# Original fileName:C:\NMO_dev\data_proc\Source_Temp1//Igbpf5-7866-03-F_1.dat.asc
+# The original file has 8 soma contours that are averaged into 8 soma points
+# NEUROMANTIC V1.6.3 (6/21/2017 3:44:01 PM): Saved to Igbpf5-7866-03-F_1.DC.swc
+# ORIGINAL_SOURCE 
+# CREATURE 
+# REGION 
+# FIELD/LAYER 
+# TYPE 
+# CONTRIBUTOR 
+# REFERENCE 
+# RAW 
+# EXTRAS 
+# SOMA_AREA 
+# SHRINKAGE_CORRECTION 
+# VERSION_NUMBER 
+# VERSION_DATE 
+# ********************************************* 
+# SCALE 1.0 1.0 1.0 
+ 1 1 0 0 0 3.584 -1
+ 2 1 0 -3.54 0 3.584 1
+ 3 1 0 3.55 0 3.584 1
+ 4 3 -4.55 0.81 -2.91 0.875 1
+ 5 3 -8.25 5.63 -4.61 0.715 4
+ 6 3 -10.35 9.2 -4.31 0.57 5
+ 7 3 -12.82 12.94 -4.48 0.645 6
+ 8 3 -15.42 14.63 -4.7 0.6 7
+ 9 3 -16.69 16.44 -3.32 0.575 8
+ 10 3 -17.36 17.33 -3.27 0.72 9
+ 11 3 -18.64 20.73 -3.12 0.79 10
+ 12 3 -17.83 28.07 -1.57 0.57 11
+ 13 3 -17.63 30.3 -0.66 0.395 12
+ 14 3 -18.05 16.55 -2.27 0.575 9
+ 15 3 -19.4 16.68 -1.22 0.5 14
+ 16 3 -22.19 16.72 0.2 0.605 15
+ 17 3 -25.39 18.08 0.39 0.44 16
+ 18 3 -0.74 2.76 -1.9 0.64 1
+ 19 3 3.49 4.61 -3.66 0.64 18
+ 20 3 10.8 4.77 -3.02 0.48 19
+ 21 3 12.95 6.23 -3.56 0.545 20
+ 22 3 14.05 8.39 -3.03 0.72 21
+ 23 3 14.74 11.64 -3.38 0.555 22
+ 24 3 16.7 14.32 -3.12 0.53 23
+ 25 3 17.67 16.47 -3.5 0.63 24
+ 26 3 18.93 20.58 -2.76 0.35 25
+ 27 3 18.43 23.82 -2.9 0.345 26
+ 28 3 18.56 26.11 -3.61 0.32 27
+ 29 3 20.14 29.86 -3.33 0.515 28
+ 30 3 20.99 34.16 -3.79 0.435 29
+ 31 3 4.42 1.44 -1.02 0.61 1
+ 32 3 6.4 1.75 0.22 0.565 31
+ 33 3 7.83 2.53 1.05 0.575 32
+ 34 3 7.34 3.74 2.89 0.505 33
+ 35 3 4.86 7.01 1.96 0.595 34
+ 36 3 2.27 13.73 1.09 0.615 35
+ 37 3 2.22 15.66 0.87 0.59 36
+ 38 3 2.75 17.29 1.39 0.695 37
+ 39 3 3.48 18.66 0.96 0.555 38
+ 40 3 4.31 19.98 1.35 0.555 39
+ 41 3 4.56 21.74 1.9 0.435 40
+ 42 3 5.18 23.23 2.26 0.57 41
+ 43 3 6.86 23.82 2.94 0.325 42

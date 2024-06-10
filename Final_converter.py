@@ -43,120 +43,12 @@ def convert_to_nml(path, output_dir=''):
     filename = re.sub(r'[^a-zA-Z0-9_]', '_', filename)
     if filename[0].isdigit():
         filename = '_' + filename
-    
+
     cell_ID = f"{filename}_cell"
 
     nml_file = construct_nml(d, filename, cell_ID, comments, output_dir=output_dir)
 
     return nml_file
-
-
-def fix_dict(d, types, children):
-    '''
-
-    This function exists to fix any types of somas that don't work in NeuroML.
-    At the moment, incorporated (and thus able to be converted are:
-
-    1) Somas indicated by a soma-outline, both one and multiple
-
-    '''
-
-    hadcoords = []
-    outline = False
-    multiple_outline = False
-
-    for soma_seg in types['soma']:
-        x = d[soma_seg][1]
-        y = d[soma_seg][2]
-        z = d[soma_seg][3]
-        coor = (x, y, z)
-        if coor in hadcoords:
-            if outline is True:
-                multiple_outline = True
-            outline = True
-        hadcoords.append(coor)
-
-    hadcoords = []
-    tot_x = 0
-    tot_y = 0
-    tot_z = 0
-    amount_of_points = 0
-
-    if outline is True:
-        print("Points of the soma are treated as soma outline!")
-        print(">-------<")
-
-        for seg in types['soma']:
-            x = d[seg][1]
-            y = d[seg][2]
-            z = d[seg][3]
-            coor = (x, y, z)
-
-            if coor not in hadcoords:
-                tot_x = tot_x + x
-                tot_y = tot_y + y
-                tot_z = tot_z + z
-                amount_of_points += 1
-            hadcoords.append(coor)
-
-        # print("The amount of points is: %s" %amount_of_points)
-        Cx = tot_x/amount_of_points
-        Cy = tot_y/amount_of_points
-        Cz = tot_z/amount_of_points
-
-        tot_dis = 0
-        hadcoords = []
-        # print("Center of mass: %s %s %s" %(Cx,Cy,Cz))
-
-        for seg in types['soma']:
-            # print("Segment: %s" %seg)
-            x = d[seg][1]
-            y = d[seg][2]
-            z = d[seg][3]
-            coor = (x, y, z)
-            # print("Coor: %s %s %s" %(x,y,z))
-            distance = ((Cx - x)**2 + (Cy - y)**2 + (Cz - z)**2)**(1/2)
-            # print("Distance: %s" %distance)
-
-            if coor not in hadcoords:
-                tot_dis = tot_dis + distance
-                # print("The total distance becomes: %s" %tot_dis)
-            hadcoords.append(coor)
-
-        rs = (tot_dis/amount_of_points)*(5/8)
-
-        to_sub = len(types['soma']) - 3
-
-        d_new = {}
-        d_new[0] = (1, Cx, Cy, Cz, rs, -1)
-        d_new[1] = (1, Cx, Cy+rs, Cz, rs, 0)
-        d_new[2] = (1, Cx, Cy-rs, Cz, rs, 0)
-
-        for entry in d:
-            if d[entry][0] != 1:
-                type_seg = d[entry][0]
-                x_seg = d[entry][1]
-                y_seg = d[entry][2]
-                z_seg = d[entry][3]
-                rad_seg = d[entry][4]
-                par_seg = d[entry][5]
-
-                if d[par_seg][0] == 1:
-                    par_seg = 0
-                else:
-                    par_seg = par_seg - to_sub
-
-                new_ID = entry - to_sub
-                d_new[new_ID] = (type_seg, x_seg, y_seg, z_seg, rad_seg, par_seg)
-
-        # print("The dictionary:")
-        # print(d)
-        # print("Has been refined to dictionary:")
-        # print(d_new)
-
-        n, children, type_seg, types, root = classify_types_branches_and_leafs(d_new)
-
-        return d_new, n, children, type_seg, types, root
 
 
 def open_and_split(path):
@@ -201,8 +93,10 @@ def open_and_split(path):
         raise Exception("Could not process SWC file, cell does not contain any segments.")
     
     # Check if cell has more than one or zero segment(s) without a parent
-    if no_par != 1:
-        raise Exception("SWC file contains more than one or zero segments without a parent")
+    if no_par == 0:
+        raise Exception("SWC file contains zero segments without a parent (root segments).")
+    if no_par > 1:
+        raise Exception("SWC file contains more than 1 segment without a parent (root segments).")
 
     return d, comments
 
@@ -226,7 +120,6 @@ def construct_nml(d, filename, cell_ID, comments, output_dir=''):
     nml_cell = neuroml.Cell(id=cell_ID)
     make_notes(comments, nml_cell)
     n, children, type_seg, types, root = classify_types_branches_and_leafs(d)
-    # d, n, children, type_seg, types, root = fix_dict(d, types, children)
     segmentGroups = find_segments(d, n, cell_ID, children)
     nml_mor = process_segments(d, children, root, cell_ID)
     nml_cell = process_cables(segmentGroups, type_seg, nml_mor, nml_cell)
@@ -381,6 +274,9 @@ def find_segments(d, n, cell_ID, children):
                 segGr.append(toAdd)
                 toAdd = d[toAdd][5]
 
+        if all_loops:
+            print(f"Loop found! this is the segment groups: {all_loops}")
+
         for loop in all_loops:
             segmentGroups = adjustSegmentGroups(loop, segmentGroups, children, d)
 
@@ -407,6 +303,7 @@ def find_segments(d, n, cell_ID, children):
 
             if (toAdd in segGr or isin is True) and toAdd != 0 and toAdd not in n[2]:
                 all_loops.append(segGr)
+                print("it reaches this step")
                 break
             elif toAdd == 0 and toAdd in n[2]: 
                 segmentFound = True
@@ -718,7 +615,7 @@ def process_segments(d, children, root, Cell_ID):
             coord_distal = (d[next_to_process][1], d[next_to_process][2], d[next_to_process][3])
             coord_proximal = (d[parent][1], d[parent][2], d[parent][3])
             if coord_distal == coord_proximal and d[next_to_process][4] == d[parent][4]:
-                raise Exception(f"Warning: Multiple spherical segments detected, see point {next_to_process}.")
+                print(f"Warning: 2 segments detected with same radius and coordinates, see point {next_to_process + 1}.")
             
             segpar = neuroml.SegmentParent(segments=parentID)
             thisSeg = neuroml.Segment(id=str(next_to_process),
@@ -904,51 +801,51 @@ def print_statistics(d, segment_groups):
 
 # Converting from a map:
 
-path_swc = 'swc_no_api'
-path_nml = 'nml_no_api'
+# path_swc = 'swc_no_api'
+# path_nml = 'nml_no_api'
 
-total_errors = 0
-exception_counts = {}
+# total_errors = 0
+# exception_counts = {}
 
-# Use os.walk to iterate through all directories and subdirectories
-file_paths = []
-for root, dirs, files in os.walk(path_swc):
-    for file in files:
-        if file.endswith('.CNG.swc'):
-            file_paths.append(os.path.join(root, file))
+# # Use os.walk to iterate through all directories and subdirectories
+# file_paths = []
+# for root, dirs, files in os.walk(path_swc):
+#     for file in files:
+#         if file.endswith('.CNG.swc'):
+#             file_paths.append(os.path.join(root, file))
 
-total_files = len(file_paths)
+# total_files = len(file_paths)
 
-for file_path in file_paths:
-    swc_file = os.path.basename(file_path)
-    print(f'Processing file: {swc_file}')
-    try:
-        nml_file_name = convert_to_nml(file_path, output_dir=path_nml)
-        print(f'Converted {swc_file} to the following file: {nml_file_name}\n')
-    except Exception as e:
-        exception_message = str(e)
-        if exception_message in exception_counts:
-            exception_counts[exception_message] += 1
-        else:
-            exception_counts[exception_message] = 1
-        total_errors += 1
-        print(f'Error converting {swc_file}: {e}\n')
+# for file_path in file_paths:
+#     swc_file = os.path.basename(file_path)
+#     print(f'Processing file: {swc_file}')
+#     try:
+#         nml_file_name = convert_to_nml(file_path, output_dir=path_nml)
+#         print(f'Converted {swc_file} to the following file: {nml_file_name}\n')
+#     except Exception as e:
+#         exception_message = str(e)
+#         if exception_message in exception_counts:
+#             exception_counts[exception_message] += 1
+#         else:
+#             exception_counts[exception_message] = 1
+#         total_errors += 1
+#         print(f'Error converting {swc_file}: {e}\n')
 
 
-print(f'From {total_files} total files: \nConversion successful for {total_files - total_errors} files. \nConversion unsuccessful for {total_errors} files.')
-print("\nSummary of Exception Counts:")
-for exception_type, count in exception_counts.items():
-    print(f"{exception_type}: {count} times")
+# print(f'From {total_files} total files: \nConversion successful for {total_files - total_errors} files. \nConversion unsuccessful for {total_errors} files.')
+# print("\nSummary of Exception Counts:")
+# for exception_type, count in exception_counts.items():
+#     print(f"{exception_type}: {count} times")
 
 
 # Converting single file:
 
-# path = 'GGN_20170309_sc.swc'
-# output_dir = ''
+path = 'swc_no_api/GGN_20170309_sc.swc'
+output_dir = ''
 
-# swc_file = os.path.basename(path)
-# try:
-#     nml_file = construct_nml(path, output_dir='')
-#     print(f'Converted {swc_file} to the following file: {nml_file}\n')
-# except Exception as e:
-#     print(f'Error converting {swc_file}: {e}\n')
+swc_file = os.path.basename(path)
+try:
+    nml_file = convert_to_nml(path, output_dir='')
+    print(f'Converted {swc_file} to the following file: {nml_file}\n')
+except Exception as e:
+    print(f'Error converting {swc_file}: {e}\n')

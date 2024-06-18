@@ -9,6 +9,8 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
+
 ########################################
 
 </notes>
@@ -63,44 +65,44 @@ The notes listed below are the notes that were originally contained in the SWC f
             <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="custom_6_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_6_1" neuroLexId="SAO:864921383">
                 <member segment="5"/>
             </segmentGroup>
-            <segmentGroup id="custom_6_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_6_2" neuroLexId="SAO:864921383">
                 <member segment="6"/>
                 <member segment="7"/>
             </segmentGroup>
-            <segmentGroup id="custom_6_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_6_3" neuroLexId="SAO:864921383">
                 <member segment="8"/>
                 <member segment="9"/>
                 <member segment="10"/>
             </segmentGroup>
-            <segmentGroup id="soma_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="custom_6_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_6_4" neuroLexId="SAO:864921383">
                 <member segment="3"/>
                 <member segment="4"/>
             </segmentGroup>
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
+                <include segmentGroup="custom_6_1"/>
+                <include segmentGroup="custom_6_2"/>
                 <include segmentGroup="custom_6_3"/>
+                <include segmentGroup="soma_3"/>
                 <include segmentGroup="custom_6_4"/>
-                <include segmentGroup="custom_6_5"/>
-                <include segmentGroup="soma_6"/>
-                <include segmentGroup="custom_6_7"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
-                <include segmentGroup="soma_6"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="custom_6_group">
+                <include segmentGroup="custom_6_1"/>
+                <include segmentGroup="custom_6_2"/>
                 <include segmentGroup="custom_6_3"/>
                 <include segmentGroup="custom_6_4"/>
-                <include segmentGroup="custom_6_5"/>
-                <include segmentGroup="custom_6_7"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="_7B_09_traced_10_cell_properties">

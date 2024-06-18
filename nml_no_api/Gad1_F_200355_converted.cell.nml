@@ -9,6 +9,7 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
 SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
 Original fileName:C:\test3\Auto swc//Gad1-F-200355.swc.swc.CNG.swc
 
@@ -19,6 +20,7 @@ SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
 Original fileName:C:\test3\Source_Temp1//Gad1-F-200355.swc
 
 TREES toolbox tree - Gad1-F-200355
+
 ########################################
 
 </notes>
@@ -1521,7 +1523,7 @@ TREES toolbox tree - Gad1-F-200355
             <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="axon_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_1" neuroLexId="SAO:864921383">
                 <member segment="17"/>
                 <member segment="18"/>
                 <member segment="19"/>
@@ -1532,11 +1534,11 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="24"/>
                 <member segment="25"/>
             </segmentGroup>
-            <segmentGroup id="axon_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_2" neuroLexId="SAO:864921383">
                 <member segment="29"/>
                 <member segment="30"/>
             </segmentGroup>
-            <segmentGroup id="axon_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_3" neuroLexId="SAO:864921383">
                 <member segment="31"/>
                 <member segment="32"/>
                 <member segment="33"/>
@@ -1548,31 +1550,31 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="39"/>
                 <member segment="40"/>
             </segmentGroup>
-            <segmentGroup id="axon_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_4" neuroLexId="SAO:864921383">
                 <member segment="46"/>
                 <member segment="47"/>
                 <member segment="48"/>
             </segmentGroup>
-            <segmentGroup id="axon_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_5" neuroLexId="SAO:864921383">
                 <member segment="50"/>
                 <member segment="51"/>
                 <member segment="52"/>
                 <member segment="53"/>
             </segmentGroup>
-            <segmentGroup id="axon_8" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_6" neuroLexId="SAO:864921383">
                 <member segment="63"/>
                 <member segment="64"/>
             </segmentGroup>
-            <segmentGroup id="axon_9" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_7" neuroLexId="SAO:864921383">
                 <member segment="70"/>
                 <member segment="71"/>
                 <member segment="72"/>
             </segmentGroup>
-            <segmentGroup id="axon_10" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_8" neuroLexId="SAO:864921383">
                 <member segment="75"/>
                 <member segment="76"/>
             </segmentGroup>
-            <segmentGroup id="axon_11" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_9" neuroLexId="SAO:864921383">
                 <member segment="77"/>
                 <member segment="78"/>
                 <member segment="79"/>
@@ -1581,7 +1583,7 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="82"/>
                 <member segment="83"/>
             </segmentGroup>
-            <segmentGroup id="axon_12" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_10" neuroLexId="SAO:864921383">
                 <member segment="90"/>
                 <member segment="91"/>
                 <member segment="92"/>
@@ -1589,56 +1591,56 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="94"/>
                 <member segment="95"/>
             </segmentGroup>
-            <segmentGroup id="axon_13" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_11" neuroLexId="SAO:864921383">
                 <member segment="98"/>
                 <member segment="99"/>
                 <member segment="100"/>
                 <member segment="101"/>
             </segmentGroup>
-            <segmentGroup id="axon_14" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_12" neuroLexId="SAO:864921383">
                 <member segment="107"/>
                 <member segment="108"/>
                 <member segment="109"/>
                 <member segment="110"/>
                 <member segment="111"/>
             </segmentGroup>
-            <segmentGroup id="axon_15" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_13" neuroLexId="SAO:864921383">
                 <member segment="116"/>
                 <member segment="117"/>
                 <member segment="118"/>
                 <member segment="119"/>
             </segmentGroup>
-            <segmentGroup id="axon_16" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_14" neuroLexId="SAO:864921383">
                 <member segment="133"/>
                 <member segment="134"/>
                 <member segment="135"/>
                 <member segment="136"/>
                 <member segment="137"/>
             </segmentGroup>
-            <segmentGroup id="axon_17" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_15" neuroLexId="SAO:864921383">
                 <member segment="138"/>
                 <member segment="139"/>
                 <member segment="140"/>
                 <member segment="141"/>
             </segmentGroup>
-            <segmentGroup id="axon_18" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_16" neuroLexId="SAO:864921383">
                 <member segment="144"/>
             </segmentGroup>
-            <segmentGroup id="axon_19" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_17" neuroLexId="SAO:864921383">
                 <member segment="150"/>
                 <member segment="151"/>
                 <member segment="152"/>
             </segmentGroup>
-            <segmentGroup id="axon_20" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_18" neuroLexId="SAO:864921383">
                 <member segment="153"/>
                 <member segment="154"/>
             </segmentGroup>
-            <segmentGroup id="axon_21" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_19" neuroLexId="SAO:864921383">
                 <member segment="157"/>
                 <member segment="158"/>
                 <member segment="159"/>
             </segmentGroup>
-            <segmentGroup id="axon_22" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_20" neuroLexId="SAO:864921383">
                 <member segment="165"/>
                 <member segment="166"/>
                 <member segment="167"/>
@@ -1649,14 +1651,14 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="172"/>
                 <member segment="173"/>
             </segmentGroup>
-            <segmentGroup id="axon_23" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_21" neuroLexId="SAO:864921383">
                 <member segment="175"/>
                 <member segment="176"/>
                 <member segment="177"/>
                 <member segment="178"/>
                 <member segment="179"/>
             </segmentGroup>
-            <segmentGroup id="axon_24" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_22" neuroLexId="SAO:864921383">
                 <member segment="182"/>
                 <member segment="183"/>
                 <member segment="184"/>
@@ -1665,32 +1667,32 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="187"/>
                 <member segment="188"/>
             </segmentGroup>
-            <segmentGroup id="axon_25" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_23" neuroLexId="SAO:864921383">
                 <member segment="192"/>
                 <member segment="193"/>
             </segmentGroup>
-            <segmentGroup id="axon_26" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_24" neuroLexId="SAO:864921383">
                 <member segment="200"/>
             </segmentGroup>
-            <segmentGroup id="axon_27" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_25" neuroLexId="SAO:864921383">
                 <member segment="203"/>
                 <member segment="204"/>
                 <member segment="205"/>
                 <member segment="206"/>
             </segmentGroup>
-            <segmentGroup id="axon_28" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_26" neuroLexId="SAO:864921383">
                 <member segment="209"/>
                 <member segment="210"/>
                 <member segment="211"/>
                 <member segment="212"/>
                 <member segment="213"/>
             </segmentGroup>
-            <segmentGroup id="axon_29" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_27" neuroLexId="SAO:864921383">
                 <member segment="215"/>
                 <member segment="216"/>
                 <member segment="217"/>
             </segmentGroup>
-            <segmentGroup id="axon_30" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_28" neuroLexId="SAO:864921383">
                 <member segment="218"/>
                 <member segment="219"/>
                 <member segment="220"/>
@@ -1703,48 +1705,48 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="227"/>
                 <member segment="228"/>
             </segmentGroup>
-            <segmentGroup id="axon_31" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_29" neuroLexId="SAO:864921383">
                 <member segment="238"/>
                 <member segment="239"/>
                 <member segment="240"/>
             </segmentGroup>
-            <segmentGroup id="axon_32" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_30" neuroLexId="SAO:864921383">
                 <member segment="244"/>
                 <member segment="245"/>
                 <member segment="246"/>
             </segmentGroup>
-            <segmentGroup id="axon_33" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_31" neuroLexId="SAO:864921383">
                 <member segment="247"/>
                 <member segment="248"/>
                 <member segment="249"/>
                 <member segment="250"/>
             </segmentGroup>
-            <segmentGroup id="axon_34" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_32" neuroLexId="SAO:864921383">
                 <member segment="252"/>
                 <member segment="253"/>
                 <member segment="254"/>
             </segmentGroup>
-            <segmentGroup id="axon_35" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_33" neuroLexId="SAO:864921383">
                 <member segment="257"/>
                 <member segment="258"/>
                 <member segment="259"/>
                 <member segment="260"/>
                 <member segment="261"/>
             </segmentGroup>
-            <segmentGroup id="axon_36" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_34" neuroLexId="SAO:864921383">
                 <member segment="267"/>
                 <member segment="268"/>
                 <member segment="269"/>
                 <member segment="270"/>
             </segmentGroup>
-            <segmentGroup id="axon_37" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_35" neuroLexId="SAO:864921383">
                 <member segment="275"/>
                 <member segment="276"/>
                 <member segment="277"/>
                 <member segment="278"/>
                 <member segment="279"/>
             </segmentGroup>
-            <segmentGroup id="axon_38" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_36" neuroLexId="SAO:864921383">
                 <member segment="282"/>
                 <member segment="283"/>
                 <member segment="284"/>
@@ -1753,19 +1755,19 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="287"/>
                 <member segment="288"/>
             </segmentGroup>
-            <segmentGroup id="axon_39" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_37" neuroLexId="SAO:864921383">
                 <member segment="292"/>
                 <member segment="293"/>
                 <member segment="294"/>
             </segmentGroup>
-            <segmentGroup id="axon_40" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_38" neuroLexId="SAO:864921383">
                 <member segment="313"/>
             </segmentGroup>
-            <segmentGroup id="axon_41" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_39" neuroLexId="SAO:864921383">
                 <member segment="314"/>
                 <member segment="315"/>
             </segmentGroup>
-            <segmentGroup id="axon_42" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_40" neuroLexId="SAO:864921383">
                 <member segment="318"/>
                 <member segment="319"/>
                 <member segment="320"/>
@@ -1779,7 +1781,7 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="328"/>
                 <member segment="329"/>
             </segmentGroup>
-            <segmentGroup id="axon_43" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_41" neuroLexId="SAO:864921383">
                 <member segment="333"/>
                 <member segment="334"/>
                 <member segment="335"/>
@@ -1788,33 +1790,33 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="338"/>
                 <member segment="339"/>
             </segmentGroup>
-            <segmentGroup id="axon_44" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_42" neuroLexId="SAO:864921383">
                 <member segment="345"/>
                 <member segment="346"/>
                 <member segment="347"/>
             </segmentGroup>
-            <segmentGroup id="axon_45" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_43" neuroLexId="SAO:864921383">
                 <member segment="348"/>
                 <member segment="349"/>
                 <member segment="350"/>
             </segmentGroup>
-            <segmentGroup id="axon_46" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_44" neuroLexId="SAO:864921383">
                 <member segment="355"/>
                 <member segment="356"/>
                 <member segment="357"/>
                 <member segment="358"/>
             </segmentGroup>
-            <segmentGroup id="axon_47" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_45" neuroLexId="SAO:864921383">
                 <member segment="360"/>
                 <member segment="361"/>
                 <member segment="362"/>
             </segmentGroup>
-            <segmentGroup id="axon_48" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_46" neuroLexId="SAO:864921383">
                 <member segment="364"/>
                 <member segment="365"/>
                 <member segment="366"/>
             </segmentGroup>
-            <segmentGroup id="axon_49" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_47" neuroLexId="SAO:864921383">
                 <member segment="367"/>
                 <member segment="368"/>
                 <member segment="369"/>
@@ -1822,10 +1824,10 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="371"/>
                 <member segment="372"/>
             </segmentGroup>
-            <segmentGroup id="soma_50" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="axon_51" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_48" neuroLexId="SAO:864921383">
                 <member segment="3"/>
                 <member segment="4"/>
                 <member segment="5"/>
@@ -1838,29 +1840,29 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="12"/>
                 <member segment="13"/>
             </segmentGroup>
-            <segmentGroup id="axon_52" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_49" neuroLexId="SAO:864921383">
                 <member segment="14"/>
                 <member segment="15"/>
                 <member segment="16"/>
             </segmentGroup>
-            <segmentGroup id="axon_53" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_50" neuroLexId="SAO:864921383">
                 <member segment="26"/>
             </segmentGroup>
-            <segmentGroup id="axon_54" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_51" neuroLexId="SAO:864921383">
                 <member segment="27"/>
                 <member segment="28"/>
             </segmentGroup>
-            <segmentGroup id="axon_55" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_52" neuroLexId="SAO:864921383">
                 <member segment="41"/>
                 <member segment="42"/>
                 <member segment="43"/>
                 <member segment="44"/>
                 <member segment="45"/>
             </segmentGroup>
-            <segmentGroup id="axon_56" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_53" neuroLexId="SAO:864921383">
                 <member segment="49"/>
             </segmentGroup>
-            <segmentGroup id="axon_57" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_54" neuroLexId="SAO:864921383">
                 <member segment="54"/>
                 <member segment="55"/>
                 <member segment="56"/>
@@ -1868,23 +1870,23 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="58"/>
                 <member segment="59"/>
             </segmentGroup>
-            <segmentGroup id="axon_58" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_55" neuroLexId="SAO:864921383">
                 <member segment="60"/>
                 <member segment="61"/>
                 <member segment="62"/>
             </segmentGroup>
-            <segmentGroup id="axon_59" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_56" neuroLexId="SAO:864921383">
                 <member segment="65"/>
                 <member segment="66"/>
                 <member segment="67"/>
                 <member segment="68"/>
                 <member segment="69"/>
             </segmentGroup>
-            <segmentGroup id="axon_60" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_57" neuroLexId="SAO:864921383">
                 <member segment="73"/>
                 <member segment="74"/>
             </segmentGroup>
-            <segmentGroup id="axon_61" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_58" neuroLexId="SAO:864921383">
                 <member segment="84"/>
                 <member segment="85"/>
                 <member segment="86"/>
@@ -1892,33 +1894,33 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="88"/>
                 <member segment="89"/>
             </segmentGroup>
-            <segmentGroup id="axon_62" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_59" neuroLexId="SAO:864921383">
                 <member segment="96"/>
                 <member segment="97"/>
             </segmentGroup>
-            <segmentGroup id="axon_63" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_60" neuroLexId="SAO:864921383">
                 <member segment="102"/>
             </segmentGroup>
-            <segmentGroup id="axon_64" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_61" neuroLexId="SAO:864921383">
                 <member segment="103"/>
                 <member segment="104"/>
                 <member segment="105"/>
                 <member segment="106"/>
             </segmentGroup>
-            <segmentGroup id="axon_65" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_62" neuroLexId="SAO:864921383">
                 <member segment="112"/>
                 <member segment="113"/>
                 <member segment="114"/>
                 <member segment="115"/>
             </segmentGroup>
-            <segmentGroup id="axon_66" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_63" neuroLexId="SAO:864921383">
                 <member segment="120"/>
                 <member segment="121"/>
                 <member segment="122"/>
                 <member segment="123"/>
                 <member segment="124"/>
             </segmentGroup>
-            <segmentGroup id="axon_67" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_64" neuroLexId="SAO:864921383">
                 <member segment="125"/>
                 <member segment="126"/>
                 <member segment="127"/>
@@ -1928,41 +1930,41 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="131"/>
                 <member segment="132"/>
             </segmentGroup>
-            <segmentGroup id="axon_68" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_65" neuroLexId="SAO:864921383">
                 <member segment="142"/>
                 <member segment="143"/>
             </segmentGroup>
-            <segmentGroup id="axon_69" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_66" neuroLexId="SAO:864921383">
                 <member segment="145"/>
                 <member segment="146"/>
                 <member segment="147"/>
                 <member segment="148"/>
                 <member segment="149"/>
             </segmentGroup>
-            <segmentGroup id="axon_70" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_67" neuroLexId="SAO:864921383">
                 <member segment="155"/>
                 <member segment="156"/>
             </segmentGroup>
-            <segmentGroup id="axon_71" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_68" neuroLexId="SAO:864921383">
                 <member segment="160"/>
                 <member segment="161"/>
                 <member segment="162"/>
                 <member segment="163"/>
                 <member segment="164"/>
             </segmentGroup>
-            <segmentGroup id="axon_72" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_69" neuroLexId="SAO:864921383">
                 <member segment="174"/>
             </segmentGroup>
-            <segmentGroup id="axon_73" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_70" neuroLexId="SAO:864921383">
                 <member segment="180"/>
                 <member segment="181"/>
             </segmentGroup>
-            <segmentGroup id="axon_74" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_71" neuroLexId="SAO:864921383">
                 <member segment="189"/>
                 <member segment="190"/>
                 <member segment="191"/>
             </segmentGroup>
-            <segmentGroup id="axon_75" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_72" neuroLexId="SAO:864921383">
                 <member segment="194"/>
                 <member segment="195"/>
                 <member segment="196"/>
@@ -1970,18 +1972,18 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="198"/>
                 <member segment="199"/>
             </segmentGroup>
-            <segmentGroup id="axon_76" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_73" neuroLexId="SAO:864921383">
                 <member segment="201"/>
                 <member segment="202"/>
             </segmentGroup>
-            <segmentGroup id="axon_77" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_74" neuroLexId="SAO:864921383">
                 <member segment="207"/>
                 <member segment="208"/>
             </segmentGroup>
-            <segmentGroup id="axon_78" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_75" neuroLexId="SAO:864921383">
                 <member segment="214"/>
             </segmentGroup>
-            <segmentGroup id="axon_79" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_76" neuroLexId="SAO:864921383">
                 <member segment="229"/>
                 <member segment="230"/>
                 <member segment="231"/>
@@ -1991,44 +1993,44 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="235"/>
                 <member segment="236"/>
             </segmentGroup>
-            <segmentGroup id="axon_80" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_77" neuroLexId="SAO:864921383">
                 <member segment="237"/>
             </segmentGroup>
-            <segmentGroup id="axon_81" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_78" neuroLexId="SAO:864921383">
                 <member segment="241"/>
                 <member segment="242"/>
                 <member segment="243"/>
             </segmentGroup>
-            <segmentGroup id="axon_82" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_79" neuroLexId="SAO:864921383">
                 <member segment="251"/>
             </segmentGroup>
-            <segmentGroup id="axon_83" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_80" neuroLexId="SAO:864921383">
                 <member segment="255"/>
                 <member segment="256"/>
             </segmentGroup>
-            <segmentGroup id="axon_84" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_81" neuroLexId="SAO:864921383">
                 <member segment="262"/>
                 <member segment="263"/>
                 <member segment="264"/>
                 <member segment="265"/>
                 <member segment="266"/>
             </segmentGroup>
-            <segmentGroup id="axon_85" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_82" neuroLexId="SAO:864921383">
                 <member segment="271"/>
                 <member segment="272"/>
                 <member segment="273"/>
                 <member segment="274"/>
             </segmentGroup>
-            <segmentGroup id="axon_86" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_83" neuroLexId="SAO:864921383">
                 <member segment="280"/>
                 <member segment="281"/>
             </segmentGroup>
-            <segmentGroup id="axon_87" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_84" neuroLexId="SAO:864921383">
                 <member segment="289"/>
                 <member segment="290"/>
                 <member segment="291"/>
             </segmentGroup>
-            <segmentGroup id="axon_88" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_85" neuroLexId="SAO:864921383">
                 <member segment="295"/>
                 <member segment="296"/>
                 <member segment="297"/>
@@ -2044,45 +2046,47 @@ TREES toolbox tree - Gad1-F-200355
                 <member segment="307"/>
                 <member segment="308"/>
             </segmentGroup>
-            <segmentGroup id="axon_89" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_86" neuroLexId="SAO:864921383">
                 <member segment="309"/>
                 <member segment="310"/>
                 <member segment="311"/>
                 <member segment="312"/>
             </segmentGroup>
-            <segmentGroup id="axon_90" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_87" neuroLexId="SAO:864921383">
                 <member segment="316"/>
                 <member segment="317"/>
             </segmentGroup>
-            <segmentGroup id="axon_91" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_88" neuroLexId="SAO:864921383">
                 <member segment="330"/>
                 <member segment="331"/>
                 <member segment="332"/>
             </segmentGroup>
-            <segmentGroup id="axon_92" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_89" neuroLexId="SAO:864921383">
                 <member segment="340"/>
                 <member segment="341"/>
                 <member segment="342"/>
                 <member segment="343"/>
             </segmentGroup>
-            <segmentGroup id="axon_93" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_90" neuroLexId="SAO:864921383">
                 <member segment="344"/>
             </segmentGroup>
-            <segmentGroup id="axon_94" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_91" neuroLexId="SAO:864921383">
                 <member segment="351"/>
                 <member segment="352"/>
                 <member segment="353"/>
                 <member segment="354"/>
             </segmentGroup>
-            <segmentGroup id="axon_95" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_92" neuroLexId="SAO:864921383">
                 <member segment="359"/>
             </segmentGroup>
-            <segmentGroup id="axon_96" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_93" neuroLexId="SAO:864921383">
                 <member segment="363"/>
             </segmentGroup>
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
+                <include segmentGroup="axon_1"/>
+                <include segmentGroup="axon_2"/>
                 <include segmentGroup="axon_3"/>
                 <include segmentGroup="axon_4"/>
                 <include segmentGroup="axon_5"/>
@@ -2128,9 +2132,10 @@ TREES toolbox tree - Gad1-F-200355
                 <include segmentGroup="axon_45"/>
                 <include segmentGroup="axon_46"/>
                 <include segmentGroup="axon_47"/>
+                <include segmentGroup="soma_3"/>
                 <include segmentGroup="axon_48"/>
                 <include segmentGroup="axon_49"/>
-                <include segmentGroup="soma_50"/>
+                <include segmentGroup="axon_50"/>
                 <include segmentGroup="axon_51"/>
                 <include segmentGroup="axon_52"/>
                 <include segmentGroup="axon_53"/>
@@ -2174,16 +2179,15 @@ TREES toolbox tree - Gad1-F-200355
                 <include segmentGroup="axon_91"/>
                 <include segmentGroup="axon_92"/>
                 <include segmentGroup="axon_93"/>
-                <include segmentGroup="axon_94"/>
-                <include segmentGroup="axon_95"/>
-                <include segmentGroup="axon_96"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
-                <include segmentGroup="soma_50"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="axon_group" neuroLexId="SAO:1770195789">
+                <include segmentGroup="axon_1"/>
+                <include segmentGroup="axon_2"/>
                 <include segmentGroup="axon_3"/>
                 <include segmentGroup="axon_4"/>
                 <include segmentGroup="axon_5"/>
@@ -2231,6 +2235,7 @@ TREES toolbox tree - Gad1-F-200355
                 <include segmentGroup="axon_47"/>
                 <include segmentGroup="axon_48"/>
                 <include segmentGroup="axon_49"/>
+                <include segmentGroup="axon_50"/>
                 <include segmentGroup="axon_51"/>
                 <include segmentGroup="axon_52"/>
                 <include segmentGroup="axon_53"/>
@@ -2274,9 +2279,6 @@ TREES toolbox tree - Gad1-F-200355
                 <include segmentGroup="axon_91"/>
                 <include segmentGroup="axon_92"/>
                 <include segmentGroup="axon_93"/>
-                <include segmentGroup="axon_94"/>
-                <include segmentGroup="axon_95"/>
-                <include segmentGroup="axon_96"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="Gad1_F_200355_cell_properties">

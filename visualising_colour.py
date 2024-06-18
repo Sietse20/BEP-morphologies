@@ -97,5 +97,5 @@ def visualise(file):
     viz.show()
 
 # Example usage
-file = 'nml_no_api\B4_CA1_L_B63x1zCell2ACR_converted.cell.nml'
+file = 'Case1_new_converted.cell.nml'
 visualise(file)

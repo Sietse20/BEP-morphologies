@@ -9,6 +9,8 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
+
 ########################################
 
 </notes>
@@ -12924,7 +12926,7 @@ The notes listed below are the notes that were originally contained in the SWC f
             <segmentGroup id="soma_1" neuroLexId="SAO:864921383">
                 <member segment="16"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_1" neuroLexId="SAO:864921383">
                 <member segment="91"/>
                 <member segment="92"/>
                 <member segment="93"/>
@@ -12988,7 +12990,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="151"/>
                 <member segment="152"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
                 <member segment="153"/>
                 <member segment="154"/>
                 <member segment="155"/>
@@ -13045,7 +13047,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="206"/>
                 <member segment="207"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
                 <member segment="223"/>
                 <member segment="224"/>
                 <member segment="225"/>
@@ -13173,7 +13175,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="347"/>
                 <member segment="348"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
                 <member segment="349"/>
                 <member segment="350"/>
                 <member segment="351"/>
@@ -13305,7 +13307,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="477"/>
                 <member segment="478"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
                 <member segment="498"/>
                 <member segment="499"/>
                 <member segment="500"/>
@@ -13415,7 +13417,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="604"/>
                 <member segment="605"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
                 <member segment="615"/>
                 <member segment="616"/>
                 <member segment="617"/>
@@ -13461,7 +13463,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="657"/>
                 <member segment="658"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
                 <member segment="768"/>
                 <member segment="769"/>
                 <member segment="770"/>
@@ -13486,7 +13488,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="789"/>
                 <member segment="790"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
                 <member segment="791"/>
                 <member segment="792"/>
                 <member segment="793"/>
@@ -13500,7 +13502,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="801"/>
                 <member segment="802"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
                 <member segment="808"/>
                 <member segment="809"/>
                 <member segment="810"/>
@@ -13613,7 +13615,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="917"/>
                 <member segment="918"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
                 <member segment="919"/>
                 <member segment="920"/>
                 <member segment="921"/>
@@ -13639,7 +13641,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="941"/>
                 <member segment="942"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
                 <member segment="957"/>
                 <member segment="958"/>
                 <member segment="959"/>
@@ -13759,7 +13761,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1073"/>
                 <member segment="1074"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
                 <member segment="1075"/>
                 <member segment="1076"/>
                 <member segment="1077"/>
@@ -13797,7 +13799,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1109"/>
                 <member segment="1110"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
                 <member segment="1183"/>
                 <member segment="1184"/>
                 <member segment="1185"/>
@@ -13863,7 +13865,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1245"/>
                 <member segment="1246"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
                 <member segment="1255"/>
                 <member segment="1256"/>
                 <member segment="1257"/>
@@ -13882,7 +13884,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1270"/>
                 <member segment="1271"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
                 <member segment="1272"/>
                 <member segment="1273"/>
                 <member segment="1274"/>
@@ -13894,7 +13896,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1280"/>
                 <member segment="1281"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_17" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
                 <member segment="1388"/>
                 <member segment="1389"/>
                 <member segment="1390"/>
@@ -13947,7 +13949,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1437"/>
                 <member segment="1438"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_17" neuroLexId="SAO:864921383">
                 <member segment="1439"/>
                 <member segment="1440"/>
                 <member segment="1441"/>
@@ -14048,7 +14050,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1536"/>
                 <member segment="1537"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_19" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
                 <member segment="1538"/>
                 <member segment="1539"/>
                 <member segment="1540"/>
@@ -14111,7 +14113,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1597"/>
                 <member segment="1598"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_20" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_19" neuroLexId="SAO:864921383">
                 <member segment="1599"/>
                 <member segment="1600"/>
                 <member segment="1601"/>
@@ -14143,7 +14145,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1627"/>
                 <member segment="1628"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_21" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_20" neuroLexId="SAO:864921383">
                 <member segment="1648"/>
                 <member segment="1649"/>
                 <member segment="1650"/>
@@ -14179,7 +14181,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1680"/>
                 <member segment="1681"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_22" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_21" neuroLexId="SAO:864921383">
                 <member segment="1682"/>
                 <member segment="1683"/>
                 <member segment="1684"/>
@@ -14260,7 +14262,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1759"/>
                 <member segment="1760"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_23" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_22" neuroLexId="SAO:864921383">
                 <member segment="1875"/>
                 <member segment="1876"/>
                 <member segment="1877"/>
@@ -14298,7 +14300,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1909"/>
                 <member segment="1910"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_24" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_23" neuroLexId="SAO:864921383">
                 <member segment="1911"/>
                 <member segment="1912"/>
                 <member segment="1913"/>
@@ -14343,7 +14345,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1952"/>
                 <member segment="1953"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_25" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_24" neuroLexId="SAO:864921383">
                 <member segment="1954"/>
                 <member segment="1955"/>
                 <member segment="1956"/>
@@ -14449,7 +14451,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2056"/>
                 <member segment="2057"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_26" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_25" neuroLexId="SAO:864921383">
                 <member segment="2058"/>
                 <member segment="2059"/>
                 <member segment="2060"/>
@@ -14490,7 +14492,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2095"/>
                 <member segment="2096"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_27" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_26" neuroLexId="SAO:864921383">
                 <member segment="2173"/>
                 <member segment="2174"/>
                 <member segment="2175"/>
@@ -14595,7 +14597,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2274"/>
                 <member segment="2275"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_28" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_27" neuroLexId="SAO:864921383">
                 <member segment="2276"/>
                 <member segment="2277"/>
                 <member segment="2278"/>
@@ -14665,7 +14667,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2342"/>
                 <member segment="2343"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_29" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_28" neuroLexId="SAO:864921383">
                 <member segment="2344"/>
                 <member segment="2345"/>
                 <member segment="2346"/>
@@ -14688,7 +14690,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2363"/>
                 <member segment="2364"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_30" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_1" neuroLexId="SAO:864921383">
                 <member segment="2575"/>
                 <member segment="2576"/>
                 <member segment="2577"/>
@@ -14728,7 +14730,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2611"/>
                 <member segment="2612"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_31" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_2" neuroLexId="SAO:864921383">
                 <member segment="2613"/>
                 <member segment="2614"/>
                 <member segment="2615"/>
@@ -14761,7 +14763,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2642"/>
                 <member segment="2643"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_32" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_3" neuroLexId="SAO:864921383">
                 <member segment="2644"/>
                 <member segment="2645"/>
                 <member segment="2646"/>
@@ -14820,7 +14822,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2699"/>
                 <member segment="2700"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_33" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_4" neuroLexId="SAO:864921383">
                 <member segment="2701"/>
                 <member segment="2702"/>
                 <member segment="2703"/>
@@ -14980,7 +14982,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2857"/>
                 <member segment="2858"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_34" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_5" neuroLexId="SAO:864921383">
                 <member segment="2859"/>
                 <member segment="2860"/>
                 <member segment="2861"/>
@@ -15047,7 +15049,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2922"/>
                 <member segment="2923"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_35" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_6" neuroLexId="SAO:864921383">
                 <member segment="2952"/>
                 <member segment="2953"/>
                 <member segment="2954"/>
@@ -15208,7 +15210,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="3109"/>
                 <member segment="3110"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_36" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_7" neuroLexId="SAO:864921383">
                 <member segment="3111"/>
                 <member segment="3112"/>
                 <member segment="3113"/>
@@ -15262,7 +15264,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="3161"/>
                 <member segment="3162"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_37" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_8" neuroLexId="SAO:864921383">
                 <member segment="3163"/>
                 <member segment="3164"/>
                 <member segment="3165"/>
@@ -15328,10 +15330,10 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="3225"/>
                 <member segment="3226"/>
             </segmentGroup>
-            <segmentGroup id="soma_38" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="soma_39" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="1"/>
                 <member segment="2"/>
                 <member segment="3"/>
@@ -15341,29 +15343,29 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="7"/>
                 <member segment="8"/>
             </segmentGroup>
-            <segmentGroup id="soma_40" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_4" neuroLexId="SAO:864921383">
                 <member segment="9"/>
                 <member segment="10"/>
             </segmentGroup>
-            <segmentGroup id="soma_41" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_5" neuroLexId="SAO:864921383">
                 <member segment="11"/>
                 <member segment="12"/>
                 <member segment="13"/>
                 <member segment="14"/>
             </segmentGroup>
-            <segmentGroup id="soma_42" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_6" neuroLexId="SAO:864921383">
                 <member segment="15"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_43" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_29" neuroLexId="SAO:864921383">
                 <member segment="17"/>
                 <member segment="18"/>
                 <member segment="19"/>
                 <member segment="20"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_44" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_30" neuroLexId="SAO:864921383">
                 <member segment="21"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_45" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_31" neuroLexId="SAO:864921383">
                 <member segment="22"/>
                 <member segment="23"/>
                 <member segment="24"/>
@@ -15434,7 +15436,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="89"/>
                 <member segment="90"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_46" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_32" neuroLexId="SAO:864921383">
                 <member segment="208"/>
                 <member segment="209"/>
                 <member segment="210"/>
@@ -15451,7 +15453,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="221"/>
                 <member segment="222"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_47" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_33" neuroLexId="SAO:864921383">
                 <member segment="479"/>
                 <member segment="480"/>
                 <member segment="481"/>
@@ -15472,7 +15474,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="496"/>
                 <member segment="497"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_48" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_34" neuroLexId="SAO:864921383">
                 <member segment="606"/>
                 <member segment="607"/>
                 <member segment="608"/>
@@ -15483,7 +15485,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="613"/>
                 <member segment="614"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_49" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_35" neuroLexId="SAO:864921383">
                 <member segment="659"/>
                 <member segment="660"/>
                 <member segment="661"/>
@@ -15594,14 +15596,14 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="766"/>
                 <member segment="767"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_50" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_36" neuroLexId="SAO:864921383">
                 <member segment="803"/>
                 <member segment="804"/>
                 <member segment="805"/>
                 <member segment="806"/>
                 <member segment="807"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_51" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_37" neuroLexId="SAO:864921383">
                 <member segment="943"/>
                 <member segment="944"/>
                 <member segment="945"/>
@@ -15617,7 +15619,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="955"/>
                 <member segment="956"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_52" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_38" neuroLexId="SAO:864921383">
                 <member segment="1111"/>
                 <member segment="1112"/>
                 <member segment="1113"/>
@@ -15638,14 +15640,14 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1128"/>
                 <member segment="1129"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_53" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_39" neuroLexId="SAO:864921383">
                 <member segment="1130"/>
                 <member segment="1131"/>
                 <member segment="1132"/>
                 <member segment="1133"/>
                 <member segment="1134"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_54" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_40" neuroLexId="SAO:864921383">
                 <member segment="1135"/>
                 <member segment="1136"/>
                 <member segment="1137"/>
@@ -15673,7 +15675,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1159"/>
                 <member segment="1160"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_55" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_41" neuroLexId="SAO:864921383">
                 <member segment="1161"/>
                 <member segment="1162"/>
                 <member segment="1163"/>
@@ -15683,7 +15685,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1167"/>
                 <member segment="1168"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_56" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_42" neuroLexId="SAO:864921383">
                 <member segment="1169"/>
                 <member segment="1170"/>
                 <member segment="1171"/>
@@ -15699,7 +15701,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1181"/>
                 <member segment="1182"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_57" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_43" neuroLexId="SAO:864921383">
                 <member segment="1247"/>
                 <member segment="1248"/>
                 <member segment="1249"/>
@@ -15709,7 +15711,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1253"/>
                 <member segment="1254"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_58" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_44" neuroLexId="SAO:864921383">
                 <member segment="1282"/>
                 <member segment="1283"/>
                 <member segment="1284"/>
@@ -15756,7 +15758,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1325"/>
                 <member segment="1326"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_59" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_45" neuroLexId="SAO:864921383">
                 <member segment="1327"/>
                 <member segment="1328"/>
                 <member segment="1329"/>
@@ -15819,7 +15821,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1386"/>
                 <member segment="1387"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_60" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_46" neuroLexId="SAO:864921383">
                 <member segment="1629"/>
                 <member segment="1630"/>
                 <member segment="1631"/>
@@ -15840,7 +15842,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1646"/>
                 <member segment="1647"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_61" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_47" neuroLexId="SAO:864921383">
                 <member segment="1761"/>
                 <member segment="1762"/>
                 <member segment="1763"/>
@@ -15862,7 +15864,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1779"/>
                 <member segment="1780"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_62" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_48" neuroLexId="SAO:864921383">
                 <member segment="1781"/>
                 <member segment="1782"/>
                 <member segment="1783"/>
@@ -15877,7 +15879,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1792"/>
                 <member segment="1793"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_63" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_49" neuroLexId="SAO:864921383">
                 <member segment="1794"/>
                 <member segment="1795"/>
                 <member segment="1796"/>
@@ -15887,7 +15889,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1800"/>
                 <member segment="1801"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_64" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_50" neuroLexId="SAO:864921383">
                 <member segment="1802"/>
                 <member segment="1803"/>
                 <member segment="1804"/>
@@ -15962,7 +15964,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="1873"/>
                 <member segment="1874"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_65" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_51" neuroLexId="SAO:864921383">
                 <member segment="2097"/>
                 <member segment="2098"/>
                 <member segment="2099"/>
@@ -15972,7 +15974,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2103"/>
                 <member segment="2104"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_66" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_52" neuroLexId="SAO:864921383">
                 <member segment="2105"/>
                 <member segment="2106"/>
                 <member segment="2107"/>
@@ -16042,7 +16044,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2171"/>
                 <member segment="2172"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_67" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_9" neuroLexId="SAO:864921383">
                 <member segment="2365"/>
                 <member segment="2366"/>
                 <member segment="2367"/>
@@ -16054,7 +16056,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2373"/>
                 <member segment="2374"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_68" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_10" neuroLexId="SAO:864921383">
                 <member segment="2375"/>
                 <member segment="2376"/>
                 <member segment="2377"/>
@@ -16064,7 +16066,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2381"/>
                 <member segment="2382"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_69" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_11" neuroLexId="SAO:864921383">
                 <member segment="2383"/>
                 <member segment="2384"/>
                 <member segment="2385"/>
@@ -16078,7 +16080,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2393"/>
                 <member segment="2394"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_70" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_12" neuroLexId="SAO:864921383">
                 <member segment="2395"/>
                 <member segment="2396"/>
                 <member segment="2397"/>
@@ -16100,7 +16102,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2413"/>
                 <member segment="2414"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_71" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_13" neuroLexId="SAO:864921383">
                 <member segment="2415"/>
                 <member segment="2416"/>
                 <member segment="2417"/>
@@ -16178,7 +16180,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2489"/>
                 <member segment="2490"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_72" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_14" neuroLexId="SAO:864921383">
                 <member segment="2491"/>
                 <member segment="2492"/>
                 <member segment="2493"/>
@@ -16264,7 +16266,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="2573"/>
                 <member segment="2574"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_73" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_15" neuroLexId="SAO:864921383">
                 <member segment="2924"/>
                 <member segment="2925"/>
                 <member segment="2926"/>
@@ -16296,6 +16298,7 @@ The notes listed below are the notes that were originally contained in the SWC f
             </segmentGroup>
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
+                <include segmentGroup="bas_dend_1"/>
                 <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
@@ -16323,20 +16326,33 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <include segmentGroup="bas_dend_26"/>
                 <include segmentGroup="bas_dend_27"/>
                 <include segmentGroup="bas_dend_28"/>
+                <include segmentGroup="ap_dend_1"/>
+                <include segmentGroup="ap_dend_2"/>
+                <include segmentGroup="ap_dend_3"/>
+                <include segmentGroup="ap_dend_4"/>
+                <include segmentGroup="ap_dend_5"/>
+                <include segmentGroup="ap_dend_6"/>
+                <include segmentGroup="ap_dend_7"/>
+                <include segmentGroup="ap_dend_8"/>
+                <include segmentGroup="soma_2"/>
+                <include segmentGroup="soma_3"/>
+                <include segmentGroup="soma_4"/>
+                <include segmentGroup="soma_5"/>
+                <include segmentGroup="soma_6"/>
                 <include segmentGroup="bas_dend_29"/>
-                <include segmentGroup="ap_dend_30"/>
-                <include segmentGroup="ap_dend_31"/>
-                <include segmentGroup="ap_dend_32"/>
-                <include segmentGroup="ap_dend_33"/>
-                <include segmentGroup="ap_dend_34"/>
-                <include segmentGroup="ap_dend_35"/>
-                <include segmentGroup="ap_dend_36"/>
-                <include segmentGroup="ap_dend_37"/>
-                <include segmentGroup="soma_38"/>
-                <include segmentGroup="soma_39"/>
-                <include segmentGroup="soma_40"/>
-                <include segmentGroup="soma_41"/>
-                <include segmentGroup="soma_42"/>
+                <include segmentGroup="bas_dend_30"/>
+                <include segmentGroup="bas_dend_31"/>
+                <include segmentGroup="bas_dend_32"/>
+                <include segmentGroup="bas_dend_33"/>
+                <include segmentGroup="bas_dend_34"/>
+                <include segmentGroup="bas_dend_35"/>
+                <include segmentGroup="bas_dend_36"/>
+                <include segmentGroup="bas_dend_37"/>
+                <include segmentGroup="bas_dend_38"/>
+                <include segmentGroup="bas_dend_39"/>
+                <include segmentGroup="bas_dend_40"/>
+                <include segmentGroup="bas_dend_41"/>
+                <include segmentGroup="bas_dend_42"/>
                 <include segmentGroup="bas_dend_43"/>
                 <include segmentGroup="bas_dend_44"/>
                 <include segmentGroup="bas_dend_45"/>
@@ -16347,29 +16363,16 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <include segmentGroup="bas_dend_50"/>
                 <include segmentGroup="bas_dend_51"/>
                 <include segmentGroup="bas_dend_52"/>
-                <include segmentGroup="bas_dend_53"/>
-                <include segmentGroup="bas_dend_54"/>
-                <include segmentGroup="bas_dend_55"/>
-                <include segmentGroup="bas_dend_56"/>
-                <include segmentGroup="bas_dend_57"/>
-                <include segmentGroup="bas_dend_58"/>
-                <include segmentGroup="bas_dend_59"/>
-                <include segmentGroup="bas_dend_60"/>
-                <include segmentGroup="bas_dend_61"/>
-                <include segmentGroup="bas_dend_62"/>
-                <include segmentGroup="bas_dend_63"/>
-                <include segmentGroup="bas_dend_64"/>
-                <include segmentGroup="bas_dend_65"/>
-                <include segmentGroup="bas_dend_66"/>
-                <include segmentGroup="ap_dend_67"/>
-                <include segmentGroup="ap_dend_68"/>
-                <include segmentGroup="ap_dend_69"/>
-                <include segmentGroup="ap_dend_70"/>
-                <include segmentGroup="ap_dend_71"/>
-                <include segmentGroup="ap_dend_72"/>
-                <include segmentGroup="ap_dend_73"/>
+                <include segmentGroup="ap_dend_9"/>
+                <include segmentGroup="ap_dend_10"/>
+                <include segmentGroup="ap_dend_11"/>
+                <include segmentGroup="ap_dend_12"/>
+                <include segmentGroup="ap_dend_13"/>
+                <include segmentGroup="ap_dend_14"/>
+                <include segmentGroup="ap_dend_15"/>
             </segmentGroup>
             <segmentGroup id="basal_group" neuroLexId="SAO:1079900774">
+                <include segmentGroup="bas_dend_1"/>
                 <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
@@ -16398,6 +16401,19 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <include segmentGroup="bas_dend_27"/>
                 <include segmentGroup="bas_dend_28"/>
                 <include segmentGroup="bas_dend_29"/>
+                <include segmentGroup="bas_dend_30"/>
+                <include segmentGroup="bas_dend_31"/>
+                <include segmentGroup="bas_dend_32"/>
+                <include segmentGroup="bas_dend_33"/>
+                <include segmentGroup="bas_dend_34"/>
+                <include segmentGroup="bas_dend_35"/>
+                <include segmentGroup="bas_dend_36"/>
+                <include segmentGroup="bas_dend_37"/>
+                <include segmentGroup="bas_dend_38"/>
+                <include segmentGroup="bas_dend_39"/>
+                <include segmentGroup="bas_dend_40"/>
+                <include segmentGroup="bas_dend_41"/>
+                <include segmentGroup="bas_dend_42"/>
                 <include segmentGroup="bas_dend_43"/>
                 <include segmentGroup="bas_dend_44"/>
                 <include segmentGroup="bas_dend_45"/>
@@ -16408,47 +16424,34 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <include segmentGroup="bas_dend_50"/>
                 <include segmentGroup="bas_dend_51"/>
                 <include segmentGroup="bas_dend_52"/>
-                <include segmentGroup="bas_dend_53"/>
-                <include segmentGroup="bas_dend_54"/>
-                <include segmentGroup="bas_dend_55"/>
-                <include segmentGroup="bas_dend_56"/>
-                <include segmentGroup="bas_dend_57"/>
-                <include segmentGroup="bas_dend_58"/>
-                <include segmentGroup="bas_dend_59"/>
-                <include segmentGroup="bas_dend_60"/>
-                <include segmentGroup="bas_dend_61"/>
-                <include segmentGroup="bas_dend_62"/>
-                <include segmentGroup="bas_dend_63"/>
-                <include segmentGroup="bas_dend_64"/>
-                <include segmentGroup="bas_dend_65"/>
-                <include segmentGroup="bas_dend_66"/>
             </segmentGroup>
             <segmentGroup id="apical_group" neuroLexId="SAO:273773228">
-                <include segmentGroup="ap_dend_30"/>
-                <include segmentGroup="ap_dend_31"/>
-                <include segmentGroup="ap_dend_32"/>
-                <include segmentGroup="ap_dend_33"/>
-                <include segmentGroup="ap_dend_34"/>
-                <include segmentGroup="ap_dend_35"/>
-                <include segmentGroup="ap_dend_36"/>
-                <include segmentGroup="ap_dend_37"/>
-                <include segmentGroup="ap_dend_67"/>
-                <include segmentGroup="ap_dend_68"/>
-                <include segmentGroup="ap_dend_69"/>
-                <include segmentGroup="ap_dend_70"/>
-                <include segmentGroup="ap_dend_71"/>
-                <include segmentGroup="ap_dend_72"/>
-                <include segmentGroup="ap_dend_73"/>
+                <include segmentGroup="ap_dend_1"/>
+                <include segmentGroup="ap_dend_2"/>
+                <include segmentGroup="ap_dend_3"/>
+                <include segmentGroup="ap_dend_4"/>
+                <include segmentGroup="ap_dend_5"/>
+                <include segmentGroup="ap_dend_6"/>
+                <include segmentGroup="ap_dend_7"/>
+                <include segmentGroup="ap_dend_8"/>
+                <include segmentGroup="ap_dend_9"/>
+                <include segmentGroup="ap_dend_10"/>
+                <include segmentGroup="ap_dend_11"/>
+                <include segmentGroup="ap_dend_12"/>
+                <include segmentGroup="ap_dend_13"/>
+                <include segmentGroup="ap_dend_14"/>
+                <include segmentGroup="ap_dend_15"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
-                <include segmentGroup="soma_38"/>
-                <include segmentGroup="soma_39"/>
-                <include segmentGroup="soma_40"/>
-                <include segmentGroup="soma_41"/>
-                <include segmentGroup="soma_42"/>
+                <include segmentGroup="soma_2"/>
+                <include segmentGroup="soma_3"/>
+                <include segmentGroup="soma_4"/>
+                <include segmentGroup="soma_5"/>
+                <include segmentGroup="soma_6"/>
             </segmentGroup>
             <segmentGroup id="dendrite_group" neuroLexId="SAO:1211023249">
+                <include segmentGroup="bas_dend_1"/>
                 <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
@@ -16476,15 +16479,28 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <include segmentGroup="bas_dend_26"/>
                 <include segmentGroup="bas_dend_27"/>
                 <include segmentGroup="bas_dend_28"/>
+                <include segmentGroup="ap_dend_1"/>
+                <include segmentGroup="ap_dend_2"/>
+                <include segmentGroup="ap_dend_3"/>
+                <include segmentGroup="ap_dend_4"/>
+                <include segmentGroup="ap_dend_5"/>
+                <include segmentGroup="ap_dend_6"/>
+                <include segmentGroup="ap_dend_7"/>
+                <include segmentGroup="ap_dend_8"/>
                 <include segmentGroup="bas_dend_29"/>
-                <include segmentGroup="ap_dend_30"/>
-                <include segmentGroup="ap_dend_31"/>
-                <include segmentGroup="ap_dend_32"/>
-                <include segmentGroup="ap_dend_33"/>
-                <include segmentGroup="ap_dend_34"/>
-                <include segmentGroup="ap_dend_35"/>
-                <include segmentGroup="ap_dend_36"/>
-                <include segmentGroup="ap_dend_37"/>
+                <include segmentGroup="bas_dend_30"/>
+                <include segmentGroup="bas_dend_31"/>
+                <include segmentGroup="bas_dend_32"/>
+                <include segmentGroup="bas_dend_33"/>
+                <include segmentGroup="bas_dend_34"/>
+                <include segmentGroup="bas_dend_35"/>
+                <include segmentGroup="bas_dend_36"/>
+                <include segmentGroup="bas_dend_37"/>
+                <include segmentGroup="bas_dend_38"/>
+                <include segmentGroup="bas_dend_39"/>
+                <include segmentGroup="bas_dend_40"/>
+                <include segmentGroup="bas_dend_41"/>
+                <include segmentGroup="bas_dend_42"/>
                 <include segmentGroup="bas_dend_43"/>
                 <include segmentGroup="bas_dend_44"/>
                 <include segmentGroup="bas_dend_45"/>
@@ -16495,27 +16511,13 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <include segmentGroup="bas_dend_50"/>
                 <include segmentGroup="bas_dend_51"/>
                 <include segmentGroup="bas_dend_52"/>
-                <include segmentGroup="bas_dend_53"/>
-                <include segmentGroup="bas_dend_54"/>
-                <include segmentGroup="bas_dend_55"/>
-                <include segmentGroup="bas_dend_56"/>
-                <include segmentGroup="bas_dend_57"/>
-                <include segmentGroup="bas_dend_58"/>
-                <include segmentGroup="bas_dend_59"/>
-                <include segmentGroup="bas_dend_60"/>
-                <include segmentGroup="bas_dend_61"/>
-                <include segmentGroup="bas_dend_62"/>
-                <include segmentGroup="bas_dend_63"/>
-                <include segmentGroup="bas_dend_64"/>
-                <include segmentGroup="bas_dend_65"/>
-                <include segmentGroup="bas_dend_66"/>
-                <include segmentGroup="ap_dend_67"/>
-                <include segmentGroup="ap_dend_68"/>
-                <include segmentGroup="ap_dend_69"/>
-                <include segmentGroup="ap_dend_70"/>
-                <include segmentGroup="ap_dend_71"/>
-                <include segmentGroup="ap_dend_72"/>
-                <include segmentGroup="ap_dend_73"/>
+                <include segmentGroup="ap_dend_9"/>
+                <include segmentGroup="ap_dend_10"/>
+                <include segmentGroup="ap_dend_11"/>
+                <include segmentGroup="ap_dend_12"/>
+                <include segmentGroup="ap_dend_13"/>
+                <include segmentGroup="ap_dend_14"/>
+                <include segmentGroup="ap_dend_15"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="_1626_S5_L2_000_cell_properties">

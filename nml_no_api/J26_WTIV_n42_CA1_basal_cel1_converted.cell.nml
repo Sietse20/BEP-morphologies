@@ -9,6 +9,7 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
 SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
 Original fileName:C:\postprocessing\blah_Final\Source_Temp1//J26_WTIV_n42_CA1_basal_cel1.CNG.swc
 
@@ -21,6 +22,7 @@ Irregularities and fixes documented in C:\NMO_dev\data_proc\Temp_LMeasure\J26_WT
 Neurolucida to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
 Original fileName:C:\NMO_dev\data_proc\Source_Temp1//J26_WTIV_n42_CA1_basal_cel1.dat.asc
 The original file has a single soma contour that is averaged into 3 soma points
+
 ########################################
 
 </notes>
@@ -5479,7 +5481,7 @@ The original file has a single soma contour that is averaged into 3 soma points
             <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_1" neuroLexId="SAO:864921383">
                 <member segment="53"/>
                 <member segment="54"/>
                 <member segment="55"/>
@@ -5584,7 +5586,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="154"/>
                 <member segment="155"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
                 <member segment="196"/>
                 <member segment="197"/>
                 <member segment="198"/>
@@ -5688,7 +5690,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="296"/>
                 <member segment="297"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
                 <member segment="298"/>
                 <member segment="299"/>
                 <member segment="300"/>
@@ -5775,7 +5777,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="381"/>
                 <member segment="382"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
                 <member segment="414"/>
                 <member segment="415"/>
                 <member segment="416"/>
@@ -5877,7 +5879,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="512"/>
                 <member segment="513"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
                 <member segment="521"/>
                 <member segment="522"/>
                 <member segment="523"/>
@@ -5969,7 +5971,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="609"/>
                 <member segment="610"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
                 <member segment="611"/>
                 <member segment="612"/>
                 <member segment="613"/>
@@ -6080,7 +6082,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="718"/>
                 <member segment="719"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
                 <member segment="765"/>
                 <member segment="766"/>
                 <member segment="767"/>
@@ -6148,7 +6150,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="829"/>
                 <member segment="830"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
                 <member segment="831"/>
                 <member segment="832"/>
                 <member segment="833"/>
@@ -6260,7 +6262,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="939"/>
                 <member segment="940"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
                 <member segment="941"/>
                 <member segment="942"/>
                 <member segment="943"/>
@@ -6332,7 +6334,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="1009"/>
                 <member segment="1010"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
                 <member segment="1012"/>
                 <member segment="1013"/>
                 <member segment="1014"/>
@@ -6416,7 +6418,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="1092"/>
                 <member segment="1093"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
                 <member segment="1094"/>
                 <member segment="1095"/>
                 <member segment="1096"/>
@@ -6518,7 +6520,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="1192"/>
                 <member segment="1193"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
                 <member segment="1213"/>
                 <member segment="1214"/>
                 <member segment="1215"/>
@@ -6560,7 +6562,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="1251"/>
                 <member segment="1252"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
                 <member segment="1262"/>
                 <member segment="1263"/>
                 <member segment="1264"/>
@@ -6603,7 +6605,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="1301"/>
                 <member segment="1302"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
                 <member segment="1303"/>
                 <member segment="1304"/>
                 <member segment="1305"/>
@@ -6664,10 +6666,10 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="1360"/>
                 <member segment="1361"/>
             </segmentGroup>
-            <segmentGroup id="soma_17" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
                 <member segment="3"/>
                 <member segment="4"/>
                 <member segment="5"/>
@@ -6675,7 +6677,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="7"/>
                 <member segment="8"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_19" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
                 <member segment="9"/>
                 <member segment="10"/>
                 <member segment="11"/>
@@ -6721,7 +6723,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="51"/>
                 <member segment="52"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_20" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_17" neuroLexId="SAO:864921383">
                 <member segment="156"/>
                 <member segment="157"/>
                 <member segment="158"/>
@@ -6763,7 +6765,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="194"/>
                 <member segment="195"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_21" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
                 <member segment="383"/>
                 <member segment="384"/>
                 <member segment="385"/>
@@ -6772,7 +6774,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="388"/>
                 <member segment="389"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_22" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_19" neuroLexId="SAO:864921383">
                 <member segment="390"/>
                 <member segment="391"/>
                 <member segment="392"/>
@@ -6798,7 +6800,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="412"/>
                 <member segment="413"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_23" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_20" neuroLexId="SAO:864921383">
                 <member segment="514"/>
                 <member segment="515"/>
                 <member segment="516"/>
@@ -6807,7 +6809,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="519"/>
                 <member segment="520"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_24" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_21" neuroLexId="SAO:864921383">
                 <member segment="720"/>
                 <member segment="721"/>
                 <member segment="722"/>
@@ -6832,7 +6834,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="741"/>
                 <member segment="742"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_25" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_22" neuroLexId="SAO:864921383">
                 <member segment="743"/>
                 <member segment="744"/>
                 <member segment="745"/>
@@ -6852,16 +6854,16 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="759"/>
                 <member segment="760"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_26" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_23" neuroLexId="SAO:864921383">
                 <member segment="761"/>
                 <member segment="762"/>
                 <member segment="763"/>
                 <member segment="764"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_27" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_24" neuroLexId="SAO:864921383">
                 <member segment="1011"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_28" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_25" neuroLexId="SAO:864921383">
                 <member segment="1194"/>
                 <member segment="1195"/>
                 <member segment="1196"/>
@@ -6882,7 +6884,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="1211"/>
                 <member segment="1212"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_29" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_26" neuroLexId="SAO:864921383">
                 <member segment="1253"/>
                 <member segment="1254"/>
                 <member segment="1255"/>
@@ -6896,6 +6898,8 @@ The original file has a single soma contour that is averaged into 3 soma points
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -6908,9 +6912,10 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <include segmentGroup="bas_dend_12"/>
                 <include segmentGroup="bas_dend_13"/>
                 <include segmentGroup="bas_dend_14"/>
+                <include segmentGroup="soma_3"/>
                 <include segmentGroup="bas_dend_15"/>
                 <include segmentGroup="bas_dend_16"/>
-                <include segmentGroup="soma_17"/>
+                <include segmentGroup="bas_dend_17"/>
                 <include segmentGroup="bas_dend_18"/>
                 <include segmentGroup="bas_dend_19"/>
                 <include segmentGroup="bas_dend_20"/>
@@ -6920,11 +6925,10 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <include segmentGroup="bas_dend_24"/>
                 <include segmentGroup="bas_dend_25"/>
                 <include segmentGroup="bas_dend_26"/>
-                <include segmentGroup="bas_dend_27"/>
-                <include segmentGroup="bas_dend_28"/>
-                <include segmentGroup="bas_dend_29"/>
             </segmentGroup>
             <segmentGroup id="basal_group" neuroLexId="SAO:1079900774">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -6939,6 +6943,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <include segmentGroup="bas_dend_14"/>
                 <include segmentGroup="bas_dend_15"/>
                 <include segmentGroup="bas_dend_16"/>
+                <include segmentGroup="bas_dend_17"/>
                 <include segmentGroup="bas_dend_18"/>
                 <include segmentGroup="bas_dend_19"/>
                 <include segmentGroup="bas_dend_20"/>
@@ -6948,16 +6953,15 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <include segmentGroup="bas_dend_24"/>
                 <include segmentGroup="bas_dend_25"/>
                 <include segmentGroup="bas_dend_26"/>
-                <include segmentGroup="bas_dend_27"/>
-                <include segmentGroup="bas_dend_28"/>
-                <include segmentGroup="bas_dend_29"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
-                <include segmentGroup="soma_17"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="dendrite_group" neuroLexId="SAO:1211023249">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -6972,6 +6976,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <include segmentGroup="bas_dend_14"/>
                 <include segmentGroup="bas_dend_15"/>
                 <include segmentGroup="bas_dend_16"/>
+                <include segmentGroup="bas_dend_17"/>
                 <include segmentGroup="bas_dend_18"/>
                 <include segmentGroup="bas_dend_19"/>
                 <include segmentGroup="bas_dend_20"/>
@@ -6981,9 +6986,6 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <include segmentGroup="bas_dend_24"/>
                 <include segmentGroup="bas_dend_25"/>
                 <include segmentGroup="bas_dend_26"/>
-                <include segmentGroup="bas_dend_27"/>
-                <include segmentGroup="bas_dend_28"/>
-                <include segmentGroup="bas_dend_29"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="J26_WTIV_n42_CA1_basal_cel1_cell_properties">

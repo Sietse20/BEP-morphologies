@@ -9,6 +9,7 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
 SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
 Original fileName:C:\NMO_dev\data_proc\Kuddannaya_Final\Source_Temp1//Tracetest_N360_circle_Map2Tau2_72_semi-auto_44.CNG.swc
 
@@ -45,6 +46,7 @@ VERSION_NUMBER
 VERSION_DATE
 *********************************************
 SCALE 1.0 1.0 1.0
+
 ########################################
 
 </notes>
@@ -519,12 +521,12 @@ SCALE 1.0 1.0 1.0
             <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_1" neuroLexId="SAO:864921383">
                 <member segment="3"/>
                 <member segment="4"/>
                 <member segment="5"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
                 <member segment="6"/>
                 <member segment="7"/>
                 <member segment="8"/>
@@ -532,20 +534,20 @@ SCALE 1.0 1.0 1.0
                 <member segment="10"/>
                 <member segment="11"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
                 <member segment="49"/>
                 <member segment="50"/>
                 <member segment="51"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
                 <member segment="52"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
                 <member segment="53"/>
                 <member segment="54"/>
                 <member segment="55"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
                 <member segment="76"/>
                 <member segment="77"/>
                 <member segment="78"/>
@@ -560,7 +562,7 @@ SCALE 1.0 1.0 1.0
                 <member segment="87"/>
                 <member segment="88"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
                 <member segment="89"/>
                 <member segment="90"/>
                 <member segment="91"/>
@@ -578,20 +580,20 @@ SCALE 1.0 1.0 1.0
                 <member segment="103"/>
                 <member segment="104"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
                 <member segment="110"/>
                 <member segment="111"/>
                 <member segment="112"/>
                 <member segment="113"/>
                 <member segment="114"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
                 <member segment="115"/>
             </segmentGroup>
-            <segmentGroup id="soma_12" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
                 <member segment="12"/>
                 <member segment="13"/>
                 <member segment="14"/>
@@ -613,7 +615,7 @@ SCALE 1.0 1.0 1.0
                 <member segment="30"/>
                 <member segment="31"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
                 <member segment="32"/>
                 <member segment="33"/>
                 <member segment="34"/>
@@ -630,11 +632,11 @@ SCALE 1.0 1.0 1.0
                 <member segment="45"/>
                 <member segment="46"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
                 <member segment="47"/>
                 <member segment="48"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
                 <member segment="56"/>
                 <member segment="57"/>
                 <member segment="58"/>
@@ -654,11 +656,11 @@ SCALE 1.0 1.0 1.0
                 <member segment="72"/>
                 <member segment="73"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_17" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
                 <member segment="74"/>
                 <member segment="75"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
                 <member segment="105"/>
                 <member segment="106"/>
                 <member segment="107"/>
@@ -668,6 +670,8 @@ SCALE 1.0 1.0 1.0
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -675,17 +679,17 @@ SCALE 1.0 1.0 1.0
                 <include segmentGroup="bas_dend_7"/>
                 <include segmentGroup="bas_dend_8"/>
                 <include segmentGroup="bas_dend_9"/>
+                <include segmentGroup="soma_3"/>
                 <include segmentGroup="bas_dend_10"/>
                 <include segmentGroup="bas_dend_11"/>
-                <include segmentGroup="soma_12"/>
+                <include segmentGroup="bas_dend_12"/>
                 <include segmentGroup="bas_dend_13"/>
                 <include segmentGroup="bas_dend_14"/>
                 <include segmentGroup="bas_dend_15"/>
-                <include segmentGroup="bas_dend_16"/>
-                <include segmentGroup="bas_dend_17"/>
-                <include segmentGroup="bas_dend_18"/>
             </segmentGroup>
             <segmentGroup id="basal_group" neuroLexId="SAO:1079900774">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -695,19 +699,19 @@ SCALE 1.0 1.0 1.0
                 <include segmentGroup="bas_dend_9"/>
                 <include segmentGroup="bas_dend_10"/>
                 <include segmentGroup="bas_dend_11"/>
+                <include segmentGroup="bas_dend_12"/>
                 <include segmentGroup="bas_dend_13"/>
                 <include segmentGroup="bas_dend_14"/>
                 <include segmentGroup="bas_dend_15"/>
-                <include segmentGroup="bas_dend_16"/>
-                <include segmentGroup="bas_dend_17"/>
-                <include segmentGroup="bas_dend_18"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
-                <include segmentGroup="soma_12"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="dendrite_group" neuroLexId="SAO:1211023249">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -717,12 +721,10 @@ SCALE 1.0 1.0 1.0
                 <include segmentGroup="bas_dend_9"/>
                 <include segmentGroup="bas_dend_10"/>
                 <include segmentGroup="bas_dend_11"/>
+                <include segmentGroup="bas_dend_12"/>
                 <include segmentGroup="bas_dend_13"/>
                 <include segmentGroup="bas_dend_14"/>
                 <include segmentGroup="bas_dend_15"/>
-                <include segmentGroup="bas_dend_16"/>
-                <include segmentGroup="bas_dend_17"/>
-                <include segmentGroup="bas_dend_18"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="Tracetest_N360_circle_Map2Tau2_72_semi_auto_44_cell_properties">

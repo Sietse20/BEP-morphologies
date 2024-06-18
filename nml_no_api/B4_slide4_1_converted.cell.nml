@@ -9,8 +9,10 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
 SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
 Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\Source_Temp1//B4_slide4_1.CNG.swc
+
 
 ########################################
 
@@ -1390,7 +1392,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="7"/>
                 <member segment="8"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_1" neuroLexId="SAO:864921383">
                 <member segment="20"/>
                 <member segment="21"/>
                 <member segment="22"/>
@@ -1402,18 +1404,18 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="28"/>
                 <member segment="29"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
                 <member segment="30"/>
                 <member segment="31"/>
                 <member segment="32"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
                 <member segment="33"/>
                 <member segment="34"/>
                 <member segment="35"/>
                 <member segment="36"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
                 <member segment="37"/>
                 <member segment="38"/>
                 <member segment="39"/>
@@ -1429,7 +1431,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="49"/>
                 <member segment="50"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
                 <member segment="58"/>
                 <member segment="59"/>
                 <member segment="60"/>
@@ -1437,7 +1439,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="62"/>
                 <member segment="63"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
                 <member segment="64"/>
                 <member segment="65"/>
                 <member segment="66"/>
@@ -1450,7 +1452,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="73"/>
                 <member segment="74"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
                 <member segment="75"/>
                 <member segment="76"/>
                 <member segment="77"/>
@@ -1459,7 +1461,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="80"/>
                 <member segment="81"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
                 <member segment="88"/>
                 <member segment="89"/>
                 <member segment="90"/>
@@ -1471,7 +1473,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="96"/>
                 <member segment="97"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
                 <member segment="98"/>
                 <member segment="99"/>
                 <member segment="100"/>
@@ -1485,7 +1487,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="108"/>
                 <member segment="109"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
                 <member segment="110"/>
                 <member segment="111"/>
                 <member segment="112"/>
@@ -1513,7 +1515,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="134"/>
                 <member segment="135"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
                 <member segment="136"/>
                 <member segment="137"/>
                 <member segment="138"/>
@@ -1531,7 +1533,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="150"/>
                 <member segment="151"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
                 <member segment="161"/>
                 <member segment="162"/>
                 <member segment="163"/>
@@ -1542,22 +1544,22 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="168"/>
                 <member segment="169"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
                 <member segment="170"/>
                 <member segment="171"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
                 <member segment="172"/>
                 <member segment="173"/>
                 <member segment="174"/>
                 <member segment="175"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
                 <member segment="180"/>
                 <member segment="181"/>
                 <member segment="182"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_17" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
                 <member segment="183"/>
                 <member segment="184"/>
                 <member segment="185"/>
@@ -1568,7 +1570,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="190"/>
                 <member segment="191"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_17" neuroLexId="SAO:864921383">
                 <member segment="192"/>
                 <member segment="193"/>
                 <member segment="194"/>
@@ -1578,7 +1580,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="198"/>
                 <member segment="199"/>
             </segmentGroup>
-            <segmentGroup id="axon_19" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_1" neuroLexId="SAO:864921383">
                 <member segment="200"/>
                 <member segment="201"/>
                 <member segment="202"/>
@@ -1592,12 +1594,12 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="210"/>
                 <member segment="211"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_20" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_1" neuroLexId="SAO:864921383">
                 <member segment="222"/>
                 <member segment="223"/>
                 <member segment="224"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_21" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_2" neuroLexId="SAO:864921383">
                 <member segment="228"/>
                 <member segment="229"/>
                 <member segment="230"/>
@@ -1610,7 +1612,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="237"/>
                 <member segment="238"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_22" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_3" neuroLexId="SAO:864921383">
                 <member segment="239"/>
                 <member segment="240"/>
                 <member segment="241"/>
@@ -1624,7 +1626,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="249"/>
                 <member segment="250"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_23" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_4" neuroLexId="SAO:864921383">
                 <member segment="256"/>
                 <member segment="257"/>
                 <member segment="258"/>
@@ -1632,7 +1634,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="260"/>
                 <member segment="261"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_24" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_5" neuroLexId="SAO:864921383">
                 <member segment="262"/>
                 <member segment="263"/>
                 <member segment="264"/>
@@ -1643,7 +1645,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="269"/>
                 <member segment="270"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_25" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_6" neuroLexId="SAO:864921383">
                 <member segment="282"/>
                 <member segment="283"/>
                 <member segment="284"/>
@@ -1653,7 +1655,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="288"/>
                 <member segment="289"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_26" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_7" neuroLexId="SAO:864921383">
                 <member segment="299"/>
                 <member segment="300"/>
                 <member segment="301"/>
@@ -1669,7 +1671,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="311"/>
                 <member segment="312"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_27" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_8" neuroLexId="SAO:864921383">
                 <member segment="313"/>
                 <member segment="314"/>
                 <member segment="315"/>
@@ -1677,52 +1679,52 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="317"/>
                 <member segment="318"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_28" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_9" neuroLexId="SAO:864921383">
                 <member segment="335"/>
                 <member segment="336"/>
                 <member segment="337"/>
                 <member segment="338"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_29" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_10" neuroLexId="SAO:864921383">
                 <member segment="339"/>
                 <member segment="340"/>
             </segmentGroup>
-            <segmentGroup id="soma_30" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_31" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
                 <member segment="9"/>
                 <member segment="10"/>
                 <member segment="11"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_32" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_19" neuroLexId="SAO:864921383">
                 <member segment="12"/>
                 <member segment="13"/>
                 <member segment="14"/>
                 <member segment="15"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_33" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_20" neuroLexId="SAO:864921383">
                 <member segment="16"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_34" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_21" neuroLexId="SAO:864921383">
                 <member segment="17"/>
                 <member segment="18"/>
                 <member segment="19"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_35" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_22" neuroLexId="SAO:864921383">
                 <member segment="51"/>
                 <member segment="52"/>
                 <member segment="53"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_36" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_23" neuroLexId="SAO:864921383">
                 <member segment="54"/>
                 <member segment="55"/>
                 <member segment="56"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_37" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_24" neuroLexId="SAO:864921383">
                 <member segment="57"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_38" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_25" neuroLexId="SAO:864921383">
                 <member segment="82"/>
                 <member segment="83"/>
                 <member segment="84"/>
@@ -1730,56 +1732,56 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="86"/>
                 <member segment="87"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_39" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_26" neuroLexId="SAO:864921383">
                 <member segment="152"/>
                 <member segment="153"/>
                 <member segment="154"/>
                 <member segment="155"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_40" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_27" neuroLexId="SAO:864921383">
                 <member segment="156"/>
                 <member segment="157"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_41" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_28" neuroLexId="SAO:864921383">
                 <member segment="158"/>
                 <member segment="159"/>
                 <member segment="160"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_42" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_29" neuroLexId="SAO:864921383">
                 <member segment="176"/>
                 <member segment="177"/>
                 <member segment="178"/>
                 <member segment="179"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_43" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_11" neuroLexId="SAO:864921383">
                 <member segment="212"/>
                 <member segment="213"/>
                 <member segment="214"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_44" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_12" neuroLexId="SAO:864921383">
                 <member segment="215"/>
                 <member segment="216"/>
                 <member segment="217"/>
                 <member segment="218"/>
                 <member segment="219"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_45" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_13" neuroLexId="SAO:864921383">
                 <member segment="220"/>
                 <member segment="221"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_46" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_14" neuroLexId="SAO:864921383">
                 <member segment="225"/>
                 <member segment="226"/>
                 <member segment="227"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_47" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_15" neuroLexId="SAO:864921383">
                 <member segment="251"/>
                 <member segment="252"/>
                 <member segment="253"/>
                 <member segment="254"/>
                 <member segment="255"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_48" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_16" neuroLexId="SAO:864921383">
                 <member segment="271"/>
                 <member segment="272"/>
                 <member segment="273"/>
@@ -1788,13 +1790,13 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="276"/>
                 <member segment="277"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_49" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_17" neuroLexId="SAO:864921383">
                 <member segment="278"/>
                 <member segment="279"/>
                 <member segment="280"/>
                 <member segment="281"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_50" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_18" neuroLexId="SAO:864921383">
                 <member segment="290"/>
                 <member segment="291"/>
                 <member segment="292"/>
@@ -1805,7 +1807,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <member segment="297"/>
                 <member segment="298"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_51" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_19" neuroLexId="SAO:864921383">
                 <member segment="319"/>
                 <member segment="320"/>
                 <member segment="321"/>
@@ -1825,6 +1827,7 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
             </segmentGroup>
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
+                <include segmentGroup="bas_dend_1"/>
                 <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
@@ -1841,42 +1844,42 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <include segmentGroup="bas_dend_15"/>
                 <include segmentGroup="bas_dend_16"/>
                 <include segmentGroup="bas_dend_17"/>
+                <include segmentGroup="axon_1"/>
+                <include segmentGroup="ap_dend_1"/>
+                <include segmentGroup="ap_dend_2"/>
+                <include segmentGroup="ap_dend_3"/>
+                <include segmentGroup="ap_dend_4"/>
+                <include segmentGroup="ap_dend_5"/>
+                <include segmentGroup="ap_dend_6"/>
+                <include segmentGroup="ap_dend_7"/>
+                <include segmentGroup="ap_dend_8"/>
+                <include segmentGroup="ap_dend_9"/>
+                <include segmentGroup="ap_dend_10"/>
+                <include segmentGroup="soma_2"/>
                 <include segmentGroup="bas_dend_18"/>
-                <include segmentGroup="axon_19"/>
-                <include segmentGroup="ap_dend_20"/>
-                <include segmentGroup="ap_dend_21"/>
-                <include segmentGroup="ap_dend_22"/>
-                <include segmentGroup="ap_dend_23"/>
-                <include segmentGroup="ap_dend_24"/>
-                <include segmentGroup="ap_dend_25"/>
-                <include segmentGroup="ap_dend_26"/>
-                <include segmentGroup="ap_dend_27"/>
-                <include segmentGroup="ap_dend_28"/>
-                <include segmentGroup="ap_dend_29"/>
-                <include segmentGroup="soma_30"/>
-                <include segmentGroup="bas_dend_31"/>
-                <include segmentGroup="bas_dend_32"/>
-                <include segmentGroup="bas_dend_33"/>
-                <include segmentGroup="bas_dend_34"/>
-                <include segmentGroup="bas_dend_35"/>
-                <include segmentGroup="bas_dend_36"/>
-                <include segmentGroup="bas_dend_37"/>
-                <include segmentGroup="bas_dend_38"/>
-                <include segmentGroup="bas_dend_39"/>
-                <include segmentGroup="bas_dend_40"/>
-                <include segmentGroup="bas_dend_41"/>
-                <include segmentGroup="bas_dend_42"/>
-                <include segmentGroup="ap_dend_43"/>
-                <include segmentGroup="ap_dend_44"/>
-                <include segmentGroup="ap_dend_45"/>
-                <include segmentGroup="ap_dend_46"/>
-                <include segmentGroup="ap_dend_47"/>
-                <include segmentGroup="ap_dend_48"/>
-                <include segmentGroup="ap_dend_49"/>
-                <include segmentGroup="ap_dend_50"/>
-                <include segmentGroup="ap_dend_51"/>
+                <include segmentGroup="bas_dend_19"/>
+                <include segmentGroup="bas_dend_20"/>
+                <include segmentGroup="bas_dend_21"/>
+                <include segmentGroup="bas_dend_22"/>
+                <include segmentGroup="bas_dend_23"/>
+                <include segmentGroup="bas_dend_24"/>
+                <include segmentGroup="bas_dend_25"/>
+                <include segmentGroup="bas_dend_26"/>
+                <include segmentGroup="bas_dend_27"/>
+                <include segmentGroup="bas_dend_28"/>
+                <include segmentGroup="bas_dend_29"/>
+                <include segmentGroup="ap_dend_11"/>
+                <include segmentGroup="ap_dend_12"/>
+                <include segmentGroup="ap_dend_13"/>
+                <include segmentGroup="ap_dend_14"/>
+                <include segmentGroup="ap_dend_15"/>
+                <include segmentGroup="ap_dend_16"/>
+                <include segmentGroup="ap_dend_17"/>
+                <include segmentGroup="ap_dend_18"/>
+                <include segmentGroup="ap_dend_19"/>
             </segmentGroup>
             <segmentGroup id="basal_group" neuroLexId="SAO:1079900774">
+                <include segmentGroup="bas_dend_1"/>
                 <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
@@ -1894,48 +1897,48 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <include segmentGroup="bas_dend_16"/>
                 <include segmentGroup="bas_dend_17"/>
                 <include segmentGroup="bas_dend_18"/>
-                <include segmentGroup="bas_dend_31"/>
-                <include segmentGroup="bas_dend_32"/>
-                <include segmentGroup="bas_dend_33"/>
-                <include segmentGroup="bas_dend_34"/>
-                <include segmentGroup="bas_dend_35"/>
-                <include segmentGroup="bas_dend_36"/>
-                <include segmentGroup="bas_dend_37"/>
-                <include segmentGroup="bas_dend_38"/>
-                <include segmentGroup="bas_dend_39"/>
-                <include segmentGroup="bas_dend_40"/>
-                <include segmentGroup="bas_dend_41"/>
-                <include segmentGroup="bas_dend_42"/>
+                <include segmentGroup="bas_dend_19"/>
+                <include segmentGroup="bas_dend_20"/>
+                <include segmentGroup="bas_dend_21"/>
+                <include segmentGroup="bas_dend_22"/>
+                <include segmentGroup="bas_dend_23"/>
+                <include segmentGroup="bas_dend_24"/>
+                <include segmentGroup="bas_dend_25"/>
+                <include segmentGroup="bas_dend_26"/>
+                <include segmentGroup="bas_dend_27"/>
+                <include segmentGroup="bas_dend_28"/>
+                <include segmentGroup="bas_dend_29"/>
             </segmentGroup>
             <segmentGroup id="apical_group" neuroLexId="SAO:273773228">
-                <include segmentGroup="ap_dend_20"/>
-                <include segmentGroup="ap_dend_21"/>
-                <include segmentGroup="ap_dend_22"/>
-                <include segmentGroup="ap_dend_23"/>
-                <include segmentGroup="ap_dend_24"/>
-                <include segmentGroup="ap_dend_25"/>
-                <include segmentGroup="ap_dend_26"/>
-                <include segmentGroup="ap_dend_27"/>
-                <include segmentGroup="ap_dend_28"/>
-                <include segmentGroup="ap_dend_29"/>
-                <include segmentGroup="ap_dend_43"/>
-                <include segmentGroup="ap_dend_44"/>
-                <include segmentGroup="ap_dend_45"/>
-                <include segmentGroup="ap_dend_46"/>
-                <include segmentGroup="ap_dend_47"/>
-                <include segmentGroup="ap_dend_48"/>
-                <include segmentGroup="ap_dend_49"/>
-                <include segmentGroup="ap_dend_50"/>
-                <include segmentGroup="ap_dend_51"/>
+                <include segmentGroup="ap_dend_1"/>
+                <include segmentGroup="ap_dend_2"/>
+                <include segmentGroup="ap_dend_3"/>
+                <include segmentGroup="ap_dend_4"/>
+                <include segmentGroup="ap_dend_5"/>
+                <include segmentGroup="ap_dend_6"/>
+                <include segmentGroup="ap_dend_7"/>
+                <include segmentGroup="ap_dend_8"/>
+                <include segmentGroup="ap_dend_9"/>
+                <include segmentGroup="ap_dend_10"/>
+                <include segmentGroup="ap_dend_11"/>
+                <include segmentGroup="ap_dend_12"/>
+                <include segmentGroup="ap_dend_13"/>
+                <include segmentGroup="ap_dend_14"/>
+                <include segmentGroup="ap_dend_15"/>
+                <include segmentGroup="ap_dend_16"/>
+                <include segmentGroup="ap_dend_17"/>
+                <include segmentGroup="ap_dend_18"/>
+                <include segmentGroup="ap_dend_19"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
-                <include segmentGroup="soma_30"/>
+                <include segmentGroup="soma_2"/>
             </segmentGroup>
             <segmentGroup id="axon_group" neuroLexId="SAO:1770195789">
-                <include segmentGroup="axon_19"/>
+                <include segmentGroup="axon_1"/>
             </segmentGroup>
             <segmentGroup id="dendrite_group" neuroLexId="SAO:1211023249">
+                <include segmentGroup="bas_dend_1"/>
                 <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
@@ -1952,38 +1955,37 @@ Original fileName:C:\Users\masoo\OneDrive\Desktop\postprocessing\Urban_K_Final\S
                 <include segmentGroup="bas_dend_15"/>
                 <include segmentGroup="bas_dend_16"/>
                 <include segmentGroup="bas_dend_17"/>
+                <include segmentGroup="ap_dend_1"/>
+                <include segmentGroup="ap_dend_2"/>
+                <include segmentGroup="ap_dend_3"/>
+                <include segmentGroup="ap_dend_4"/>
+                <include segmentGroup="ap_dend_5"/>
+                <include segmentGroup="ap_dend_6"/>
+                <include segmentGroup="ap_dend_7"/>
+                <include segmentGroup="ap_dend_8"/>
+                <include segmentGroup="ap_dend_9"/>
+                <include segmentGroup="ap_dend_10"/>
                 <include segmentGroup="bas_dend_18"/>
-                <include segmentGroup="ap_dend_20"/>
-                <include segmentGroup="ap_dend_21"/>
-                <include segmentGroup="ap_dend_22"/>
-                <include segmentGroup="ap_dend_23"/>
-                <include segmentGroup="ap_dend_24"/>
-                <include segmentGroup="ap_dend_25"/>
-                <include segmentGroup="ap_dend_26"/>
-                <include segmentGroup="ap_dend_27"/>
-                <include segmentGroup="ap_dend_28"/>
-                <include segmentGroup="ap_dend_29"/>
-                <include segmentGroup="bas_dend_31"/>
-                <include segmentGroup="bas_dend_32"/>
-                <include segmentGroup="bas_dend_33"/>
-                <include segmentGroup="bas_dend_34"/>
-                <include segmentGroup="bas_dend_35"/>
-                <include segmentGroup="bas_dend_36"/>
-                <include segmentGroup="bas_dend_37"/>
-                <include segmentGroup="bas_dend_38"/>
-                <include segmentGroup="bas_dend_39"/>
-                <include segmentGroup="bas_dend_40"/>
-                <include segmentGroup="bas_dend_41"/>
-                <include segmentGroup="bas_dend_42"/>
-                <include segmentGroup="ap_dend_43"/>
-                <include segmentGroup="ap_dend_44"/>
-                <include segmentGroup="ap_dend_45"/>
-                <include segmentGroup="ap_dend_46"/>
-                <include segmentGroup="ap_dend_47"/>
-                <include segmentGroup="ap_dend_48"/>
-                <include segmentGroup="ap_dend_49"/>
-                <include segmentGroup="ap_dend_50"/>
-                <include segmentGroup="ap_dend_51"/>
+                <include segmentGroup="bas_dend_19"/>
+                <include segmentGroup="bas_dend_20"/>
+                <include segmentGroup="bas_dend_21"/>
+                <include segmentGroup="bas_dend_22"/>
+                <include segmentGroup="bas_dend_23"/>
+                <include segmentGroup="bas_dend_24"/>
+                <include segmentGroup="bas_dend_25"/>
+                <include segmentGroup="bas_dend_26"/>
+                <include segmentGroup="bas_dend_27"/>
+                <include segmentGroup="bas_dend_28"/>
+                <include segmentGroup="bas_dend_29"/>
+                <include segmentGroup="ap_dend_11"/>
+                <include segmentGroup="ap_dend_12"/>
+                <include segmentGroup="ap_dend_13"/>
+                <include segmentGroup="ap_dend_14"/>
+                <include segmentGroup="ap_dend_15"/>
+                <include segmentGroup="ap_dend_16"/>
+                <include segmentGroup="ap_dend_17"/>
+                <include segmentGroup="ap_dend_18"/>
+                <include segmentGroup="ap_dend_19"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="B4_slide4_1_cell_properties">

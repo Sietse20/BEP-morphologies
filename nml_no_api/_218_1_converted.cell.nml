@@ -9,6 +9,8 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
+
 ########################################
 
 </notes>
@@ -511,7 +513,7 @@ The notes listed below are the notes that were originally contained in the SWC f
             <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_1" neuroLexId="SAO:864921383">
                 <member segment="3"/>
                 <member segment="4"/>
                 <member segment="5"/>
@@ -533,7 +535,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="21"/>
                 <member segment="22"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
                 <member segment="23"/>
                 <member segment="24"/>
                 <member segment="25"/>
@@ -548,7 +550,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="34"/>
                 <member segment="35"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
                 <member segment="36"/>
                 <member segment="37"/>
                 <member segment="38"/>
@@ -560,7 +562,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="44"/>
                 <member segment="45"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
                 <member segment="46"/>
                 <member segment="47"/>
                 <member segment="48"/>
@@ -570,7 +572,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="52"/>
                 <member segment="53"/>
             </segmentGroup>
-            <segmentGroup id="axon_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="axon_1" neuroLexId="SAO:864921383">
                 <member segment="54"/>
                 <member segment="55"/>
                 <member segment="56"/>
@@ -641,38 +643,38 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="121"/>
                 <member segment="122"/>
             </segmentGroup>
-            <segmentGroup id="soma_8" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
-                <include segmentGroup="bas_dend_5"/>
-                <include segmentGroup="bas_dend_6"/>
-                <include segmentGroup="axon_7"/>
-                <include segmentGroup="soma_8"/>
+                <include segmentGroup="axon_1"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="basal_group" neuroLexId="SAO:1079900774">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
-                <include segmentGroup="bas_dend_5"/>
-                <include segmentGroup="bas_dend_6"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
-                <include segmentGroup="soma_8"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="axon_group" neuroLexId="SAO:1770195789">
-                <include segmentGroup="axon_7"/>
+                <include segmentGroup="axon_1"/>
             </segmentGroup>
             <segmentGroup id="dendrite_group" neuroLexId="SAO:1211023249">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
-                <include segmentGroup="bas_dend_5"/>
-                <include segmentGroup="bas_dend_6"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="_218_1_cell_properties">

@@ -78,11 +78,11 @@ def validate_eden(file):
 
 # Validate files in directory:
 
-directory = "nml_no_api"
-total_files, total_errors = validate_neuroml_files(directory)
-print(f'\nFrom {total_files} total files: \nValidation successful for {total_files - total_errors} files. \nValidation unsuccessful for {total_errors} files.')
+# directory = "nml_no_api"
+# total_files, total_errors = validate_neuroml_files(directory)
+# print(f'\nFrom {total_files} total files: \nValidation successful for {total_files - total_errors} files. \nValidation unsuccessful for {total_errors} files.')
 
 # Validate single file:
 
-# file = "GGN_20170309_sc_converted.cell.nml"
-# validate_single_file(file)
+file = "Case1_new_converted.cell.nml"
+validate_single_file(file)

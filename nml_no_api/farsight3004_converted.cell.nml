@@ -9,6 +9,8 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
+
 ########################################
 
 </notes>
@@ -3435,7 +3437,7 @@ The notes listed below are the notes that were originally contained in the SWC f
             <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_1" neuroLexId="SAO:864921383">
                 <member segment="28"/>
                 <member segment="29"/>
                 <member segment="30"/>
@@ -3496,7 +3498,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="85"/>
                 <member segment="86"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_2" neuroLexId="SAO:864921383">
                 <member segment="119"/>
                 <member segment="120"/>
                 <member segment="121"/>
@@ -3541,7 +3543,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="160"/>
                 <member segment="161"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_3" neuroLexId="SAO:864921383">
                 <member segment="162"/>
                 <member segment="163"/>
                 <member segment="164"/>
@@ -3595,7 +3597,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="212"/>
                 <member segment="213"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_4" neuroLexId="SAO:864921383">
                 <member segment="248"/>
                 <member segment="249"/>
                 <member segment="250"/>
@@ -3619,7 +3621,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="268"/>
                 <member segment="269"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_5" neuroLexId="SAO:864921383">
                 <member segment="270"/>
                 <member segment="271"/>
                 <member segment="272"/>
@@ -3637,7 +3639,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="284"/>
                 <member segment="285"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_8" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_6" neuroLexId="SAO:864921383">
                 <member segment="289"/>
                 <member segment="290"/>
                 <member segment="291"/>
@@ -3649,7 +3651,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="297"/>
                 <member segment="298"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_9" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_7" neuroLexId="SAO:864921383">
                 <member segment="318"/>
                 <member segment="319"/>
                 <member segment="320"/>
@@ -3671,7 +3673,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="336"/>
                 <member segment="337"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_10" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_8" neuroLexId="SAO:864921383">
                 <member segment="338"/>
                 <member segment="339"/>
                 <member segment="340"/>
@@ -3684,7 +3686,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="347"/>
                 <member segment="348"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_11" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_9" neuroLexId="SAO:864921383">
                 <member segment="349"/>
                 <member segment="350"/>
                 <member segment="351"/>
@@ -3703,7 +3705,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="364"/>
                 <member segment="365"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_12" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_10" neuroLexId="SAO:864921383">
                 <member segment="427"/>
                 <member segment="428"/>
                 <member segment="429"/>
@@ -3744,7 +3746,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="464"/>
                 <member segment="465"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_13" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_11" neuroLexId="SAO:864921383">
                 <member segment="466"/>
                 <member segment="467"/>
                 <member segment="468"/>
@@ -3754,7 +3756,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="472"/>
                 <member segment="473"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_14" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_12" neuroLexId="SAO:864921383">
                 <member segment="502"/>
                 <member segment="503"/>
                 <member segment="504"/>
@@ -3770,7 +3772,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="514"/>
                 <member segment="515"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_15" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_13" neuroLexId="SAO:864921383">
                 <member segment="535"/>
                 <member segment="536"/>
                 <member segment="537"/>
@@ -3794,7 +3796,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="555"/>
                 <member segment="556"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_16" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_14" neuroLexId="SAO:864921383">
                 <member segment="570"/>
                 <member segment="571"/>
                 <member segment="572"/>
@@ -3816,7 +3818,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="588"/>
                 <member segment="589"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_17" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_15" neuroLexId="SAO:864921383">
                 <member segment="646"/>
                 <member segment="647"/>
                 <member segment="648"/>
@@ -3875,7 +3877,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="701"/>
                 <member segment="702"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_18" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_16" neuroLexId="SAO:864921383">
                 <member segment="703"/>
                 <member segment="704"/>
                 <member segment="705"/>
@@ -3894,7 +3896,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="718"/>
                 <member segment="719"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_19" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_17" neuroLexId="SAO:864921383">
                 <member segment="738"/>
                 <member segment="739"/>
                 <member segment="740"/>
@@ -3942,7 +3944,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="782"/>
                 <member segment="783"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_20" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_18" neuroLexId="SAO:864921383">
                 <member segment="784"/>
                 <member segment="785"/>
                 <member segment="786"/>
@@ -3979,7 +3981,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="817"/>
                 <member segment="818"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_21" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_19" neuroLexId="SAO:864921383">
                 <member segment="819"/>
                 <member segment="820"/>
                 <member segment="821"/>
@@ -4007,7 +4009,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="843"/>
                 <member segment="844"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_22" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_20" neuroLexId="SAO:864921383">
                 <member segment="845"/>
                 <member segment="846"/>
                 <member segment="847"/>
@@ -4018,16 +4020,16 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="852"/>
                 <member segment="853"/>
             </segmentGroup>
-            <segmentGroup id="soma_23" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_24" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_21" neuroLexId="SAO:864921383">
                 <member segment="3"/>
                 <member segment="4"/>
                 <member segment="5"/>
                 <member segment="6"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_25" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_22" neuroLexId="SAO:864921383">
                 <member segment="7"/>
                 <member segment="8"/>
                 <member segment="9"/>
@@ -4045,14 +4047,14 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="21"/>
                 <member segment="22"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_26" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_23" neuroLexId="SAO:864921383">
                 <member segment="23"/>
                 <member segment="24"/>
                 <member segment="25"/>
                 <member segment="26"/>
                 <member segment="27"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_27" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_24" neuroLexId="SAO:864921383">
                 <member segment="87"/>
                 <member segment="88"/>
                 <member segment="89"/>
@@ -4086,7 +4088,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="117"/>
                 <member segment="118"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_28" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_25" neuroLexId="SAO:864921383">
                 <member segment="214"/>
                 <member segment="215"/>
                 <member segment="216"/>
@@ -4122,12 +4124,12 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="246"/>
                 <member segment="247"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_29" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_26" neuroLexId="SAO:864921383">
                 <member segment="286"/>
                 <member segment="287"/>
                 <member segment="288"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_30" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_27" neuroLexId="SAO:864921383">
                 <member segment="299"/>
                 <member segment="300"/>
                 <member segment="301"/>
@@ -4143,14 +4145,14 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="311"/>
                 <member segment="312"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_31" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_28" neuroLexId="SAO:864921383">
                 <member segment="313"/>
                 <member segment="314"/>
                 <member segment="315"/>
                 <member segment="316"/>
                 <member segment="317"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_32" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_29" neuroLexId="SAO:864921383">
                 <member segment="366"/>
                 <member segment="367"/>
                 <member segment="368"/>
@@ -4213,7 +4215,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="425"/>
                 <member segment="426"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_33" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_30" neuroLexId="SAO:864921383">
                 <member segment="474"/>
                 <member segment="475"/>
                 <member segment="476"/>
@@ -4230,7 +4232,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="487"/>
                 <member segment="488"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_34" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_31" neuroLexId="SAO:864921383">
                 <member segment="489"/>
                 <member segment="490"/>
                 <member segment="491"/>
@@ -4245,7 +4247,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="500"/>
                 <member segment="501"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_35" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_32" neuroLexId="SAO:864921383">
                 <member segment="516"/>
                 <member segment="517"/>
                 <member segment="518"/>
@@ -4266,7 +4268,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="533"/>
                 <member segment="534"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_36" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_33" neuroLexId="SAO:864921383">
                 <member segment="557"/>
                 <member segment="558"/>
                 <member segment="559"/>
@@ -4281,7 +4283,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="568"/>
                 <member segment="569"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_37" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_34" neuroLexId="SAO:864921383">
                 <member segment="590"/>
                 <member segment="591"/>
                 <member segment="592"/>
@@ -4339,7 +4341,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <member segment="644"/>
                 <member segment="645"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_38" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_35" neuroLexId="SAO:864921383">
                 <member segment="720"/>
                 <member segment="721"/>
                 <member segment="722"/>
@@ -4362,6 +4364,8 @@ The notes listed below are the notes that were originally contained in the SWC f
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
+                <include segmentGroup="custom_7_1"/>
+                <include segmentGroup="custom_7_2"/>
                 <include segmentGroup="custom_7_3"/>
                 <include segmentGroup="custom_7_4"/>
                 <include segmentGroup="custom_7_5"/>
@@ -4380,9 +4384,10 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <include segmentGroup="custom_7_18"/>
                 <include segmentGroup="custom_7_19"/>
                 <include segmentGroup="custom_7_20"/>
+                <include segmentGroup="soma_3"/>
                 <include segmentGroup="custom_7_21"/>
                 <include segmentGroup="custom_7_22"/>
-                <include segmentGroup="soma_23"/>
+                <include segmentGroup="custom_7_23"/>
                 <include segmentGroup="custom_7_24"/>
                 <include segmentGroup="custom_7_25"/>
                 <include segmentGroup="custom_7_26"/>
@@ -4395,16 +4400,15 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <include segmentGroup="custom_7_33"/>
                 <include segmentGroup="custom_7_34"/>
                 <include segmentGroup="custom_7_35"/>
-                <include segmentGroup="custom_7_36"/>
-                <include segmentGroup="custom_7_37"/>
-                <include segmentGroup="custom_7_38"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
-                <include segmentGroup="soma_23"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="custom_7_group">
+                <include segmentGroup="custom_7_1"/>
+                <include segmentGroup="custom_7_2"/>
                 <include segmentGroup="custom_7_3"/>
                 <include segmentGroup="custom_7_4"/>
                 <include segmentGroup="custom_7_5"/>
@@ -4425,6 +4429,7 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <include segmentGroup="custom_7_20"/>
                 <include segmentGroup="custom_7_21"/>
                 <include segmentGroup="custom_7_22"/>
+                <include segmentGroup="custom_7_23"/>
                 <include segmentGroup="custom_7_24"/>
                 <include segmentGroup="custom_7_25"/>
                 <include segmentGroup="custom_7_26"/>
@@ -4437,9 +4442,6 @@ The notes listed below are the notes that were originally contained in the SWC f
                 <include segmentGroup="custom_7_33"/>
                 <include segmentGroup="custom_7_34"/>
                 <include segmentGroup="custom_7_35"/>
-                <include segmentGroup="custom_7_36"/>
-                <include segmentGroup="custom_7_37"/>
-                <include segmentGroup="custom_7_38"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="farsight3004_cell_properties">

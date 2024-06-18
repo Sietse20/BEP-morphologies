@@ -9,6 +9,7 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
 SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
 Original fileName:C:\NMO_dev\data_proc\King_Final\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.CNG.swc
 
@@ -20,6 +21,7 @@ Irregularities and fixes documented in C:\NMO_dev\data_proc\Temp_LMeasure\B4-CA1
 
 SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
 Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
+
 
 ########################################
 
@@ -3191,7 +3193,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
             <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_1" neuroLexId="SAO:864921383">
                 <member segment="13"/>
                 <member segment="14"/>
                 <member segment="15"/>
@@ -3211,12 +3213,12 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="29"/>
                 <member segment="30"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_2" neuroLexId="SAO:864921383">
                 <member segment="39"/>
                 <member segment="40"/>
                 <member segment="41"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_3" neuroLexId="SAO:864921383">
                 <member segment="42"/>
                 <member segment="43"/>
                 <member segment="44"/>
@@ -3228,17 +3230,17 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="50"/>
                 <member segment="51"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_4" neuroLexId="SAO:864921383">
                 <member segment="56"/>
                 <member segment="57"/>
                 <member segment="58"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_5" neuroLexId="SAO:864921383">
                 <member segment="67"/>
                 <member segment="68"/>
                 <member segment="69"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_8" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_6" neuroLexId="SAO:864921383">
                 <member segment="70"/>
                 <member segment="71"/>
                 <member segment="72"/>
@@ -3252,7 +3254,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="80"/>
                 <member segment="81"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_9" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_7" neuroLexId="SAO:864921383">
                 <member segment="82"/>
                 <member segment="83"/>
                 <member segment="84"/>
@@ -3262,7 +3264,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="88"/>
                 <member segment="89"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_10" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_8" neuroLexId="SAO:864921383">
                 <member segment="94"/>
                 <member segment="95"/>
                 <member segment="96"/>
@@ -3275,7 +3277,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="103"/>
                 <member segment="104"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_11" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_9" neuroLexId="SAO:864921383">
                 <member segment="105"/>
                 <member segment="106"/>
                 <member segment="107"/>
@@ -3287,7 +3289,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="113"/>
                 <member segment="114"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_12" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_10" neuroLexId="SAO:864921383">
                 <member segment="115"/>
                 <member segment="116"/>
                 <member segment="117"/>
@@ -3295,19 +3297,19 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="119"/>
                 <member segment="120"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_13" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_11" neuroLexId="SAO:864921383">
                 <member segment="123"/>
                 <member segment="124"/>
                 <member segment="125"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_14" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_12" neuroLexId="SAO:864921383">
                 <member segment="130"/>
                 <member segment="131"/>
                 <member segment="132"/>
                 <member segment="133"/>
                 <member segment="134"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_15" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_13" neuroLexId="SAO:864921383">
                 <member segment="136"/>
                 <member segment="137"/>
                 <member segment="138"/>
@@ -3318,7 +3320,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="143"/>
                 <member segment="144"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_16" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_14" neuroLexId="SAO:864921383">
                 <member segment="145"/>
                 <member segment="146"/>
                 <member segment="147"/>
@@ -3347,7 +3349,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="170"/>
                 <member segment="171"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_17" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_15" neuroLexId="SAO:864921383">
                 <member segment="172"/>
                 <member segment="173"/>
                 <member segment="174"/>
@@ -3355,20 +3357,20 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="176"/>
                 <member segment="177"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_18" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_16" neuroLexId="SAO:864921383">
                 <member segment="178"/>
                 <member segment="179"/>
                 <member segment="180"/>
                 <member segment="181"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_19" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_17" neuroLexId="SAO:864921383">
                 <member segment="186"/>
                 <member segment="187"/>
                 <member segment="188"/>
                 <member segment="189"/>
                 <member segment="190"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_20" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_18" neuroLexId="SAO:864921383">
                 <member segment="191"/>
                 <member segment="192"/>
                 <member segment="193"/>
@@ -3379,7 +3381,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="198"/>
                 <member segment="199"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_21" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_19" neuroLexId="SAO:864921383">
                 <member segment="200"/>
                 <member segment="201"/>
                 <member segment="202"/>
@@ -3393,7 +3395,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="210"/>
                 <member segment="211"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_22" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_20" neuroLexId="SAO:864921383">
                 <member segment="214"/>
                 <member segment="215"/>
                 <member segment="216"/>
@@ -3421,19 +3423,19 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="238"/>
                 <member segment="239"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_23" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_21" neuroLexId="SAO:864921383">
                 <member segment="241"/>
                 <member segment="242"/>
                 <member segment="243"/>
                 <member segment="244"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_24" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_22" neuroLexId="SAO:864921383">
                 <member segment="249"/>
                 <member segment="250"/>
                 <member segment="251"/>
                 <member segment="252"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_25" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_23" neuroLexId="SAO:864921383">
                 <member segment="265"/>
                 <member segment="266"/>
                 <member segment="267"/>
@@ -3443,14 +3445,14 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="271"/>
                 <member segment="272"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_26" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_24" neuroLexId="SAO:864921383">
                 <member segment="273"/>
                 <member segment="274"/>
                 <member segment="275"/>
                 <member segment="276"/>
                 <member segment="277"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_27" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_25" neuroLexId="SAO:864921383">
                 <member segment="284"/>
                 <member segment="285"/>
                 <member segment="286"/>
@@ -3460,14 +3462,14 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="290"/>
                 <member segment="291"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_28" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_26" neuroLexId="SAO:864921383">
                 <member segment="292"/>
                 <member segment="293"/>
                 <member segment="294"/>
                 <member segment="295"/>
                 <member segment="296"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_29" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_27" neuroLexId="SAO:864921383">
                 <member segment="297"/>
                 <member segment="298"/>
                 <member segment="299"/>
@@ -3491,7 +3493,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="317"/>
                 <member segment="318"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_30" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_28" neuroLexId="SAO:864921383">
                 <member segment="321"/>
                 <member segment="322"/>
                 <member segment="323"/>
@@ -3506,12 +3508,12 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="332"/>
                 <member segment="333"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_31" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_29" neuroLexId="SAO:864921383">
                 <member segment="338"/>
                 <member segment="339"/>
                 <member segment="340"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_32" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_30" neuroLexId="SAO:864921383">
                 <member segment="347"/>
                 <member segment="348"/>
                 <member segment="349"/>
@@ -3519,7 +3521,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="351"/>
                 <member segment="352"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_33" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_31" neuroLexId="SAO:864921383">
                 <member segment="353"/>
                 <member segment="354"/>
                 <member segment="355"/>
@@ -3545,7 +3547,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="375"/>
                 <member segment="376"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_34" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_32" neuroLexId="SAO:864921383">
                 <member segment="379"/>
                 <member segment="380"/>
                 <member segment="381"/>
@@ -3558,7 +3560,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="388"/>
                 <member segment="389"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_35" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_33" neuroLexId="SAO:864921383">
                 <member segment="390"/>
                 <member segment="391"/>
                 <member segment="392"/>
@@ -3566,7 +3568,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="394"/>
                 <member segment="395"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_36" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_34" neuroLexId="SAO:864921383">
                 <member segment="396"/>
                 <member segment="397"/>
                 <member segment="398"/>
@@ -3581,19 +3583,19 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="407"/>
                 <member segment="408"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_37" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_35" neuroLexId="SAO:864921383">
                 <member segment="417"/>
                 <member segment="418"/>
                 <member segment="419"/>
                 <member segment="420"/>
                 <member segment="421"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_38" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_36" neuroLexId="SAO:864921383">
                 <member segment="425"/>
                 <member segment="426"/>
                 <member segment="427"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_39" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_37" neuroLexId="SAO:864921383">
                 <member segment="428"/>
                 <member segment="429"/>
                 <member segment="430"/>
@@ -3612,7 +3614,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="443"/>
                 <member segment="444"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_40" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_38" neuroLexId="SAO:864921383">
                 <member segment="466"/>
                 <member segment="467"/>
                 <member segment="468"/>
@@ -3620,7 +3622,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="470"/>
                 <member segment="471"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_41" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_39" neuroLexId="SAO:864921383">
                 <member segment="472"/>
                 <member segment="473"/>
                 <member segment="474"/>
@@ -3649,7 +3651,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="497"/>
                 <member segment="498"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_42" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_40" neuroLexId="SAO:864921383">
                 <member segment="499"/>
                 <member segment="500"/>
                 <member segment="501"/>
@@ -3667,7 +3669,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="513"/>
                 <member segment="514"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_43" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_41" neuroLexId="SAO:864921383">
                 <member segment="515"/>
                 <member segment="516"/>
                 <member segment="517"/>
@@ -3677,7 +3679,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="521"/>
                 <member segment="522"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_44" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_42" neuroLexId="SAO:864921383">
                 <member segment="533"/>
                 <member segment="534"/>
                 <member segment="535"/>
@@ -3685,7 +3687,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="537"/>
                 <member segment="538"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_45" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_43" neuroLexId="SAO:864921383">
                 <member segment="539"/>
                 <member segment="540"/>
                 <member segment="541"/>
@@ -3694,7 +3696,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="544"/>
                 <member segment="545"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_46" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_44" neuroLexId="SAO:864921383">
                 <member segment="556"/>
                 <member segment="557"/>
                 <member segment="558"/>
@@ -3708,19 +3710,19 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="566"/>
                 <member segment="567"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_47" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_45" neuroLexId="SAO:864921383">
                 <member segment="580"/>
                 <member segment="581"/>
                 <member segment="582"/>
                 <member segment="583"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_48" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_46" neuroLexId="SAO:864921383">
                 <member segment="584"/>
                 <member segment="585"/>
                 <member segment="586"/>
                 <member segment="587"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_49" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_47" neuroLexId="SAO:864921383">
                 <member segment="591"/>
                 <member segment="592"/>
                 <member segment="593"/>
@@ -3762,19 +3764,19 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="629"/>
                 <member segment="630"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_50" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_48" neuroLexId="SAO:864921383">
                 <member segment="631"/>
                 <member segment="632"/>
                 <member segment="633"/>
                 <member segment="634"/>
                 <member segment="635"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_51" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_49" neuroLexId="SAO:864921383">
                 <member segment="636"/>
                 <member segment="637"/>
                 <member segment="638"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_52" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_50" neuroLexId="SAO:864921383">
                 <member segment="639"/>
                 <member segment="640"/>
                 <member segment="641"/>
@@ -3795,7 +3797,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="656"/>
                 <member segment="657"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_53" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_51" neuroLexId="SAO:864921383">
                 <member segment="660"/>
                 <member segment="661"/>
                 <member segment="662"/>
@@ -3808,7 +3810,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="669"/>
                 <member segment="670"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_54" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_52" neuroLexId="SAO:864921383">
                 <member segment="671"/>
                 <member segment="672"/>
                 <member segment="673"/>
@@ -3828,7 +3830,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="687"/>
                 <member segment="688"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_55" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_53" neuroLexId="SAO:864921383">
                 <member segment="705"/>
                 <member segment="706"/>
                 <member segment="707"/>
@@ -3841,7 +3843,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="714"/>
                 <member segment="715"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_56" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_54" neuroLexId="SAO:864921383">
                 <member segment="718"/>
                 <member segment="719"/>
                 <member segment="720"/>
@@ -3861,7 +3863,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="734"/>
                 <member segment="735"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_57" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_55" neuroLexId="SAO:864921383">
                 <member segment="736"/>
                 <member segment="737"/>
                 <member segment="738"/>
@@ -3871,7 +3873,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="742"/>
                 <member segment="743"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_58" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_56" neuroLexId="SAO:864921383">
                 <member segment="746"/>
                 <member segment="747"/>
                 <member segment="748"/>
@@ -3903,7 +3905,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="774"/>
                 <member segment="775"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_59" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_57" neuroLexId="SAO:864921383">
                 <member segment="776"/>
                 <member segment="777"/>
                 <member segment="778"/>
@@ -3914,37 +3916,37 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="783"/>
                 <member segment="784"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_60" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_58" neuroLexId="SAO:864921383">
                 <member segment="785"/>
                 <member segment="786"/>
                 <member segment="787"/>
                 <member segment="788"/>
                 <member segment="789"/>
             </segmentGroup>
-            <segmentGroup id="soma_61" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_62" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_59" neuroLexId="SAO:864921383">
                 <member segment="3"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_63" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_60" neuroLexId="SAO:864921383">
                 <member segment="4"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_64" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_61" neuroLexId="SAO:864921383">
                 <member segment="5"/>
                 <member segment="6"/>
                 <member segment="7"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_65" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_62" neuroLexId="SAO:864921383">
                 <member segment="8"/>
                 <member segment="9"/>
                 <member segment="10"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_66" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_63" neuroLexId="SAO:864921383">
                 <member segment="11"/>
                 <member segment="12"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_67" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_64" neuroLexId="SAO:864921383">
                 <member segment="31"/>
                 <member segment="32"/>
                 <member segment="33"/>
@@ -3954,81 +3956,81 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="37"/>
                 <member segment="38"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_68" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_65" neuroLexId="SAO:864921383">
                 <member segment="52"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_69" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_66" neuroLexId="SAO:864921383">
                 <member segment="53"/>
                 <member segment="54"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_70" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_67" neuroLexId="SAO:864921383">
                 <member segment="55"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_71" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_68" neuroLexId="SAO:864921383">
                 <member segment="59"/>
                 <member segment="60"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_72" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_69" neuroLexId="SAO:864921383">
                 <member segment="61"/>
                 <member segment="62"/>
                 <member segment="63"/>
                 <member segment="64"/>
                 <member segment="65"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_73" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_70" neuroLexId="SAO:864921383">
                 <member segment="66"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_74" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_71" neuroLexId="SAO:864921383">
                 <member segment="90"/>
                 <member segment="91"/>
                 <member segment="92"/>
                 <member segment="93"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_75" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_72" neuroLexId="SAO:864921383">
                 <member segment="121"/>
                 <member segment="122"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_76" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_73" neuroLexId="SAO:864921383">
                 <member segment="126"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_77" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_74" neuroLexId="SAO:864921383">
                 <member segment="127"/>
                 <member segment="128"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_78" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_75" neuroLexId="SAO:864921383">
                 <member segment="129"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_79" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_76" neuroLexId="SAO:864921383">
                 <member segment="135"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_80" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_77" neuroLexId="SAO:864921383">
                 <member segment="182"/>
                 <member segment="183"/>
                 <member segment="184"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_81" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_78" neuroLexId="SAO:864921383">
                 <member segment="185"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_82" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_79" neuroLexId="SAO:864921383">
                 <member segment="212"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_83" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_80" neuroLexId="SAO:864921383">
                 <member segment="213"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_84" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_81" neuroLexId="SAO:864921383">
                 <member segment="240"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_85" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_82" neuroLexId="SAO:864921383">
                 <member segment="245"/>
                 <member segment="246"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_86" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_83" neuroLexId="SAO:864921383">
                 <member segment="247"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_87" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_84" neuroLexId="SAO:864921383">
                 <member segment="248"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_88" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_85" neuroLexId="SAO:864921383">
                 <member segment="253"/>
                 <member segment="254"/>
                 <member segment="255"/>
@@ -4036,7 +4038,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="257"/>
                 <member segment="258"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_89" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_86" neuroLexId="SAO:864921383">
                 <member segment="259"/>
                 <member segment="260"/>
                 <member segment="261"/>
@@ -4044,27 +4046,27 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="263"/>
                 <member segment="264"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_90" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_87" neuroLexId="SAO:864921383">
                 <member segment="278"/>
                 <member segment="279"/>
                 <member segment="280"/>
                 <member segment="281"/>
                 <member segment="282"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_91" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_88" neuroLexId="SAO:864921383">
                 <member segment="283"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_92" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_89" neuroLexId="SAO:864921383">
                 <member segment="319"/>
                 <member segment="320"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_93" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_90" neuroLexId="SAO:864921383">
                 <member segment="334"/>
                 <member segment="335"/>
                 <member segment="336"/>
                 <member segment="337"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_94" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_91" neuroLexId="SAO:864921383">
                 <member segment="341"/>
                 <member segment="342"/>
                 <member segment="343"/>
@@ -4072,14 +4074,14 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="345"/>
                 <member segment="346"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_95" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_92" neuroLexId="SAO:864921383">
                 <member segment="377"/>
                 <member segment="378"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_96" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_93" neuroLexId="SAO:864921383">
                 <member segment="409"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_97" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_94" neuroLexId="SAO:864921383">
                 <member segment="410"/>
                 <member segment="411"/>
                 <member segment="412"/>
@@ -4088,24 +4090,24 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="415"/>
                 <member segment="416"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_98" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_95" neuroLexId="SAO:864921383">
                 <member segment="422"/>
                 <member segment="423"/>
                 <member segment="424"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_99" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_96" neuroLexId="SAO:864921383">
                 <member segment="445"/>
                 <member segment="446"/>
                 <member segment="447"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_100" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_97" neuroLexId="SAO:864921383">
                 <member segment="448"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_101" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_98" neuroLexId="SAO:864921383">
                 <member segment="449"/>
                 <member segment="450"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_102" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_99" neuroLexId="SAO:864921383">
                 <member segment="451"/>
                 <member segment="452"/>
                 <member segment="453"/>
@@ -4122,7 +4124,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="464"/>
                 <member segment="465"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_103" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_100" neuroLexId="SAO:864921383">
                 <member segment="523"/>
                 <member segment="524"/>
                 <member segment="525"/>
@@ -4134,25 +4136,25 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="531"/>
                 <member segment="532"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_104" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_101" neuroLexId="SAO:864921383">
                 <member segment="546"/>
                 <member segment="547"/>
                 <member segment="548"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_105" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_102" neuroLexId="SAO:864921383">
                 <member segment="549"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_106" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_103" neuroLexId="SAO:864921383">
                 <member segment="550"/>
                 <member segment="551"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_107" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_104" neuroLexId="SAO:864921383">
                 <member segment="552"/>
                 <member segment="553"/>
                 <member segment="554"/>
                 <member segment="555"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_108" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_105" neuroLexId="SAO:864921383">
                 <member segment="568"/>
                 <member segment="569"/>
                 <member segment="570"/>
@@ -4166,20 +4168,20 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="578"/>
                 <member segment="579"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_109" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_106" neuroLexId="SAO:864921383">
                 <member segment="588"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_110" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_107" neuroLexId="SAO:864921383">
                 <member segment="589"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_111" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_108" neuroLexId="SAO:864921383">
                 <member segment="590"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_112" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_109" neuroLexId="SAO:864921383">
                 <member segment="658"/>
                 <member segment="659"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_113" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_110" neuroLexId="SAO:864921383">
                 <member segment="689"/>
                 <member segment="690"/>
                 <member segment="691"/>
@@ -4197,19 +4199,21 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <member segment="703"/>
                 <member segment="704"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_114" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_111" neuroLexId="SAO:864921383">
                 <member segment="716"/>
                 <member segment="717"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_115" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_112" neuroLexId="SAO:864921383">
                 <member segment="744"/>
             </segmentGroup>
-            <segmentGroup id="custom_7_116" neuroLexId="SAO:864921383">
+            <segmentGroup id="custom_7_113" neuroLexId="SAO:864921383">
                 <member segment="745"/>
             </segmentGroup>
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
+                <include segmentGroup="custom_7_1"/>
+                <include segmentGroup="custom_7_2"/>
                 <include segmentGroup="custom_7_3"/>
                 <include segmentGroup="custom_7_4"/>
                 <include segmentGroup="custom_7_5"/>
@@ -4266,9 +4270,10 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <include segmentGroup="custom_7_56"/>
                 <include segmentGroup="custom_7_57"/>
                 <include segmentGroup="custom_7_58"/>
+                <include segmentGroup="soma_3"/>
                 <include segmentGroup="custom_7_59"/>
                 <include segmentGroup="custom_7_60"/>
-                <include segmentGroup="soma_61"/>
+                <include segmentGroup="custom_7_61"/>
                 <include segmentGroup="custom_7_62"/>
                 <include segmentGroup="custom_7_63"/>
                 <include segmentGroup="custom_7_64"/>
@@ -4321,16 +4326,15 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <include segmentGroup="custom_7_111"/>
                 <include segmentGroup="custom_7_112"/>
                 <include segmentGroup="custom_7_113"/>
-                <include segmentGroup="custom_7_114"/>
-                <include segmentGroup="custom_7_115"/>
-                <include segmentGroup="custom_7_116"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
-                <include segmentGroup="soma_61"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="custom_7_group">
+                <include segmentGroup="custom_7_1"/>
+                <include segmentGroup="custom_7_2"/>
                 <include segmentGroup="custom_7_3"/>
                 <include segmentGroup="custom_7_4"/>
                 <include segmentGroup="custom_7_5"/>
@@ -4389,6 +4393,7 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <include segmentGroup="custom_7_58"/>
                 <include segmentGroup="custom_7_59"/>
                 <include segmentGroup="custom_7_60"/>
+                <include segmentGroup="custom_7_61"/>
                 <include segmentGroup="custom_7_62"/>
                 <include segmentGroup="custom_7_63"/>
                 <include segmentGroup="custom_7_64"/>
@@ -4441,9 +4446,6 @@ Original fileName:C:\NMO_dev\data_proc\Source_Temp1//B4-CA1-L-B63x1zCell2ACR.swc
                 <include segmentGroup="custom_7_111"/>
                 <include segmentGroup="custom_7_112"/>
                 <include segmentGroup="custom_7_113"/>
-                <include segmentGroup="custom_7_114"/>
-                <include segmentGroup="custom_7_115"/>
-                <include segmentGroup="custom_7_116"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="B4_CA1_L_B63x1zCell2ACR_cell_properties">

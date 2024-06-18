@@ -9,8 +9,10 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
 SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
 Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_MPD_8_FT_10_XYZ_Sorted-swc_N3DFix-swc_1.CNG.swc
+
 
 ########################################
 
@@ -2906,7 +2908,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
             <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_1" neuroLexId="SAO:864921383">
                 <member segment="105"/>
                 <member segment="106"/>
                 <member segment="107"/>
@@ -2944,7 +2946,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="139"/>
                 <member segment="140"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
                 <member segment="141"/>
                 <member segment="142"/>
                 <member segment="143"/>
@@ -2959,7 +2961,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="152"/>
                 <member segment="153"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
                 <member segment="154"/>
                 <member segment="155"/>
                 <member segment="156"/>
@@ -2973,7 +2975,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="164"/>
                 <member segment="165"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
                 <member segment="215"/>
                 <member segment="216"/>
                 <member segment="217"/>
@@ -3002,7 +3004,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="240"/>
                 <member segment="241"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
                 <member segment="242"/>
                 <member segment="243"/>
                 <member segment="244"/>
@@ -3038,7 +3040,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="274"/>
                 <member segment="275"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
                 <member segment="276"/>
                 <member segment="277"/>
                 <member segment="278"/>
@@ -3075,7 +3077,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="309"/>
                 <member segment="310"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
                 <member segment="311"/>
                 <member segment="312"/>
                 <member segment="313"/>
@@ -3083,7 +3085,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="315"/>
                 <member segment="316"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
                 <member segment="317"/>
                 <member segment="318"/>
                 <member segment="319"/>
@@ -3122,7 +3124,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="352"/>
                 <member segment="353"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
                 <member segment="391"/>
                 <member segment="392"/>
                 <member segment="393"/>
@@ -3180,7 +3182,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="445"/>
                 <member segment="446"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
                 <member segment="453"/>
                 <member segment="454"/>
                 <member segment="455"/>
@@ -3228,7 +3230,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="497"/>
                 <member segment="498"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
                 <member segment="499"/>
                 <member segment="500"/>
                 <member segment="501"/>
@@ -3240,7 +3242,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="507"/>
                 <member segment="508"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
                 <member segment="563"/>
                 <member segment="564"/>
                 <member segment="565"/>
@@ -3272,7 +3274,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="591"/>
                 <member segment="592"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
                 <member segment="593"/>
                 <member segment="594"/>
                 <member segment="595"/>
@@ -3297,7 +3299,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="614"/>
                 <member segment="615"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
                 <member segment="634"/>
                 <member segment="635"/>
                 <member segment="636"/>
@@ -3338,7 +3340,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="671"/>
                 <member segment="672"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_17" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
                 <member segment="673"/>
                 <member segment="674"/>
                 <member segment="675"/>
@@ -3351,7 +3353,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="682"/>
                 <member segment="683"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
                 <member segment="684"/>
                 <member segment="685"/>
                 <member segment="686"/>
@@ -3390,10 +3392,10 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="719"/>
                 <member segment="720"/>
             </segmentGroup>
-            <segmentGroup id="soma_19" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_20" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_17" neuroLexId="SAO:864921383">
                 <member segment="3"/>
                 <member segment="4"/>
                 <member segment="5"/>
@@ -3404,7 +3406,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="10"/>
                 <member segment="11"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_21" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
                 <member segment="12"/>
                 <member segment="13"/>
                 <member segment="14"/>
@@ -3498,10 +3500,10 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="102"/>
                 <member segment="103"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_22" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_19" neuroLexId="SAO:864921383">
                 <member segment="104"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_23" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_20" neuroLexId="SAO:864921383">
                 <member segment="166"/>
                 <member segment="167"/>
                 <member segment="168"/>
@@ -3520,7 +3522,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="181"/>
                 <member segment="182"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_24" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_21" neuroLexId="SAO:864921383">
                 <member segment="183"/>
                 <member segment="184"/>
                 <member segment="185"/>
@@ -3531,7 +3533,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="190"/>
                 <member segment="191"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_25" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_22" neuroLexId="SAO:864921383">
                 <member segment="192"/>
                 <member segment="193"/>
                 <member segment="194"/>
@@ -3540,7 +3542,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="197"/>
                 <member segment="198"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_26" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_23" neuroLexId="SAO:864921383">
                 <member segment="199"/>
                 <member segment="200"/>
                 <member segment="201"/>
@@ -3558,7 +3560,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="213"/>
                 <member segment="214"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_27" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_24" neuroLexId="SAO:864921383">
                 <member segment="354"/>
                 <member segment="355"/>
                 <member segment="356"/>
@@ -3597,7 +3599,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="389"/>
                 <member segment="390"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_28" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_25" neuroLexId="SAO:864921383">
                 <member segment="447"/>
                 <member segment="448"/>
                 <member segment="449"/>
@@ -3605,7 +3607,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="451"/>
                 <member segment="452"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_29" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_26" neuroLexId="SAO:864921383">
                 <member segment="509"/>
                 <member segment="510"/>
                 <member segment="511"/>
@@ -3620,7 +3622,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="520"/>
                 <member segment="521"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_30" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_27" neuroLexId="SAO:864921383">
                 <member segment="522"/>
                 <member segment="523"/>
                 <member segment="524"/>
@@ -3663,14 +3665,14 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <member segment="561"/>
                 <member segment="562"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_31" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_28" neuroLexId="SAO:864921383">
                 <member segment="616"/>
                 <member segment="617"/>
                 <member segment="618"/>
                 <member segment="619"/>
                 <member segment="620"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_32" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_29" neuroLexId="SAO:864921383">
                 <member segment="621"/>
                 <member segment="622"/>
                 <member segment="623"/>
@@ -3688,6 +3690,8 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -3702,9 +3706,10 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <include segmentGroup="bas_dend_14"/>
                 <include segmentGroup="bas_dend_15"/>
                 <include segmentGroup="bas_dend_16"/>
+                <include segmentGroup="soma_3"/>
                 <include segmentGroup="bas_dend_17"/>
                 <include segmentGroup="bas_dend_18"/>
-                <include segmentGroup="soma_19"/>
+                <include segmentGroup="bas_dend_19"/>
                 <include segmentGroup="bas_dend_20"/>
                 <include segmentGroup="bas_dend_21"/>
                 <include segmentGroup="bas_dend_22"/>
@@ -3715,11 +3720,10 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <include segmentGroup="bas_dend_27"/>
                 <include segmentGroup="bas_dend_28"/>
                 <include segmentGroup="bas_dend_29"/>
-                <include segmentGroup="bas_dend_30"/>
-                <include segmentGroup="bas_dend_31"/>
-                <include segmentGroup="bas_dend_32"/>
             </segmentGroup>
             <segmentGroup id="basal_group" neuroLexId="SAO:1079900774">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -3736,6 +3740,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <include segmentGroup="bas_dend_16"/>
                 <include segmentGroup="bas_dend_17"/>
                 <include segmentGroup="bas_dend_18"/>
+                <include segmentGroup="bas_dend_19"/>
                 <include segmentGroup="bas_dend_20"/>
                 <include segmentGroup="bas_dend_21"/>
                 <include segmentGroup="bas_dend_22"/>
@@ -3746,16 +3751,15 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <include segmentGroup="bas_dend_27"/>
                 <include segmentGroup="bas_dend_28"/>
                 <include segmentGroup="bas_dend_29"/>
-                <include segmentGroup="bas_dend_30"/>
-                <include segmentGroup="bas_dend_31"/>
-                <include segmentGroup="bas_dend_32"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
-                <include segmentGroup="soma_19"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="dendrite_group" neuroLexId="SAO:1211023249">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -3772,6 +3776,7 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <include segmentGroup="bas_dend_16"/>
                 <include segmentGroup="bas_dend_17"/>
                 <include segmentGroup="bas_dend_18"/>
+                <include segmentGroup="bas_dend_19"/>
                 <include segmentGroup="bas_dend_20"/>
                 <include segmentGroup="bas_dend_21"/>
                 <include segmentGroup="bas_dend_22"/>
@@ -3782,9 +3787,6 @@ Original fileName:C:\NMO_dev\data_proc\Yayon_Soreq_Final\Source_Temp1//Cell_090_
                 <include segmentGroup="bas_dend_27"/>
                 <include segmentGroup="bas_dend_28"/>
                 <include segmentGroup="bas_dend_29"/>
-                <include segmentGroup="bas_dend_30"/>
-                <include segmentGroup="bas_dend_31"/>
-                <include segmentGroup="bas_dend_32"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="Cell_090_MPD_8_FT_10_XYZ_Sorted_swc_N3DFix_swc_1_cell_properties">

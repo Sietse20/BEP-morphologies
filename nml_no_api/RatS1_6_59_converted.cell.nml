@@ -9,12 +9,14 @@ The notes listed below are the notes that were originally contained in the SWC f
 ****************************************
 
 ########################################
+
 Original file RatS1-6-59.swc edited using StdSwc version 1.31 on 10/14/14.
 Irregularities and fixes documented in RatS1-6-59.swc.std.  See StdSwc1.31.doc for more information.
 
 Neurolucida to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
 Original fileName:C:\Users\praveen\Desktop\DataProcessing\CurrentArchives\Processing\Franca\SWC conversion\RatS1-6-59.asc
 The original file has a single soma contour that is averaged into 3 soma points
+
 ########################################
 
 </notes>
@@ -221,7 +223,7 @@ The original file has a single soma contour that is averaged into 3 soma points
             <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_1" neuroLexId="SAO:864921383">
                 <member segment="3"/>
                 <member segment="4"/>
                 <member segment="5"/>
@@ -240,7 +242,7 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="18"/>
                 <member segment="19"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
                 <member segment="20"/>
                 <member segment="21"/>
                 <member segment="22"/>
@@ -263,46 +265,46 @@ The original file has a single soma contour that is averaged into 3 soma points
                 <member segment="39"/>
                 <member segment="40"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
                 <member segment="41"/>
                 <member segment="42"/>
                 <member segment="43"/>
                 <member segment="44"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
                 <member segment="45"/>
                 <member segment="46"/>
                 <member segment="47"/>
                 <member segment="48"/>
             </segmentGroup>
-            <segmentGroup id="soma_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
-                <include segmentGroup="bas_dend_5"/>
-                <include segmentGroup="bas_dend_6"/>
-                <include segmentGroup="soma_7"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="basal_group" neuroLexId="SAO:1079900774">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
-                <include segmentGroup="bas_dend_5"/>
-                <include segmentGroup="bas_dend_6"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
-                <include segmentGroup="soma_7"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="dendrite_group" neuroLexId="SAO:1211023249">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
-                <include segmentGroup="bas_dend_5"/>
-                <include segmentGroup="bas_dend_6"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="RatS1_6_59_cell_properties">

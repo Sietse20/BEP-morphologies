@@ -84,5 +84,5 @@ def validate_eden(file):
 
 # Validate single file:
 
-file = "Case1_new_converted.cell.nml"
+file = "mock_path\skel_20073_sorted_converted.cell.nml"
 validate_single_file(file)

@@ -97,5 +97,5 @@ def visualise(file):
     viz.show()
 
 # Example usage
-file = 'Case1_new_converted.cell.nml'
+file = 'mock_path\skel_20073_sorted_converted.cell.nml'
 visualise(file)

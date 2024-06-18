@@ -799,7 +799,7 @@ def print_statistics(d, segment_groups):
 #         print(f'Error converting {swc_file}: {e}\n')
 
 
-# Converting from a map:
+## Converting from a map:
 
 # path_swc = 'swc_no_api'
 # path_nml = 'nml_no_api'
@@ -840,7 +840,7 @@ def print_statistics(d, segment_groups):
 
 # Converting single file:
 
-path = 'swc_no_api/GGN_20170309_sc.swc'
+path = "swc_no_api\\neuron_nmo_1\eyewire\CNG version\skel_20073_sorted.CNG.swc"
 output_dir = ''
 
 swc_file = os.path.basename(path)

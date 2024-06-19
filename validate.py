@@ -2,23 +2,26 @@ import subprocess
 import glob
 import os
 import eden_simulator
+import time
+import pprint
 
 
 def validate_single_file(file_path):
     try:
-        # Construct the command for each file
-        command = ['pynml', '-validate', file_path]
+        file_name = os.path.basename(file_path)
 
-        # Execute the command
+        # Construct the command and execute it
+        command = ['pynml', '-validate', file_path]
         result = subprocess.run(command, capture_output=True, text=True, check=True)
 
+        # Validate files with eden
         validate_eden(file_path)
 
         # Print the output
         if result.returncode == 0:
-            print(f"Validation succeeded for file: {os.path.basename(file_path)}")
+            print(f"Validation succeeded for file: {file_name}")
         else:
-            print(f"Validation failed for file: {os.path.basename(file_path)}")
+            print(f"Validation failed for file: {file_name}")
             print(result.stdout)
             print(result.stderr)
 
@@ -26,50 +29,61 @@ def validate_single_file(file_path):
         # Handle errors in the command execution
         print(f"An error occurred while validating the file: {file_path}")
         print(f"Error: {e.stderr}")
-    except FileNotFoundError:
-        print("pynml is not installed or not found in the PATH.")
 
 
-def validate_neuroml_files(directory):
-    # Find all .cell.nml files in the specified directory
-    file_pattern = os.path.join(directory, '*.cell.nml')
+def clear_screen():
+    if os.name == 'nt':  # For Windows
+        os.system('cls')
+    else:  # For Unix-based systems (Linux, macOS)
+        os.system('clear')
+
+
+def validate_directory(directory):
+    # Find all .nml files in the specified directory
+    file_pattern = os.path.join(directory, '*.nml')
     files = glob.glob(file_pattern)
 
     if not files:
-        print("No .cell.nml files found in the directory.")
+        print("No .nml files found in the directory.")
         return
-    
-    total_files = len(files)
-    total_errors = 0
 
-    for file_path in files:
+    unsuccessful_files = {}
+
+    for i, file_path in enumerate(files):
         try:
-            # Construct the command for each file
-            command = ['pynml', '-validate', file_path]
+            file_name = os.path.basename(file_path)
+            clear_screen()
+            print(f'Validating {file_name}... (File {i + 1}/{len(files)})')
 
-            # Execute the command
+            # Construct the command and execute it
+            command = ['pynml', '-validate', file_path]
             result = subprocess.run(command, capture_output=True, text=True, check=True)
 
+            # Validate files with eden
             validate_eden(file_path)
 
             # Print the output
             if result.returncode == 0:
-                print(f"Validation succeeded for file: {os.path.basename(file_path)}")
+                print(f"Validation succeeded for file: {file_name}")
             else:
-                print(f"Validation failed for file: {os.path.basename(file_path)}")
-                print(result.stdout)
-                print(result.stderr)
-                total_errors += 1
+                unsuccessful_files[file_name] = {"stdout": result.stdout,
+                                                 "stderr": result.stderr}
+                print(f"Validation failed for file: {file_name}")
+                time.sleep(2)
 
         except subprocess.CalledProcessError as e:
-            # Handle errors in the command execution
-            print(f"An error occurred while validating the file: {file_path}")
-            print(f"Error: {e.stderr}")
-            total_errors += 1
-        except FileNotFoundError:
-            print("pynml is not installed or not found in the PATH.")
-    
-    return total_files, total_errors
+            unsuccessful_files[file_name] = {"error": e}
+            print(f"An error occurred while validating the file: {file_name}")
+            time.sleep(2)
+
+    # Printing summary:
+    clear_screen()
+    print(f"Validation succeeded for {len(files) - len(unsuccessful_files)} files.")
+    print(f"Validation failed for {len(unsuccessful_files)} files.")
+
+    if unsuccessful_files:
+        print("\nErrors per file:")
+        pprint.pprint(unsuccessful_files)
 
 
 def validate_eden(file):
@@ -77,12 +91,12 @@ def validate_eden(file):
 
 
 # Validate files in directory:
+directory = "test_nml"
 
-# directory = "nml_api"
-# total_files, total_errors = validate_neuroml_files(directory)
-# print(f'\nFrom {total_files} total files: \nValidation successful for {total_files - total_errors} files. \nValidation unsuccessful for {total_errors} files.')
+validate_directory(directory)
+
 
 # Validate single file:
+# file = "_10_6vkd1m_converted.cell.nml"
 
-file = "nml_api\_10_6vkd1m_converted.cell.nml"
-validate_single_file(file)
+# validate_single_file(file)

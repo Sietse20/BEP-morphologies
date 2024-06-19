@@ -5,7 +5,7 @@ import trimesh
 def visualise(file):
     cell_dict = eden_simulator.experimental.explain_cell(file)
     cell_info = cell_dict[list(cell_dict.keys())[0]]
-
+    print(cell_info.keys())
     viz = trimesh.Trimesh(vertices=cell_info['mesh_vertices'],
                           faces=cell_info['mesh_faces'])
 
@@ -13,5 +13,5 @@ def visualise(file):
     viz.show()
 
 
-file = "nml_api\_1_13_7_converted.cell.nml"
+file = "_10_6vkd1m_converted.cell.nml"
 visualise(file)

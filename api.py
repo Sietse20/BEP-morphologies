@@ -27,13 +27,15 @@ def fetch_swc_file(neuron_id):
 
     if time.time() - start < 1/3:
         time.sleep(1/3 - (time.time() - start))
-        
+
+    start2 = time.time()
     swc_response = requests.get(swc_url)
-    
+
     if swc_response.status_code != 200:
-        raise("Failed to fetch SWC file:", swc_response.text)
-    
-    time.sleep(1/3)
+        raise ("Failed to fetch SWC file:", swc_response.text)
+
+    if time.time() - start2 < 1/3:
+        time.sleep(1/3 - (time.time() - start2))
 
     return swc_response.content, swc_name
 
@@ -44,13 +46,13 @@ def create_swc_file(neuron_id, output_dir=''):
 
     Input: - neuron_id: id of neuron on neuromorpho.org (int)
            - output_dir (optional):  directory in which the SWC file will be saved (str)
-    
+
     Returns: name of the newly created neuroml file (str)
     '''
     start_fetch = time.time()
     swc_content, swc_name = fetch_swc_file(neuron_id)
     fetch_time = time.time() - start_fetch
-    
+
     start_write = time.time()
     if swc_content:
         if output_dir:
@@ -58,14 +60,15 @@ def create_swc_file(neuron_id, output_dir=''):
                 f.write(swc_content)
             write_time = time.time() - start_write
             return f"{output_dir}/{swc_name}.swc", fetch_time, write_time
-        
+
         else:
             with open(f"{swc_name}.swc", "wb") as f:
                 f.write(swc_content)
-            write_time = time.time() - start_write    
+            write_time = time.time() - start_write
             return f"{swc_name}.swc", fetch_time, write_time
 
 
 if __name__ == "__main__":
     neuron_id = 2
-    create_swc_file(neuron_id, '')
+    output_dir = ''
+    create_swc_file(neuron_id, output_dir=output_dir)

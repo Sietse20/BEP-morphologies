@@ -394,12 +394,12 @@ def process_segments(d, children, root, Cell_ID, errors):
     This function incorporates the segments into the neuroml morphology object.
 
     Input: - d: dict {point (int): (type, x_coord, y_coord, z_coord, radius, parent)}
-           - children: dict {point (int): [children]} 
+           - children: dict {point (int): [children]}
            - root: point without parent (int)
-           - cell_ID: unique ID of neuroml cell (str) 
+           - cell_ID: unique ID of neuroml cell (str)
            - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
 
-    Returns: nml_mor: neuroml morphology object    
+    Returns: nml_mor: neuroml morphology object
     '''
 
     nml_mor = neuroml.Morphology(id=f'{Cell_ID}_morphology')
@@ -540,7 +540,7 @@ def define_biophysical_properties(nml_cell, Cell_ID):
     This function defines some basic biophysical properties for the given cell.
 
     Input: - nml_cell: neuroml cell object
-           - Cell_ID: unique ID of neuroml cell (str) 
+           - Cell_ID: unique ID of neuroml cell (str)
 
     Returns: nml_cell: neuroml cell object
     '''
@@ -611,7 +611,7 @@ def convert_directory(path_swc, path_nml, print_errors):
     summary['Unsuccessful conversions'] = 0
     summary['Errors'] = {}
     errors_per_file = {}
-    unsuccessful_files = []
+    unsuccessful_files = {}
 
     # Use os.walk to iterate through all directories and subdirectories
     file_paths = []
@@ -631,7 +631,7 @@ def convert_directory(path_swc, path_nml, print_errors):
         except ConversionException as e:
             errors = e.errors
             summary['Unsuccessful conversions'] += 1
-            unsuccessful_files.append(swc_file)
+            unsuccessful_files[swc_file] = errors
             print(f'Error converting {swc_file}: {e}')
             time.sleep(2)
         except Exception as e:
@@ -649,10 +649,13 @@ def convert_directory(path_swc, path_nml, print_errors):
 
     clear_screen()
     print('Conversion complete!')
-    print("Summary:")
+    print("\nSummary:")
     pprint.pprint(summary)
+
     if unsuccessful_files:
-        print("The conversion was unsuccessful for files", unsuccessful_files)
+        print("\nErrors for unsuccessfully converted files:")
+        for file, errors in unsuccessful_files.items():
+            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
 
     if print_errors:
         print("\nErrors per file:")
@@ -675,7 +678,7 @@ def convert_api(range_api, output_dir_swc, output_dir_nml, print_errors):
     summary['Successful conversions'] = 0
     summary['Unsuccessful conversions'] = 0
     summary['Errors'] = {}
-    unsuccessful_files = []
+    unsuccessful_files = {}
     errors_per_file = {}
     fetch_time = []
     conversion_time = []
@@ -699,7 +702,7 @@ def convert_api(range_api, output_dir_swc, output_dir_nml, print_errors):
             except ConversionException as e:
                 errors = e.errors
                 summary['Unsuccessful conversions'] += 1
-                unsuccessful_files.append(swc_file)
+                unsuccessful_files[swc_file] = errors
                 print(f'Error converting {swc_file}: {e}\n')
                 time.sleep(2)
             except Exception as e:
@@ -716,23 +719,26 @@ def convert_api(range_api, output_dir_swc, output_dir_nml, print_errors):
                     summary['Errors'][error] += 1
 
         except Exception:
-            if 'Unsuccessful fetch' not in summary['Errors']:
-                summary['Errors']['Unsuccessful fetch'] = 1
+            if 'Unsuccessful fetch' not in summary:
+                summary['Unsuccessful fetch'] = 1
             else:
-                summary['Errors']['Unsuccessful fetch'] += 1
+                summary['Unsuccessful fetch'] += 1
             print(f"Unsuccessful fetch for neuron {neuron_id}")
             time.sleep(2)
 
     clear_screen()
     print('Conversion complete!')
-    print("Summary:")
+    print("\nSummary:")
     pprint.pprint(summary)
+
     print(f"\nAverage fetching time: {np.mean(fetch_time)}")
     print(f"Average writing time: {np.mean(write_time)}")
     print(f"Average conversion time: {np.mean(conversion_time)}")
 
     if unsuccessful_files:
-        print("The conversion was unsuccessful for files", unsuccessful_files)
+        print("\nErrors for unsuccessfully converted files:")
+        for file, errors in unsuccessful_files.items():
+            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
 
     if print_errors:
         print("\nErrors per file:")
@@ -742,20 +748,20 @@ def convert_api(range_api, output_dir_swc, output_dir_nml, print_errors):
 
 if __name__ == '__main__':
     # Converting single file:
-    # path = ""
+    # path = "swc_api\\10-6vkd1m.swc"
     # output_dir = ''
 
     # convert_file(path, output_dir)
 
     # Converting from a directory:
-    # path_swc = "swc_no_api"
-    # path_nml = 'nml_no_api'
+    # path_swc = "test_swc"
+    # path_nml = 'test_nml'
     # print_errors = False
 
     # convert_directory(path_swc, path_nml, print_errors)
 
     # Converting from the API:
-    range_api = (4000, 5000)
+    range_api = (500, 700)
     output_dir_swc = 'swc_api'
     output_dir_nml = 'nml_api'
     print_errors = False

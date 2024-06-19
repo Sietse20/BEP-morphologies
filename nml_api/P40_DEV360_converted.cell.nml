@@ -1,0 +1,284 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.3.xsd" id="P40_DEV360">
+    <cell id="P40_DEV360_cell">
+        <notes>
+
+****************************************
+This NeuroML file was converted from SWC to NeuroML format by Sietse Reissenweber's converter.                      
+For any questions regarding the conversion, you can email me at s.reissenweber12@gmail.com.                      
+The notes listed below are the notes that were originally contained in the SWC file.
+****************************************
+
+########################################
+
+SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
+Original fileName:/cng_repository/Soumya/LM_Automated_Testing_Enviornment/Test_Lm3.7.2_10062011_SG_Linux_NMOConv6/TestResults/LoadTest/test_10/P40-DEV360.CNG.swc
+
+Original file P40_DEV360.swc edited by Duncan Donohue using StdSwc version 1.31 on 2/27/08.
+Irregularities and fixes documented in P40_DEV360.swc.std.  See StdSwc1.31.doc for more information.
+
+Neurolucida to SWC conversion from L-Measure. R. Scorcioni: rscorcio@gmu.edu
+Original fileName:C:\Users\Duncan\Desktop\Dat files to convert\Furtak 181 asc\P40_DEV360.ASC
+
+
+########################################
+
+</notes>
+        <morphology id="P40_DEV360_cell_morphology">
+            <segment id="0" name="Comp_0">
+                <proximal x="-0.78" y="-0.33" z="0.0" diameter="5.04524"/>
+                <distal x="-0.78" y="-0.33" z="0.0" diameter="5.04524"/>
+            </segment>
+            <segment id="1" name="Comp_1">
+                <parent segment="0"/>
+                <distal x="-0.78" y="2.18" z="0.0" diameter="5.04524"/>
+            </segment>
+            <segment id="2" name="Comp_2">
+                <parent segment="0"/>
+                <distal x="-0.78" y="-2.85" z="0.0" diameter="5.04524"/>
+            </segment>
+            <segment id="3" name="Comp_3">
+                <parent segment="0"/>
+                <distal x="0.0" y="1.67" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="4" name="Comp_4">
+                <parent segment="3"/>
+                <distal x="0.0" y="4.68" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="5" name="Comp_5">
+                <parent segment="4"/>
+                <distal x="3.35" y="6.69" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="6" name="Comp_6">
+                <parent segment="5"/>
+                <distal x="3.35" y="9.02" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="7" name="Comp_7">
+                <parent segment="6"/>
+                <distal x="3.68" y="9.69" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="8" name="Comp_8">
+                <parent segment="7"/>
+                <distal x="4.01" y="10.37" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="9" name="Comp_9">
+                <parent segment="4"/>
+                <distal x="-0.33" y="8.69" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="10" name="Comp_10">
+                <parent segment="0"/>
+                <distal x="1.34" y="0.33" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="11" name="Comp_11">
+                <parent segment="10"/>
+                <distal x="2.34" y="0.33" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="12" name="Comp_12">
+                <parent segment="11"/>
+                <distal x="2.68" y="0.67" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="13" name="Comp_13">
+                <parent segment="12"/>
+                <distal x="3.35" y="1.0" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="14" name="Comp_14">
+                <parent segment="13"/>
+                <distal x="6.36" y="1.0" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="15" name="Comp_15">
+                <parent segment="14"/>
+                <distal x="6.69" y="1.34" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="16" name="Comp_16">
+                <parent segment="0"/>
+                <distal x="-0.67" y="-2.68" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="17" name="Comp_17">
+                <parent segment="16"/>
+                <distal x="3.35" y="-4.68" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="18" name="Comp_18">
+                <parent segment="17"/>
+                <distal x="4.85" y="-4.01" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="19" name="Comp_19">
+                <parent segment="18"/>
+                <distal x="6.36" y="-3.35" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="20" name="Comp_20">
+                <parent segment="18"/>
+                <distal x="6.69" y="-6.36" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="21" name="Comp_21">
+                <parent segment="17"/>
+                <distal x="3.68" y="-8.36" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="22" name="Comp_22">
+                <parent segment="0"/>
+                <distal x="-1.34" y="-2.34" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="23" name="Comp_23">
+                <parent segment="22"/>
+                <distal x="-1.34" y="-2.0" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="24" name="Comp_24">
+                <parent segment="23"/>
+                <distal x="-1.34" y="-6.02" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="25" name="Comp_25">
+                <parent segment="24"/>
+                <distal x="0.0" y="-10.03" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="26" name="Comp_26">
+                <parent segment="24"/>
+                <distal x="-3.01" y="-10.03" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="27" name="Comp_27">
+                <parent segment="0"/>
+                <distal x="-2.34" y="0.33" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="28" name="Comp_28">
+                <parent segment="27"/>
+                <distal x="-5.01" y="0.67" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="29" name="Comp_29">
+                <parent segment="28"/>
+                <distal x="-5.35" y="1.0" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="30" name="Comp_30">
+                <parent segment="29"/>
+                <distal x="-5.69" y="1.0" z="2.12" diameter="1.34"/>
+            </segment>
+            <segment id="31" name="Comp_31">
+                <parent segment="30"/>
+                <distal x="-7.69" y="4.34" z="2.12" diameter="1.34"/>
+            </segment>
+            <segmentGroup id="soma_1" neuroLexId="SAO:864921383">
+                <member segment="1"/>
+            </segmentGroup>
+            <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
+                <member segment="2"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_1" neuroLexId="SAO:864921383">
+                <member segment="5"/>
+                <member segment="6"/>
+                <member segment="7"/>
+                <member segment="8"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
+                <member segment="9"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
+                <member segment="10"/>
+                <member segment="11"/>
+                <member segment="12"/>
+                <member segment="13"/>
+                <member segment="14"/>
+                <member segment="15"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
+                <member segment="19"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
+                <member segment="20"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
+                <member segment="21"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
+                <member segment="25"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
+                <member segment="26"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
+                <member segment="27"/>
+                <member segment="28"/>
+                <member segment="29"/>
+                <member segment="30"/>
+                <member segment="31"/>
+            </segmentGroup>
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
+                <member segment="0"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
+                <member segment="3"/>
+                <member segment="4"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
+                <member segment="16"/>
+                <member segment="17"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
+                <member segment="18"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
+                <member segment="22"/>
+                <member segment="23"/>
+                <member segment="24"/>
+            </segmentGroup>
+            <segmentGroup id="all">
+                <include segmentGroup="soma_1"/>
+                <include segmentGroup="soma_2"/>
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
+                <include segmentGroup="bas_dend_3"/>
+                <include segmentGroup="bas_dend_4"/>
+                <include segmentGroup="bas_dend_5"/>
+                <include segmentGroup="bas_dend_6"/>
+                <include segmentGroup="bas_dend_7"/>
+                <include segmentGroup="bas_dend_8"/>
+                <include segmentGroup="bas_dend_9"/>
+                <include segmentGroup="soma_3"/>
+                <include segmentGroup="bas_dend_10"/>
+                <include segmentGroup="bas_dend_11"/>
+                <include segmentGroup="bas_dend_12"/>
+                <include segmentGroup="bas_dend_13"/>
+            </segmentGroup>
+            <segmentGroup id="basal_group" neuroLexId="SAO:1079900774">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
+                <include segmentGroup="bas_dend_3"/>
+                <include segmentGroup="bas_dend_4"/>
+                <include segmentGroup="bas_dend_5"/>
+                <include segmentGroup="bas_dend_6"/>
+                <include segmentGroup="bas_dend_7"/>
+                <include segmentGroup="bas_dend_8"/>
+                <include segmentGroup="bas_dend_9"/>
+                <include segmentGroup="bas_dend_10"/>
+                <include segmentGroup="bas_dend_11"/>
+                <include segmentGroup="bas_dend_12"/>
+                <include segmentGroup="bas_dend_13"/>
+            </segmentGroup>
+            <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
+                <include segmentGroup="soma_1"/>
+                <include segmentGroup="soma_2"/>
+                <include segmentGroup="soma_3"/>
+            </segmentGroup>
+            <segmentGroup id="dendrite_group" neuroLexId="SAO:1211023249">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
+                <include segmentGroup="bas_dend_3"/>
+                <include segmentGroup="bas_dend_4"/>
+                <include segmentGroup="bas_dend_5"/>
+                <include segmentGroup="bas_dend_6"/>
+                <include segmentGroup="bas_dend_7"/>
+                <include segmentGroup="bas_dend_8"/>
+                <include segmentGroup="bas_dend_9"/>
+                <include segmentGroup="bas_dend_10"/>
+                <include segmentGroup="bas_dend_11"/>
+                <include segmentGroup="bas_dend_12"/>
+                <include segmentGroup="bas_dend_13"/>
+            </segmentGroup>
+        </morphology>
+        <biophysicalProperties id="P40_DEV360_cell_properties">
+            <membraneProperties>
+                <spikeThresh value="0.0 mV"/>
+                <specificCapacitance value="1.0 uF_per_cm2"/>
+                <initMembPotential value="-60.0 mV"/>
+            </membraneProperties>
+            <intracellularProperties>
+                <resistivity value="0.03 kohm_cm"/>
+            </intracellularProperties>
+        </biophysicalProperties>
+    </cell>
+</neuroml>

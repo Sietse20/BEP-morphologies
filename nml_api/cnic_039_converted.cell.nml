@@ -4416,7 +4416,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
             <segmentGroup id="soma_2" neuroLexId="SAO:864921383">
                 <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_1" neuroLexId="SAO:864921383">
                 <member segment="14"/>
                 <member segment="15"/>
                 <member segment="16"/>
@@ -4435,7 +4435,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="29"/>
                 <member segment="30"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
                 <member segment="31"/>
                 <member segment="32"/>
                 <member segment="33"/>
@@ -4476,7 +4476,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="68"/>
                 <member segment="69"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
                 <member segment="73"/>
                 <member segment="74"/>
                 <member segment="75"/>
@@ -4492,7 +4492,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="85"/>
                 <member segment="86"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_4" neuroLexId="SAO:864921383">
                 <member segment="87"/>
                 <member segment="88"/>
                 <member segment="89"/>
@@ -4513,7 +4513,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="104"/>
                 <member segment="105"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_5" neuroLexId="SAO:864921383">
                 <member segment="112"/>
                 <member segment="113"/>
                 <member segment="114"/>
@@ -4542,7 +4542,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="137"/>
                 <member segment="138"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_6" neuroLexId="SAO:864921383">
                 <member segment="139"/>
                 <member segment="140"/>
                 <member segment="141"/>
@@ -4573,7 +4573,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="166"/>
                 <member segment="167"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_7" neuroLexId="SAO:864921383">
                 <member segment="182"/>
                 <member segment="183"/>
                 <member segment="184"/>
@@ -4597,7 +4597,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="202"/>
                 <member segment="203"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_8" neuroLexId="SAO:864921383">
                 <member segment="204"/>
                 <member segment="205"/>
                 <member segment="206"/>
@@ -4624,7 +4624,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="227"/>
                 <member segment="228"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_9" neuroLexId="SAO:864921383">
                 <member segment="236"/>
                 <member segment="237"/>
                 <member segment="238"/>
@@ -4666,7 +4666,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="274"/>
                 <member segment="275"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_10" neuroLexId="SAO:864921383">
                 <member segment="276"/>
                 <member segment="277"/>
                 <member segment="278"/>
@@ -4676,7 +4676,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="282"/>
                 <member segment="283"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_11" neuroLexId="SAO:864921383">
                 <member segment="312"/>
                 <member segment="313"/>
                 <member segment="314"/>
@@ -4712,7 +4712,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="344"/>
                 <member segment="345"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_12" neuroLexId="SAO:864921383">
                 <member segment="346"/>
                 <member segment="347"/>
                 <member segment="348"/>
@@ -4736,7 +4736,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="366"/>
                 <member segment="367"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_13" neuroLexId="SAO:864921383">
                 <member segment="368"/>
                 <member segment="369"/>
                 <member segment="370"/>
@@ -4745,7 +4745,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="373"/>
                 <member segment="374"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_14" neuroLexId="SAO:864921383">
                 <member segment="375"/>
                 <member segment="376"/>
                 <member segment="377"/>
@@ -4796,7 +4796,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="422"/>
                 <member segment="423"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_17" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_15" neuroLexId="SAO:864921383">
                 <member segment="432"/>
                 <member segment="433"/>
                 <member segment="434"/>
@@ -4851,7 +4851,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="483"/>
                 <member segment="484"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_16" neuroLexId="SAO:864921383">
                 <member segment="487"/>
                 <member segment="488"/>
                 <member segment="489"/>
@@ -4892,7 +4892,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="524"/>
                 <member segment="525"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_19" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_17" neuroLexId="SAO:864921383">
                 <member segment="526"/>
                 <member segment="527"/>
                 <member segment="528"/>
@@ -4936,7 +4936,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="566"/>
                 <member segment="567"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_20" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_1" neuroLexId="SAO:864921383">
                 <member segment="641"/>
                 <member segment="642"/>
                 <member segment="643"/>
@@ -4950,13 +4950,13 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="651"/>
                 <member segment="652"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_21" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_2" neuroLexId="SAO:864921383">
                 <member segment="653"/>
                 <member segment="654"/>
                 <member segment="655"/>
                 <member segment="656"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_22" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_3" neuroLexId="SAO:864921383">
                 <member segment="657"/>
                 <member segment="658"/>
                 <member segment="659"/>
@@ -4974,7 +4974,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="671"/>
                 <member segment="672"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_23" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_4" neuroLexId="SAO:864921383">
                 <member segment="673"/>
                 <member segment="674"/>
                 <member segment="675"/>
@@ -4993,7 +4993,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="688"/>
                 <member segment="689"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_24" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_5" neuroLexId="SAO:864921383">
                 <member segment="690"/>
                 <member segment="691"/>
                 <member segment="692"/>
@@ -5034,7 +5034,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="727"/>
                 <member segment="728"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_25" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_6" neuroLexId="SAO:864921383">
                 <member segment="729"/>
                 <member segment="730"/>
                 <member segment="731"/>
@@ -5050,7 +5050,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="741"/>
                 <member segment="742"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_26" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_7" neuroLexId="SAO:864921383">
                 <member segment="753"/>
                 <member segment="754"/>
                 <member segment="755"/>
@@ -5059,12 +5059,12 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="758"/>
                 <member segment="759"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_27" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_8" neuroLexId="SAO:864921383">
                 <member segment="760"/>
                 <member segment="761"/>
                 <member segment="762"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_28" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_9" neuroLexId="SAO:864921383">
                 <member segment="763"/>
                 <member segment="764"/>
                 <member segment="765"/>
@@ -5083,7 +5083,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="778"/>
                 <member segment="779"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_29" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_10" neuroLexId="SAO:864921383">
                 <member segment="787"/>
                 <member segment="788"/>
                 <member segment="789"/>
@@ -5118,7 +5118,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="818"/>
                 <member segment="819"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_30" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_11" neuroLexId="SAO:864921383">
                 <member segment="820"/>
                 <member segment="821"/>
                 <member segment="822"/>
@@ -5130,7 +5130,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="828"/>
                 <member segment="829"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_31" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_12" neuroLexId="SAO:864921383">
                 <member segment="841"/>
                 <member segment="842"/>
                 <member segment="843"/>
@@ -5142,7 +5142,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="849"/>
                 <member segment="850"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_32" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_13" neuroLexId="SAO:864921383">
                 <member segment="851"/>
                 <member segment="852"/>
                 <member segment="853"/>
@@ -5150,7 +5150,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="855"/>
                 <member segment="856"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_33" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_14" neuroLexId="SAO:864921383">
                 <member segment="857"/>
                 <member segment="858"/>
                 <member segment="859"/>
@@ -5190,7 +5190,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="893"/>
                 <member segment="894"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_34" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_15" neuroLexId="SAO:864921383">
                 <member segment="904"/>
                 <member segment="905"/>
                 <member segment="906"/>
@@ -5213,7 +5213,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="923"/>
                 <member segment="924"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_35" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_16" neuroLexId="SAO:864921383">
                 <member segment="925"/>
                 <member segment="926"/>
                 <member segment="927"/>
@@ -5227,7 +5227,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="935"/>
                 <member segment="936"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_36" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_17" neuroLexId="SAO:864921383">
                 <member segment="953"/>
                 <member segment="954"/>
                 <member segment="955"/>
@@ -5250,7 +5250,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="972"/>
                 <member segment="973"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_37" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_18" neuroLexId="SAO:864921383">
                 <member segment="974"/>
                 <member segment="975"/>
                 <member segment="976"/>
@@ -5269,7 +5269,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="989"/>
                 <member segment="990"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_38" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_19" neuroLexId="SAO:864921383">
                 <member segment="997"/>
                 <member segment="998"/>
                 <member segment="999"/>
@@ -5313,7 +5313,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="1037"/>
                 <member segment="1038"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_39" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_20" neuroLexId="SAO:864921383">
                 <member segment="1039"/>
                 <member segment="1040"/>
                 <member segment="1041"/>
@@ -5323,7 +5323,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="1045"/>
                 <member segment="1046"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_40" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_18" neuroLexId="SAO:864921383">
                 <member segment="1068"/>
                 <member segment="1069"/>
                 <member segment="1070"/>
@@ -5343,7 +5343,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="1084"/>
                 <member segment="1085"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_41" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_19" neuroLexId="SAO:864921383">
                 <member segment="1086"/>
                 <member segment="1087"/>
                 <member segment="1088"/>
@@ -5356,32 +5356,32 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="1095"/>
                 <member segment="1096"/>
             </segmentGroup>
-            <segmentGroup id="soma_42" neuroLexId="SAO:864921383">
+            <segmentGroup id="soma_3" neuroLexId="SAO:864921383">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_43" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_20" neuroLexId="SAO:864921383">
                 <member segment="3"/>
                 <member segment="4"/>
                 <member segment="5"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_44" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_21" neuroLexId="SAO:864921383">
                 <member segment="6"/>
                 <member segment="7"/>
                 <member segment="8"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_45" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_22" neuroLexId="SAO:864921383">
                 <member segment="9"/>
                 <member segment="10"/>
                 <member segment="11"/>
                 <member segment="12"/>
                 <member segment="13"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_46" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_23" neuroLexId="SAO:864921383">
                 <member segment="70"/>
                 <member segment="71"/>
                 <member segment="72"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_47" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_24" neuroLexId="SAO:864921383">
                 <member segment="106"/>
                 <member segment="107"/>
                 <member segment="108"/>
@@ -5389,19 +5389,19 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="110"/>
                 <member segment="111"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_48" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_25" neuroLexId="SAO:864921383">
                 <member segment="168"/>
                 <member segment="169"/>
                 <member segment="170"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_49" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_26" neuroLexId="SAO:864921383">
                 <member segment="171"/>
                 <member segment="172"/>
                 <member segment="173"/>
                 <member segment="174"/>
                 <member segment="175"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_50" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_27" neuroLexId="SAO:864921383">
                 <member segment="176"/>
                 <member segment="177"/>
                 <member segment="178"/>
@@ -5409,7 +5409,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="180"/>
                 <member segment="181"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_51" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_28" neuroLexId="SAO:864921383">
                 <member segment="229"/>
                 <member segment="230"/>
                 <member segment="231"/>
@@ -5418,17 +5418,17 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="234"/>
                 <member segment="235"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_52" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_29" neuroLexId="SAO:864921383">
                 <member segment="284"/>
                 <member segment="285"/>
                 <member segment="286"/>
                 <member segment="287"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_53" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_30" neuroLexId="SAO:864921383">
                 <member segment="288"/>
                 <member segment="289"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_54" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_31" neuroLexId="SAO:864921383">
                 <member segment="290"/>
                 <member segment="291"/>
                 <member segment="292"/>
@@ -5452,7 +5452,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="310"/>
                 <member segment="311"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_55" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_32" neuroLexId="SAO:864921383">
                 <member segment="424"/>
                 <member segment="425"/>
                 <member segment="426"/>
@@ -5462,26 +5462,26 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="430"/>
                 <member segment="431"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_56" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_33" neuroLexId="SAO:864921383">
                 <member segment="485"/>
                 <member segment="486"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_57" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_21" neuroLexId="SAO:864921383">
                 <member segment="568"/>
                 <member segment="569"/>
                 <member segment="570"/>
                 <member segment="571"/>
                 <member segment="572"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_58" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_22" neuroLexId="SAO:864921383">
                 <member segment="573"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_59" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_23" neuroLexId="SAO:864921383">
                 <member segment="574"/>
                 <member segment="575"/>
                 <member segment="576"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_60" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_24" neuroLexId="SAO:864921383">
                 <member segment="577"/>
                 <member segment="578"/>
                 <member segment="579"/>
@@ -5489,7 +5489,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="581"/>
                 <member segment="582"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_61" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_25" neuroLexId="SAO:864921383">
                 <member segment="583"/>
                 <member segment="584"/>
                 <member segment="585"/>
@@ -5503,7 +5503,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="593"/>
                 <member segment="594"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_62" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_26" neuroLexId="SAO:864921383">
                 <member segment="595"/>
                 <member segment="596"/>
                 <member segment="597"/>
@@ -5515,7 +5515,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="603"/>
                 <member segment="604"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_63" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_27" neuroLexId="SAO:864921383">
                 <member segment="605"/>
                 <member segment="606"/>
                 <member segment="607"/>
@@ -5530,17 +5530,17 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="616"/>
                 <member segment="617"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_64" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_28" neuroLexId="SAO:864921383">
                 <member segment="618"/>
                 <member segment="619"/>
                 <member segment="620"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_65" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_29" neuroLexId="SAO:864921383">
                 <member segment="621"/>
                 <member segment="622"/>
                 <member segment="623"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_66" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_30" neuroLexId="SAO:864921383">
                 <member segment="624"/>
                 <member segment="625"/>
                 <member segment="626"/>
@@ -5559,13 +5559,13 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="639"/>
                 <member segment="640"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_67" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_31" neuroLexId="SAO:864921383">
                 <member segment="743"/>
                 <member segment="744"/>
                 <member segment="745"/>
                 <member segment="746"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_68" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_32" neuroLexId="SAO:864921383">
                 <member segment="747"/>
                 <member segment="748"/>
                 <member segment="749"/>
@@ -5573,7 +5573,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="751"/>
                 <member segment="752"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_69" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_33" neuroLexId="SAO:864921383">
                 <member segment="780"/>
                 <member segment="781"/>
                 <member segment="782"/>
@@ -5582,14 +5582,14 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="785"/>
                 <member segment="786"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_70" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_34" neuroLexId="SAO:864921383">
                 <member segment="830"/>
                 <member segment="831"/>
                 <member segment="832"/>
                 <member segment="833"/>
                 <member segment="834"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_71" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_35" neuroLexId="SAO:864921383">
                 <member segment="835"/>
                 <member segment="836"/>
                 <member segment="837"/>
@@ -5597,7 +5597,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="839"/>
                 <member segment="840"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_72" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_36" neuroLexId="SAO:864921383">
                 <member segment="895"/>
                 <member segment="896"/>
                 <member segment="897"/>
@@ -5605,12 +5605,12 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="899"/>
                 <member segment="900"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_73" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_37" neuroLexId="SAO:864921383">
                 <member segment="901"/>
                 <member segment="902"/>
                 <member segment="903"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_74" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_38" neuroLexId="SAO:864921383">
                 <member segment="937"/>
                 <member segment="938"/>
                 <member segment="939"/>
@@ -5628,7 +5628,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="951"/>
                 <member segment="952"/>
             </segmentGroup>
-            <segmentGroup id="ap_dend_75" neuroLexId="SAO:864921383">
+            <segmentGroup id="ap_dend_39" neuroLexId="SAO:864921383">
                 <member segment="991"/>
                 <member segment="992"/>
                 <member segment="993"/>
@@ -5636,7 +5636,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <member segment="995"/>
                 <member segment="996"/>
             </segmentGroup>
-            <segmentGroup id="bas_dend_76" neuroLexId="SAO:864921383">
+            <segmentGroup id="bas_dend_34" neuroLexId="SAO:864921383">
                 <member segment="1047"/>
                 <member segment="1048"/>
                 <member segment="1049"/>
@@ -5662,6 +5662,8 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
             <segmentGroup id="all">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -5677,9 +5679,43 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <include segmentGroup="bas_dend_15"/>
                 <include segmentGroup="bas_dend_16"/>
                 <include segmentGroup="bas_dend_17"/>
+                <include segmentGroup="ap_dend_1"/>
+                <include segmentGroup="ap_dend_2"/>
+                <include segmentGroup="ap_dend_3"/>
+                <include segmentGroup="ap_dend_4"/>
+                <include segmentGroup="ap_dend_5"/>
+                <include segmentGroup="ap_dend_6"/>
+                <include segmentGroup="ap_dend_7"/>
+                <include segmentGroup="ap_dend_8"/>
+                <include segmentGroup="ap_dend_9"/>
+                <include segmentGroup="ap_dend_10"/>
+                <include segmentGroup="ap_dend_11"/>
+                <include segmentGroup="ap_dend_12"/>
+                <include segmentGroup="ap_dend_13"/>
+                <include segmentGroup="ap_dend_14"/>
+                <include segmentGroup="ap_dend_15"/>
+                <include segmentGroup="ap_dend_16"/>
+                <include segmentGroup="ap_dend_17"/>
+                <include segmentGroup="ap_dend_18"/>
+                <include segmentGroup="ap_dend_19"/>
+                <include segmentGroup="ap_dend_20"/>
                 <include segmentGroup="bas_dend_18"/>
                 <include segmentGroup="bas_dend_19"/>
-                <include segmentGroup="ap_dend_20"/>
+                <include segmentGroup="soma_3"/>
+                <include segmentGroup="bas_dend_20"/>
+                <include segmentGroup="bas_dend_21"/>
+                <include segmentGroup="bas_dend_22"/>
+                <include segmentGroup="bas_dend_23"/>
+                <include segmentGroup="bas_dend_24"/>
+                <include segmentGroup="bas_dend_25"/>
+                <include segmentGroup="bas_dend_26"/>
+                <include segmentGroup="bas_dend_27"/>
+                <include segmentGroup="bas_dend_28"/>
+                <include segmentGroup="bas_dend_29"/>
+                <include segmentGroup="bas_dend_30"/>
+                <include segmentGroup="bas_dend_31"/>
+                <include segmentGroup="bas_dend_32"/>
+                <include segmentGroup="bas_dend_33"/>
                 <include segmentGroup="ap_dend_21"/>
                 <include segmentGroup="ap_dend_22"/>
                 <include segmentGroup="ap_dend_23"/>
@@ -5699,45 +5735,11 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <include segmentGroup="ap_dend_37"/>
                 <include segmentGroup="ap_dend_38"/>
                 <include segmentGroup="ap_dend_39"/>
-                <include segmentGroup="bas_dend_40"/>
-                <include segmentGroup="bas_dend_41"/>
-                <include segmentGroup="soma_42"/>
-                <include segmentGroup="bas_dend_43"/>
-                <include segmentGroup="bas_dend_44"/>
-                <include segmentGroup="bas_dend_45"/>
-                <include segmentGroup="bas_dend_46"/>
-                <include segmentGroup="bas_dend_47"/>
-                <include segmentGroup="bas_dend_48"/>
-                <include segmentGroup="bas_dend_49"/>
-                <include segmentGroup="bas_dend_50"/>
-                <include segmentGroup="bas_dend_51"/>
-                <include segmentGroup="bas_dend_52"/>
-                <include segmentGroup="bas_dend_53"/>
-                <include segmentGroup="bas_dend_54"/>
-                <include segmentGroup="bas_dend_55"/>
-                <include segmentGroup="bas_dend_56"/>
-                <include segmentGroup="ap_dend_57"/>
-                <include segmentGroup="ap_dend_58"/>
-                <include segmentGroup="ap_dend_59"/>
-                <include segmentGroup="ap_dend_60"/>
-                <include segmentGroup="ap_dend_61"/>
-                <include segmentGroup="ap_dend_62"/>
-                <include segmentGroup="ap_dend_63"/>
-                <include segmentGroup="ap_dend_64"/>
-                <include segmentGroup="ap_dend_65"/>
-                <include segmentGroup="ap_dend_66"/>
-                <include segmentGroup="ap_dend_67"/>
-                <include segmentGroup="ap_dend_68"/>
-                <include segmentGroup="ap_dend_69"/>
-                <include segmentGroup="ap_dend_70"/>
-                <include segmentGroup="ap_dend_71"/>
-                <include segmentGroup="ap_dend_72"/>
-                <include segmentGroup="ap_dend_73"/>
-                <include segmentGroup="ap_dend_74"/>
-                <include segmentGroup="ap_dend_75"/>
-                <include segmentGroup="bas_dend_76"/>
+                <include segmentGroup="bas_dend_34"/>
             </segmentGroup>
             <segmentGroup id="basal_group" neuroLexId="SAO:1079900774">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -5755,25 +5757,42 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <include segmentGroup="bas_dend_17"/>
                 <include segmentGroup="bas_dend_18"/>
                 <include segmentGroup="bas_dend_19"/>
-                <include segmentGroup="bas_dend_40"/>
-                <include segmentGroup="bas_dend_41"/>
-                <include segmentGroup="bas_dend_43"/>
-                <include segmentGroup="bas_dend_44"/>
-                <include segmentGroup="bas_dend_45"/>
-                <include segmentGroup="bas_dend_46"/>
-                <include segmentGroup="bas_dend_47"/>
-                <include segmentGroup="bas_dend_48"/>
-                <include segmentGroup="bas_dend_49"/>
-                <include segmentGroup="bas_dend_50"/>
-                <include segmentGroup="bas_dend_51"/>
-                <include segmentGroup="bas_dend_52"/>
-                <include segmentGroup="bas_dend_53"/>
-                <include segmentGroup="bas_dend_54"/>
-                <include segmentGroup="bas_dend_55"/>
-                <include segmentGroup="bas_dend_56"/>
-                <include segmentGroup="bas_dend_76"/>
+                <include segmentGroup="bas_dend_20"/>
+                <include segmentGroup="bas_dend_21"/>
+                <include segmentGroup="bas_dend_22"/>
+                <include segmentGroup="bas_dend_23"/>
+                <include segmentGroup="bas_dend_24"/>
+                <include segmentGroup="bas_dend_25"/>
+                <include segmentGroup="bas_dend_26"/>
+                <include segmentGroup="bas_dend_27"/>
+                <include segmentGroup="bas_dend_28"/>
+                <include segmentGroup="bas_dend_29"/>
+                <include segmentGroup="bas_dend_30"/>
+                <include segmentGroup="bas_dend_31"/>
+                <include segmentGroup="bas_dend_32"/>
+                <include segmentGroup="bas_dend_33"/>
+                <include segmentGroup="bas_dend_34"/>
             </segmentGroup>
             <segmentGroup id="apical_group" neuroLexId="SAO:273773228">
+                <include segmentGroup="ap_dend_1"/>
+                <include segmentGroup="ap_dend_2"/>
+                <include segmentGroup="ap_dend_3"/>
+                <include segmentGroup="ap_dend_4"/>
+                <include segmentGroup="ap_dend_5"/>
+                <include segmentGroup="ap_dend_6"/>
+                <include segmentGroup="ap_dend_7"/>
+                <include segmentGroup="ap_dend_8"/>
+                <include segmentGroup="ap_dend_9"/>
+                <include segmentGroup="ap_dend_10"/>
+                <include segmentGroup="ap_dend_11"/>
+                <include segmentGroup="ap_dend_12"/>
+                <include segmentGroup="ap_dend_13"/>
+                <include segmentGroup="ap_dend_14"/>
+                <include segmentGroup="ap_dend_15"/>
+                <include segmentGroup="ap_dend_16"/>
+                <include segmentGroup="ap_dend_17"/>
+                <include segmentGroup="ap_dend_18"/>
+                <include segmentGroup="ap_dend_19"/>
                 <include segmentGroup="ap_dend_20"/>
                 <include segmentGroup="ap_dend_21"/>
                 <include segmentGroup="ap_dend_22"/>
@@ -5794,32 +5813,15 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <include segmentGroup="ap_dend_37"/>
                 <include segmentGroup="ap_dend_38"/>
                 <include segmentGroup="ap_dend_39"/>
-                <include segmentGroup="ap_dend_57"/>
-                <include segmentGroup="ap_dend_58"/>
-                <include segmentGroup="ap_dend_59"/>
-                <include segmentGroup="ap_dend_60"/>
-                <include segmentGroup="ap_dend_61"/>
-                <include segmentGroup="ap_dend_62"/>
-                <include segmentGroup="ap_dend_63"/>
-                <include segmentGroup="ap_dend_64"/>
-                <include segmentGroup="ap_dend_65"/>
-                <include segmentGroup="ap_dend_66"/>
-                <include segmentGroup="ap_dend_67"/>
-                <include segmentGroup="ap_dend_68"/>
-                <include segmentGroup="ap_dend_69"/>
-                <include segmentGroup="ap_dend_70"/>
-                <include segmentGroup="ap_dend_71"/>
-                <include segmentGroup="ap_dend_72"/>
-                <include segmentGroup="ap_dend_73"/>
-                <include segmentGroup="ap_dend_74"/>
-                <include segmentGroup="ap_dend_75"/>
             </segmentGroup>
             <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
                 <include segmentGroup="soma_1"/>
                 <include segmentGroup="soma_2"/>
-                <include segmentGroup="soma_42"/>
+                <include segmentGroup="soma_3"/>
             </segmentGroup>
             <segmentGroup id="dendrite_group" neuroLexId="SAO:1211023249">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
                 <include segmentGroup="bas_dend_3"/>
                 <include segmentGroup="bas_dend_4"/>
                 <include segmentGroup="bas_dend_5"/>
@@ -5835,9 +5837,42 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <include segmentGroup="bas_dend_15"/>
                 <include segmentGroup="bas_dend_16"/>
                 <include segmentGroup="bas_dend_17"/>
+                <include segmentGroup="ap_dend_1"/>
+                <include segmentGroup="ap_dend_2"/>
+                <include segmentGroup="ap_dend_3"/>
+                <include segmentGroup="ap_dend_4"/>
+                <include segmentGroup="ap_dend_5"/>
+                <include segmentGroup="ap_dend_6"/>
+                <include segmentGroup="ap_dend_7"/>
+                <include segmentGroup="ap_dend_8"/>
+                <include segmentGroup="ap_dend_9"/>
+                <include segmentGroup="ap_dend_10"/>
+                <include segmentGroup="ap_dend_11"/>
+                <include segmentGroup="ap_dend_12"/>
+                <include segmentGroup="ap_dend_13"/>
+                <include segmentGroup="ap_dend_14"/>
+                <include segmentGroup="ap_dend_15"/>
+                <include segmentGroup="ap_dend_16"/>
+                <include segmentGroup="ap_dend_17"/>
+                <include segmentGroup="ap_dend_18"/>
+                <include segmentGroup="ap_dend_19"/>
+                <include segmentGroup="ap_dend_20"/>
                 <include segmentGroup="bas_dend_18"/>
                 <include segmentGroup="bas_dend_19"/>
-                <include segmentGroup="ap_dend_20"/>
+                <include segmentGroup="bas_dend_20"/>
+                <include segmentGroup="bas_dend_21"/>
+                <include segmentGroup="bas_dend_22"/>
+                <include segmentGroup="bas_dend_23"/>
+                <include segmentGroup="bas_dend_24"/>
+                <include segmentGroup="bas_dend_25"/>
+                <include segmentGroup="bas_dend_26"/>
+                <include segmentGroup="bas_dend_27"/>
+                <include segmentGroup="bas_dend_28"/>
+                <include segmentGroup="bas_dend_29"/>
+                <include segmentGroup="bas_dend_30"/>
+                <include segmentGroup="bas_dend_31"/>
+                <include segmentGroup="bas_dend_32"/>
+                <include segmentGroup="bas_dend_33"/>
                 <include segmentGroup="ap_dend_21"/>
                 <include segmentGroup="ap_dend_22"/>
                 <include segmentGroup="ap_dend_23"/>
@@ -5857,42 +5892,7 @@ ORIGINAL_SOURCE Computational Neurobiology and Imaging Center
                 <include segmentGroup="ap_dend_37"/>
                 <include segmentGroup="ap_dend_38"/>
                 <include segmentGroup="ap_dend_39"/>
-                <include segmentGroup="bas_dend_40"/>
-                <include segmentGroup="bas_dend_41"/>
-                <include segmentGroup="bas_dend_43"/>
-                <include segmentGroup="bas_dend_44"/>
-                <include segmentGroup="bas_dend_45"/>
-                <include segmentGroup="bas_dend_46"/>
-                <include segmentGroup="bas_dend_47"/>
-                <include segmentGroup="bas_dend_48"/>
-                <include segmentGroup="bas_dend_49"/>
-                <include segmentGroup="bas_dend_50"/>
-                <include segmentGroup="bas_dend_51"/>
-                <include segmentGroup="bas_dend_52"/>
-                <include segmentGroup="bas_dend_53"/>
-                <include segmentGroup="bas_dend_54"/>
-                <include segmentGroup="bas_dend_55"/>
-                <include segmentGroup="bas_dend_56"/>
-                <include segmentGroup="ap_dend_57"/>
-                <include segmentGroup="ap_dend_58"/>
-                <include segmentGroup="ap_dend_59"/>
-                <include segmentGroup="ap_dend_60"/>
-                <include segmentGroup="ap_dend_61"/>
-                <include segmentGroup="ap_dend_62"/>
-                <include segmentGroup="ap_dend_63"/>
-                <include segmentGroup="ap_dend_64"/>
-                <include segmentGroup="ap_dend_65"/>
-                <include segmentGroup="ap_dend_66"/>
-                <include segmentGroup="ap_dend_67"/>
-                <include segmentGroup="ap_dend_68"/>
-                <include segmentGroup="ap_dend_69"/>
-                <include segmentGroup="ap_dend_70"/>
-                <include segmentGroup="ap_dend_71"/>
-                <include segmentGroup="ap_dend_72"/>
-                <include segmentGroup="ap_dend_73"/>
-                <include segmentGroup="ap_dend_74"/>
-                <include segmentGroup="ap_dend_75"/>
-                <include segmentGroup="bas_dend_76"/>
+                <include segmentGroup="bas_dend_34"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="cnic_039_cell_properties">

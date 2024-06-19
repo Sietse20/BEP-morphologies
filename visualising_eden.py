@@ -13,5 +13,5 @@ def visualise(file):
     viz.show()
 
 
-file = "mock_path\skel_20073_sorted_converted.cell.nml"
+file = "nml_api\_1_13_7_converted.cell.nml"
 visualise(file)

@@ -8,6 +8,9 @@ import numpy as np
 import api
 import api2
 import time
+import io
+import sys
+import pickle
 
 
 '''
@@ -28,7 +31,7 @@ If you have any questions about the code, feel free to contact me at s.reissenwe
 '''
 
 
-def construct_nml(path, output_dir=''):
+def construct_nml(input_data, output_dir=''):
     '''
     This function is the big function that calls all helper functions to construct the neuroml file.
 
@@ -41,18 +44,37 @@ def construct_nml(path, output_dir=''):
 
     errors = {}
 
-    filename = os.path.basename(path).split('.')[0]
+    if isinstance(input_data, tuple):
+        filename = input_data[0]
+        input = input_data[1]
+    else:
+        filename = os.path.basename(input_data).split('.')[0]
+        input = input_data
     filename = change_filename(filename, errors)
     cell_ID = f"{filename}_cell"
     nml_doc = neuroml.NeuroMLDocument(id=filename)
     nml_cell = neuroml.Cell(id=cell_ID)
+    start = time.time()
+    d, comments = open_and_split(input, errors)
+    open_and_split_time = time.time() - start
 
-    d, comments = open_and_split(path, errors)
     make_notes(comments, nml_cell)
+    start = time.time()
     n, children, type_seg, root = classify_types_branches_and_leafs(d, errors)
+    classify_types_branches_and_leafs_time = time.time() - start
+
+    start = time.time()
     segmentGroups = find_segments(d, n)
+    find_segments_time = time.time() - start
+
+    start = time.time()
     nml_mor = process_segments(d, children, root, cell_ID, errors)
+    process_segments_time = time.time() - start
+
+    start = time.time()
     nml_cell = process_cables(segmentGroups, type_seg, nml_mor, nml_cell)
+    process_cables_time = time.time() - start
+
     nml_cell = define_biophysical_properties(nml_cell, cell_ID)
 
     nml_doc.cells.append(nml_cell)
@@ -125,7 +147,7 @@ def log_error(errors, error_type, occurrence=1, extra_info=None, fix=None, stop=
         raise ConversionException(error_type, errors)
 
 
-def open_and_split(path, errors):
+def open_and_split(input_data, errors):
     '''
     This function takes a (path to an) SWC file and creates a dictionary with necessary information to generate the neuroml file.
 
@@ -143,7 +165,13 @@ def open_and_split(path, errors):
     invalid_lines = []
     soma_detected = False  # Used for checking if any soma samples are present
 
-    with open(path, 'r+') as f:
+    if isinstance(input_data, bytes):
+        f = io.BytesIO(input_data)
+        f = io.TextIOWrapper(f, encoding='utf-8')
+    else:
+        f = open(input_data, 'r+')
+
+    with f:
         for line in f:
             line_nr += 1
             if not line:
@@ -265,12 +293,18 @@ def classify_types_branches_and_leafs(d, errors):
     endpoints = []
     internal_points = []
 
+    children_count = {point: 0 for point in d}
+
     for point, info in d.items():
-        # Create dict n:
-        number_of_children = 0
-        for info2 in d.values():
-            if info2[5] == point:
-                number_of_children += 1
+        parent = info[5]
+        if parent in children_count:
+            children_count[parent] += 1
+        else:
+            children_count[parent] = 1
+
+    for point, info in d.items():
+        # Create dict n
+        number_of_children = children_count[point]
         if number_of_children == 0:
             n[0].append(point)
         elif number_of_children == 1:
@@ -308,6 +342,11 @@ def classify_types_branches_and_leafs(d, errors):
 
         children[point] = []
 
+    # Create dict children:
+    for point, info in d.items():
+        if point != root:
+            children[info[5]].append(point)
+
     # Check for endpoints with zero radius
     if endpoints:
         log_error(errors, "Endpoint of zero radius detected", occurrence=len(endpoints), extra_info=f"Points {', '.join(map(str, endpoints))}", fix=f"Changed radius to small number {0.000001}")
@@ -315,11 +354,6 @@ def classify_types_branches_and_leafs(d, errors):
     # Check for internal points with zero radius
     if internal_points:
         log_error(errors, "Internal point of zero radius detected", occurrence=len(internal_points), extra_info=f"Points {', '.join(map(str, internal_points))}", fix=f"Changed radius to small number {0.000001}")
-
-    # Create dict children:
-    for point, info in d.items():
-        if point != root:
-            children[info[5]].append(point)
 
     return n, children, type_seg, root
 
@@ -575,10 +609,11 @@ def convert_file(path, output_dir):
     This function converts a single file to a neuroml file and saves it to an optionally specified output directory.
     It prints a conversion message and the error dictionary.
     '''
-
+    start = time.time()
     swc_file = os.path.basename(path)
+
     try:
-        nml_file, errors = construct_nml(path, output_dir=output_dir)
+        nml_file, errors, open_and_split_time, classify_types_branches_and_leafs_time, find_segments_time, process_segments_time, process_cables_time = construct_nml(path, output_dir=output_dir)
         print(f'Converted {swc_file} to the following file: {nml_file}')
         if errors:
             print(json.dumps(errors, indent=2, separators=(',', ': ')))
@@ -587,6 +622,10 @@ def convert_file(path, output_dir):
         print(json.dumps(e.errors, indent=2, separators=(',', ': ')))
     except Exception as e:
         print(f'Error converting {swc_file}: {e}')
+
+    total_time = time.time() - start
+    print(f"Total time: {total_time}")
+    print(f"open_and_split_time: {open_and_split_time} \nclassify_types_branches_and_leafs_time: {classify_types_branches_and_leafs_time} \nfind_segments_time: {find_segments_time} \nprocess_segments_time: {process_segments_time} \nprocess_cables_time: {process_cables_time}")
 
 
 # Converting from a map:
@@ -693,7 +732,7 @@ def convert_api_neuronid(range_api, output_dir_swc, output_dir_nml, print_errors
             swc_file = os.path.basename(path)
             clear_screen()
             print(f'Converting {swc_file}... (File {i + 1}/{len(range(*range_api))})')
-            
+
             try:
                 start_conversion = time.time()
                 nml_file, errors = construct_nml(path, output_dir=output_dir_nml)
@@ -746,7 +785,13 @@ def convert_api_neuronid(range_api, output_dir_swc, output_dir_nml, print_errors
             print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
 
 
-def convert_api_bulk(page_range, size, output_dir_swc, output_dir_nml, print_errors):
+def clear_line(line_number):
+    # Move cursor to the beginning of the specified line and clear it
+    sys.stdout.write(f"\033[{line_number};0H\033[K")
+    sys.stdout.flush()
+
+
+def convert_api_bulk(page_range, size, output_dir_nml, print_errors):
     # Create dictionaries for summary of converted files
     summary = {}
     summary['Successful conversions'] = 0
@@ -755,37 +800,50 @@ def convert_api_bulk(page_range, size, output_dir_swc, output_dir_nml, print_err
     unsuccessful_files = {}
     errors_per_file = {}
 
-    swc_paths = api.create_swc_files(page_range, size, output_dir=output_dir_swc)
-
-    for i, swc_path in enumerate(swc_paths):
-        swc_file = os.path.basename(swc_path)
+    for i, page_num in enumerate(range(*page_range)):
         clear_screen()
-        print(f'Converting {swc_file}... (File {i + 1}/{len(swc_paths)})')
+        print(f"Fetching page {page_num}... (Page {i + 1}/{len(range(*page_range))})")
 
-        try:
-            nml_file, errors = construct_nml(swc_path, output_dir=output_dir_nml)
-            summary['Successful conversions'] += 1
-        except ConversionException as e:
-            errors = e.errors
-            summary['Unsuccessful conversions'] += 1
-            unsuccessful_files[swc_file] = errors
-            print(f'Error converting {swc_file}: {e}\n')
-            time.sleep(2)
-        except Exception as e:
-            print(f'Error converting {swc_file}: {e}\n')
-            time.sleep(2)
+        swc_contents = api.create_swc_files(page_num, size)
 
-        if print_errors and errors:
-            errors_per_file[swc_file] = errors
+        clear_screen()
+        print(f"Converting page {page_num}... (Page {i + 1}/{len(range(*page_range))})")
+        for i, (swc_file, swc_content) in enumerate(swc_contents.items()):
+            clear_line(2)
+            print(f'Converting {swc_file}... (File {i + 1}/{len(swc_contents)})')
 
-        for error in errors:
-            if error not in summary['Errors']:
-                summary['Errors'][error] = 1
-            else:
-                summary['Errors'][error] += 1
+            try:
+                nml_file, errors = construct_nml((swc_file, swc_content), output_dir=output_dir_nml)
+                summary['Successful conversions'] += 1
+            except ConversionException as e:
+                errors = e.errors
+                summary['Unsuccessful conversions'] += 1
+                unsuccessful_files[swc_file] = errors
+                print(f'Error converting {swc_file}: {e}\n')
+                time.sleep(2)
+            except Exception as e:
+                print(f'Error converting {swc_file}: {e}\n')
+                time.sleep(2)
+
+            if print_errors and errors:
+                errors_per_file[swc_file] = errors
+
+            for error in errors:
+                if error not in summary['Errors']:
+                    summary['Errors'][error] = 1
+                else:
+                    summary['Errors'][error] += 1
 
     clear_screen()
     print('Conversion complete!')
+
+    # Save dict to file
+    start_page = page_range[0]
+    end_page = page_range[1] - 1
+    file_path = f"summaries/pages_{start_page}-{end_page}"
+    with open(file_path, 'wb') as f:
+        pickle.dump(summary, f)
+
     print("\nSummary:")
     pprint.pprint(summary)
 
@@ -806,7 +864,7 @@ def convert_api_bulk(page_range, size, output_dir_swc, output_dir_nml, print_err
 
 if __name__ == '__main__':
     # Converting single file:
-    # path = "10-6vkd1m.swc"
+    # path = "neuron_nmo\kisvarday\CNG version\oi28rpy1-1.CNG.swc"
     # output_dir = ''
 
     # convert_file(path, output_dir)
@@ -830,10 +888,9 @@ if __name__ == '__main__':
 
 
     # Converting from the API (bulk):
-    page_range = (1, 3)
-    size = 20
-    output_dir_swc = 'swc_try'
-    output_dir_nml = 'nml_try'
+    page_range = (0, 1)
+    size = 50
+    output_dir_nml = 'nml_bulk'
     print_errors = False
 
-    convert_api_bulk(page_range, size, output_dir_swc, output_dir_nml, print_errors)
+    convert_api_bulk(page_range, size, output_dir_nml, print_errors)

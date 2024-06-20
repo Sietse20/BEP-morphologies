@@ -1,6 +1,7 @@
 from neuromorpho_api import requestor as requests
 import time
 import os
+import sys
 
 
 def clear_screen():
@@ -8,6 +9,12 @@ def clear_screen():
         os.system('cls')
     else:  # For Unix-based systems (Linux, macOS)
         os.system('clear')
+
+
+def clear_line(line_number):
+    # Move cursor to the beginning of the specified line and clear it
+    sys.stdout.write(f"\033[{line_number};0H\033[K")
+    sys.stdout.flush()
 
 
 def fetch_metadata(page_num, size):
@@ -51,7 +58,7 @@ def fetch_swc(data):
     return swc_response.content, swc_name
 
 
-def create_swc_files(page_range, size, output_dir=''):
+def create_swc_files(page_num, size):
     '''
     This function writes the SWC contents to a new SWC file in an optionally specified output directory.
 
@@ -61,35 +68,29 @@ def create_swc_files(page_range, size, output_dir=''):
     Returns: name of the newly created neuroml file (str)
     '''
 
-    swc_content = []
-    swc_paths = []
+    swc_contents = {}
 
-    for i, page_num in enumerate(range(*page_range)):
-        clear_screen()
-        print(f"Fetching page {page_num}... (Page {i + 1}/{len(range(*page_range))})")
+    try:
         data = fetch_metadata(page_num, size)
 
         for j, neuron in enumerate(data['_embedded']['neuronResources']):
-            clear_screen()
-            print(f"Fetching neuron {neuron['neuron_name']} (Page {i + 1}/{len(range(*page_range))}, neuron {j + 1}/{len(data['_embedded']['neuronResources'])})")
-            swc_content, swc_name = fetch_swc(neuron)
+            clear_line(2)
+            print(f"Fetching neuron {neuron['neuron_name']}... (Neuron {j + 1}/{len(data['_embedded']['neuronResources'])})")
 
-            if swc_content:
-                if output_dir:
-                    with open(f"{output_dir}/{swc_name}.swc", "wb") as f:
-                        f.write(swc_content)
-                    swc_paths.append(f"{output_dir}/{swc_name}.swc")
+            try:
+                swc_content, swc_name = fetch_swc(neuron)
+                if swc_content:
+                    swc_contents[swc_name] = swc_content
+            except Exception as e:
+                print(f"Error fetching neuron {neuron['neuron_name']}: {e}")
 
-                else:
-                    with open(f"{swc_name}.swc", "wb") as f:
-                        f.write(swc_content)
-                    swc_paths.append(f"{swc_name}.swc")
+    except Exception as e:
+        print(f"Error fetching page {page_num}: {e}")
 
-    return swc_paths
+    return swc_contents
 
 
 if __name__ == "__main__":
     page_range = (1, 3)
     size = 20
-    output_dir = 'swc_try'
-    create_swc_files(page_range, size, output_dir=output_dir)
+    create_swc_files(page_range, size)

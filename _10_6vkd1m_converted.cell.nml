@@ -38,7 +38,7 @@ Original fileName:C:\Users\Duncan\Desktop\Dat files to convert\Smith 87 asc\10-6
             </segment>
             <segment id="3" name="Comp_3">
                 <parent segment="0"/>
-                <distal x="-30.54" y="-4.75" z="3.98" diameter="0.0"/>
+                <distal x="-30.54" y="-4.75" z="3.98" diameter="0.12"/>
             </segment>
             <segment id="4" name="Comp_4">
                 <parent segment="3"/>

@@ -6,6 +6,7 @@ import json
 import pprint
 import numpy as np
 import api
+import api2
 import time
 
 
@@ -138,7 +139,7 @@ def open_and_split(path, errors):
     d = {}
     line_nr = 0
     comments = []
-    no_par = [0, []]  # Used for checking amount of segments without parent
+    no_par = []  # Used for checking amount of segments without parent
     invalid_lines = []
     soma_detected = False  # Used for checking if any soma samples are present
 
@@ -173,8 +174,7 @@ def open_and_split(path, errors):
 
                         if par_ID < 0:
                             par_ID = -1
-                            no_par[0] += 1
-                            no_par[1].append(seg_ID + 1)
+                            no_par.append(str(seg_ID + 1))
 
                         d[seg_ID] = (type_ID, x_coor, y_coor, z_coor, rad, par_ID)
 
@@ -187,10 +187,10 @@ def open_and_split(path, errors):
         log_error(errors, "SWC file does not contain any segments", fix="No fixes. SWC file is invalid.", stop=True)
 
     # Check if cell has more than one or zero segment(s) without a parent
-    if no_par[0] == 0:
+    if len(no_par) == 0:
         log_error(errors, "Zero segments without parent (root segments) detected", fix="No fixes. SWC file is invalid.", stop=True)
-    if no_par[0] > 1:
-        log_error(errors, "More than one segment without parent (root segment) detected", extra_info=f"Points {', '.join(map(str, no_par[1]))}", fix="No fixes. SWC file is invalid.", stop=True)
+    if len(no_par) > 1:
+        log_error(errors, "More than one segment without parent (root segment) detected", extra_info=f"Points {', '.join(no_par)}", fix="No fixes. SWC file is invalid.", stop=True)
 
     # Check if cell contains soma samples
     if not soma_detected:
@@ -665,7 +665,7 @@ def convert_directory(path_swc, path_nml, print_errors):
 
 # Converting from API:
 
-def convert_api(range_api, output_dir_swc, output_dir_nml, print_errors):
+def convert_api_neuronid(range_api, output_dir_swc, output_dir_nml, print_errors):
     '''
     This function fetches the neurons given by range_api from the neuromorpho API and converts the fetched SWC files to neuroml files.
     It saves them to an optionally specified output directory.
@@ -688,12 +688,12 @@ def convert_api(range_api, output_dir_swc, output_dir_nml, print_errors):
             clear_screen()
             print(f'Fetching neuron {neuron_id}... (File {i + 1}/{len(range(*range_api))})')
 
-            path, fetch_time, write_time = api.create_swc_file(neuron_id, output_dir=output_dir_swc)
+            path, fetch_time, write_time = api2.create_swc_file(neuron_id, output_dir=output_dir_swc)
 
             swc_file = os.path.basename(path)
             clear_screen()
             print(f'Converting {swc_file}... (File {i + 1}/{len(range(*range_api))})')
-
+            
             try:
                 start_conversion = time.time()
                 nml_file, errors = construct_nml(path, output_dir=output_dir_nml)
@@ -746,12 +746,71 @@ def convert_api(range_api, output_dir_swc, output_dir_nml, print_errors):
             print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
 
 
+def convert_api_bulk(page_range, size, output_dir_swc, output_dir_nml, print_errors):
+    # Create dictionaries for summary of converted files
+    summary = {}
+    summary['Successful conversions'] = 0
+    summary['Unsuccessful conversions'] = 0
+    summary['Errors'] = {}
+    unsuccessful_files = {}
+    errors_per_file = {}
+
+    swc_paths = api.create_swc_files(page_range, size, output_dir=output_dir_swc)
+
+    for i, swc_path in enumerate(swc_paths):
+        swc_file = os.path.basename(swc_path)
+        clear_screen()
+        print(f'Converting {swc_file}... (File {i + 1}/{len(swc_paths)})')
+
+        try:
+            nml_file, errors = construct_nml(swc_path, output_dir=output_dir_nml)
+            summary['Successful conversions'] += 1
+        except ConversionException as e:
+            errors = e.errors
+            summary['Unsuccessful conversions'] += 1
+            unsuccessful_files[swc_file] = errors
+            print(f'Error converting {swc_file}: {e}\n')
+            time.sleep(2)
+        except Exception as e:
+            print(f'Error converting {swc_file}: {e}\n')
+            time.sleep(2)
+
+        if print_errors and errors:
+            errors_per_file[swc_file] = errors
+
+        for error in errors:
+            if error not in summary['Errors']:
+                summary['Errors'][error] = 1
+            else:
+                summary['Errors'][error] += 1
+
+    clear_screen()
+    print('Conversion complete!')
+    print("\nSummary:")
+    pprint.pprint(summary)
+
+    # print(f"\nAverage fetching time: {np.mean(fetch_time)}")
+    # print(f"Average writing time: {np.mean(write_time)}")
+    # print(f"Average conversion time: {np.mean(conversion_time)}")
+
+    if unsuccessful_files:
+        print("\nErrors for unsuccessfully converted files:")
+        for file, errors in unsuccessful_files.items():
+            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
+
+    if print_errors:
+        print("\nErrors per file:")
+        for file, errors in errors_per_file.items():
+            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
+
+
 if __name__ == '__main__':
     # Converting single file:
-    # path = "swc_api\\10-6vkd1m.swc"
+    # path = "10-6vkd1m.swc"
     # output_dir = ''
 
     # convert_file(path, output_dir)
+
 
     # Converting from a directory:
     # path_swc = "test_swc"
@@ -760,10 +819,21 @@ if __name__ == '__main__':
 
     # convert_directory(path_swc, path_nml, print_errors)
 
-    # Converting from the API:
-    range_api = (500, 700)
-    output_dir_swc = 'swc_api'
-    output_dir_nml = 'nml_api'
+
+    # Converting from the API (neuron_id):
+    # range_api = (700, 800)
+    # output_dir_swc = 'swc_api'
+    # output_dir_nml = 'nml_api'
+    # print_errors = False
+
+    # convert_api_neuronid(range_api, output_dir_swc, output_dir_nml, print_errors)
+
+
+    # Converting from the API (bulk):
+    page_range = (1, 3)
+    size = 20
+    output_dir_swc = 'swc_try'
+    output_dir_nml = 'nml_try'
     print_errors = False
 
-    convert_api(range_api, output_dir_swc, output_dir_nml, print_errors)
+    convert_api_bulk(page_range, size, output_dir_swc, output_dir_nml, print_errors)

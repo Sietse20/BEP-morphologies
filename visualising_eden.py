@@ -13,5 +13,5 @@ def visualise(file):
     viz.show()
 
 
-file = "_10_6vkd1m_converted.cell.nml"
+file = "nml_api\gammaMN1_converted.cell.nml"
 visualise(file)

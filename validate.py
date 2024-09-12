@@ -91,12 +91,12 @@ def validate_eden(file):
 
 
 # Validate files in directory:
-directory = "test_nml"
+# directory = "test_nml"
 
-validate_directory(directory)
+# validate_directory(directory)
 
 
 # Validate single file:
-# file = "_10_6vkd1m_converted.cell.nml"
+file = "GGN_20170309_sc_converted.cell.nml"
 
 # validate_single_file(file)

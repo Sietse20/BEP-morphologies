@@ -1,0 +1,106 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.3.xsd" id="l22_sphersoma">
+    <cell id="l22_sphersoma_cell">
+        <notes>
+
+****************************************
+This NeuroML file was converted from SWC to NeuroML format by Sietse Reissenweber's converter.                      
+For any questions regarding the conversion, you can email me at s.reissenweber12@gmail.com.                      
+The notes listed below are the notes that were originally contained in the SWC file.
+****************************************
+
+########################################
+
+Original file l22.swc edited by Duncan Donohue using StdSwc version 1.21 on 7/25/05.
+Irregularities and fixes documented in l22.swc.std.  See StdSwc1.21.doc for more information.
+
+ORIGINAL_SOURCE Neurolucida
+CREATURE rat F344
+REGION Hippocampus
+FIELD/LAYER CA3
+TYPE CA3c Pyramidal Cell in vivo young
+CONTRIBUTOR Buzsaki_G &amp; Turner_DA
+REFERENCE J. Comp. Neurol. 356: 580-594, 1995
+RAW l22.asc
+EXTRAS Turner_P.CA3
+SOMA_AREA 0.98E3
+SHRINKAGE_CORRECTION 1.33 1.33 2.5
+VERSION_NUMBER 2.0
+VERSION_DATE 1998-03-27
+*********************************************
+SCALE 1.33  1.33  2.5
+
+
+########################################
+
+</notes>
+        <morphology id="l22_sphersoma_cell_morphology">
+            <segment id="0" name="Comp_0">
+                <proximal x="-2.913" y="28.103" z="10.7" diameter="6.84"/>
+                <distal x="-2.913" y="28.103" z="10.7" diameter="6.84"/>
+            </segment>
+            <segment id="1" name="Comp_1">
+                <parent segment="0"/>
+                <distal x="-13.112" y="30.457" z="13.2" diameter="2.0"/>
+            </segment>
+            <segment id="2" name="Comp_2">
+                <parent segment="1"/>
+                <distal x="-3.112" y="40.457" z="13.2" diameter="2.0"/>
+            </segment>
+            <segment id="3" name="Comp_3">
+                <parent segment="2"/>
+                <distal x="-3.112" y="50.457" z="13.2" diameter="2.0"/>
+            </segment>
+            <segment id="4" name="Comp_4">
+                <parent segment="3"/>
+                <distal x="-13.112" y="60.457" z="13.2" diameter="0.6"/>
+            </segment>
+            <segment id="5" name="Comp_5">
+                <parent segment="3"/>
+                <distal x="3.112" y="60.457" z="13.2" diameter="0.6"/>
+            </segment>
+            <segmentGroup id="bas_dend_1" neuroLexId="SAO:864921383">
+                <member segment="4"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_2" neuroLexId="SAO:864921383">
+                <member segment="5"/>
+            </segmentGroup>
+            <segmentGroup id="bas_dend_3" neuroLexId="SAO:864921383">
+                <member segment="1"/>
+                <member segment="2"/>
+                <member segment="3"/>
+            </segmentGroup>
+            <segmentGroup id="soma_1" neuroLexId="SAO:864921383">
+                <member segment="0"/>
+            </segmentGroup>
+            <segmentGroup id="all">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
+                <include segmentGroup="bas_dend_3"/>
+                <include segmentGroup="soma_1"/>
+            </segmentGroup>
+            <segmentGroup id="soma_group" neuroLexId="SAO:1044911821">
+                <include segmentGroup="soma_1"/>
+            </segmentGroup>
+            <segmentGroup id="dendrite_group" neuroLexId="SAO:1211023249">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
+                <include segmentGroup="bas_dend_3"/>
+            </segmentGroup>
+            <segmentGroup id="basal_group" neuroLexId="SAO:1079900774">
+                <include segmentGroup="bas_dend_1"/>
+                <include segmentGroup="bas_dend_2"/>
+                <include segmentGroup="bas_dend_3"/>
+            </segmentGroup>
+        </morphology>
+        <biophysicalProperties id="l22_sphersoma_cell_properties">
+            <membraneProperties>
+                <spikeThresh value="0.0 mV"/>
+                <specificCapacitance value="1.0 uF_per_cm2"/>
+                <initMembPotential value="-60.0 mV"/>
+            </membraneProperties>
+            <intracellularProperties>
+                <resistivity value="0.03 kohm_cm"/>
+            </intracellularProperties>
+        </biophysicalProperties>
+    </cell>
+</neuroml>

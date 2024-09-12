@@ -1,0 +1,9 @@
+import pickle
+
+# Step 1: Open the pickle file in binary read mode
+with open('summaries\pages_1100-1699', 'rb') as file:
+    # Step 2: Load the dictionary from the file
+    dictionary = pickle.load(file)
+
+# Step 3: Use the dictionary
+print(dictionary)

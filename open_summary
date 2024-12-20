@@ -1,9 +1,22 @@
 import pickle
+import os
+
+d = {'Successful conversions': 0,
+     'Unsuccessful conversions': 0,
+     'Errors': {}}
+
 
 # Step 1: Open the pickle file in binary read mode
-with open('summaries\pages_1100-1699', 'rb') as file:
-    # Step 2: Load the dictionary from the file
-    dictionary = pickle.load(file)
+for filename in os.listdir('summaries'):
+    with open(f'summaries/{filename}', 'rb') as f:
+        # Step 2: Load the dictionary from the file
+        dictionary = pickle.load(f)
+        d['Successful conversions'] += dictionary['Successful conversions']
+        d['Unsuccessful conversions'] += dictionary['Unsuccessful conversions']
+        for key, value in dictionary['Errors'].items():
+            if key not in d['Errors']:
+                d['Errors'][key] = value
+            else:
+                d['Errors'][key] += value
 
-# Step 3: Use the dictionary
-print(dictionary)
+print(d)

@@ -44,9 +44,9 @@ def construct_nml(input_data, output_dir=''):
         filename = os.path.basename(input_data).split('.')[0]
         input = input_data
 
-    filename = change_filename(filename, errors)
-    cell_ID = f"{filename}_cell"
-    nml_doc = neuroml.NeuroMLDocument(id=filename)
+    nml_id = create_id(filename)
+    cell_ID = f"{nml_id}_cell"
+    nml_doc = neuroml.NeuroMLDocument(id=nml_id)
     nml_cell = neuroml.Cell(id=cell_ID)
 
     d, comments = open_and_split(input, errors)
@@ -178,7 +178,8 @@ def open_and_split(input_data, errors):
                         if type_ID == 1:
                             soma_detected = True
 
-                        if par_ID == -1:
+                        if par_ID < 0:
+                            par_ID = -1
                             no_par.append(str(seg_ID + 1))
 
                         d[seg_ID] = (type_ID, x_coor, y_coor, z_coor, rad, par_ID)
@@ -204,24 +205,20 @@ def open_and_split(input_data, errors):
     return d, comments
 
 
-def change_filename(filename, errors):
+def create_id(filename):
     '''
-    This function is used to change the filename to conform to neuroml filename pattern restrictions.
+    This function is used to create an nml id from the filename to conform to neuroml pattern restrictions.
 
-    Inputs: - filename: str
-            - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
+    Inputs: filename (str)
 
-    Returns: new_name: new file name (str)
+    Returns: nml_id: neuroml id (str)
     '''
 
-    new_name = re.sub(r'[^a-zA-Z0-9_]', '_', filename)
-    if new_name[0].isdigit():
-        new_name = '_' + new_name
+    nml_id = re.sub(r'[^a-zA-Z0-9_]', '_', filename)
+    if nml_id[0].isdigit():
+        nml_id = '_' + nml_id
 
-    if new_name != filename:
-        log_error(errors, "Filename does not comply with neuroml filename pattern restrictions", fix=f"Changed filename to {new_name}")
-
-    return new_name
+    return nml_id
 
 
 def make_notes(comments, nml_cell):

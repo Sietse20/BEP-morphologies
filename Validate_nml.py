@@ -97,6 +97,6 @@ def validate_eden(file):
 
 
 # Validate single file:
-file = "GGN_20170309_sc_converted.cell.nml"
-
-# validate_single_file(file)
+if __name__ == "__main__":
+    file = "nml_api\_0_2a_converted.cell.nml"
+    validate_single_file(file)

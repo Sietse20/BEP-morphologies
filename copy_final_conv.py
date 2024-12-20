@@ -5,7 +5,7 @@ import os
 import json
 import pprint
 import numpy as np
-import api_bulk
+import API_bulk
 
 
 '''

@@ -2,6 +2,7 @@ import Converter_utils
 import API_bulk
 import API_neuronid
 import Validate_nml
+import neuroml.writers as writers
 
 import json
 import pprint
@@ -10,6 +11,23 @@ import time
 import sys
 import pickle
 import os
+
+
+def write_nml_file(nml_doc, filename, output_dir=''):
+    '''
+    This function writes the neuroml document object to a neuroml file in an optionally specified output directory.
+
+    Input: - nml_doc: neuroml document object
+           - filename: name of the SWC file (str)
+           - output_dir (optional): directory in which the neuroml file will be saved (str)
+
+    Returns: name of the newly created neuroml file (str)
+    '''
+
+    nml_file = f'{output_dir}/{filename}_converted.cell.nml' if output_dir else f'{filename}_converted.cell.nml'
+    writers.NeuroMLWriter.write(nml_doc, nml_file)
+
+    return os.path.basename(nml_file)
 
 
 def convert_file(path, validate=True, output_dir=''):
@@ -21,7 +39,8 @@ def convert_file(path, validate=True, output_dir=''):
     swc_file = os.path.basename(path)
 
     try:
-        nml_file, errors = Converter_utils.construct_nml(path, output_dir=output_dir)
+        nml_doc, errors = Converter_utils.construct_nml(path)
+        nml_file = write_nml_file(nml_doc, swc_file, output_dir)
         print(f'Converted {swc_file} to the following file: {nml_file}')
         if errors:
             print(json.dumps(errors, indent=2, separators=(',', ': ')))
@@ -74,7 +93,8 @@ def convert_directory(path_swc, validate=True, print_errors=False, path_nml=''):
         print(f'Converting {swc_file}... (File {i + 1}/{len(file_paths)})')
 
         try:
-            nml_file, errors = Converter_utils.construct_nml(file_path, output_dir=path_nml)
+            nml_doc, errors = Converter_utils.construct_nml(file_path)
+            nml_file = write_nml_file(nml_doc, swc_file, path_nml)
             summary['Successful conversions'] += 1
         except Converter_utils.ConversionException as e:
             errors = e.errors
@@ -99,7 +119,7 @@ def convert_directory(path_swc, validate=True, print_errors=False, path_nml=''):
                 summary['Errors'][error] += 1
 
         if validate:
-            validate_nml.validate_single_file(nml_file)
+            Validate_nml.validate_single_file(nml_file)
 
     clear_screen()
     print('Conversion complete!')
@@ -148,7 +168,8 @@ def convert_api_neuronid(range_api, validate=True, print_errors=False, output_di
 
             try:
                 start_conversion = time.time()
-                nml_file, errors = Converter_utils.construct_nml(path, output_dir=output_dir_nml)
+                nml_doc, errors = Converter_utils.construct_nml(path)
+                nml_file = write_nml_file(nml_doc, swc_file, output_dir_nml)
                 conversion_time.append(time.time() - start_conversion)
                 summary['Successful conversions'] += 1
             except Converter_utils.ConversionException as e:
@@ -171,7 +192,7 @@ def convert_api_neuronid(range_api, validate=True, print_errors=False, output_di
                     summary['Errors'][error] += 1
 
             if validate:
-                validate_nml.validate_single_file(nml_file)
+                Validate_nml.validate_single_file(nml_file)
 
         except Exception:
             if 'Unsuccessful fetch' not in summary:
@@ -210,7 +231,7 @@ def clear_line(line_number):
     sys.stdout.flush()
 
 
-def convert_api_bulk(page_range, size, validate=True, print_errors=False, output_dir_nml=''):
+def convert_api_bulk(page_range, size, validate=False, print_errors=False, write_nml=False, output_dir_nml=''):
     '''
     This function fetches the neurons in bulk given by page_range and size (amount of neurons per page) from the neuromorpho API and converts the fetched SWC files to neuroml files.
     It saves them to an optionally specified output directory.
@@ -239,7 +260,9 @@ def convert_api_bulk(page_range, size, validate=True, print_errors=False, output
             print(f'Converting {swc_file}... (File {i + 1}/{len(swc_contents)})')
 
             try:
-                nml_file, errors = Converter_utils.construct_nml((swc_file, swc_content), output_dir=output_dir_nml)
+                nml_doc, errors = Converter_utils.construct_nml((swc_file, swc_content))
+                if write_nml:
+                    nml_file = write_nml_file(nml_doc, swc_file, output_dir_nml)
                 summary['Successful conversions'] += 1
             except Converter_utils.ConversionException as e:
                 errors = e.errors
@@ -292,10 +315,10 @@ def convert_api_bulk(page_range, size, validate=True, print_errors=False, output
 
 if __name__ == '__main__':
     # Converting single file:
-    path = "swc_api/0-2a.swc"
-    output_dir = ''
+    # path = "swc_api/0-2a.swc"
+    # output_dir = ''
 
-    convert_file(path, validate=True, output_dir=output_dir)
+    # convert_file(path, validate=True, output_dir=output_dir)
 
     # Converting from a directory:
     # path_swc = "Padraig"
@@ -306,18 +329,21 @@ if __name__ == '__main__':
 
 
     # Converting from the API (neuron_id):
-    # range_api = (700, 800)
+    # range_api = (700, 710)
     # output_dir_swc = 'swc_api'
     # output_dir_nml = 'nml_api'
     # print_errors = False
+    # validate = False
 
-    # convert_api_neuronid(range_api, output_dir_swc, output_dir_nml, print_errors)
+    # convert_api_neuronid(range_api, validate=validate, print_errors=print_errors, output_dir_swc=output_dir_swc, output_dir_nml=output_dir_nml)
 
 
     # Converting from the API (bulk):
-    # page_range = (0, 1)
-    # size = 50
-    # output_dir_nml = '
-    # print_errors = False
+    page_range = (0, 1)
+    size = 20
+    output_dir_nml = 'nml_api'
+    print_errors = False
+    validate = False
+    write_nml = False
 
-    # convert_api_bulk(page_range, size, print_errors, output_dir_nml=output_dir_nml)
+    convert_api_bulk(page_range, size, validate=validate, print_errors=print_errors, write_nml=write_nml, output_dir_nml=output_dir_nml)

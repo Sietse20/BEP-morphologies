@@ -1,4 +1,4 @@
-from neuromorpho_api import requestor as requests
+import requests
 import time
 
 
@@ -47,7 +47,7 @@ def create_swc_file(neuron_id, output_dir=''):
     Input: - neuron_id: id of neuron on neuromorpho.org (int)
            - output_dir (optional):  directory in which the SWC file will be saved (str)
 
-    Returns: name of the newly created neuroml file (str)
+    Returns: name of the newly created SWC file (str)
     '''
     start_fetch = time.time()
     swc_content, swc_name = fetch_swc_file(neuron_id)

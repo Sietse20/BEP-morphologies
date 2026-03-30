@@ -1,4 +1,4 @@
-from neuromorpho_api import requestor as requests
+import requests
 import time
 import os
 import sys
@@ -51,7 +51,7 @@ def fetch_swc(data):
     start = time.time()
     swc_response = requests.get(swc_url)
     if swc_response.status_code != 200:
-        raise Exception("Failed to fetch SWC file:", swc_response.text)
+        raise Exception(f"Failed to fetch SWC file: {swc_response.text}")
     if time.time() - start < 1/3:
         time.sleep(1/3 - (time.time() - start))
 
@@ -60,12 +60,12 @@ def fetch_swc(data):
 
 def create_swc_files(page_num, size):
     '''
-    This function writes the SWC contents to a new SWC file in an optionally specified output directory.
+    This function saves the SWC contents of a certain page in the NeuroMorpho repository to a dictionary in bytes form.
 
-    Input: - neuron_id: id of neuron on neuromorpho.org (int)
-           - output_dir (optional):  directory in which the SWC file will be saved (str)
+    Input: - page_num: Number of page in the repository (int)
+           - size: Number of neurons to fetch per page (int)
 
-    Returns: name of the newly created neuroml file (str)
+    Returns: dictionary containing SWC contents (dict)
     '''
 
     swc_contents = {}
@@ -79,11 +79,11 @@ def create_swc_files(page_num, size):
         
         if swc_content:
             swc_contents[swc_name] = swc_content
-
+        
     return swc_contents
 
 
 if __name__ == "__main__":
     page_num = 1
-    size = 20
+    size = 10
     create_swc_files(page_num, size)

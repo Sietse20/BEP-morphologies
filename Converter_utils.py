@@ -1,5 +1,4 @@
 import neuroml
-import neuroml.writers as writers
 import re
 import os
 import io
@@ -23,14 +22,13 @@ If you have any questions about the code, feel free to contact me at s.reissenwe
 '''
 
 
-def construct_nml(input_data, output_dir=''):
+def construct_nml(input_data):
     '''
     This function is the big function that calls all helper functions to construct the neuroml file.
 
     Input: - input_data: filepath to SWC file (str) or SWC data from API (tuple[filename (str), SWC data (bytes)])
-           - output_dir (optional): directory in which the neuroml file will be saved (str)
 
-    Returns: - name of the newly created neuroml file (str)
+    Returns: - nml_doc: neuroml document object
              - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
     '''
 
@@ -59,10 +57,7 @@ def construct_nml(input_data, output_dir=''):
 
     nml_doc.cells.append(nml_cell)
 
-    nml_file = f'{output_dir}/{filename}_converted.cell.nml' if output_dir else f'{filename}_converted.cell.nml'
-    writers.NeuroMLWriter.write(nml_doc, nml_file)
-
-    return os.path.basename(nml_file), errors
+    return nml_doc, errors
 
 
 class ConversionException(Exception):

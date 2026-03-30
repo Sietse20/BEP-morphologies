@@ -89,21 +89,21 @@ def log_error(errors, error_type, occurrence=1, extra_info=None, fix=None, stop=
     Returns: None
     '''
 
-    # Check if error_type is related to unknown SWC types
-    if error_type.startswith("Unknown type detected"):
+    # Check if error_type is related to unknown SWC structure identifiers
+    if error_type.startswith("Unknown structure identifier detected"):
         type_id = error_type[23:]
-        if "Unknown type detected" not in errors:
-            errors["Unknown type detected"] = {}
+        if "Unknown structure identifier detected" not in errors:
+            errors["Unknown structure identifier detected"] = {}
 
-        if type_id not in errors["Unknown type detected"]:
-            errors["Unknown type detected"][type_id] = {
+        if type_id not in errors["Unknown structure identifier detected"]:
+            errors["Unknown structure identifier detected"][type_id] = {
                 "occurrences": 0,
                 "fix": None
             }
 
-        errors["Unknown type detected"][type_id]["occurrences"] += occurrence
+        errors["Unknown structure identifier detected"][type_id]["occurrences"] += occurrence
         if fix is not None:
-            errors["Unknown type detected"][type_id]["fix"] = fix
+            errors["Unknown structure identifier detected"][type_id]["fix"] = fix
     else:
         if error_type not in errors:
             errors[error_type] = {
@@ -131,7 +131,7 @@ def open_and_split(input_data, errors):
     Input: - input_data: filepath to SWC file (str) or SWC data (bytes)
            - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
 
-    Returns: - d: dict {point (int): (type, x_coord, y_coord, z_coord, radius, parent)}
+    Returns: - d: dict {point (int): (structure_id, x_coord, y_coord, z_coord, radius, parent)}
              - comments: list of comments [comment (str)]
     '''
 
@@ -165,7 +165,7 @@ def open_and_split(input_data, errors):
                         invalid_lines.append(line_nr)
                     else:
                         seg_ID = int(information[0]) - 1
-                        type_ID = int(information[1])
+                        struc_ID = int(information[1])
                         x_coor = float(information[2])
                         y_coor = float(information[3])
                         z_coor = float(information[4])
@@ -175,14 +175,14 @@ def open_and_split(input_data, errors):
                         if par_ID > seg_ID:
                             log_error(errors, "Parent ID referred to before being defined. Loops might be present", extra_info=f"Point {seg_ID + 1}, parent {par_ID + 1}", fix="No fixes. SWC file is invalid", stop=True)
 
-                        if type_ID == 1:
+                        if struc_ID == 1:
                             soma_detected = True
 
                         if par_ID < 0:
                             par_ID = -1
                             no_par.append(str(seg_ID + 1))
 
-                        d[seg_ID] = (type_ID, x_coor, y_coor, z_coor, rad, par_ID)
+                        d[seg_ID] = (struc_ID, x_coor, y_coor, z_coor, rad, par_ID)
 
     # Check if there are invalid lines in the SWC file
     if invalid_lines:
@@ -247,14 +247,14 @@ def make_notes(comments, nml_cell):
 
 def classify_types_branches_and_leafs(d, errors):
     '''
-    This function classifies the segments into different types, and determines the children of points.
+    This function classifies the segments into different types of structures, and determines the children of points.
 
-    Input: - d: dict {point (int): (type, x_coord, y_coord, z_coord, radius, parent)}
+    Input: - d: dict {point (int): (struc_ID, x_coord, y_coord, z_coord, radius, parent)}
            - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
 
     Returns: - n: dict {amount of children (int): [points]}
              - children: dict {point (int): [children]}
-             - type_seg: dict {point (int): type morph. part (e.g. soma) (str)}
+             - type_seg: dict {point (int): type morph. structure (e.g. soma) (str)}
              - root: point without parent (int)
     '''
 
@@ -303,10 +303,10 @@ def classify_types_branches_and_leafs(d, errors):
             type_seg[point] = 'bas_dend'
         elif info[0] == 4:
             type_seg[point] = 'ap_dend'
-        else:  # Account for custom types
-            type_id = f'custom_{info[0]}'
-            type_seg[point] = type_id
-            log_error(errors, f"Unknown type detected: {type_id}", fix=f"Added new type {type_id} and new group {type_id}_group")
+        else:  # Account for custom structure identifiers
+            struc_id = f'custom_{info[0]}'
+            type_seg[point] = struc_id
+            log_error(errors, f"Unknown structure identifier detected: {struc_id}", fix=f"Added new type {struc_id} and new group {struc_id}_group")
 
         # Find root:
         if info[5] == -1:
@@ -334,9 +334,9 @@ def classify_types_branches_and_leafs(d, errors):
 
 def find_segments(d, n):
     '''
-    This function organizes the segments into unbranched segment groups of the same type.
+    This function organizes the segments into unbranched segment groups of the same structural type.
 
-    Input: - d: dict {point (int): (type, x_coord, y_coord, z_coord, radius, parent)}
+    Input: - d: dict {point (int): (struc_id, x_coord, y_coord, z_coord, radius, parent)}
            - n: dict {amount of children (int): [points]}
 
     Returns: - segmentGroups: list with lists of segmentgroups [[points], [points], ...]
@@ -401,7 +401,7 @@ def process_segments(d, children, root, Cell_ID, errors):
     '''
     This function incorporates the segments into the neuroml morphology object.
 
-    Input: - d: dict {point (int): (type, x_coord, y_coord, z_coord, radius, parent)}
+    Input: - d: dict {point (int): (struc_id, x_coord, y_coord, z_coord, radius, parent)}
            - children: dict {point (int): [children]}
            - root: point without parent (int)
            - cell_ID: unique ID of neuroml cell (str)
@@ -472,7 +472,7 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
     The morphology object is then added to the cell object.
 
     Input: - segmentGroups: list with lists of segmentgroups [[point], [point], ...]
-           - type_seg: dict {point (int): type morph. part (e.g. soma) (str)}
+           - type_seg: dict {point (int): type morph. structurte (e.g. soma) (str)}
            - nml_mor: neuroml morphology object
            - nml_cell: neuroml cell object
 

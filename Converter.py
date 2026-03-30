@@ -264,7 +264,7 @@ def convert_api_bulk(page_range, size, validate=True, print_errors=False, output
                     summary['Errors'][error] += 1
 
             if validate:
-                validate_nml.validate_single_file(nml_file)
+                Validate_nml.validate_single_file(nml_file)
 
     clear_screen()
     print('Conversion complete!')

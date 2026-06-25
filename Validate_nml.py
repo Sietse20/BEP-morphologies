@@ -4,6 +4,7 @@ import os
 import eden_simulator
 import time
 import pprint
+from utils import clear_screen
 
 
 def validate_single_file(file_path):
@@ -29,13 +30,6 @@ def validate_single_file(file_path):
         # Handle errors in the command execution
         print(f"An error occurred while validating the file: {file_path}")
         print(f"Error: {e.stderr}")
-
-
-def clear_screen():
-    if os.name == 'nt':  # For Windows
-        os.system('cls')
-    else:  # For Unix-based systems (Linux, macOS)
-        os.system('clear')
 
 
 def validate_directory(directory):
@@ -90,13 +84,13 @@ def validate_eden(file):
     eden_simulator.experimental.explain_cell(file)
 
 
-# Validate files in directory:
-# directory = "test_nml"
-
-# validate_directory(directory)
-
-
-# Validate single file:
 if __name__ == "__main__":
+    # Validate files in directory:
+    # directory = "test_nml"
+
+    # validate_directory(directory)
+
+
+    # Validate single file:
     file = "nml_api\_0_2a_converted.cell.nml"
     validate_single_file(file)

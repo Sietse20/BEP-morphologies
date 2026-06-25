@@ -13,5 +13,5 @@ def visualise(file):
     viz.show()
 
 
-file = "0-2a_converted.cell.nml"
+file = "nml_random/c4_7_converted.cell.nml"
 visualise(file)

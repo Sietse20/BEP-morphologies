@@ -1,33 +1,90 @@
-import Converter_utils
-import API_bulk
-import API_neuronid
-import Validate_nml
-import neuroml.writers as writers
+import converter_utils
+import nm_api
+import validate_nml
+from nm_api import APIException, APITimeoutException
+from utils import clear_screen, clear_line
 
 import json
 import pprint
 import numpy as np
 import time
-import sys
 import pickle
 import os
+import traceback
+import random
 
 
-def write_nml_file(nml_doc, filename, output_dir=''):
+def make_summary():
     '''
-    This function writes the neuroml document object to a neuroml file in an optionally specified output directory.
-
-    Input: - nml_doc: neuroml document object
-           - filename: name of the SWC file (str)
-           - output_dir (optional): directory in which the neuroml file will be saved (str)
-
-    Returns: name of the newly created neuroml file (str)
+    Returns a fresh summary dictionary.
     '''
 
-    nml_file = f'{output_dir}/{filename}_converted.cell.nml' if output_dir else f'{filename}_converted.cell.nml'
-    writers.NeuroMLWriter.write(nml_doc, nml_file)
+    return {
+        'Successful conversions': 0,
+        'Unsuccessful conversions': {},
+        'Errors': {}
+    }
 
-    return os.path.basename(nml_file)
+
+def print_summary(summary, unsuccessful_files, errors_per_file, print_errors):
+    '''Prints the conversion summary, unsuccessful files, and per-file errors.'''
+
+    print("\nSummary:")
+    pprint.pprint(summary)
+
+    if unsuccessful_files:
+        print("\nErrors for unsuccessfully converted files:")
+        for file, errors in unsuccessful_files.items():
+            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
+
+    if print_errors:
+        print("\nErrors per file:")
+        for file, errors in errors_per_file.items():
+            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
+
+
+def convert_single(input_data, summary, unsuccessful_files, errors_per_file, print_errors=False, validate=False, write_nml=True, output_dir=''):
+    '''
+    Converts a single SWC file to neuroml and updates the summary in place.
+
+    Input: - input_data: filepath (str) or (neuron_name, swc_content) tuple
+           - summary: summary dict to update in place
+           - unsuccessful_files: dict to update in place
+           - errors_per_file: dict to update in place
+           - print_errors (optional): whether to store per-file errors (bool)
+           - validate (optional): whether to validate the output file (bool)
+           - write_nml (optional): whether to write the nml file to disk (bool)
+           - output_dir (optional): directory to write the nml file to (str)
+
+    Returns: None
+    '''
+
+    swc_file = input_data[0] if isinstance(input_data, tuple) else os.path.basename(input_data)
+    errors = {}
+    nml_file = None
+
+    try:
+        nml_file, nml_doc, errors = converter_utils.construct_nml(input_data, write_nml=write_nml, output_dir=output_dir)
+        summary['Successful conversions'] += 1
+    except converter_utils.ConversionException as e:
+        errors = e.errors
+        summary['Unsuccessful conversions']['Conversion exception'] = summary['Unsuccessful conversions'].get('Conversion exception', 0) + 1
+        unsuccessful_files[swc_file] = errors
+        print(f'Error converting {swc_file}: {e}')
+    except Exception as e:
+        summary['Unsuccessful conversions']['Internal error'] = summary['Unsuccessful conversions'].get('Internal error', 0) + 1
+        unsuccessful_files[swc_file] = str(e)
+        print(f'UNEXPECTED ERROR for {swc_file}: {type(e).__name__}: {e}')
+        traceback.print_exc()
+
+    if print_errors and errors:
+        errors_per_file[swc_file] = errors
+
+    for error in errors:
+        summary['Errors'][error] = summary['Errors'].get(error, 0) + 1
+
+    if validate and nml_file:
+        validate_nml.validate_single_file(nml_file)
 
 
 def convert_file(path, validate=True, output_dir=''):
@@ -39,29 +96,19 @@ def convert_file(path, validate=True, output_dir=''):
     swc_file = os.path.basename(path)
 
     try:
-        nml_doc, errors = Converter_utils.construct_nml(path)
-        nml_file = write_nml_file(nml_doc, swc_file, output_dir)
-        print(f'Converted {swc_file} to the following file: {nml_file}')
+        nml_file, nml_doc, errors = converter_utils.construct_nml(path, write_nml=True, output_dir=output_dir)
+        print(f'Converted {swc_file} to {nml_file}')
         if errors:
             print(json.dumps(errors, indent=2, separators=(',', ': ')))
         if validate:
-            Validate_nml.validate_single_file(nml_file)
-    except Converter_utils.ConversionException as e:
+            full_path = os.path.join(output_dir, nml_file)
+            validate_nml.validate_single_file(full_path)
+    except converter_utils.ConversionException as e:
         print(f'Error converting {swc_file}: {e}')
         print(json.dumps(e.errors, indent=2, separators=(',', ': ')))
     except Exception as e:
-        print(f'Error converting {swc_file}: {e}')
-
-
-def clear_screen():
-    '''
-    This function is used to clear the terminal screen.
-    '''
-
-    if os.name == 'nt':  # For Windows
-        os.system('cls')
-    else:  # For Unix-based systems (Linux, macOS)
-        os.system('clear')
+        print(f'Unexpected error converting {swc_file}: {e}')
+        traceback.print_exc()
 
 
 def convert_directory(path_swc, validate=True, print_errors=False, path_nml=''):
@@ -72,13 +119,9 @@ def convert_directory(path_swc, validate=True, print_errors=False, path_nml=''):
     '''
 
     # Create dictionaries for summary of converted files
-    summary = {}
-    summary['Successful conversions'] = 0
-    summary['Unsuccessful conversions'] = 0
-    summary['Errors'] = {}
+    summary = make_summary()
     errors_per_file = {}
     unsuccessful_files = {}
-    errors = {}
 
     # Iterating through all directories and subdirectories
     file_paths = []
@@ -88,53 +131,13 @@ def convert_directory(path_swc, validate=True, print_errors=False, path_nml=''):
                 file_paths.append(os.path.join(root, file))
 
     for i, file_path in enumerate(file_paths):
-        swc_file = os.path.basename(file_path)
         clear_screen()
-        print(f'Converting {swc_file}... (File {i + 1}/{len(file_paths)})')
+        print(f'Converting {os.path.basename(file_path)}... (File {i + 1}/{len(file_paths)})')
 
-        try:
-            nml_doc, errors = Converter_utils.construct_nml(file_path)
-            nml_file = write_nml_file(nml_doc, swc_file, path_nml)
-            summary['Successful conversions'] += 1
-        except Converter_utils.ConversionException as e:
-            errors = e.errors
-            summary['Unsuccessful conversions']['Conversion exception'] += 1
-            unsuccessful_files[swc_file] = errors
-            print(f'Error converting {swc_file}: {e}\n')
-            time.sleep(2)
-        except Exception as e:
-            errors = e
-            summary['Unsuccessful conversions']['Other exception'] += 1
-            unsuccessful_files[swc_file] = e
-            print(f'Error converting {swc_file}: {e}')
-            time.sleep(2)
-
-        if print_errors:
-            errors_per_file[swc_file] = errors
-
-        for error in errors:
-            if error not in summary['Errors']:
-                summary['Errors'][error] = 1
-            else:
-                summary['Errors'][error] += 1
-
-        if validate:
-            Validate_nml.validate_single_file(nml_file)
+        convert_single(file_path, summary, unsuccessful_files, errors_per_file, print_errors=print_errors, validate=validate, output_dir=path_nml)
 
     clear_screen()
-    print('Conversion complete!')
-    print("\nSummary:")
-    pprint.pprint(summary)
-
-    if unsuccessful_files:
-        print("\nErrors for unsuccessfully converted files:")
-        for file, errors in unsuccessful_files.items():
-            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
-
-    if print_errors:
-        print("\nErrors per file:")
-        for file, errors in errors_per_file.items():
-            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
+    print_summary(summary, unsuccessful_files, errors_per_file, print_errors)
 
 
 def convert_api_neuronid(range_api, validate=True, print_errors=False, output_dir_swc='', output_dir_nml=''):
@@ -146,89 +149,47 @@ def convert_api_neuronid(range_api, validate=True, print_errors=False, output_di
     '''
 
     # Create dictionaries for summary of converted files
-    summary = {}
-    summary['Successful conversions'] = 0
-    summary['Unsuccessful conversions'] = 0
-    summary['Errors'] = {}
+    summary = make_summary()
     unsuccessful_files = {}
     errors_per_file = {}
-    fetch_time = []
-    conversion_time = []
+    fetch_times = []
+    conversion_times = []
+    write_times = []
 
-    for i, neuron_id in enumerate(range(*range_api)):
+    neuron_ids = list(range(*range_api))
+
+    for i, neuron_id in enumerate(neuron_ids):
+        clear_screen()
+        print(f'Fetching neuron {neuron_id}... (File {i + 1}/{len(neuron_ids)})')
+
         try:
-            clear_screen()
-            print(f'Fetching neuron {neuron_id}... (File {i + 1}/{len(range(*range_api))})')
+            path, fetch_time, write_time = nm_api.fetch_neuron_by_id(neuron_id, output_dir=output_dir_swc)
+            fetch_times.append(fetch_time)
+            write_times.append(write_time)
+        except APITimeoutException as e:
+            summary['Unsuccessful conversions']['API timeout'] = summary['Unsuccessful conversions'].get('API timeout', 0) + 1
+            print(f'Timeout fetching neuron {neuron_id}: {e}')
+            time.sleep(5)
+            continue
+        except APIException as e:
+            summary['Unsuccessful conversions']['API error'] = summary['Unsuccessful conversions'].get('API error', 0) + 1
+            print(f'API error fetching neuron {neuron_id}: {e}')
+            continue
 
-            path, fetch_time, write_time = API_neuronid.create_swc_file(neuron_id, output_dir=output_dir_swc)
+        clear_screen()
+        print(f'Converting {os.path.basename(path)}... (File {i + 1}/{len(neuron_ids)})')
 
-            swc_file = os.path.basename(path)
-            clear_screen()
-            print(f'Converting {swc_file}... (File {i + 1}/{len(range(*range_api))})')
-
-            try:
-                start_conversion = time.time()
-                nml_doc, errors = Converter_utils.construct_nml(path)
-                nml_file = write_nml_file(nml_doc, swc_file, output_dir_nml)
-                conversion_time.append(time.time() - start_conversion)
-                summary['Successful conversions'] += 1
-            except Converter_utils.ConversionException as e:
-                errors = e.errors
-                summary['Unsuccessful conversions'] += 1
-                unsuccessful_files[swc_file] = errors
-                print(f'Error converting {swc_file}: {e}\n')
-                time.sleep(2)
-            except Exception as e:
-                print(f'Error converting {swc_file}: {e}\n')
-                time.sleep(2)
-
-            if print_errors and errors:
-                errors_per_file[swc_file] = errors
-
-            for error in errors:
-                if error not in summary['Errors']:
-                    summary['Errors'][error] = 1
-                else:
-                    summary['Errors'][error] += 1
-
-            if validate:
-                Validate_nml.validate_single_file(nml_file)
-
-        except Exception:
-            if 'Unsuccessful fetch' not in summary:
-                summary['Unsuccessful fetch'] = 1
-            else:
-                summary['Unsuccessful fetch'] += 1
-            print(f"Unsuccessful fetch for neuron {neuron_id}")
-            time.sleep(2)
+        start = time.time()
+        convert_single(path, summary, unsuccessful_files, errors_per_file, print_errors=print_errors, validate=validate, output_dir=output_dir_nml)
+        conversion_times.append(time.time() - start)
 
     clear_screen()
     print('Conversion complete!')
-    print("\nSummary:")
-    pprint.pprint(summary)
 
-    print(f"\nAverage fetching time: {np.mean(fetch_time)}")
-    print(f"Average writing time: {np.mean(write_time)}")
-    print(f"Average conversion time: {np.mean(conversion_time)}")
-
-    if unsuccessful_files:
-        print("\nErrors for unsuccessfully converted files:")
-        for file, errors in unsuccessful_files.items():
-            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
-
-    if print_errors:
-        print("\nErrors per file:")
-        for file, errors in errors_per_file.items():
-            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
-
-
-def clear_line(line_number):
-    '''
-    This function clears the line given by the line number.
-    '''
-
-    sys.stdout.write(f"\033[{line_number};0H\033[K")
-    sys.stdout.flush()
+    print(f"\nAverage fetching time: {np.mean(fetch_times)}")
+    print(f"Average writing time: {np.mean(write_times)}")
+    print(f"Average conversion time: {np.mean(conversion_times)}")
+    print_summary(summary, unsuccessful_files, errors_per_file, print_errors)
 
 
 def convert_api_bulk(page_range, size, validate=False, print_errors=False, write_nml=False, output_dir_nml=''):
@@ -240,10 +201,7 @@ def convert_api_bulk(page_range, size, validate=False, print_errors=False, write
     '''
 
     # Create dictionaries for summary of converted files
-    summary = {}
-    summary['Successful conversions'] = 0
-    summary['Unsuccessful conversions'] = 0
-    summary['Errors'] = {}
+    summary = make_summary()
     unsuccessful_files = {}
     errors_per_file = {}
 
@@ -251,43 +209,30 @@ def convert_api_bulk(page_range, size, validate=False, print_errors=False, write
         clear_screen()
         print(f"Fetching page {page_num}... (Page {i + 1}/{len(range(*page_range))})")
 
-        swc_contents = API_bulk.create_swc_files(page_num, size)
+        try:
+            swc_contents, failed_fetches = nm_api.fetch_neurons_by_page(page_num, size)
+        except APITimeoutException as e:
+            summary['Unsuccessful conversions']['API timeout'] = summary['Unsuccessful conversions'].get('API timeout', 0) + 1
+            print(f'Timeout fetching page {page_num}: {e}')
+            time.sleep(5)
+            continue
+        except APIException as e:
+            summary['Unsuccessful conversions']['API error'] = summary['Unsuccessful conversions'].get('API error', 0) + 1
+            print(f'API error fetching page {page_num}: {e}')
+            continue
+
+        for neuron_name, reason in failed_fetches.items():
+            summary['Unsuccessful conversions'][reason] = summary['Unsuccessful conversions'].get(reason, 0) + 1
+            unsuccessful_files[neuron_name] = reason
 
         clear_screen()
         print(f"Converting page {page_num}... (Page {i + 1}/{len(range(*page_range))})")
-        for i, (swc_file, swc_content) in enumerate(swc_contents.items()):
+
+        for j, (swc_file, swc_content) in enumerate(swc_contents.items()):
             clear_line(2)
-            print(f'Converting {swc_file}... (File {i + 1}/{len(swc_contents)})')
+            print(f'Converting {swc_file}... (File {j + 1}/{len(swc_contents)})')
 
-            try:
-                nml_doc, errors = Converter_utils.construct_nml((swc_file, swc_content))
-                if write_nml:
-                    nml_file = write_nml_file(nml_doc, swc_file, output_dir_nml)
-                summary['Successful conversions'] += 1
-            except Converter_utils.ConversionException as e:
-                errors = e.errors
-                summary['Unsuccessful conversions']['Conversion exception'] += 1
-                unsuccessful_files[swc_file] = errors
-                print(f'Error converting {swc_file}: {e}\n')
-                time.sleep(2)
-            except Exception as e:
-                errors = e
-                summary['Unsuccessful conversions']['Other exception'] += 1
-                unsuccessful_files[swc_file] = e
-                print(f'Error converting {swc_file}: {e}\n')
-                time.sleep(2)
-
-            if print_errors and errors:
-                errors_per_file[swc_file] = errors
-
-            for error in errors:
-                if error not in summary['Errors']:
-                    summary['Errors'][error] = 1
-                else:
-                    summary['Errors'][error] += 1
-
-            if validate:
-                Validate_nml.validate_single_file(nml_file)
+            convert_single((swc_file, swc_content), summary, unsuccessful_files, errors_per_file, print_errors=print_errors, validate=validate, write_nml=write_nml, output_dir=output_dir_nml)
 
     clear_screen()
     print('Conversion complete!')
@@ -299,18 +244,29 @@ def convert_api_bulk(page_range, size, validate=False, print_errors=False, write
     with open(file_path, 'wb') as f:
         pickle.dump(summary, f)
 
-    print("\nSummary:")
-    pprint.pprint(summary)
+    print_summary(summary, unsuccessful_files, errors_per_file, print_errors)
 
-    if unsuccessful_files:
-        print("\nErrors for unsuccessfully converted files:")
-        for file, errors in unsuccessful_files.items():
-            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
 
-    if print_errors:
-        print("\nErrors per file:")
-        for file, errors in errors_per_file.items():
-            print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
+def convert_api_random(validate = True, output_dir_swc='', output_dir_nml=''):
+    neuron_id = random.randint(0, 286626 - 1)
+
+    print(f'Fetching neuron {neuron_id}...')
+    try:
+        path, fetch_time, write_time = nm_api.fetch_neuron_by_id(neuron_id, output_dir=output_dir_swc)
+    except APITimeoutException as e:
+        print(f'Timeout fetching neuron {neuron_id}: {e}')
+    except APIException as e:
+        print(f'API error fetching neuron {neuron_id}: {e}')
+
+    print(f'Converting {os.path.basename(path)}...')
+    start = time.time()
+    convert_file(path, validate=validate, output_dir=output_dir_nml)
+    conversion_time = time.time() - start
+    print('Conversion complete!')
+
+    print(f"\nFetching time: {fetch_time}")
+    print(f"Writing time: {write_time}")
+    print(f"Conversion time: {conversion_time}")
 
 
 if __name__ == '__main__':
@@ -339,11 +295,19 @@ if __name__ == '__main__':
 
 
     # Converting from the API (bulk):
-    page_range = (0, 1)
-    size = 20
-    output_dir_nml = 'nml_api'
-    print_errors = False
-    validate = False
-    write_nml = False
+    # page_range = (2115, 2120)
+    # size = 20
+    # output_dir_nml = 'nml_api'
+    # print_errors = False
+    # validate = False
+    # write_nml = False
 
-    convert_api_bulk(page_range, size, validate=validate, print_errors=print_errors, write_nml=write_nml, output_dir_nml=output_dir_nml)
+    # convert_api_bulk(page_range, size, validate=validate, print_errors=print_errors, write_nml=write_nml, output_dir_nml=output_dir_nml)
+
+
+    # Converting from the API (random):
+    output_dir_swc = 'swc_random'
+    output_dir_nml = 'nml_random'
+    validate = False
+
+    convert_api_random(validate=validate, output_dir_swc=output_dir_swc, output_dir_nml=output_dir_nml)

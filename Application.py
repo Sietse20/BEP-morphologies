@@ -3,7 +3,7 @@ from tkinter import filedialog, messagebox
 from tkinter.scrolledtext import ScrolledText
 import os
 import sys
-import Converter_utils
+import converter_utils
 
 class LogRedirector:
     def __init__(self, widget):
@@ -188,17 +188,17 @@ class ConverterApp:
     def convert_single_file(self, swc_file_path, output_directory):
         if swc_file_path.endswith('.swc'):
             print(f"Converting single file: {swc_file_path} to {output_directory if output_directory else 'default directory'}")
-            Converter_utils.convert_file(swc_file_path, output_dir=output_directory)
+            converter_utils.convert_file(swc_file_path, output_dir=output_directory)
         else:
             messagebox.showerror("Invalid File", "Please choose a file with a .swc extension")
 
     def convert_directory(self, directory_path, print_errors, output_directory):
         print(f"Converting directory: {directory_path} with print errors set to {print_errors} to {output_directory if output_directory else 'default directory'}")
-        Converter_utils.convert_directory(directory_path, print_errors, path_nml=output_directory)
+        converter_utils.convert_directory(directory_path, print_errors, path_nml=output_directory)
 
     def convert_from_api(self, page_range, size, print_errors, output_directory):
         print(f"Converting from API with page range: {page_range}, size: {size}, print errors set to {print_errors}, output directory: {output_directory if output_directory else 'default directory'}")
-        Converter_utils.convert_api_bulk(page_range, size, print_errors, output_dir_nml=output_directory)
+        converter_utils.convert_api_bulk(page_range, size, print_errors, output_dir_nml=output_directory)
 
     def start_api_conversion(self):
         page_range_start = self.page_range_start.get()

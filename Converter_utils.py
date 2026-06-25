@@ -2,6 +2,7 @@ import neuroml
 import re
 import os
 import io
+import neuroml.writers as writers
 
 
 '''
@@ -22,7 +23,7 @@ If you have any questions about the code, feel free to contact me at s.reissenwe
 '''
 
 
-def construct_nml(input_data):
+def construct_nml(input_data, write_nml=True, output_dir=''):
     '''
     This function is the big function that calls all helper functions to construct the neuroml file.
 
@@ -33,31 +34,35 @@ def construct_nml(input_data):
     '''
 
     errors = {}
+    nml_file = None
 
     # Extract input_data (tuple means API)
     if isinstance(input_data, tuple):
         filename = input_data[0]
-        input = input_data[1]
+        input_swc = input_data[1]
     else:
         filename = os.path.basename(input_data).split('.')[0]
-        input = input_data
+        input_swc = input_data
 
     nml_id = create_id(filename)
-    cell_ID = f"{nml_id}_cell"
+    cell_id = f"{nml_id}_cell"
     nml_doc = neuroml.NeuroMLDocument(id=nml_id)
-    nml_cell = neuroml.Cell(id=cell_ID)
+    nml_cell = neuroml.Cell(id=cell_id)
 
-    d, comments = open_and_split(input, errors)
+    d, comments = open_and_split(input_swc, errors)
     make_notes(comments, nml_cell)
     n, children, type_seg, root = classify_types_branches_and_leafs(d, errors)
     segmentGroups = find_segments(d, n)
-    nml_mor = process_segments(d, children, root, cell_ID, errors)
+    nml_mor = process_segments(d, children, root, cell_id, errors)
     process_cables(segmentGroups, type_seg, nml_mor, nml_cell)
-    define_biophysical_properties(nml_cell, cell_ID)
+    define_biophysical_properties(nml_cell, cell_id)
 
     nml_doc.cells.append(nml_cell)
 
-    return nml_doc, errors
+    if write_nml:
+        nml_file = write_nml_file(nml_doc, filename, output_dir=output_dir)
+
+    return nml_file, nml_doc, errors
 
 
 class ConversionException(Exception):
@@ -86,7 +91,7 @@ def log_error(errors, error_type, occurrence=1, extra_info=None, fix=None, stop=
 
     # Check if error_type is related to unknown SWC structure identifiers
     if error_type.startswith("Unknown structure identifier detected"):
-        type_id = error_type[23:]
+        type_id = error_type[39:]
         if "Unknown structure identifier detected" not in errors:
             errors["Unknown structure identifier detected"] = {}
 
@@ -142,7 +147,7 @@ def open_and_split(input_data, errors):
         f = io.BytesIO(input_data)
         f = io.TextIOWrapper(f, encoding='utf-8')
     else:
-        f = open(input_data, 'r+')
+        f = open(input_data, 'r')
 
     with f:
         for line in f:
@@ -344,13 +349,12 @@ def find_segments(d, n):
         toAdd = leaf
         group_type = d[toAdd][0]
         segGr = []
-        segmentFound = False
 
-        while segmentFound is False:
+        while True:
             if toAdd == -1:
-                segmentFound = True
+                break
             elif toAdd in n[2]:  # Found a branch point
-                segmentFound = True
+                break
             elif d[toAdd][0] != group_type:
                 segmentGroups.append(segGr)
                 segGr = []
@@ -369,13 +373,12 @@ def find_segments(d, n):
         toAdd = branch
         group_type = d[toAdd][0]
         segGr = []
-        segmentFound = False
 
-        while segmentFound is False:
+        while True:
             if toAdd == -1:
-                segmentFound = True
+                break
             elif toAdd in n[2] and toAdd != branch:
-                segmentFound = True
+                break
             elif d[toAdd][0] != group_type:
                 segmentGroups.append(segGr)
                 segGr = []
@@ -392,26 +395,25 @@ def find_segments(d, n):
     return segmentGroups
 
 
-def process_segments(d, children, root, Cell_ID, errors):
+def process_segments(d, children, root, cell_id, errors):
     '''
     This function incorporates the segments into the neuroml morphology object.
 
     Input: - d: dict {point (int): (struc_id, x_coord, y_coord, z_coord, radius, parent)}
            - children: dict {point (int): [children]}
            - root: point without parent (int)
-           - cell_ID: unique ID of neuroml cell (str)
+           - cell_id: unique ID of neuroml cell (str)
            - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
 
     Returns: nml_mor: neuroml morphology object
     '''
 
-    nml_mor = neuroml.Morphology(id=f'{Cell_ID}_morphology')
+    nml_mor = neuroml.Morphology(id=f'{cell_id}_morphology')
 
     available_points = [root]
     processed = []
-    all_processed = False
 
-    while all_processed is False:
+    while available_points:
         next_to_process = min(available_points)
 
         if next_to_process == root:  # Set distal and proximal points to root point if root
@@ -455,18 +457,16 @@ def process_segments(d, children, root, Cell_ID, errors):
 
         available_points.remove(next_to_process)
         available_points += children[next_to_process]
-        if not available_points:
-            all_processed = True
 
     return nml_mor
 
 
-def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
+def process_cables(segment_groups, type_seg, nml_mor, nml_cell):
     '''
     This function incorporates the segment groups into the morphology object and adds them to bigger segment groups.
     The morphology object is then added to the cell object.
 
-    Input: - segmentGroups: list with lists of segmentgroups [[point], [point], ...]
+    Input: - segment_groups: list with lists of segmentGroups [[point], [point], ...]
            - type_seg: dict {point (int): type morph. structurte (e.g. soma) (str)}
            - nml_mor: neuroml morphology object
            - nml_cell: neuroml cell object
@@ -487,8 +487,8 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
     custom_groups = {}  # Dictionary to hold custom segment groups
     counter = {}  # Dictionary to keep track of ids of groups
 
-    for segmentGroup in segmentGroups:
-        type_cable = type_seg[segmentGroup[0]]
+    for segment_group in segment_groups:
+        type_cable = type_seg[segment_group[0]]
         if type_cable not in counter:
             counter[type_cable] = 1
         else:
@@ -496,7 +496,7 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
         cable_id = f'{type_cable}_{counter[type_cable]}'
         this_cable = neuroml.SegmentGroup(id=cable_id, neuro_lex_id='SAO:864921383')
 
-        for segment in reversed(segmentGroup):
+        for segment in reversed(segment_group):
             member = neuroml.Member(segments=segment)
             this_cable.members.append(member)
 
@@ -525,9 +525,9 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
     for cable in cables:
         nml_mor.segment_groups.append(cable)
 
-    for type in [all_cables, soma_group, axon_group, dendrite_group, basal_group, apical_group]:
-        if type.includes:
-            nml_mor.segment_groups.append(type)
+    for seg_group in [all_cables, soma_group, axon_group, dendrite_group, basal_group, apical_group]:
+        if seg_group.includes:
+            nml_mor.segment_groups.append(seg_group)
 
     for custom_group in custom_groups.values():
         nml_mor.segment_groups.append(custom_group)
@@ -535,18 +535,18 @@ def process_cables(segmentGroups, type_seg, nml_mor, nml_cell):
     nml_cell.morphology = nml_mor
 
 
-def define_biophysical_properties(nml_cell, Cell_ID):
+def define_biophysical_properties(nml_cell, cell_id):
     '''
     This function defines some basic biophysical properties for the given cell.
 
     Input: - nml_cell: neuroml cell object
-           - Cell_ID: unique ID of neuroml cell (str)
+           - cell_id: unique ID of neuroml cell (str)
 
     Returns: None
     '''
 
     # Create biophysical properties object
-    all_props = neuroml.BiophysicalProperties(id=f'{Cell_ID}_properties')
+    all_props = neuroml.BiophysicalProperties(id=f'{cell_id}_properties')
 
     # Create and configure membrane properties
     membrane_props = neuroml.MembraneProperties()
@@ -564,3 +564,19 @@ def define_biophysical_properties(nml_cell, Cell_ID):
 
     # Assign object to cell
     nml_cell.biophysical_properties = all_props
+
+
+def write_nml_file(nml_doc, filename, output_dir=''):
+    '''
+    This function writes the neuroml document object to a neuroml file in an optionally specified output directory.
+
+    Input: - nml_doc: neuroml document object
+           - filename: name of the SWC file (str)
+           - output_dir (optional): directory in which the neuroml file will be saved (str)
+
+    Returns: name of the newly created neuroml file (str)
+    '''
+
+    nml_file = f'{output_dir}/{filename}_converted.cell.nml' if output_dir else f'{filename}_converted.cell.nml'
+    writers.NeuroMLWriter.write(nml_doc, nml_file)
+    return os.path.basename(nml_file)

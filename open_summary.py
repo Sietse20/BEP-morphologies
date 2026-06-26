@@ -8,7 +8,7 @@ d = {'Successful conversions': 0,
 
 # Step 1: Open the pickle file in binary read mode
 for filename in os.listdir('summaries'):
-    with open(f'summaries/{filename}', 'rb') as f:
+    with open(f'new_summaries/pages_0-999', 'rb') as f:
         # Step 2: Load the dictionary from the file
         dictionary = pickle.load(f)
         d['Successful conversions'] += dictionary['Successful conversions']

@@ -1,0 +1,211 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.3.1.xsd" id="fru_M_400032">
+    <notes>
+
+****************************************
+This NeuroML file was converted from SWC to NeuroML format by Sietse Reissenweber's converter.                      
+For any questions regarding the conversion, you can email me at s.reissenweber12@gmail.com.                      
+The notes listed below are the notes that were originally contained in the SWC file.
+****************************************
+
+########################################
+
+SWC to SWC conversion from L-Measure. Sridevi Polavaram: spolavar@gmu.edu
+Original fileName:C:\Users\NMO2\Desktop\Jatin\PCA\chiang\CNGversion\fru-M-400032.CNG.swc
+
+
+########################################
+
+</notes>
+    <morphology id="fru_M_400032_morphology">
+        <segmentGroup id="axon_1" neuroLexId="SAO:864921383">
+            <member segment="26"/>
+            <member segment="27"/>
+            <member segment="28"/>
+            <member segment="29"/>
+            <member segment="30"/>
+            <member segment="31"/>
+            <member segment="32"/>
+            <member segment="33"/>
+            <member segment="34"/>
+            <member segment="35"/>
+            <member segment="36"/>
+            <member segment="37"/>
+        </segmentGroup>
+        <segmentGroup id="axon_2" neuroLexId="SAO:864921383">
+            <member segment="38"/>
+            <member segment="39"/>
+            <member segment="40"/>
+            <member segment="41"/>
+            <member segment="42"/>
+            <member segment="43"/>
+            <member segment="44"/>
+        </segmentGroup>
+        <segmentGroup id="axon_3" neuroLexId="SAO:864921383">
+            <member segment="51"/>
+            <member segment="52"/>
+            <member segment="53"/>
+            <member segment="54"/>
+            <member segment="55"/>
+        </segmentGroup>
+        <segmentGroup id="axon_4" neuroLexId="SAO:864921383">
+            <member segment="56"/>
+            <member segment="57"/>
+            <member segment="58"/>
+        </segmentGroup>
+        <segmentGroup id="axon_5" neuroLexId="SAO:864921383">
+            <member segment="59"/>
+            <member segment="60"/>
+            <member segment="61"/>
+            <member segment="62"/>
+        </segmentGroup>
+        <segmentGroup id="axon_6" neuroLexId="SAO:864921383">
+            <member segment="63"/>
+            <member segment="64"/>
+            <member segment="65"/>
+            <member segment="66"/>
+            <member segment="67"/>
+            <member segment="68"/>
+        </segmentGroup>
+        <segmentGroup id="axon_7" neuroLexId="SAO:864921383">
+            <member segment="69"/>
+            <member segment="70"/>
+            <member segment="71"/>
+            <member segment="72"/>
+            <member segment="73"/>
+            <member segment="74"/>
+            <member segment="75"/>
+            <member segment="76"/>
+            <member segment="77"/>
+        </segmentGroup>
+        <segmentGroup id="axon_8" neuroLexId="SAO:864921383">
+            <member segment="78"/>
+            <member segment="79"/>
+            <member segment="80"/>
+        </segmentGroup>
+        <segmentGroup id="axon_9" neuroLexId="SAO:864921383">
+            <member segment="84"/>
+            <member segment="85"/>
+            <member segment="86"/>
+        </segmentGroup>
+        <segmentGroup id="axon_10" neuroLexId="SAO:864921383">
+            <member segment="87"/>
+            <member segment="88"/>
+        </segmentGroup>
+        <segmentGroup id="axon_11" neuroLexId="SAO:864921383">
+            <member segment="89"/>
+            <member segment="90"/>
+            <member segment="91"/>
+        </segmentGroup>
+        <segmentGroup id="axon_12" neuroLexId="SAO:864921383">
+            <member segment="92"/>
+            <member segment="93"/>
+        </segmentGroup>
+        <segmentGroup id="axon_13" neuroLexId="SAO:864921383">
+            <member segment="0"/>
+            <member segment="1"/>
+            <member segment="2"/>
+            <member segment="3"/>
+            <member segment="4"/>
+            <member segment="5"/>
+            <member segment="6"/>
+            <member segment="7"/>
+            <member segment="8"/>
+            <member segment="9"/>
+            <member segment="10"/>
+            <member segment="11"/>
+            <member segment="12"/>
+            <member segment="13"/>
+        </segmentGroup>
+        <segmentGroup id="axon_14" neuroLexId="SAO:864921383">
+            <member segment="14"/>
+            <member segment="15"/>
+            <member segment="16"/>
+        </segmentGroup>
+        <segmentGroup id="axon_15" neuroLexId="SAO:864921383">
+            <member segment="17"/>
+        </segmentGroup>
+        <segmentGroup id="axon_16" neuroLexId="SAO:864921383">
+            <member segment="18"/>
+        </segmentGroup>
+        <segmentGroup id="axon_17" neuroLexId="SAO:864921383">
+            <member segment="19"/>
+        </segmentGroup>
+        <segmentGroup id="axon_18" neuroLexId="SAO:864921383">
+            <member segment="20"/>
+            <member segment="21"/>
+            <member segment="22"/>
+            <member segment="23"/>
+            <member segment="24"/>
+        </segmentGroup>
+        <segmentGroup id="axon_19" neuroLexId="SAO:864921383">
+            <member segment="25"/>
+        </segmentGroup>
+        <segmentGroup id="axon_20" neuroLexId="SAO:864921383">
+            <member segment="45"/>
+            <member segment="46"/>
+            <member segment="47"/>
+            <member segment="48"/>
+        </segmentGroup>
+        <segmentGroup id="axon_21" neuroLexId="SAO:864921383">
+            <member segment="49"/>
+            <member segment="50"/>
+        </segmentGroup>
+        <segmentGroup id="axon_22" neuroLexId="SAO:864921383">
+            <member segment="81"/>
+            <member segment="82"/>
+        </segmentGroup>
+        <segmentGroup id="axon_23" neuroLexId="SAO:864921383">
+            <member segment="83"/>
+        </segmentGroup>
+        <segmentGroup id="all">
+            <include segmentGroup="axon_1"/>
+            <include segmentGroup="axon_2"/>
+            <include segmentGroup="axon_3"/>
+            <include segmentGroup="axon_4"/>
+            <include segmentGroup="axon_5"/>
+            <include segmentGroup="axon_6"/>
+            <include segmentGroup="axon_7"/>
+            <include segmentGroup="axon_8"/>
+            <include segmentGroup="axon_9"/>
+            <include segmentGroup="axon_10"/>
+            <include segmentGroup="axon_11"/>
+            <include segmentGroup="axon_12"/>
+            <include segmentGroup="axon_13"/>
+            <include segmentGroup="axon_14"/>
+            <include segmentGroup="axon_15"/>
+            <include segmentGroup="axon_16"/>
+            <include segmentGroup="axon_17"/>
+            <include segmentGroup="axon_18"/>
+            <include segmentGroup="axon_19"/>
+            <include segmentGroup="axon_20"/>
+            <include segmentGroup="axon_21"/>
+            <include segmentGroup="axon_22"/>
+            <include segmentGroup="axon_23"/>
+        </segmentGroup>
+        <segmentGroup id="axon_group" neuroLexId="SAO:1770195789">
+            <include segmentGroup="axon_1"/>
+            <include segmentGroup="axon_2"/>
+            <include segmentGroup="axon_3"/>
+            <include segmentGroup="axon_4"/>
+            <include segmentGroup="axon_5"/>
+            <include segmentGroup="axon_6"/>
+            <include segmentGroup="axon_7"/>
+            <include segmentGroup="axon_8"/>
+            <include segmentGroup="axon_9"/>
+            <include segmentGroup="axon_10"/>
+            <include segmentGroup="axon_11"/>
+            <include segmentGroup="axon_12"/>
+            <include segmentGroup="axon_13"/>
+            <include segmentGroup="axon_14"/>
+            <include segmentGroup="axon_15"/>
+            <include segmentGroup="axon_16"/>
+            <include segmentGroup="axon_17"/>
+            <include segmentGroup="axon_18"/>
+            <include segmentGroup="axon_19"/>
+            <include segmentGroup="axon_20"/>
+            <include segmentGroup="axon_21"/>
+            <include segmentGroup="axon_22"/>
+            <include segmentGroup="axon_23"/>
+        </segmentGroup>
+    </morphology>
+</neuroml>

@@ -240,7 +240,7 @@ def convert_api_bulk(page_range, size, validate=False, print_errors=False, write
     # Save summary to file
     start_page = page_range[0]
     end_page = page_range[1] - 1
-    file_path = f"summaries/pages_{start_page}-{end_page}"
+    file_path = f"new_summaries/pages_{start_page}-{end_page}"
     with open(file_path, 'wb') as f:
         pickle.dump(summary, f)
 
@@ -271,7 +271,7 @@ def convert_api_random(validate = True, output_dir_swc='', output_dir_nml=''):
 
 if __name__ == '__main__':
     # Converting single file:
-    # path = "swc_api/0-2a.swc"
+    # path = "swc_random/2B-01-traced-control-11.swc"
     # output_dir = ''
 
     # convert_file(path, validate=True, output_dir=output_dir)
@@ -295,8 +295,8 @@ if __name__ == '__main__':
 
 
     # Converting from the API (bulk):
-    # page_range = (2115, 2120)
-    # size = 20
+    # page_range = (0, 1000)
+    # size = 50
     # output_dir_nml = 'nml_api'
     # print_errors = False
     # validate = False
@@ -308,6 +308,6 @@ if __name__ == '__main__':
     # Converting from the API (random):
     output_dir_swc = 'swc_random'
     output_dir_nml = 'nml_random'
-    validate = False
+    validate = True
 
     convert_api_random(validate=validate, output_dir_swc=output_dir_swc, output_dir_nml=output_dir_nml)

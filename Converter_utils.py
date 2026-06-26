@@ -50,11 +50,11 @@ def construct_nml(input_data, write_nml=True, output_dir=''):
     nml_cell = neuroml.Cell(id=cell_id)
 
     d, comments = open_and_split(input_swc, errors)
-    make_notes(comments, nml_cell)
+    make_notes(comments, nml_doc)
     n, children, type_seg, root = classify_types_branches_and_leafs(d, errors)
-    segmentGroups = find_segments(d, n)
-    nml_mor = process_segments(d, children, root, cell_id, errors)
-    process_cables(segmentGroups, type_seg, nml_mor, nml_cell)
+    segmentGroups = find_segments(d, n, root)
+    nml_mor, point_to_segment = process_segments(d, children, root, cell_id, errors)
+    process_cables(segmentGroups, type_seg, nml_mor, nml_cell, point_to_segment)
     define_biophysical_properties(nml_cell, cell_id)
 
     nml_doc.cells.append(nml_cell)
@@ -188,19 +188,15 @@ def open_and_split(input_data, errors):
     if invalid_lines:
         log_error(errors, "Line in SWC file contains an invalid amount of columns (more or less than 7)", occurrence=len(invalid_lines), extra_info=f"Lines {', '.join(map(str, invalid_lines))}", fix="Skipped these lines")
 
-    # Check if cell has segments
+    # Check if file has segments
     if not d:
         log_error(errors, "SWC file does not contain any segments", fix="No fixes. SWC file is invalid.", stop=True)
 
-    # Check if cell has more than one or zero segment(s) without a parent
+    # Check if file has more than one or zero segment(s) without a parent
     if len(no_par) == 0:
         log_error(errors, "Zero segments without parent (root segments) detected", fix="No fixes. SWC file is invalid.", stop=True)
     if len(no_par) > 1:
         log_error(errors, "More than one segment without parent (root segment) detected", extra_info=f"Points {', '.join(no_par)}", fix="No fixes. SWC file is invalid.", stop=True)
-
-    # Check if cell contains soma samples
-    if not soma_detected:
-        log_error(errors, "No soma segments detected", fix="No fixes.")
 
     return d, comments
 
@@ -221,28 +217,28 @@ def create_id(filename):
     return nml_id
 
 
-def make_notes(comments, nml_cell):
+def make_notes(comments, nml_doc):
     '''
     This function creates the notes listed at the top of the neuroml file. It also includes the original comments listed in the SWC file.
 
     Input: - comments: list of comments [comment (str)]
-           - nml_cell: neuroml cell object
+           - nml_doc: neuroml document object
 
     Returns: None
     '''
 
-    nml_cell.notes = "\n\n" + '*' * 40 + \
+    nml_doc.notes = "\n\n" + '*' * 40 + \
                      "\nThis NeuroML file was converted from SWC to NeuroML format by Sietse Reissenweber's converter. \
                      \nFor any questions regarding the conversion, you can email me at s.reissenweber12@gmail.com. \
                      \nThe notes listed below are the notes that were originally contained in the SWC file.\n" \
                      + '*' * 40 + "\n\n"
 
-    nml_cell.notes += "#" * 40 + "\n\n"
+    nml_doc.notes += "#" * 40 + "\n\n"
 
     for comment in comments:
-        nml_cell.notes += f'{comment}\n'
+        nml_doc.notes += f'{comment}\n'
 
-    nml_cell.notes += "\n" + "#" * 40 + "\n\n"
+    nml_doc.notes += "\n" + "#" * 40 + "\n\n"
 
 
 def classify_types_branches_and_leafs(d, errors):
@@ -288,11 +284,26 @@ def classify_types_branches_and_leafs(d, errors):
 
         # Check for 0.0 diameter:
         if info[4] <= 0.0:
-            d[point] = info[:4] + (0.000001,) + (info[5],)
-            if point in n[0]:
+            if point in n[0]:  # endpoint
+                d[point] = info[:4] + (0.000001,) + (info[5],)
                 endpoints.append(point)
-            else:
-                internal_points.append(point)
+            else:  # internal point
+                # Gather radii of all attached points (parent + children)
+                attached_radii = []
+                if info[5] != -1 and d[info[5]][4] > 0.0:
+                    attached_radii.append(d[info[5]][4])
+                for child in [p for p, i in d.items() if i[5] == point]:
+                    if d[child][4] > 0.0:
+                        attached_radii.append(d[child][4])
+
+                if attached_radii:
+                    avg_radius = sum(attached_radii) / len(attached_radii)
+                    d[point] = info[:4] + (avg_radius,) + (info[5],)
+                    internal_points.append(point)
+                else:
+                    # All attached points also have zero radius, fall back to small number
+                    d[point] = info[:4] + (0.000001,) + (info[5],)
+                    internal_points.append(point)
 
         # Create dicts type_seg and types:
         if info[0] == 1:
@@ -327,12 +338,12 @@ def classify_types_branches_and_leafs(d, errors):
 
     # Check for internal points with zero radius
     if internal_points:
-        log_error(errors, "Internal point of zero radius detected", occurrence=len(internal_points), extra_info=f"Points {', '.join(map(str, internal_points))}", fix=f"Changed radius to small number {0.000001}")
+        log_error(errors, "Internal point of zero radius detected", occurrence=len(internal_points), extra_info=f"Points {', '.join(map(str, internal_points))}", fix=f"Changed radius to average of attached points' radii (or small number if all attached points also have zero radius)")
 
     return n, children, type_seg, root
 
 
-def find_segments(d, n):
+def find_segments(d, n, root):
     '''
     This function organizes the segments into unbranched segment groups of the same structural type.
 
@@ -344,8 +355,16 @@ def find_segments(d, n):
 
     segmentGroups = []
 
+    # Collect all soma points as single group
+    soma_group = [point for point in d if d[point][0] == 1 and point != root]
+    if soma_group:
+        segmentGroups.append(soma_group)
+
+
     # Processing from leaf points to branch points:
     for leaf in n[0]:
+        if d[leaf][0] == 1:
+            continue
         toAdd = leaf
         group_type = d[toAdd][0]
         segGr = []
@@ -370,6 +389,8 @@ def find_segments(d, n):
 
     # Processing from branch points to other branch points:
     for branch in n[2]:
+        if d[branch][0] == 1:
+            continue
         toAdd = branch
         group_type = d[toAdd][0]
         segGr = []
@@ -395,81 +416,205 @@ def find_segments(d, n):
     return segmentGroups
 
 
-def process_segments(d, children, root, cell_id, errors):
+def process_segments(d, children, root, mor_id, errors):
     '''
-    This function incorporates the segments into the neuroml morphology object.
-
-    Input: - d: dict {point (int): (struc_id, x_coord, y_coord, z_coord, radius, parent)}
-           - children: dict {point (int): [children]}
-           - root: point without parent (int)
-           - cell_id: unique ID of neuroml cell (str)
-           - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
-
-    Returns: nml_mor: neuroml morphology object
+    Converts SWC points into NeuroML segments.
+    Handles:
+    - 1 point soma: sphere
+    - 3 point soma: cylinder (outer -> center -> outer)
+    - N point soma: soma chain
     '''
 
-    nml_mor = neuroml.Morphology(id=f'{cell_id}_morphology')
+    nml_mor = neuroml.Morphology(id=f'{mor_id}')
+    point_to_segment = {}
 
-    available_points = [root]
-    processed = []
+    # Collect soma points
+    soma_point_set = set()
+    def collect_soma_points(point):
+        if d[point][0] == 1:
+            soma_point_set.add(point)
+            for child in children[point]:
+                collect_soma_points(child)
+    collect_soma_points(root)
+    n_soma = len(soma_point_set)
+
+    def make_point(p):
+        return neuroml.Point3DWithDiam(
+            x=str(d[p][1]),
+            y=str(d[p][2]),
+            z=str(d[p][3]),
+            diameter=str(d[p][4] * 2)
+        )
+
+    # CASE 1: Single soma point -> sphere
+    if n_soma == 1:
+        log_error(
+            errors,
+            "Soma representation: single point sphere",
+            fix="Represented as sphere (proximal == distal)"
+        )
+
+        p0 = list(soma_point_set)[0]
+        somaSeg = neuroml.Segment(
+            id=str(len(nml_mor.segments)),
+            name="soma",
+            proximal=make_point(p0),
+            distal=make_point(p0)
+        )
+        nml_mor.segments.append(somaSeg)
+        point_to_segment[p0] = somaSeg.id
+
+    # CASE 2: Three point soma cylinder
+    elif (
+        n_soma == 3 and
+        len([c for c in children[root] if c in soma_point_set]) == 2
+    ):
+        log_error(
+            errors,
+            "Soma representation: 3-point soma",
+            fix="Converted into cylinder outer->center->outer"
+        )
+
+        center = root
+        outer_points = [
+            c for c in children[root]
+            if c in soma_point_set
+        ]
+        bottom = outer_points[0]
+        top = outer_points[1]
+
+        # outer -> center
+        rootSeg = neuroml.Segment(
+            id=str(len(nml_mor.segments)),
+            name="soma_root",
+            proximal=make_point(bottom),
+            distal=make_point(center)
+        )
+
+        nml_mor.segments.append(rootSeg)
+
+        # The SWC root is located at the center.
+        # All dendrites should attach here.
+        point_to_segment[center] = rootSeg.id
+        point_to_segment[bottom] = rootSeg.id
+
+        # center -> outer
+        extensionSeg = neuroml.Segment(
+            id=str(len(nml_mor.segments)),
+            name="soma_extension",
+            proximal=make_point(center),
+            distal=make_point(top),
+            parent=neuroml.SegmentParent(
+                segments=rootSeg.id
+            )
+        )
+        nml_mor.segments.append(extensionSeg)
+        point_to_segment[top] = extensionSeg.id
+
+    # CASE 3: Other soma representations
+    elif n_soma > 0:
+        log_error(
+            errors,
+            f"Soma representation: {n_soma}-point soma",
+            fix="Converted soma points into a chain"
+        )
+
+        # create ordered soma chain
+        soma_points = [root]
+        visited = {root}
+        queue = list(children[root])
+
+        while queue:
+            p = queue.pop(0)
+            if p in soma_point_set and p not in visited:
+                soma_points.append(p)
+                visited.add(p)
+                queue.extend(children[p])
+
+        # create chain
+        for i in range(len(soma_points)-1):
+            p1 = soma_points[i]
+            p2 = soma_points[i+1]
+
+            seg = neuroml.Segment(
+                id=str(len(nml_mor.segments)),
+                name=f"Soma_{p1}_{p2}",
+                proximal=make_point(p1),
+                distal=make_point(p2)
+            )
+
+            if i > 0:
+                seg.parent = neuroml.SegmentParent(
+                    segments=point_to_segment[p1]
+                )
+            nml_mor.segments.append(seg)
+
+            # only distal point belongs to new segment
+            point_to_segment[p2] = seg.id
+
+        # root belongs to first segment
+        point_to_segment[root] = "0"
+
+    else:
+        log_error(
+            errors,
+            "Soma representation: no soma points detected",
+            fix="Root used as origin"
+        )
+
+    # Process dendrites / axons
+    if n_soma == 0:
+        available_points = [root]
+    else:
+        available_points = []
+        for soma_point in soma_point_set:
+            for child in children[soma_point]:
+                if child not in soma_point_set:
+                    available_points.append(child)
 
     while available_points:
-        next_to_process = min(available_points)
+        p = available_points.pop(0)
+        parent = d[p][5]
 
-        if next_to_process == root:  # Set distal and proximal points to root point if root
-            Soma_Root = neuroml.Point3DWithDiam(x=str(d[next_to_process][1]),
-                                                y=str(d[next_to_process][2]),
-                                                z=str(d[next_to_process][3]),
-                                                diameter=str(d[next_to_process][4] * 2))
-            distalp = Soma_Root
-            proximalp = Soma_Root
+        # root segment (no parent)
+        if parent == -1:
+            seg = neuroml.Segment(
+                id=str(len(nml_mor.segments)),
+                name=f"Comp_{p}",
+                proximal=make_point(p),
+                distal=make_point(p)
+            )
+
         else:
-            distalp = neuroml.Point3DWithDiam(x=str(d[next_to_process][1]),
-                                              y=str(d[next_to_process][2]),
-                                              z=str(d[next_to_process][3]),
-                                              diameter=str(d[next_to_process][4] * 2))
-            parent = d[next_to_process][5]
-            proximalp = neuroml.Point3DWithDiam(x=str(d[parent][1]),
-                                                y=str(d[parent][2]),
-                                                z=str(d[parent][3]),
-                                                diameter=str(d[parent][4] * 2))
+            seg = neuroml.Segment(
+                id=str(len(nml_mor.segments)),
+                name=f"Comp_{p}",
+                distal=make_point(p)
+            )
+            if parent in point_to_segment:
 
-        parentID = d[next_to_process][5]
-        if parentID != -1:
-            coord_distal = (d[next_to_process][1], d[next_to_process][2], d[next_to_process][3])
-            coord_proximal = (d[parent][1], d[parent][2], d[parent][3])
-            if coord_distal == coord_proximal and d[next_to_process][4] == d[parent][4]:
-                log_error(errors, "Two segments detected with same radius and coordinates", extra_info=f"Segments {next_to_process} and {parent}", fix="No fixes.")
+                seg.parent = neuroml.SegmentParent(
+                    segments=point_to_segment[parent]
+                )
+            else:
+                raise Exception(
+                    f"No parent segment found for SWC point {p}"
+                )
 
-            segpar = neuroml.SegmentParent(segments=parentID)
-            thisSeg = neuroml.Segment(id=str(next_to_process),
-                                      name=f'Comp_{str(next_to_process)}',
-                                      distal=distalp,
-                                      parent=segpar)
-        else:
-            thisSeg = neuroml.Segment(id=str(next_to_process),
-                                      name=f'Comp_{str(next_to_process)}',
-                                      proximal=proximalp,
-                                      distal=distalp)
+        nml_mor.segments.append(seg)
+        point_to_segment[p] = seg.id
+        available_points.extend(children[p])
 
-        nml_mor.segments.append(thisSeg)
-        processed.append(next_to_process)
-
-        available_points.remove(next_to_process)
-        available_points += children[next_to_process]
-
-    return nml_mor
+    return nml_mor, point_to_segment
 
 
-def process_cables(segment_groups, type_seg, nml_mor, nml_cell):
+def process_cables(segment_groups, type_seg, nml_mor, nml_cell, point_to_segment):
     '''
     This function incorporates the segment groups into the morphology object and adds them to bigger segment groups.
-    The morphology object is then added to the cell object.
 
     Input: - segment_groups: list with lists of segmentGroups [[point], [point], ...]
            - type_seg: dict {point (int): type morph. structurte (e.g. soma) (str)}
            - nml_mor: neuroml morphology object
-           - nml_cell: neuroml cell object
 
     Returns: None
     '''
@@ -478,6 +623,10 @@ def process_cables(segment_groups, type_seg, nml_mor, nml_cell):
 
     # Create main segment groups
     all_cables = neuroml.SegmentGroup(id='all')
+    for segment_id in point_to_segment.values():
+        all_cables.members.append(
+            neuroml.Member(segments=str(segment_id))
+        )
     soma_group = neuroml.SegmentGroup(id='soma_group', neuro_lex_id='SAO:1044911821')
     axon_group = neuroml.SegmentGroup(id='axon_group', neuro_lex_id='SAO:1770195789')
     dendrite_group = neuroml.SegmentGroup(id='dendrite_group', neuro_lex_id='SAO:1211023249')
@@ -496,9 +645,15 @@ def process_cables(segment_groups, type_seg, nml_mor, nml_cell):
         cable_id = f'{type_cable}_{counter[type_cable]}'
         this_cable = neuroml.SegmentGroup(id=cable_id, neuro_lex_id='SAO:864921383')
 
+        added_segments = set()
+
         for segment in reversed(segment_group):
-            member = neuroml.Member(segments=segment)
-            this_cable.members.append(member)
+            seg_id = str(point_to_segment[segment])
+
+            if seg_id not in added_segments:
+                member = neuroml.Member(segments=seg_id)
+                this_cable.members.append(member)
+                added_segments.add(seg_id)
 
         cables.append(this_cable)
         cable_include = neuroml.Include(segment_groups=cable_id)

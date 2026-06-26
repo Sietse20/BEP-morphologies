@@ -60,5 +60,5 @@ def visualize_groups(file):
 
 
 if __name__ == "__main__":
-    file = "nml_random/Cell_500_MPD_8_FT_10_XYZ_Sorted-swc_N3DFix-swc_pruned_converted.cell.nml"
+    file = "nml_random/YF12002_4001-5000_bright149_converted.cell.nml"
     visualize_compartments(file)

@@ -14,9 +14,27 @@ import traceback
 import random
 
 
+'''
+
+BEFORE USING THIS PROGRAM
+
+This program offers the following functionalities:
+1. Converts a single SWC file.
+2. Converts multiple SWC files from a specified directory.
+3. Converts SWC files from neuromorpho.org using their API, by neuronID.
+4. Converts SWC files from neuromorpho.org using their API, in bulk by page number and size.
+5. Converts a random SWC file from neuromorpho.org using their API.
+
+The desired functionality can be selected in the if __name__ == "__main__": section at the bottom of the script. 
+Each functionality is implemented as a separate function. 
+To use a specific conversion option, uncomment or add the corresponding function call and provide the required input arguments.
+
+'''
+
+
 def make_summary():
     '''
-    Returns a fresh summary dictionary.
+    Returns a new summary dictionary.
     '''
 
     return {
@@ -27,7 +45,9 @@ def make_summary():
 
 
 def print_summary(summary, unsuccessful_files, errors_per_file, print_errors):
-    '''Prints the conversion summary, unsuccessful files, and per-file errors.'''
+    '''
+    Prints the conversion summary, unsuccessful files, and per-file errors.
+    '''
 
     print("\nSummary:")
     pprint.pprint(summary)
@@ -43,20 +63,9 @@ def print_summary(summary, unsuccessful_files, errors_per_file, print_errors):
             print(f"{file}: {json.dumps(errors, indent=2, separators=(',', ': '))}")
 
 
-def convert_single(input_data, summary, unsuccessful_files, errors_per_file, print_errors=False, validate=False, write_nml=True, output_dir=''):
+def convert_single(input_data, summary, unsuccessful_files, errors_per_file, print_errors=False, validate=False, write_nml=True, output_dir='', neuron_data=None):
     '''
     Converts a single SWC file to neuroml and updates the summary in place.
-
-    Input: - input_data: filepath (str) or (neuron_name, swc_content) tuple
-           - summary: summary dict to update in place
-           - unsuccessful_files: dict to update in place
-           - errors_per_file: dict to update in place
-           - print_errors (optional): whether to store per-file errors (bool)
-           - validate (optional): whether to validate the output file (bool)
-           - write_nml (optional): whether to write the nml file to disk (bool)
-           - output_dir (optional): directory to write the nml file to (str)
-
-    Returns: None
     '''
 
     swc_file = input_data[0] if isinstance(input_data, tuple) else os.path.basename(input_data)
@@ -66,11 +75,19 @@ def convert_single(input_data, summary, unsuccessful_files, errors_per_file, pri
     try:
         nml_file, nml_doc, errors = converter_utils.construct_nml(input_data, write_nml=write_nml, output_dir=output_dir)
         summary['Successful conversions'] += 1
+
+        if neuron_data:
+            converter_utils.log_metadata(neuron_data, "conversion_success", errors)
+
     except converter_utils.ConversionException as e:
         errors = e.errors
         summary['Unsuccessful conversions']['Conversion exception'] = summary['Unsuccessful conversions'].get('Conversion exception', 0) + 1
         unsuccessful_files[swc_file] = errors
         print(f'Error converting {swc_file}: {e}')
+
+        if neuron_data:
+            converter_utils.log_metadata(neuron_data, "conversion_failed", errors)
+
     except Exception as e:
         summary['Unsuccessful conversions']['Internal error'] = summary['Unsuccessful conversions'].get('Internal error', 0) + 1
         unsuccessful_files[swc_file] = str(e)
@@ -84,13 +101,15 @@ def convert_single(input_data, summary, unsuccessful_files, errors_per_file, pri
         summary['Errors'][error] = summary['Errors'].get(error, 0) + 1
 
     if validate and nml_file:
-        validate_nml.validate_single_file(nml_file)
+        full_path = os.path.join(output_dir, nml_file)
+        validate_nml.validate_single_file(full_path)
 
 
 def convert_file(path, validate=True, output_dir=''):
     '''
-    This function converts a single file to a neuroml file and saves it to an optionally specified output directory.
-    It prints a conversion message and the error dictionary.
+    Converts a single file to a neuroml file and saves it to an optionally specified output directory.
+    Prints a conversion message and the error dictionary.
+    Validates the neuroml file if indicated through validate.
     '''
 
     swc_file = os.path.basename(path)
@@ -113,9 +132,10 @@ def convert_file(path, validate=True, output_dir=''):
 
 def convert_directory(path_swc, validate=True, print_errors=False, path_nml=''):
     '''
-    This function converts all the SWC files in a given directory to neuroml files and saves them to an optionally specified output directory.
-    It shows the progress of the conversion and prints the error dictionaries if indicated through print_errors.
-    It prints a summary of the errors encountered and the amount of files (un)successfully converted.
+    Converts all the SWC files in the given directory to neuroml files and saves them to an optionally specified output directory.
+    Shows the progress of the conversion and prints the error dictionaries if indicated through print_errors.
+    Prints a summary of the errors encountered and the conversion success rate.
+    Validates the neuroml files if indicated through validate.
     '''
 
     # Create dictionaries for summary of converted files
@@ -131,7 +151,7 @@ def convert_directory(path_swc, validate=True, print_errors=False, path_nml=''):
                 file_paths.append(os.path.join(root, file))
 
     for i, file_path in enumerate(file_paths):
-        clear_screen()
+        # clear_screen()
         print(f'Converting {os.path.basename(file_path)}... (File {i + 1}/{len(file_paths)})')
 
         convert_single(file_path, summary, unsuccessful_files, errors_per_file, print_errors=print_errors, validate=validate, output_dir=path_nml)
@@ -142,10 +162,12 @@ def convert_directory(path_swc, validate=True, print_errors=False, path_nml=''):
 
 def convert_api_neuronid(range_api, validate=True, print_errors=False, output_dir_swc='', output_dir_nml=''):
     '''
-    This function fetches the neurons given by range_api from the neuromorpho API and converts the fetched SWC files to neuroml files.
-    It saves them to an optionally specified output directory.
-    It shows the progress of the conversion and prints the error dictionaries if indicated through print_errors.
-    It prints a summary of the errors encountered and the amount of files (un)successfully converted.
+    Fetches the neurons given by range_api from the neuromorpho API and converts the fetched SWC files to neuroml files.
+    Saves them to an optionally specified output directory.
+    Shows the progress of the conversion and prints the error dictionaries if indicated through print_errors.
+    Prints a summary of the errors encountered and the amount of files (un)successfully converted.
+    Validates the neuroml files if indicated through validate.
+    Shows the average fetching, writing, and conversion times.
     '''
 
     # Create dictionaries for summary of converted files
@@ -194,10 +216,12 @@ def convert_api_neuronid(range_api, validate=True, print_errors=False, output_di
 
 def convert_api_bulk(page_range, size, validate=False, print_errors=False, write_nml=False, output_dir_nml=''):
     '''
-    This function fetches the neurons in bulk given by page_range and size (amount of neurons per page) from the neuromorpho API and converts the fetched SWC files to neuroml files.
-    It saves them to an optionally specified output directory.
-    It shows the progress of the conversion and prints the error dictionaries if indicated through print_errors.
-    It prints a summary of the errors encountered and the amount of files (un)successfully converted.
+    Fetches the neurons in bulk given by page_range and size (amount of neurons per page) from the neuromorpho API and converts the fetched SWC files to neuroml files.
+    Saves them to an optionally specified output directory.
+    Shows the progress of the conversion and prints the error dictionaries if indicated through print_errors.
+    Prints a summary of the errors encountered and the amount of files (un)successfully converted.
+    Validates the neuroml files if indicated through validate.
+    Only writes the neuroml files if indicated through write_nml to save disk space when converting large amounts of files.
     '''
 
     # Create dictionaries for summary of converted files
@@ -228,11 +252,14 @@ def convert_api_bulk(page_range, size, validate=False, print_errors=False, write
         clear_screen()
         print(f"Converting page {page_num}... (Page {i + 1}/{len(range(*page_range))})")
 
-        for j, (swc_file, swc_content) in enumerate(swc_contents.items()):
+        for j, (swc_file, neuron_info) in enumerate(swc_contents.items()):
             clear_line(2)
             print(f'Converting {swc_file}... (File {j + 1}/{len(swc_contents)})')
 
-            convert_single((swc_file, swc_content), summary, unsuccessful_files, errors_per_file, print_errors=print_errors, validate=validate, write_nml=write_nml, output_dir=output_dir_nml)
+            swc_content = neuron_info["content"]
+            neuron_data = neuron_info["metadata"]
+
+            convert_single((swc_file, swc_content), summary, unsuccessful_files, errors_per_file, print_errors=print_errors, validate=validate, write_nml=write_nml, output_dir=output_dir_nml, neuron_data=neuron_data)
 
     clear_screen()
     print('Conversion complete!')
@@ -247,7 +274,14 @@ def convert_api_bulk(page_range, size, validate=False, print_errors=False, write
     print_summary(summary, unsuccessful_files, errors_per_file, print_errors)
 
 
-def convert_api_random(validate = True, output_dir_swc='', output_dir_nml=''):
+def convert_api_random(validate=True, output_dir_swc='', output_dir_nml=''):
+    '''
+    Fetches a random neuron from the neuromorpho API and converts the fetched SWC file to a neuroml file.
+    Saves the SWC and NeuroML files to optionally specified output directories.
+    Validates the neuroml file if indicated through validate.
+    Shows the average fetching, writing, and conversion times.
+    '''
+
     neuron_id = random.randint(0, 286626 - 1)
 
     print(f'Fetching neuron {neuron_id}...')
@@ -270,34 +304,45 @@ def convert_api_random(validate = True, output_dir_swc='', output_dir_nml=''):
 
 
 if __name__ == '__main__':
-    # Converting single file:
-    # path = "swc_random/2B-01-traced-control-11.swc"
-    # output_dir = ''
+    # ============================================================
+    # Converting single SWC file
+    # ============================================================
+    path = "swc_files/swc_no_api/GGN_20170309_sc.swc"
+    output_dir = 'nml_files/nml_no_api'
+    validate = True
 
-    # convert_file(path, validate=True, output_dir=output_dir)
+    # convert_file(path, validate=validate, output_dir=output_dir)
 
-    # Converting from a directory:
-    # path_swc = "Padraig"
-    # path_nml = 'Padraig_nml'
+
+    # ============================================================
+    # Converting all SWC files from a directory
+    # ============================================================
+    # path_swc = "swc_files/swc_no_api"
+    # path_nml = 'nml_files/nml_no_api'
     # print_errors = True
+    # validate = True
 
-    # convert_directory(path_swc, print_errors, path_nml=path_nml)
+    # convert_directory(path_swc, validate=validate, print_errors=print_errors, path_nml=path_nml)
 
 
-    # Converting from the API (neuron_id):
+    # ============================================================
+    # Converting from NeuroMorpho.org API using neuron ID range
+    # ============================================================
     # range_api = (700, 710)
-    # output_dir_swc = 'swc_api'
-    # output_dir_nml = 'nml_api'
-    # print_errors = False
+    # output_dir_swc = 'swc_files/swc_api'
+    # output_dir_nml = 'nml_files/nml_api'
+    # print_errors = True
     # validate = False
 
     # convert_api_neuronid(range_api, validate=validate, print_errors=print_errors, output_dir_swc=output_dir_swc, output_dir_nml=output_dir_nml)
 
 
-    # Converting from the API (bulk):
-    # page_range = (0, 1000)
+    # ============================================================
+    # Converting from NeuroMorpho.org API in bulk
+    # ============================================================
+    # page_range = (1000, 2000)
     # size = 50
-    # output_dir_nml = 'nml_api'
+    # output_dir_nml = 'nml_files/nml_api'
     # print_errors = False
     # validate = False
     # write_nml = False
@@ -305,9 +350,11 @@ if __name__ == '__main__':
     # convert_api_bulk(page_range, size, validate=validate, print_errors=print_errors, write_nml=write_nml, output_dir_nml=output_dir_nml)
 
 
-    # Converting from the API (random):
-    output_dir_swc = 'swc_random'
-    output_dir_nml = 'nml_random'
-    validate = True
+    # ============================================================
+    # Converting a random neuron from NeuroMorpho.org API
+    # ============================================================
+    # output_dir_swc = 'swc_files/swc_random'
+    # output_dir_nml = 'nml_files/nml_random'
+    # validate = True
 
-    convert_api_random(validate=validate, output_dir_swc=output_dir_swc, output_dir_nml=output_dir_nml)
+    # convert_api_random(validate=validate, output_dir_swc=output_dir_swc, output_dir_nml=output_dir_nml)

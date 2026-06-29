@@ -101,7 +101,7 @@ def fetch_neurons_by_page(page_num, size):
     Input: - page_num: page number in the repository (int)
            - size: number of neurons per page (int)
 
-    Returns: - swc_contents: {neuron_name: swc_content (bytes)} (dict)
+    Returns: - swc_contents: {neuron_name: {"content": swc_content, "metadata": neuron_data}} (dict)
              - failed_fetches: {neuron_name: reason (str)} (dict)
     '''
 
@@ -117,10 +117,16 @@ def fetch_neurons_by_page(page_num, size):
 
         try:
             swc_content, swc_name = fetch_swc(neuron)
-            swc_contents[swc_name] = swc_content
+
+            swc_contents[swc_name] = {
+                "content": swc_content,
+                "metadata": neuron
+            }
+
         except APITimeoutException as e:
             print(f"Timeout fetching {neuron['neuron_name']}, skipping: {e}")
             failed_fetches[neuron['neuron_name']] = 'API timeout'
+
         except APIException as e:
             print(f"API error fetching {neuron['neuron_name']}, skipping: {e}")
             failed_fetches[neuron['neuron_name']] = 'API error'

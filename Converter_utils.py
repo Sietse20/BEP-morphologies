@@ -2,34 +2,20 @@ import neuroml
 import re
 import os
 import io
+import csv
 import neuroml.writers as writers
-
-
-'''
-
-BEFORE USING THIS PROGRAM
-
-This program offers the following functionalities:
-1. Converts a single SWC file.
-2. Converts multiple SWC files from a specified directory.
-3. Converts SWC files from neuromorpho.org using their API.
-At the bottom of the file, you can choose which functionality to use by uncommenting the relevant section and leaving the others commented out.
-
-You can find a detailed explanatory Jupyter Notebook in my GitHub repository: https://github.com/Sietse20/BEP-morphologies.
-Search for the file 'converter_notebook.ipynb'.
-
-If you have any questions about the code, feel free to contact me at s.reissenweber12@gmail.com.
-
-'''
 
 
 def construct_nml(input_data, write_nml=True, output_dir=''):
     '''
-    This function is the big function that calls all helper functions to construct the neuroml file.
+    The big function that calls all helper functions to construct the neuroml file.
 
     Input: - input_data: filepath to SWC file (str) or SWC data from API (tuple[filename (str), SWC data (bytes)])
+           - write_nml: whether to write the neuroml file (bool)
+           - output_dir: directory to write the neuroml file to (str)
 
-    Returns: - nml_doc: neuroml document object
+    Returns: - nml_file: filepath to neuroml file (str)
+             - nml_doc: neuroml document object
              - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
     '''
 
@@ -51,10 +37,10 @@ def construct_nml(input_data, write_nml=True, output_dir=''):
 
     d, comments = open_and_split(input_swc, errors)
     make_notes(comments, nml_doc)
-    n, children, type_seg, root = classify_types_branches_and_leafs(d, errors)
+    n, children, type_seg, root = classify_branches(d, errors)
     segmentGroups = find_segments(d, n, root)
     nml_mor, point_to_segment = process_segments(d, children, root, cell_id, errors)
-    process_cables(segmentGroups, type_seg, nml_mor, nml_cell, point_to_segment)
+    process_compartments(segmentGroups, type_seg, nml_mor, nml_cell, point_to_segment)
     define_biophysical_properties(nml_cell, cell_id)
 
     nml_doc.cells.append(nml_cell)
@@ -67,7 +53,7 @@ def construct_nml(input_data, write_nml=True, output_dir=''):
 
 class ConversionException(Exception):
     '''
-    This is an exception class used to store the errors dictionary when the SWC file is invalid and an exception is raised as a consequence.
+    Exception class used to store the errors dictionary when the SWC file is invalid and an exception is raised as a consequence.
     '''
 
     def __init__(self, message, errors):
@@ -77,7 +63,7 @@ class ConversionException(Exception):
 
 def log_error(errors, error_type, occurrence=1, extra_info=None, fix=None, stop=False):
     '''
-    This function logs errors detected in the SWC file to a dictionary and adds any additional information about the errors.
+    Logs errors detected in the SWC file to a dictionary and adds any additional information about the errors.
 
     Input: - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
            - error_type: error message (str)
@@ -85,8 +71,6 @@ def log_error(errors, error_type, occurrence=1, extra_info=None, fix=None, stop=
            - extra_info (optional): extra information about the error (str)
            - fix (optional): measure implemented to fix the error (str)
            - stop (optional): should the conversion continue or not (bool)
-
-    Returns: None
     '''
 
     # Check if error_type is related to unknown SWC structure identifiers
@@ -126,7 +110,7 @@ def log_error(errors, error_type, occurrence=1, extra_info=None, fix=None, stop=
 
 def open_and_split(input_data, errors):
     '''
-    This function takes SWC data and creates a dictionary with necessary information to generate the neuroml file.
+    Takes SWC data and creates a dictionary with necessary information to generate the neuroml file.
 
     Input: - input_data: filepath to SWC file (str) or SWC data (bytes)
            - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
@@ -140,7 +124,6 @@ def open_and_split(input_data, errors):
     comments = []
     no_par = []
     invalid_lines = []
-    soma_detected = False
 
     # Extract input_data (bytes means API)
     if isinstance(input_data, bytes):
@@ -175,9 +158,6 @@ def open_and_split(input_data, errors):
                         if par_ID > seg_ID:
                             log_error(errors, "Parent ID referred to before being defined. Loops might be present", extra_info=f"Point {seg_ID + 1}, parent {par_ID + 1}", fix="No fixes. SWC file is invalid", stop=True)
 
-                        if struc_ID == 1:
-                            soma_detected = True
-
                         if par_ID < 0:
                             par_ID = -1
                             no_par.append(str(seg_ID + 1))
@@ -203,7 +183,7 @@ def open_and_split(input_data, errors):
 
 def create_id(filename):
     '''
-    This function is used to create an nml id from the filename to conform to neuroml pattern restrictions.
+    Creates an nml id from the filename to conform to neuroml pattern restrictions.
 
     Inputs: filename (str)
 
@@ -219,12 +199,11 @@ def create_id(filename):
 
 def make_notes(comments, nml_doc):
     '''
-    This function creates the notes listed at the top of the neuroml file. It also includes the original comments listed in the SWC file.
+    Creates the notes listed at the top of the neuroml file. 
+    Includes the original comments listed in the SWC file.
 
     Input: - comments: list of comments [comment (str)]
            - nml_doc: neuroml document object
-
-    Returns: None
     '''
 
     nml_doc.notes = "\n\n" + '*' * 40 + \
@@ -241,9 +220,9 @@ def make_notes(comments, nml_doc):
     nml_doc.notes += "\n" + "#" * 40 + "\n\n"
 
 
-def classify_types_branches_and_leafs(d, errors):
+def classify_branches(d, errors):
     '''
-    This function classifies the segments into different types of structures, and determines the children of points.
+    Classifies the segments into different types of structures, and determines the children of points.
 
     Input: - d: dict {point (int): (struc_ID, x_coord, y_coord, z_coord, radius, parent)}
            - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
@@ -345,10 +324,11 @@ def classify_types_branches_and_leafs(d, errors):
 
 def find_segments(d, n, root):
     '''
-    This function organizes the segments into unbranched segment groups of the same structural type.
+    Organizes the segments into unbranched segment groups of the same structural type.
 
     Input: - d: dict {point (int): (struc_id, x_coord, y_coord, z_coord, radius, parent)}
            - n: dict {amount of children (int): [points]}
+           - root: point without parent (int)
 
     Returns: - segmentGroups: list with lists of segmentgroups [[points], [points], ...]
     '''
@@ -419,10 +399,18 @@ def find_segments(d, n, root):
 def process_segments(d, children, root, mor_id, errors):
     '''
     Converts SWC points into NeuroML segments.
-    Handles:
-    - 1 point soma: sphere
-    - 3 point soma: cylinder (outer -> center -> outer)
-    - N point soma: soma chain
+    Handles: - 1 point soma: sphere
+             - 3 point soma: cylinder (outer -> center -> outer)
+             - N point soma: soma chain
+    
+    Input: - d: dict {point (int): (struc_id, x_coord, y_coord, z_coord, radius, parent)}
+           - children: dict {point (int): [children]}
+           - root: point without parent (int)
+           - mor_id: morphology id (str)
+           - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
+
+    Returns: - nml_mor: neuroml morphology object
+             - point_to_segment: dict {point (int): segment id (str)}
     '''
 
     nml_mor = neuroml.Morphology(id=f'{mor_id}')
@@ -608,15 +596,15 @@ def process_segments(d, children, root, mor_id, errors):
     return nml_mor, point_to_segment
 
 
-def process_cables(segment_groups, type_seg, nml_mor, nml_cell, point_to_segment):
+def process_compartments(segment_groups, type_seg, nml_mor, nml_cell, point_to_segment):
     '''
-    This function incorporates the segment groups into the morphology object and adds them to bigger segment groups.
+    Incorporates the segment groups into the morphology object and adds them to bigger segment groups.
 
     Input: - segment_groups: list with lists of segmentGroups [[point], [point], ...]
            - type_seg: dict {point (int): type morph. structurte (e.g. soma) (str)}
            - nml_mor: neuroml morphology object
-
-    Returns: None
+           - nml_cell: neuroml cell object
+           - point_to_segment: dict {point (int): segment id (str)}
     '''
 
     cables = []
@@ -692,12 +680,10 @@ def process_cables(segment_groups, type_seg, nml_mor, nml_cell, point_to_segment
 
 def define_biophysical_properties(nml_cell, cell_id):
     '''
-    This function defines some basic biophysical properties for the given cell.
+    Defines some basic biophysical properties for the given cell.
 
     Input: - nml_cell: neuroml cell object
            - cell_id: unique ID of neuroml cell (str)
-
-    Returns: None
     '''
 
     # Create biophysical properties object
@@ -723,7 +709,7 @@ def define_biophysical_properties(nml_cell, cell_id):
 
 def write_nml_file(nml_doc, filename, output_dir=''):
     '''
-    This function writes the neuroml document object to a neuroml file in an optionally specified output directory.
+    Writes the neuroml document object to a neuroml file in an optionally specified output directory.
 
     Input: - nml_doc: neuroml document object
            - filename: name of the SWC file (str)
@@ -735,3 +721,47 @@ def write_nml_file(nml_doc, filename, output_dir=''):
     nml_file = f'{output_dir}/{filename}_converted.cell.nml' if output_dir else f'{filename}_converted.cell.nml'
     writers.NeuroMLWriter.write(nml_doc, nml_file)
     return os.path.basename(nml_file)
+
+
+def log_metadata(neuron_data, status, errors):
+    '''
+    Logs the metadata of the neuron conversion process to a CSV file.
+    
+    Input: - neuron_data: dict containing neuron metadata (dict)
+           - status: conversion status (str)
+           - errors: dict {error message: {occurences: int, extra_info: [str], fix: str}}
+    '''
+    
+    filename = "metadata.csv"
+    exists = os.path.isfile(filename)
+
+    # Flatten errors into plain strings
+    error_types = "|".join(errors.keys()) if errors else ""
+
+    with open(filename, "a", newline="") as f:
+
+        writer = csv.DictWriter(
+            f,
+            fieldnames=[
+                "neuron_id",
+                "neuron_name",
+                "species",
+                "cell_type",
+                "brain_region",
+                "status",
+                "error_types",
+            ]
+        )
+
+        if not exists:
+            writer.writeheader()
+
+        writer.writerow({
+            "neuron_id":    neuron_data.get("neuron_id"),
+            "neuron_name":  neuron_data.get("neuron_name"),
+            "species":      neuron_data.get("species"),
+            "cell_type":    "|".join(neuron_data.get("cell_type", []) or []),
+            "brain_region": "|".join(neuron_data.get("brain_region", []) or []),
+            "status":       status,
+            "error_types":  error_types,
+        })

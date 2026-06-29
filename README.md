@@ -1,7 +1,6 @@
 # Morphologies
 
-This repository is one containing files necessary to make a clean swc -> nml conversion. The main file of this conversion is;
-SWC_to_NML_converter_Dev.py
-This large file contains some instructions as to how to use it, be sure to read those as well.
+This repository contains files necessary to make a clean SWC -> NML conversion. The main file of this conversion is Converter.py.
+This large file contains some instructions on how to use it, be sure to read those as well.
 
-In case any difficulties arise, be sure to contact me.
+If you have any questions about the code, feel free to contact me at on GitHub, or send an email to s.reissenweber12@gmail.com.

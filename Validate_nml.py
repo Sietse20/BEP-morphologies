@@ -8,6 +8,12 @@ from utils import clear_screen
 
 
 def validate_single_file(file_path):
+    '''
+    Validates a single .nml file using pynml and EDEN.
+
+    Input: file_path (str): The path to the .nml file to be validated.
+    '''
+
     try:
         file_name = os.path.basename(file_path)
 
@@ -33,6 +39,12 @@ def validate_single_file(file_path):
 
 
 def validate_directory(directory):
+    '''
+    Validates all .nml files in the specified directory using pynml and EDEN.
+
+    Input: directory (str): The path to the directory containing .nml files.
+    '''
+
     # Find all .nml files in the specified directory
     file_pattern = os.path.join(directory, '*.nml')
     files = glob.glob(file_pattern)
@@ -81,6 +93,10 @@ def validate_directory(directory):
 
 
 def validate_eden(file):
+    '''
+    Validates a .nml file using the EDEN simulator.
+    '''
+
     eden_simulator.experimental.explain_cell(file)
 
 
@@ -92,5 +108,5 @@ if __name__ == "__main__":
 
 
     # Validate single file:
-    file = "nml_api\_0_2a_converted.cell.nml"
+    file = "nml_api/_0_2a_converted.cell.nml"
     validate_single_file(file)
